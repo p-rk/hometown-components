@@ -1,5 +1,5 @@
-import React from "react";
-import {render} from "react-dom";
+import React from 'react';
+import { render } from 'react-dom';
 import Button from '../components/Buttons';
 
 const Index = () => (
@@ -9,4 +9,4 @@ const Index = () => (
   </div>
 );
 
-render(<Index />, document.getElementById("root"));
+render(<Index />, document.getElementById('root'));
