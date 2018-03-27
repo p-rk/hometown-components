@@ -1,16 +1,16 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+// const HtmlWebPackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 
 // const htmlPlugin = new HtmlWebPackPlugin({
-//   template: "./src/index.html",
-//   filename: "./index.html"
+//   template: './src/index.html',
+//   filename: './index.html'
 // });
 
 module.exports = {
   entry: {
-    'Buttons/index': "./src/components/Buttons/",
-    'Inputs/index': "./src/components/Inputs/"
+    'Buttons/index': './src/components/Buttons/',
+    'Inputs/index': './src/components/Inputs/'
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
@@ -21,7 +21,7 @@ module.exports = {
     'styled-components': {
       commonjs2: 'styled-components'
     },
-    'react': {
+    react: {
       commonjs2: 'react'
     },
     'react-dom': {
@@ -34,7 +34,14 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
+        }
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'eslint-loader'
         }
       }
     ]

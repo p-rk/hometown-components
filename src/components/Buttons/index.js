@@ -3,15 +3,15 @@ import styled from 'styled-components';
 const sizes = {
   small: {
     'font-size': '1em',
-    'margin': '1em',
+    margin: '1em',
   },
   medium: {
     'font-size': '2em',
-    'margin': '2em',
+    margin: '2em',
   },
   large: {
     'font-size': '3em',
-    'margin': '3em',
+    margin: '3em',
   }
 };
 
@@ -31,8 +31,5 @@ const Button = styled.button`
     color: ${props => props.primary ? 'white' : 'red'};
   }
 `;
-
-
-
 
 export default Button;
