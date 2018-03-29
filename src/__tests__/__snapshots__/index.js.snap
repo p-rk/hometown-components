@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It should return Button 1`] = `
+.c0 {
+  background: white;
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 1em 2em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+}
+
+@media (max-width:767px) {
+  .c0 {
+    background: white;
+    color: red;
+  }
+}
+
+<button
+  className="c0"
+  size="small"
+/>
+`;
+
+exports[`it works 1`] = `
+.c0 {
+  background: white;
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 1em 2em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+}
+
+@media (max-width:767px) {
+  .c0 {
+    background: white;
+    color: red;
+  }
+}
+
+<button
+  className="c0"
+  size="small"
+/>
+`;

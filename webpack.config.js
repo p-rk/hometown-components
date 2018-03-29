@@ -1,11 +1,5 @@
-// const HtmlWebPackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
-
-// const htmlPlugin = new HtmlWebPackPlugin({
-//   template: './src/index.html',
-//   filename: './index.html'
-// });
 
 module.exports = {
   entry: {
@@ -23,6 +17,9 @@ module.exports = {
     },
     react: {
       commonjs2: 'react'
+    },
+    'react-dom': {
+      commonjs2: 'react-dom'
     }
   },
   module: {

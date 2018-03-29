@@ -16,7 +16,6 @@ const sizes = {
 };
 
 const Button = styled.button`
-  /* Adapt the colours based on primary prop */
   background: ${props => props.primary ? 'palevioletred' : 'white'};
   color: ${props => props.primary ? 'white' : 'palevioletred'};
 
@@ -31,5 +30,9 @@ const Button = styled.button`
     color: ${props => props.primary ? 'white' : 'red'};
   }
 `;
+
+Button.defaultProps = {
+  size: 'small'
+};
 
 export default Button;
