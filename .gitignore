@@ -1,3 +1,5 @@
 node_modules
 lib
 .git
+src/__tests__/__snapshots__/
+*.snap
