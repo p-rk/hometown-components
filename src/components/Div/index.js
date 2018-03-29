@@ -7,13 +7,12 @@ injectGlobal`
 `;
 /* eslint-enable */
 
-const Input = styled.input`
-  padding: 0.5em;
-  margin: 0.5em;
-  color: palevioletred;
-  background: papayawhip;
-  border: none;
-  border-radius: 3px;
+const Div = styled.div`
+  display: ${props => props.display};
 `;
 
-export default Input;
+Div.defaultProps = {
+  display: 'block'
+};
+
+export default Div;

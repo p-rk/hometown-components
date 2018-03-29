@@ -4,7 +4,8 @@ const path = require('path');
 module.exports = {
   entry: {
     'Buttons/index': './src/components/Buttons/',
-    'Inputs/index': './src/components/Inputs/'
+    'Inputs/index': './src/components/Inputs/',
+    'Div/index': './src/components/Div/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
