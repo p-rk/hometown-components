@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode=production --progress --colors --watch",
-    "build": "webpack --mode=production",
+    "dev": "webpack-dev-server --config=webpack.dev-config.js --mode=development --progress --colors --watch --open",
+    "build": "webpack --config=webpack.prod-config.js --mode=production",
     "test": "jest",
     "prepublish": "npm run build",
     "release": "np"
