@@ -31,6 +31,13 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    modules: [
+      'src',
+      'node_modules'
+    ],
+    extensions: ['.json', '.js', '.jsx']
+  },
   plugins: [
     htmlWebpackPlugin,
     new UglifyJsPlugin()

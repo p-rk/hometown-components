@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Input from '../components/Inputs';
+import Button from 'components/Buttons';
 
 const Index = () => (
   <div>
-    <Input />
+    <Button primary>Test WER</Button>
   </div>
 );
 
