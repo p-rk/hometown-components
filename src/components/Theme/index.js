@@ -1,5 +1,5 @@
-const theme = {
-  defaultBtnSize: 'small'
+const Theme = {
+  size: 'small'
 };
 
-export default theme;
+export default Theme;
