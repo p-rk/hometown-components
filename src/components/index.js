@@ -1,2 +1,2 @@
-export Buttons from './components/Buttons';
-export Inputs from './components/Inputs';
+export Button from './Buttons';
+export Inputs from './Inputs';
