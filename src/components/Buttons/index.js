@@ -1,46 +1,4 @@
-import { styled, injectGlobal } from 'styled-components';
-
-/* eslint-disable */
-// styled-components usage
-injectGlobal`
-  /** Light **/
-  @font-face {
-  	font-family: 'SFPDLight';
-  	src: url('../../../static/fonts/light/SF-Pro-Display-Light.woff') format('woff');
-  	font-weight: normal;
-  	font-style: normal;
-  }
-
-  /** Regular **/
-  @font-face {
-  	font-family: 'SFPDRegular';
-  	src: url('../../../static/fonts/regular/SF-Pro-Display-Regular.woff') format('woff');
-  	font-weight: normal;
-  	font-style: normal;
-  }
-
-  /** Medium **/
-  @font-face {
-  	font-family: 'SFPDMedium';
-  	src: url('../../../static/fonts/medium/SF-Pro-Display-Medium.woff') format('woff');
-  	font-weight: normal;
-  	font-style: normal;
-  }
-
-  /** Semi Bold **/
-  @font-face {
-  	font-family: 'SFPDSemiBold';
-  	src: url('../../../static/fonts/semibold/SF-Pro-Display-Semibold.woff') format('woff');
-  	font-weight: normal;
-  	font-style: normal;
-  }
-
-  html, body {
-    font-family: 'SFPDRegular';
-    color: $text;
-  }
-`;
-/* eslint-enable */
+import styled from 'styled-components';
 
 const sizes = {
   small: {
@@ -83,22 +41,11 @@ const Button = styled.button`
   }
 `;
 
-const TomatoButton = Button.extend`
-  color: tomato;
-  border-color: tomato;
-`;
-
-// We're replacing the <button> tag with an <a> tag, but reuse all the same styles
 const Link = Button.withComponent('a');
 
-// Use .withComponent together with .extend to both change the tag and use additional styles
-const TomatoLink = Link.extend`
-  color: tomato;
-  border-color: tomato;
-`;
 
 Button.defaultProps = {
   size: 'medium'
 };
 
-export { Button, TomatoButton, Link, TomatoLink };
+export { Button, Link };
