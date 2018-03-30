@@ -7,7 +7,7 @@ const sizes = {
     width: '10rem'
   },
   medium: {
-    'font-size': '1rem',
+    'font-size': '1.4rem',
     margin: '1em',
     width: '14rem'
   },
@@ -21,31 +21,24 @@ const sizes = {
 const Button = styled.button`
   background: ${props => props.primary ? 'palevioletred' : 'white'};
   color: ${props => props.primary ? 'white' : 'palevioletred'};
-
   font-size: ${props => sizes[props.size]['font-size']};
   margin: ${props => sizes[props.size].margin};
-  width: ${props => sizes[props.size].width};
 
+  ${props => props.theme.width[props.width]};
+  
   padding: 1em 2em;
   border: 2px solid palevioletred;
   border-radius: 3px;
-
-  &:hover {
-    background: ${props => props.primary ? 'black' : 'red'};
-    color: ${props => props.primary ? 'white' : 'blue'};
-  }
-
-  @media(max-width: 767px) {
-    background: ${props => props.primary ? 'red' : 'white'};
-    color: ${props => props.primary ? 'white' : 'red'};
-  }
 `;
 
 const Link = Button.withComponent('a');
 
-
 Button.defaultProps = {
-  size: 'medium'
+  theme: {
+    width: '1'
+  },
+  size: 'small',
+  fontSize: '1.2em'
 };
 
 export { Button, Link };
