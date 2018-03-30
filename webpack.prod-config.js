@@ -3,8 +3,10 @@ const path = require('path');
 
 module.exports = {
   entry: {
+    index: './src/components',
     'Buttons/index': './src/components/Buttons/',
-    'Inputs/index': './src/components/Inputs/'
+    'Inputs/index': './src/components/Inputs/',
+    'Theme/index': './src/components/Theme/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
@@ -17,9 +19,6 @@ module.exports = {
     },
     react: {
       commonjs2: 'react'
-    },
-    'react-dom': {
-      commonjs2: 'react-dom'
     }
   },
   module: {

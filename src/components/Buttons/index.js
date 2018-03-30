@@ -20,7 +20,7 @@ const Button = styled.button`
   color: ${props => props.primary ? 'white' : 'palevioletred'};
 
   font-size: 1em;
-  margin: ${props => sizes[props.size]['font-size']};
+  margin: ${props => sizes[props.theme.size]['font-size']};
   padding: 1em 2em;
   border: 2px solid palevioletred;
   border-radius: 3px;
@@ -32,7 +32,9 @@ const Button = styled.button`
 `;
 
 Button.defaultProps = {
-  size: 'small'
+  theme: {
+    size: 'large'
+  }
 };
 
 export default Button;
