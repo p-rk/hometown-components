@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
-// console.log('Current theme: ', this.props.theme);
-
 const sizes = {
   default: {
     padding: '.375rem .75rem',
-    // fontSize: '1rem',
-    fontSize: `${props => props.fs1}`
+    fontSize: '1rem'
+    // fontSize: props => props.theme.fontSizes[16]
   },
   small: {
     padding: '.25rem .5rem',
@@ -27,10 +25,14 @@ const sizes = {
 const btnType = {
   default: {
     // color: `${props.theme.colors.textExtraLight}`
-    // backgroundColor: 'transparent',
-    // borderColor: `${props => props.theme.colors.border}`
+    color: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'transparent',
+    borderColor: '#979797'
   },
   primary: {
+    color: '#fff',
+    backgroundColor: '#ae8873',
+    borderColor: '#ae8873'
     // color: `${props => props.theme.colors.white}`,
     // backgroundColor: `${props => props.theme.colors.primary}`,
     // borderColor: `${props => props.theme.colors.primary}`
@@ -50,15 +52,24 @@ const Button = styled.button`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition: color .15s ease-in-out,
-  background-color .15s ease-in-out,
-  border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out,
+    border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
-  font-size: ${props => props.fs};
   ${props => sizes[props.size]};
   ${props => btnType[props.btnType]};
+
+  &:hover {
+    background: ${props => props.btnType === 'default' ? '#ae8873' : 'transparent'};;
+    color: ${props => props.btnType === 'default' ? '#FFF' : '#ae8873'};;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 `;
 
+// font-size: ${props => props.fs};
 const Link = Button.withComponent('a');
 
 Button.defaultProps = {
@@ -66,9 +77,7 @@ Button.defaultProps = {
     lineHeights: 1
   },
   size: 'default',
-  btnType: 'default',
-  fs: '1rem',
-  fs1: '2rem'
+  btnType: 'default'
 };
 
 export { Button, Link };

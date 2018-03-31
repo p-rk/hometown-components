@@ -8,6 +8,7 @@ module.exports = {
     'Inputs/index': './src/components/Inputs/',
     'Div/index': './src/components/Div/',
     'Theme/index': './src/components/Theme/',
+    'Container/index': './src/components/Container/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
