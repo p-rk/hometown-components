@@ -1,11 +1,16 @@
 // theme.js
 
 // breakpoint values
-const breakpoints = {
-  xs: '36em',
-  sm: '48em',
-  md: '62em',
-  lg: '75em'
+
+const breakpoints = val => {
+  const breakpointsVal = {
+    xs: '36em',
+    sm: '48em',
+    md: '62em',
+    lg: '75em'
+  };
+
+  return breakpointsVal[val];
 };
 
 // Colors

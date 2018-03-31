@@ -59,8 +59,8 @@ const Button = styled.button`
   ${props => btnType[props.btnType]};
 
   &:hover {
-    background: ${props => props.btnType === 'default' ? '#ae8873' : 'transparent'};;
-    color: ${props => props.btnType === 'default' ? '#FFF' : '#ae8873'};;
+    background: ${props => props.btnType === 'default' ? '#ae8873' : 'transparent'};
+    color: ${props => props.btnType === 'default' ? '#FFF' : '#ae8873'};
   }
 
   &:disabled {
