@@ -1,44 +1,74 @@
 import styled from 'styled-components';
 
+// console.log('Current theme: ', this.props.theme);
+
 const sizes = {
-  small: {
-    'font-size': '0.8em',
-    margin: '1em',
-    width: '10rem'
+  default: {
+    padding: '.375rem .75rem',
+    // fontSize: '1rem',
+    fontSize: `${props => props.fs1}`
   },
-  medium: {
-    'font-size': '1.4rem',
-    margin: '1em',
-    width: '14rem'
+  small: {
+    padding: '.25rem .5rem',
+    fontSize: '.875rem'
   },
   large: {
-    'font-size': '1.5em',
-    margin: '1em',
-    width: '18rem'
+    padding: '.5rem 1rem',
+    fontSize: '1.25rem'
+  },
+  block: {
+    display: 'block',
+    width: '100%',
+    padding: '.375rem .75rem',
+    fontSize: '1rem'
+  },
+};
+
+const btnType = {
+  default: {
+    // color: `${props.theme.colors.textExtraLight}`
+    // backgroundColor: 'transparent',
+    // borderColor: `${props => props.theme.colors.border}`
+  },
+  primary: {
+    // color: `${props => props.theme.colors.white}`,
+    // backgroundColor: `${props => props.theme.colors.primary}`,
+    // borderColor: `${props => props.theme.colors.primary}`
   }
 };
 
 const Button = styled.button`
-  background: ${props => props.primary ? 'palevioletred' : 'white'};
-  color: ${props => props.primary ? 'white' : 'palevioletred'};
-  font-size: ${props => sizes[props.size]['font-size']};
-  margin: ${props => sizes[props.size].margin};
+  border: 1px solid;
+  line-height: 1.5;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: color .15s ease-in-out,
+  background-color .15s ease-in-out,
+  border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 
-  ${props => props.theme.width[props.width]};
-  
-  padding: 1em 2em;
-  border: 2px solid palevioletred;
-  border-radius: 3px;
+  font-size: ${props => props.fs};
+  ${props => sizes[props.size]};
+  ${props => btnType[props.btnType]};
 `;
 
 const Link = Button.withComponent('a');
 
 Button.defaultProps = {
   theme: {
-    width: '1'
+    lineHeights: 1
   },
-  size: 'small',
-  fontSize: '1.2em'
+  size: 'default',
+  btnType: 'default',
+  fs: '1rem',
+  fs1: '2rem'
 };
 
 export { Button, Link };

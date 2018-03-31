@@ -7,11 +7,9 @@ import Theme from 'components/Theme';
 const Index = () => (
   <ThemeProvider theme={Theme}>
     <div>
-      <Button primary col={1} size="medium">Test Button</Button>
-      <Button primary col={4} size="medium">Test Button</Button>
-      <Button primary col={3} size="medium">Test Button</Button>
-      <Button primary col={6} size="medium">Test Button</Button>
-      <Button primary col={12} size="medium">Test Button</Button>
+      <Button size="default" btnType="default" fs="1rem">Button</Button>
+      <br /><br />
+      <Button size="block" btnType="primary" fs="1rem">Primary Button</Button>
     </div>
   </ThemeProvider>
 );

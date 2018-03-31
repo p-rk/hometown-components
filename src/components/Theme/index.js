@@ -17,6 +17,8 @@ const colors = {
   text: 'rgba(0, 0, 0, 0.75)',
   textDark: 'rgba(0, 0, 0, 0.8)',
   textLight: 'rgba(0, 0, 0, 0.6)',
+  textExtraLight: 'rgba(0, 0, 0, 0.5)',
+  border: '#979797',
   gray: [
     '#f8f9fa',
     '#e9ecef',
@@ -76,10 +78,12 @@ const letterSpacings = {
 // border-radius
 const radius = [
   '0px',
-  '3px',
-  '5px',
-  '10px',
-  '100%'
+  '.25rem',
+  '.3rem',
+  '.35rem',
+  '.40rem',
+  '.45rem',
+  '.50rem'
 ];
 
 const borderWidths = [
