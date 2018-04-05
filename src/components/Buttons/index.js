@@ -33,7 +33,6 @@ const btnType = {
     color: '#fff',
     backgroundColor: '#ae8873',
     borderColor: '#ae8873'
-    // color: `${props => props.theme.colors.white}`,
     // backgroundColor: `${props => props.theme.colors.primary}`,
     // borderColor: `${props => props.theme.colors.primary}`
   }

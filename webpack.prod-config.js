@@ -5,10 +5,14 @@ module.exports = {
   entry: {
     index: './src/components',
     'Buttons/index': './src/components/Buttons/',
-    'Inputs/index': './src/components/Inputs/',
-    'Div/index': './src/components/Div/',
-    'Theme/index': './src/components/Theme/',
     'Container/index': './src/components/Container/',
+    'Div/index': './src/components/Div/',
+    'Heading/index': './src/components/Heading/',
+    'Image/index': './src/components/Image/',
+    'InputField/index': './src/components/InputField/',
+    'Row/index': './src/components/Row/',
+    'Text/index': './src/components/Text/',
+    'Theme/index': './src/components/Theme/'
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
