@@ -4,3 +4,4 @@ build
 .git
 src/__tests__/__snapshots__/
 *.snap
+.notes
