@@ -1,13 +1,26 @@
 import styled from 'styled-components';
 
+const display = (props, type) => {
+  const typeObj = {
+    block: {
+      display: `${props.display}`,
+    },
+    flex: {
+      display: `${props.display}`,
+      flexWrap: `${props.flexWrap}`,
+      flexDirection: `${props.flexDirection}`,
+      justifyContent: `${props.justifyContent}`,
+      alignItems: `${props.alignItems}`,
+    }
+  };
+
+  return typeObj[type];
+};
+
 const Row = styled.div`
-  display: ${props => props.display};
-  flex-wrap: ${props => props.flexWrap};
-  flex-direction ${props => props.flexDirection};
-  justify-content: ${props => props.justifyContent};
-  align-items: ${props => props.alignItems};
-  //margin-right: -15px;
-  //margin-left: -15px;
+  ${props => display(props, props.display)};
+  margin-right: -15px;
+  margin-left: -15px;
 `;
 
 Row.defaultProps = {

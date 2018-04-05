@@ -22,20 +22,21 @@ const sizes = {
   },
 };
 
-const btnType = {
-  default: {
-    // color: `${props.theme.colors.textExtraLight}`
-    color: 'rgba(0, 0, 0, 0.5)',
-    backgroundColor: 'transparent',
-    borderColor: '#979797'
-  },
-  primary: {
-    color: '#fff',
-    backgroundColor: '#ae8873',
-    borderColor: '#ae8873'
-    // backgroundColor: `${props => props.theme.colors.primary}`,
-    // borderColor: `${props => props.theme.colors.primary}`
-  }
+const btnType = (props, type) => {
+  const typeObj = {
+    default: {
+      color: `${props.theme.colors.textExtraLight}`,
+      backgroundColor: 'transparent',
+      borderColor: `${props.theme.colors.border}`,
+    },
+    primary: {
+      color: `${props.theme.colors.white}`,
+      backgroundColor: `${props.theme.colors.primary}`,
+      borderColor: `${props.theme.colors.primary}`
+    }
+  };
+
+  return typeObj[type];
 };
 
 const Button = styled.button`
@@ -52,10 +53,10 @@ const Button = styled.button`
   -ms-user-select: none;
   user-select: none;
   transition: color .15s ease-in-out, background-color .15s ease-in-out,
-    border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
   ${props => sizes[props.size]};
-  ${props => btnType[props.btnType]};
+  ${props => btnType(props, props.btnType)};
 
   &:hover {
     background: ${props => props.btnType === 'default' ? '#ae8873' : 'transparent'};

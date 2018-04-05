@@ -1,18 +1,34 @@
 import styled from 'styled-components';
 
+const display = (props, type, width) => {
+  const typeObj = {
+    block: {
+      display: 'block',
+      width: `${width}`,
+      float: 'left',
+      position: 'relative',
+    },
+    flex: {
+      flexBasis: 0,
+      flexGrow: 1,
+      maxWidth: '100%'
+    }
+  };
+
+  return typeObj[type];
+};
+
 const Div = styled.div`
-  display: ${props => props.display};
+  box-sizing: border-box;
   padding-right: 15px;
   padding-left: 15px;
-  // width: 50%;
-  // -webkit-box-flex: 0;
-  // -ms-flex: 0 0 50%;
-  // flex: 0 0 50%;
-  // max-width: 50%;
+
+  ${props => display(props, props.display, props.width)};
 `;
 
 Div.defaultProps = {
-  display: 'block'
+  display: 'block',
+  width: 'auto'
 };
 
 export default Div;

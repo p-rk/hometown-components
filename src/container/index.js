@@ -28,14 +28,14 @@ const Index = () => (
         <InputField backgroundColor="rgba(0, 0, 0, 0.05)" borderColor="rgba(0, 0, 0, 0.03)" type="password" />
         <br /><br />
 
-        <Row>
-          <Div>
+        <Row display="block">
+          <Div width="50%">
             <Heading fontSize="2rem" fontWeight="bold">H3</Heading>
             <Heading fontSize="1rem" fontWeight="300">H3</Heading>
             <Heading fontSize="1.5rem" fontWeight="400">H3</Heading>
           </Div>
-          <Div>Test Test</Div>
-          <Div><Image
+          <Div width="50%">Test Test</Div>
+          <Div width="100%"><Image
             alt="Hello"
             src="http://via.placeholder.com/350x350"
             width="300"
