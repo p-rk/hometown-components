@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import { Button } from 'components/Buttons';
 import InputField from 'components/InputField';
-import { Label, SuccessMessage, ErrorMessage, Note } from 'components/Label';
+import { Label, FeedBackMessage } from 'components/Label';
 import Input from 'components/Input';
 import Container from 'components/Container';
 import Div from 'components/Div';
@@ -28,17 +28,17 @@ const Index = () => (
         <InputField>
           <Label>Email*</Label>
           <Input placeholder="Enter Email" type="email" id="email" />
-          <SuccessMessage >Success Message</SuccessMessage>
+          <FeedBackMessage type="success">Success Message</FeedBackMessage>
         </InputField>
         <InputField>
           <Label>Email1*</Label>
           <Input placeholder="Enter Email" type="email" id="email1" />
-          <ErrorMessage >Error Message</ErrorMessage>
+          <FeedBackMessage type="error">Error Message</FeedBackMessage>
         </InputField>
         <InputField>
           <Label>Email2*</Label>
           <Input placeholder="Enter Email" type="email" id="email2" />
-          <Note >Notes ******</Note>
+          <FeedBackMessage type="note">Success Message</FeedBackMessage>
         </InputField>
         <br /><br />
 

@@ -7,24 +7,11 @@ const Label = styled.label`
   color: ${props => props.color ? props.theme.colors[props.color] : props.theme.colors.textDark};
   ${props => props.mb && { marginBottom: props.mb }}
   ${props => props.mt && { marginTop: props.mt }}
-
   display: inline-block;
 `;
 
-const SuccessMessage = styled(Label)`
-  color: ${props => props.theme.colors.success};
-`;
-
-const ErrorMessage = styled(Label)`
-  color: ${props => props.theme.colors.error};
-`;
-
-const InfoMessage = styled(Label)`
-  color: ${props => props.theme.colors.info};
-`;
-
-const Note = styled(Label)`
-  color: ${props => props.theme.colors.note};
+const FeedBackMessage = styled(Label)`
+  color: ${props => props.theme.colors[props.type]};
 `;
 
 Label.defaultProps = {
@@ -32,7 +19,8 @@ Label.defaultProps = {
   fontStyle: 'normal',
   fontFamily: 'SFPDMedium',
   mb: '5px',
-  mt: '5px'
+  mt: '5px',
+  type: 'note'
 };
 
-export { Label, SuccessMessage, ErrorMessage, InfoMessage, Note };
+export { Label, FeedBackMessage };
