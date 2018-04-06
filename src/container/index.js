@@ -33,7 +33,7 @@ const Index = () => (
         <InputField>
           <Label>Email1*</Label>
           <Input placeholder="Enter Email" type="email" id="email1" />
-          <ErrorMessage >Success Message</ErrorMessage>
+          <ErrorMessage >Error Message</ErrorMessage>
         </InputField>
         <InputField>
           <Label>Email2*</Label>
