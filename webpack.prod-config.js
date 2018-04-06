@@ -9,7 +9,9 @@ module.exports = {
     'Div/index': './src/components/Div/',
     'Heading/index': './src/components/Heading/',
     'Image/index': './src/components/Image/',
+    'Input/index': './src/components/Input/',
     'InputField/index': './src/components/InputField/',
+    'Label/index': './src/components/Label/',
     'Row/index': './src/components/Row/',
     'Text/index': './src/components/Text/',
     'Theme/index': './src/components/Theme/'

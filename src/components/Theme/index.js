@@ -24,6 +24,10 @@ const colors = {
   textLight: 'rgba(0, 0, 0, 0.6)',
   textExtraLight: 'rgba(0, 0, 0, 0.5)',
   border: '#979797',
+  success: '#28a745',
+  error: '#dc3545',
+  info: '#17a2b8',
+  note: '#6c757d',
   gray: [
     '#f8f9fa',
     '#e9ecef',

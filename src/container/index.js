@@ -3,6 +3,8 @@ import { render } from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import { Button } from 'components/Buttons';
 import InputField from 'components/InputField';
+import { Label, SuccessMessage, ErrorMessage, Note } from 'components/Label';
+import Input from 'components/Input';
 import Container from 'components/Container';
 import Div from 'components/Div';
 import Row from 'components/Row';
@@ -23,9 +25,21 @@ const Index = () => (
         <Button btnType="primary" disabled>Primary Button</Button>
         <br />
         <br />
-        <InputField />
-        <br /><br />
-        <InputField backgroundColor="rgba(0, 0, 0, 0.05)" borderColor="rgba(0, 0, 0, 0.03)" type="password" />
+        <InputField>
+          <Label>Email*</Label>
+          <Input placeholder="Enter Email" type="email" id="email" />
+          <SuccessMessage >Success Message</SuccessMessage>
+        </InputField>
+        <InputField>
+          <Label>Email1*</Label>
+          <Input placeholder="Enter Email" type="email" id="email1" />
+          <ErrorMessage >Success Message</ErrorMessage>
+        </InputField>
+        <InputField>
+          <Label>Email2*</Label>
+          <Input placeholder="Enter Email" type="email" id="email2" />
+          <Note >Notes ******</Note>
+        </InputField>
         <br /><br />
 
         <Row display="block">
