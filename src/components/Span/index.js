@@ -13,6 +13,7 @@ const Span = styled.span`
   color: ${props => props.color};
   font-size: ${props => props.fontSize};
   text-align: ${props => props.ta};
+  font-family: ${props => props.fontFamily};
 
   ${props => types[props.type]};
 
@@ -34,9 +35,10 @@ const Span = styled.span`
 
 Span.defaultProps = {
   type: 'default',
-  color: 'rgba(0, 0, 0, 0.4)',
+  color: 'rgba(0, 0, 0, 0.6)',
   fontSize: '1rem',
   ta: 'left',
+  fontFamily: 'SFPDRegular'
 };
 
 export default Span;

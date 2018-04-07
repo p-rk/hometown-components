@@ -7,6 +7,10 @@ const Container = styled.div`
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  clear: both;
+  > *, ::after, ::before {
+    box-sizing: border-box;
+  }
   @media (min-width: ${props => props.theme.breakpoints('xs')}) {
     max-width: 540px;
   }

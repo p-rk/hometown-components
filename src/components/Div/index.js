@@ -19,11 +19,8 @@ const display = (props, type, width) => {
 };
 
 const Div = styled.div`
-  box-sizing: border-box;
-  padding-right: 15px;
-  padding-left: 15px;
-
   ${props => display(props, props.display, props.width)};
+  
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}
@@ -34,11 +31,16 @@ const Div = styled.div`
   ${props => props.pr && { paddingRight: props.pr }}
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
+
+  box-sizing: border-box;
+  > *, ::after, ::before {
+    box-sizing: border-box;
+  }
 `;
 
 Div.defaultProps = {
   display: 'block',
-  width: 'auto'
+  width: '100%'
 };
 
 export default Div;
