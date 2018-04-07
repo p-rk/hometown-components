@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Text = styled.input`
+const Text = styled.p`
   font-size: ${props => props.fontSize};
   text-transform: ${props => props.backgroundColor};
   font-weight: ${props => props.backgroundColor};

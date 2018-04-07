@@ -21,7 +21,7 @@ const sizes = {
   },
 };
 
-const btnType = (props, type) => {
+const type = (props, btnType) => {
   const typeObj = {
     default: {
       color: `${props.theme.colors.textExtraLight}`,
@@ -32,14 +32,24 @@ const btnType = (props, type) => {
       color: `${props.theme.colors.white}`,
       backgroundColor: `${props.theme.colors.primary}`,
       borderColor: `${props.theme.colors.primary}`
+    },
+    custom: {
+      color: `${props.color}`,
+      backgroundColor: `${props.bg}`,
+      borderColor: `${props.bc}`,
+      border: `${props.border}`
+    },
+    link: {
+      color: `${props.theme.colors.textExtraLight}`,
+      border: 'none'
     }
   };
 
-  return typeObj[type];
+  return typeObj[btnType];
 };
 
 const Button = styled.button`
-  border: 1px solid;
+  border: ${props => props.border};
   line-height: 1.5;
   display: inline-block;
   cursor: pointer;
@@ -55,11 +65,11 @@ const Button = styled.button`
   border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
   ${props => sizes[props.size]};
-  ${props => btnType(props, props.btnType)};
+  ${props => type(props, props.type)};
 
   &:hover {
-    background: ${props => props.btnType === 'default' ? '#ae8873' : 'transparent'};
-    color: ${props => props.btnType === 'default' ? '#FFF' : '#ae8873'};
+    background: ${props => props.type === 'default' ? '#ae8873' : 'transparent'};
+    color: ${props => props.type === 'default' ? '#FFF' : '#ae8873'};
   }
 
   &:disabled {
@@ -68,15 +78,13 @@ const Button = styled.button`
   }
 `;
 
-// font-size: ${props => props.fs};
-const Link = Button.withComponent('a');
-
 Button.defaultProps = {
   theme: {
     lineHeights: 1
   },
   size: 'default',
-  btnType: 'default'
+  type: 'default',
+  border: '1px solid'
 };
 
-export { Button, Link };
+export default Button;

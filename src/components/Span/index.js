@@ -35,7 +35,7 @@ const Span = styled.span`
 Span.defaultProps = {
   type: 'default',
   color: 'rgba(0, 0, 0, 0.4)',
-  fontSize: '0.8rem',
+  fontSize: '1rem',
   ta: 'left',
 };
 
