@@ -11,7 +11,7 @@ import Theme from 'components/Theme';
 const Product = ({
   itemData, rating
 }) => (
-  <Row display="block" mr="-5px" ml="-5px" mb="30px">
+  <Row display="block" mr="0" ml="0" mb="30px">
     <Link href="{itemData.url}">
       <Img
         alt={itemData.title}

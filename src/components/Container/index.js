@@ -26,7 +26,7 @@ const Container = styled.div`
 `;
 
 Container.defaultProps = {
-  type: 'cf'
+  type: 'container'
 };
 
 export default Container;
