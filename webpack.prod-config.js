@@ -13,6 +13,7 @@ module.exports = {
     'InputField/index': './src/components/InputField/',
     'Label/index': './src/components/Label/',
     'Row/index': './src/components/Row/',
+    'Span/index': './src/components/Span/',
     'Text/index': './src/components/Text/',
     'Theme/index': './src/components/Theme/'
   },

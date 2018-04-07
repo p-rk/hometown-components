@@ -4,7 +4,6 @@ const sizes = {
   default: {
     padding: '.375rem .75rem',
     fontSize: '1rem'
-    // fontSize: props => props.theme.fontSizes[16]
   },
   small: {
     padding: '.25rem .5rem',

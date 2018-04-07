@@ -10,6 +10,7 @@ import Div from 'components/Div';
 import Row from 'components/Row';
 import Heading from 'components/Heading';
 import Image from 'components/Image';
+import Span from 'components/Span';
 import Theme from 'components/Theme';
 
 const Index = () => (
@@ -49,12 +50,16 @@ const Index = () => (
             <Heading fontSize="1.5rem" fontWeight="400">H3</Heading>
           </Div>
           <Div width="50%">Test Test</Div>
-          <Div width="100%"><Image
-            alt="Hello"
-            src="http://via.placeholder.com/350x350"
-            width="300"
-            height="200"
-          /></Div>
+          <Div width="100%">
+            <Image
+              alt="Hello"
+              src="http://via.placeholder.com/350x350"
+              width="300"
+              height="200"
+            />
+            <Span>Test</Span>
+            <Span type="lt" fontSize="2rem" color="#F00" ml="1rem">Test</Span>
+          </Div>
         </Row>
       </Container>
     </div>
