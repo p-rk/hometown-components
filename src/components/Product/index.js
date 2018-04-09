@@ -12,7 +12,7 @@ const Product = ({
   itemData, rating
 }) => (
   <Row display="block" mr="0" ml="0" mb="30px">
-    <Link href="{itemData.url}">
+    <Link href={itemData.url}>
       <Img
         alt={itemData.title}
         src={itemData.img}
