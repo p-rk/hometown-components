@@ -16,7 +16,6 @@ import Span from 'components/Span';
 import Theme from 'components/Theme';
 import ProductHorziontal from 'components/ProductHorziontal';
 import ProductItems from '../data/ProductItems.js';
-import LoginForm from '../components/Forms/LoginForm';
 
 const Index = () => (
   <ThemeProvider theme={Theme}>
@@ -87,7 +86,6 @@ const Index = () => (
           </Div>
         </Row>
       </Container>
-      <LoginForm />
     </div>
   </ThemeProvider>
 );

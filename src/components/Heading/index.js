@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Heading = styled.h4`
   font-size: ${props => props.fontSize};
   font-family: ${props => props.fontFamily};
+  line-height: ${props => props.lh};
   color: ${props => props.color ? props.color : props.theme.colors.primary};
 
   ${props => props.m && { margin: props.m }}
@@ -21,7 +22,8 @@ Heading.defaultProps = {
   fontSize: '1.5rem',
   fontFamily: 'SFPDRegular',
   mt: '0.625em',
-  mb: '0.625em'
+  mb: '0.625em',
+  lh: '1.2'
 };
 
 export default Heading;

@@ -1,7 +1,6 @@
 // theme.js
 
 // breakpoint values
-
 const breakpoints = val => {
   const breakpointsVal = {
     xs: '36em',
