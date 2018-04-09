@@ -3,6 +3,7 @@
   "plugins": [
     ["babel-plugin-styled-components", {
       "ssr": true
-    }]
+    }],
+    "babel-plugin-transform-class-properties"
   ]
 }

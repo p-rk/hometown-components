@@ -14,7 +14,8 @@ module.exports = {
     'Label/index': './src/components/Label/',
     'Row/index': './src/components/Row/',
     'Text/index': './src/components/Text/',
-    'Theme/index': './src/components/Theme/'
+    'Theme/index': './src/components/Theme/',
+    'Forms/LoginForm': './src/components/Forms/LoginForm',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),

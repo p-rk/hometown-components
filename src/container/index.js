@@ -11,6 +11,7 @@ import Row from 'components/Row';
 import Heading from 'components/Heading';
 import Image from 'components/Image';
 import Theme from 'components/Theme';
+import LoginForm from '../components/Forms/LoginForm';
 
 const Index = () => (
   <ThemeProvider theme={Theme}>
@@ -57,6 +58,7 @@ const Index = () => (
           /></Div>
         </Row>
       </Container>
+      <LoginForm />
     </div>
   </ThemeProvider>
 );
