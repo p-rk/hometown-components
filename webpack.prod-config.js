@@ -15,6 +15,7 @@ module.exports = {
     'Link/index': './src/components/Link/',
     'Product/index': './src/components/Product/',
     'Row/index': './src/components/Row/',
+    'Section/index': './src/components/Section/',
     'Span/index': './src/components/Span/',
     'Text/index': './src/components/Text/',
     'Theme/index': './src/components/Theme/'

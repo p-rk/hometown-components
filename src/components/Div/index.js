@@ -1,17 +1,23 @@
 import styled from 'styled-components';
 
-const display = (props, type, width) => {
+const display = (props, type) => {
   const typeObj = {
     block: {
-      display: 'block',
-      width: `${width}`,
+      width: `${props.theme.col[props.col]}`,
       float: 'left',
       position: 'relative',
     },
     flex: {
+      maxWidth: `${props.theme.col[props.col]}`,
+      flex: `0 0 ${props.theme.col[props.col]}`,
+      width: '100%'
+    },
+    flexEqual: {
       flexBasis: 0,
       flexGrow: 1,
-      maxWidth: '100%'
+      maxWidth: `${props.theme.col[props.col]}`,
+      flex: `0 0 ${props.theme.col[props.col]}`,
+      width: '100%'
     }
   };
 
@@ -19,8 +25,9 @@ const display = (props, type, width) => {
 };
 
 const Div = styled.div`
-  ${props => display(props, props.display, props.width)};
-  
+  display: block;
+  ${props => display(props, props.display)};
+
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}
@@ -40,7 +47,7 @@ const Div = styled.div`
 
 Div.defaultProps = {
   display: 'block',
-  width: '100%'
+  col: '12'
 };
 
 export default Div;

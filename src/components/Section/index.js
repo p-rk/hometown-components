@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 const Section = styled.section`
   box-sizing: border-box;
-  ${props => props.display};
+
+  display: ${props => props.display};
+  background: ${props => props.bg};
+
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}
@@ -21,7 +24,9 @@ const Section = styled.section`
 
 Section.defaultProps = {
   display: 'block',
-  mb: '1.5rem'
+  mb: '1.5rem',
+  p: '0.9375rem',
+  bg: 'transparent'
 };
 
 export default Section;

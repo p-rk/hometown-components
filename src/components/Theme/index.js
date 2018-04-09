@@ -28,6 +28,7 @@ const colors = {
   error: '#dc3545',
   info: '#17a2b8',
   note: '#6c757d',
+  sectionBG: '#FAFAFA',
   gray: [
     '#f8f9fa',
     '#e9ecef',

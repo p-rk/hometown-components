@@ -11,23 +11,27 @@ import Div from 'components/Div';
 import Row from 'components/Row';
 import Heading from 'components/Heading';
 import Img from 'components/Img';
+import Section from 'components/Section';
 import Span from 'components/Span';
 import Theme from 'components/Theme';
-import Product from 'components/Product';
+import ProductHorziontal from 'components/ProductHorziontal';
 import ProductItems from '../data/ProductItems.js';
 
 const Index = () => (
   <ThemeProvider theme={Theme}>
     <div>
       <Container type="container">
-        {ProductItems.map(item => (
-          <Product
-            key={item.id}
-            itemData={item}
-            rating
-          />
-        ))}
+        <Section bg={Theme.colors.sectionBG}>
+          {ProductItems.map(item => (
+            <ProductHorziontal
+              key={item.id}
+              itemData={item}
+            />
+          ))}
+        </Section>
       </Container>
+
+      <Label>dhdhddh</Label>
       <br />
       <br />
       <br />
