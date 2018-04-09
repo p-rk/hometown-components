@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { ThemeProvider } from 'styled-components';
-import { Button } from 'components/Buttons';
+import Button from 'components/Buttons';
+import Link from 'components/Link';
 import InputField from 'components/InputField';
 import { Label, FeedBackMessage } from 'components/Label';
 import Input from 'components/Input';
@@ -9,21 +10,41 @@ import Container from 'components/Container';
 import Div from 'components/Div';
 import Row from 'components/Row';
 import Heading from 'components/Heading';
-import Image from 'components/Image';
+import Img from 'components/Img';
+import Span from 'components/Span';
 import Theme from 'components/Theme';
+import Product from 'components/Product';
+import ProductItems from '../data/ProductItems.js';
 import LoginForm from '../components/Forms/LoginForm';
 
 const Index = () => (
   <ThemeProvider theme={Theme}>
     <div>
       <Container type="container">
-        <Button size="default" btnType="default"><img src="" alt="" />Button</Button>
+        {ProductItems.map(item => (
+          <Product
+            key={item.id}
+            itemData={item}
+            rating
+          />
+        ))}
+      </Container>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Container type="container">
+        <Link href="#LINK">Link</Link>
+        <Button size="default" type="default"><img src="" alt="" />Button</Button>
         <br /><br />
-        <Button size="block" btnType="primary">Primary Button</Button>
+        <Button size="block" type="primary">Primary Button</Button>
         <br />
-        <Button size="small" btnType="primary">Primary Button</Button>
+        <Button size="small" type="primary">Primary Button</Button>
         <br /><br />
-        <Button btnType="primary" disabled>Primary Button</Button>
+        <Button type="primary" disabled>Primary Button</Button>
         <br />
         <br />
         <InputField>
@@ -50,12 +71,16 @@ const Index = () => (
             <Heading fontSize="1.5rem" fontWeight="400">H3</Heading>
           </Div>
           <Div width="50%">Test Test</Div>
-          <Div width="100%"><Image
-            alt="Hello"
-            src="http://via.placeholder.com/350x350"
-            width="300"
-            height="200"
-          /></Div>
+          <Div width="100%">
+            <Img
+              alt="Hello"
+              src="http://via.placeholder.com/350x350"
+              width="300"
+              height="200"
+            />
+            <Span>Test</Span>
+            <Span type="lt" fontSize="2rem" color="#F00" ml="1rem">Test</Span>
+          </Div>
         </Row>
       </Container>
       <LoginForm />

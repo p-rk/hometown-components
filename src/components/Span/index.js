@@ -1,9 +1,21 @@
 import styled from 'styled-components';
 
-const Heading = styled.h4`
+const types = {
+  default: {
+    textDecoration: 'none'
+  },
+  lt: {
+    textDecoration: 'line-through'
+  }
+};
+
+const Span = styled.span`
+  color: ${props => props.color};
   font-size: ${props => props.fontSize};
+  text-align: ${props => props.ta};
   font-family: ${props => props.fontFamily};
-  color: ${props => props.color ? props.color : props.theme.colors.primary};
+
+  ${props => types[props.type]};
 
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
@@ -15,13 +27,18 @@ const Heading = styled.h4`
   ${props => props.pr && { paddingRight: props.pr }}
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
+
+  > * {
+    box-sizing: border-box;
+  }
 `;
 
-Heading.defaultProps = {
-  fontSize: '1.5rem',
-  fontFamily: 'SFPDRegular',
-  mt: '0.625em',
-  mb: '0.625em'
+Span.defaultProps = {
+  type: 'default',
+  color: 'rgba(0, 0, 0, 0.6)',
+  fontSize: '1rem',
+  ta: 'left',
+  fontFamily: 'SFPDRegular'
 };
 
-export default Heading;
+export default Span;
