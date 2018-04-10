@@ -32,7 +32,6 @@ const Index = () => (
         </Section>
       </Container>
 
-      <Label>dhdhddh</Label>
       <br />
       <br />
       <br />

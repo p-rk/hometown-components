@@ -21,7 +21,7 @@ const sizes = {
   },
 };
 
-const type = (props, btnType) => {
+const btnType = (props, type) => {
   const typeObj = {
     default: {
       color: `${props.theme.colors.textExtraLight}`,
@@ -45,7 +45,7 @@ const type = (props, btnType) => {
     }
   };
 
-  return typeObj[btnType];
+  return typeObj[type];
 };
 
 const Button = styled.button`
@@ -65,7 +65,7 @@ const Button = styled.button`
   border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
   ${props => sizes[props.size]};
-  ${props => type(props, props.type)};
+  ${props => btnType(props, props.btnType)};
 
   ${props => props.p && { padding: props.p }}
   ${props => props.pt && { paddingTop: props.pt }}
@@ -89,7 +89,7 @@ Button.defaultProps = {
     lineHeights: 1
   },
   size: 'default',
-  type: 'default',
+  btnType: 'default',
   border: '1px solid'
 };
 
