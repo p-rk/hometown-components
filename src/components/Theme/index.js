@@ -28,6 +28,7 @@ const colors = {
   info: '#17a2b8',
   note: '#6c757d',
   sectionBG: '#FAFAFA',
+  sectionBgDark: '#f7f7f7',
   gray: [
     '#f8f9fa',
     '#e9ecef',

@@ -3,17 +3,16 @@ import styled from 'styled-components';
 const Container = styled.div`
   box-sizing: border-box;
   width: 100%;
-  padding-right: ${props => props.pr};
-  padding-left: ${props => props.pl};
-
-  padding-right: 1.25rem;
-  padding-left: 1.25rem;
   margin-right: auto;
   margin-left: auto;
   clear: both;
+  padding-right: ${props => props.pr};
+  padding-left: ${props => props.pl};
+
   > *, ::after, ::before {
     box-sizing: border-box;
   }
+  
   @media (min-width: ${props => props.theme.breakpoints('xs')}) {
     max-width: 540px;
   }
