@@ -14,18 +14,19 @@ import Img from 'components/Img';
 import Section from 'components/Section';
 import Span from 'components/Span';
 import Theme from 'components/Theme';
-import ProductHorziontal from 'components/ProductHorziontal';
+import ProductInline from 'components/ProductInline';
 import ProductItems from '../data/ProductItems.js';
 
 const Index = () => (
   <ThemeProvider theme={Theme}>
     <div>
       <Container type="container">
-        <Section bg={Theme.colors.sectionBG}>
+        <Section display="inline-block" bg={Theme.colors.sectionBG}>
           {ProductItems.map(item => (
-            <ProductHorziontal
+            <ProductInline
               key={item.id}
               itemData={item}
+              quantity
             />
           ))}
         </Section>

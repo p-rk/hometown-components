@@ -4,6 +4,7 @@ const display = (props, type) => {
   const typeObj = {
     block: {
       display: `${props.display}`,
+      clear: 'both'
     },
     flex: {
       display: `${props.display}`,

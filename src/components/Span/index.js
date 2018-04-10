@@ -10,6 +10,7 @@ const types = {
 };
 
 const Span = styled.span`
+  vertical-align: sub;
   color: ${props => props.color};
   font-size: ${props => props.fontSize};
   text-align: ${props => props.ta};
@@ -38,7 +39,8 @@ Span.defaultProps = {
   color: 'rgba(0, 0, 0, 0.6)',
   fontSize: '1rem',
   ta: 'left',
-  fontFamily: 'SFPDRegular'
+  fontFamily: 'SFPDRegular',
+  verticalAlign: 'initial'
 };
 
 export default Span;

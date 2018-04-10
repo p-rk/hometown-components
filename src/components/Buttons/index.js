@@ -67,6 +67,12 @@ const Button = styled.button`
   ${props => sizes[props.size]};
   ${props => type(props, props.type)};
 
+  ${props => props.p && { padding: props.p }}
+  ${props => props.pt && { paddingTop: props.pt }}
+  ${props => props.pr && { paddingRight: props.pr }}
+  ${props => props.pb && { paddingBottom: props.pb }}
+  ${props => props.pl && { paddingLeft: props.pl }}
+
   &:hover {
     background: ${props => props.type === 'default' ? '#ae8873' : 'transparent'};
     color: ${props => props.type === 'default' ? '#FFF' : '#ae8873'};
