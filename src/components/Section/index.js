@@ -5,7 +5,7 @@ const Section = styled.section`
   clear: both;
 
   display: ${props => props.display};
-  background: ${props => props.bg};
+  background: ${props => props.theme.colors[props.bg]};
 
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}

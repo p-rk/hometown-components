@@ -12,7 +12,7 @@ const Container = styled.div`
   > *, ::after, ::before {
     box-sizing: border-box;
   }
-  
+
   @media (min-width: ${props => props.theme.breakpoints('xs')}) {
     max-width: 540px;
   }
