@@ -6,7 +6,7 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config=webpack.dev-config.js --mode=development --progress --colors --watch --open",
     "dev-build": "webpack --config=webpack.prod-config.js --mode=production --watch --progress",
-    "dev": "concurrently \"npm run dev\" \"npm run dev-build\"",
+    "dev": "concurrently \"npm run start-dev\" \"npm run dev-build\" \"npm link\"",
     "build": "webpack --config=webpack.prod-config.js --mode=production",
     "test": "jest",
     "prepublish": "npm run build",
