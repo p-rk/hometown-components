@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Section = styled.section`
   box-sizing: border-box;
-  clear: 'both';
+  clear: both;
 
   display: ${props => props.display};
   background: ${props => props.bg};

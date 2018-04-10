@@ -4,7 +4,7 @@ const Heading = styled.h4`
   font-size: ${props => props.fontSize};
   font-family: ${props => props.fontFamily};
   line-height: ${props => props.lh};
-  color: ${props => props.color ? props.color : props.theme.colors.primary};
+  color: ${props => props.theme.colors[props.color]};
 
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
@@ -23,7 +23,8 @@ Heading.defaultProps = {
   fontFamily: 'SFPDRegular',
   mt: '0.625em',
   mb: '0.625em',
-  lh: '1.2'
+  lh: '1.2',
+  color: 'primary'
 };
 
 export default Heading;
