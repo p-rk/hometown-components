@@ -14,12 +14,13 @@ module.exports = {
     'Label/index': './src/components/Label/',
     'Link/index': './src/components/Link/',
     'Product/index': './src/components/Product/',
+    'ProductInline/index': './src/components/ProductInline/',
     'Row/index': './src/components/Row/',
     'Section/index': './src/components/Section/',
     'Span/index': './src/components/Span/',
     'Text/index': './src/components/Text/',
     'Theme/index': './src/components/Theme/',
-    'Forms/LoginForm': './src/components/Forms/LoginForm',
+    'Forms/LoginForm': './src/components/Forms/LoginForm'
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
