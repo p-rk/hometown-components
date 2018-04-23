@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'components/Link';
+import Button from 'components/Buttons';
+import { Label } from 'components/Label';
 import Row from 'components/Row';
 import Div from 'components/Div';
 import Heading from 'components/Heading';
@@ -9,7 +11,7 @@ import Span from 'components/Span';
 import Text from 'components/Text';
 import Theme from 'components/Theme';
 
-const ProductInline = ({
+const ProductInlineWithQuantity = ({
   itemData
 }) => (
   <Div mr="0" ml="0" mb="1.25rem">
@@ -51,11 +53,42 @@ const ProductInline = ({
         </Div>
       </Link>
     </Row>
+    <Row display="block" mr="0" ml="0" mt="0.625rem">
+      <Div col="6">
+        <Img src="http://via.placeholder.com/24x24" alt="" float="left" />
+        <Span fontSize="0.8em" ml="0.625rem">Remove from cart</Span>
+      </Div>
+      <Div col="6" ta="right">
+        <Button
+          type="custom"
+          color={Theme.colors.textDark}
+          border="none"
+          bg={Theme.colors.white}
+          bc="transparent"
+          pt="0"
+          pb="0"
+        >
+          <Img src="http://via.placeholder.com/24x24" alt="" float="left" />
+        </Button>
+        <Label color={Theme.colors.textDark} mb="0" mt="0">Test</Label>
+        <Button
+          type="custom"
+          color={Theme.colors.textDark}
+          border="none"
+          bg={Theme.colors.white}
+          bc="transparent"
+          pt="0"
+          pb="0"
+        >
+          <Img src="http://via.placeholder.com/24x24" alt="" float="left" />
+        </Button>
+      </Div>
+    </Row>
   </Div>
 );
 
-ProductInline.propTypes = {
+ProductInlineWithQuantity.propTypes = {
   itemData: PropTypes.object.isRequired
 };
 
-export default ProductInline;
+export default ProductInlineWithQuantity;

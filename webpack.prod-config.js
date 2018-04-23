@@ -15,6 +15,7 @@ module.exports = {
     'Link/index': './src/components/Link/',
     'Product/index': './src/components/Product/',
     'ProductInline/index': './src/components/ProductInline/',
+    'ProductInlineWithQuantity/index': './src/components/ProductInlineWithQuantity/',
     'Row/index': './src/components/Row/',
     'Section/index': './src/components/Section/',
     'Span/index': './src/components/Span/',
