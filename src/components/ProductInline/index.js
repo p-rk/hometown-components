@@ -32,7 +32,7 @@ const ProductInline = ({
             lh="1.3"
           >{itemData.title}</Heading>
           <Div mb="0.25rem">
-            <Text mt="0" mb="0.1875rem">
+            <Text mt="0" mb="0.3125rem">
               <Span
                 mr="0.625rem"
                 fontSize="0.9rem"
@@ -41,7 +41,7 @@ const ProductInline = ({
               >Rs. {itemData.disc_price}</Span>
               <Span mr="0.625rem" fontSize="0.9rem">Rs. {itemData.price}</Span>
             </Text>
-            <Text mt="0" mb="0.1875rem">
+            <Text mt="0" mb="0.3125rem">
               <Span fontSize="0.9rem">Saving Rs. {itemData.saving} ({itemData.percentage})</Span>
             </Text>
             <Text mt="0" mb="0">

@@ -14,7 +14,7 @@ import Theme from 'components/Theme';
 const ProductInlineWithQuantity = ({
   itemData
 }) => (
-  <Div mr="0" ml="0" mb="1.25rem">
+  <Div mr="0" ml="0" mb="1.375rem">
     <Row display="block" mr="0" ml="0">
       <Link href={itemData.url}>
         <Div col="4">
@@ -34,7 +34,7 @@ const ProductInlineWithQuantity = ({
             lh="1.3"
           >{itemData.title}</Heading>
           <Div mb="0.25rem">
-            <Text mt="0" mb="0.1875rem">
+            <Text mt="0" mb="0.3125rem">
               <Span
                 mr="0.625rem"
                 fontSize="0.9rem"
@@ -43,7 +43,7 @@ const ProductInlineWithQuantity = ({
               >Rs. {itemData.disc_price}</Span>
               <Span mr="0.625rem" fontSize="0.9rem">Rs. {itemData.price}</Span>
             </Text>
-            <Text mt="0" mb="0.1875rem">
+            <Text mt="0" mb="0.3125rem">
               <Span fontSize="0.9rem">Saving Rs. {itemData.saving} ({itemData.percentage})</Span>
             </Text>
             <Text mt="0" mb="0">
@@ -53,10 +53,10 @@ const ProductInlineWithQuantity = ({
         </Div>
       </Link>
     </Row>
-    <Row display="block" mr="0" ml="0" mt="0.625rem">
+    <Row display="block" mr="0" ml="0" mt="0.75rem">
       <Div col="6">
         <Img src="http://via.placeholder.com/24x24" alt="" float="left" />
-        <Span fontSize="0.8em" ml="0.625rem">Remove from cart</Span>
+        <Span fontSize="0.9em" ml="0.625rem">Remove from cart</Span>
       </Div>
       <Div col="6" ta="right">
         <Button

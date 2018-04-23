@@ -10,7 +10,7 @@ const types = {
 };
 
 const Span = styled.span`
-  vertical-align: sub;
+  vertical-align: middle;
   color: ${props => props.color};
   font-size: ${props => props.fontSize};
   text-align: ${props => props.ta};
