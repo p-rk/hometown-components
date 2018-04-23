@@ -12,7 +12,7 @@ import ProductItems from '../data/ProductItems.js';
 const Index = () => (
   <ThemeProvider theme={Theme}>
     <Container type="container">
-      <Section display="inline-block" bg={Theme.colors.sectionBG}>
+      <Section display="block" bg={Theme.colors.sectionBG}>
         {ProductItems.map(item => (
           <ProductInline
             key={item.id}

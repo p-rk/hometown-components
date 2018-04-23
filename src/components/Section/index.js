@@ -7,6 +7,8 @@ const Section = styled.section`
   display: ${props => props.display};
   background: ${props => props.theme.colors[props.bg]};
   box-shadow: ${props => props.boxShadow};
+  height: ${props => props.height};
+  overflow: auto;
 
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
@@ -29,7 +31,8 @@ Section.defaultProps = {
   mb: '1.5rem',
   p: '0.9375rem',
   bg: 'transparent',
-  boxShadow: 'none'
+  boxShadow: 'none',
+  height: 'auto'
 };
 
 export default Section;

@@ -3,11 +3,12 @@ import styled from 'styled-components';
 const Label = styled.label`
   font-size: ${props => props.fontSize};
   font-style: ${props => props.fontStyle};
-  font-family: ${props => props.fontFamily};
+  font-family: ${props => props.theme.fontFamily[props.fontFamily]};
   color: ${props => props.theme.colors[props.color]};
+  text-align: ${props => props.ta};
+  display: ${props => props.display};
   ${props => props.mb && { marginBottom: props.mb }}
   ${props => props.mt && { marginTop: props.mt }}
-  display: inline-block;
 `;
 
 const FeedBackMessage = styled(Label)`
@@ -17,11 +18,13 @@ const FeedBackMessage = styled(Label)`
 Label.defaultProps = {
   fontSize: '0.875rem',
   fontStyle: 'normal',
-  fontFamily: 'SFPDMedium',
+  fontFamily: 'medium',
   mb: '5px',
   mt: '5px',
   type: 'note',
-  color: 'textDark'
+  color: 'textDark',
+  ta: 'left',
+  display: 'inline-block'
 };
 
 export { Label, FeedBackMessage };
