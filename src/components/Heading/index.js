@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 const Heading = styled.h4`
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   font-size: ${props => props.fontSize};
   font-family: ${props => props.fontFamily};
   line-height: ${props => props.lh};
