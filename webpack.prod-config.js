@@ -21,7 +21,8 @@ module.exports = {
     'Span/index': './src/components/Span/',
     'Text/index': './src/components/Text/',
     'Theme/index': './src/components/Theme/',
-    'Forms/LoginForm': './src/components/Forms/LoginForm'
+    'Forms/LoginForm': './src/components/Forms/LoginForm',
+    'Forms/SignupForm': './src/components/Forms/SignupForm'
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
