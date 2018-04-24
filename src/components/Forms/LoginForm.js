@@ -51,7 +51,7 @@ LoginForm.defaultProps = {
   passwordFeedBackMessage: '',
   onChangeEmail: () => {},
   onChangePassword: () => {},
-  onSubmitLogin: () => {},
+  onSubmitLogin: () => {}
 
 };
 
@@ -64,5 +64,5 @@ LoginForm.propTypes = {
   emailFeedBackError: PropTypes.bool,
   emailFeedBackMessage: PropTypes.string,
   passwordFeedBackError: PropTypes.bool,
-  passwordFeedBackMessage: PropTypes.string,
+  passwordFeedBackMessage: PropTypes.string
 };
