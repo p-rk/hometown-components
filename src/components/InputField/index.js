@@ -8,7 +8,7 @@ const InputField = styled.div`
 `;
 
 InputField.defaultProps = {
-  mb: '20px',
+  mb: '0.9375rem',
 };
 
 export default InputField;

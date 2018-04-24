@@ -8,12 +8,13 @@ const FormInput = ({
   label, type, placeholder, onChange, value, feedBackMessage, feedBackError
 }) => (
   <InputField>
-    <Label>{label}</Label>
+    <Label fontSize="0.9375rem">{label}</Label>
     <Input
       type={type}
       placeholder={placeholder}
       onChange={onChange}
       value={value}
+      height="42px"
     />
     {feedBackError && <FeedBackMessage type="error">{feedBackMessage}</FeedBackMessage>}
   </InputField>

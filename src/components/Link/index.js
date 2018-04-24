@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const Link = styled.a`
   color: ${props => props.color ? props.color : props.theme.colors.primary};
+  font-size: ${props => props.fontSize};
   border: none;
   text-decoration: none;
   transition: color .15s ease-in-out, background-color .15s ease-in-out,

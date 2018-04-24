@@ -19,9 +19,9 @@ export default class LoginForm extends Component {
     return (
       <form onSubmit={onSubmitLogin}>
         <FormInput
-          label="Email"
+          label="EMail ID"
           type="text"
-          placeholder="Enter Email"
+          placeholder=""
           onChange={onChangeEmail}
           value={email}
           feedBackError={emailFeedBackError}
@@ -30,13 +30,13 @@ export default class LoginForm extends Component {
         <FormInput
           label="Password"
           type="password"
-          placeholder="Enter your password"
+          placeholder=""
           onChange={onChangePassword}
           value={password}
           feedBackError={passwordFeedBackError}
           feedBackMessage={passwordFeedBackMessage}
         />
-        <Button size="small" btnType="primary">Login</Button>
+        <Button size="block" btnType="primary" fontFamily="regular" height="42px" mt="1.5rem">LOGIN</Button>
       </form>
     );
   }

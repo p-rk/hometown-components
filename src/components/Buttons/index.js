@@ -50,6 +50,7 @@ const btnType = (props, type) => {
 
 const Button = styled.button`
   border: ${props => props.border};
+  font-family: ${props => props.theme.fontFamily[props.fontFamily]};
   line-height: 1.5;
   display: inline-block;
   cursor: pointer;
@@ -67,6 +68,7 @@ const Button = styled.button`
   ${props => sizes[props.size]};
   ${props => btnType(props, props.btnType)};
 
+  ${props => props.height && { height: props.height }}
   ${props => props.p && { padding: props.p }}
   ${props => props.pt && { paddingTop: props.pt }}
   ${props => props.pr && { paddingRight: props.pr }}
@@ -90,7 +92,8 @@ Button.defaultProps = {
   },
   size: 'default',
   btnType: 'default',
-  border: '1px solid'
+  border: '1px solid',
+  fontFamily: 'medium'
 };
 
 export default Button;
