@@ -8,7 +8,7 @@ const FormInput = ({
   label, type, placeholder, onChange, value, feedBackMessage, feedBackError
 }) => (
   <InputField>
-    <Label fontSize="0.9375rem">{label}</Label>
+    <Label fontSize="0.875em">{label}</Label>
     <Input
       type={type}
       placeholder={placeholder}

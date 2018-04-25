@@ -69,6 +69,11 @@ const Button = styled.button`
   ${props => btnType(props, props.btnType)};
 
   ${props => props.height && { height: props.height }}
+  ${props => props.m && { margin: props.m }}
+  ${props => props.mt && { marginTop: props.mt }}
+  ${props => props.mr && { marginRight: props.mr }}
+  ${props => props.mb && { marginBottom: props.mb }}
+  ${props => props.ml && { marginLeft: props.ml }}
   ${props => props.p && { padding: props.p }}
   ${props => props.pt && { paddingTop: props.pt }}
   ${props => props.pr && { paddingRight: props.pr }}

@@ -23,7 +23,7 @@ export default class SignupForm extends Component {
     return (
       <form onSubmit={onSubmitLogin}>
         <FormInput
-          label="EMail ID"
+          label="Email ID"
           type="text"
           placeholder=""
           onChange={onChangeEmail}

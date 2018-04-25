@@ -6,7 +6,6 @@ import Section from 'components/Section';
 // import Span from 'components/Span';
 import Theme from 'components/Theme';
 import ProductInline from 'components/ProductInline';
-import ProductInlineWithQuantity from '../components/ProductInlineWithQuantity';
 import ProductItems from '../data/ProductItems.js';
 
 const Index = () => (
@@ -15,13 +14,6 @@ const Index = () => (
       <Section display="block" bg={Theme.colors.sectionBG}>
         {ProductItems.map(item => (
           <ProductInline
-            key={item.id}
-            itemData={item}
-          />
-        ))}
-
-        {ProductItems.map(item => (
-          <ProductInlineWithQuantity
             key={item.id}
             itemData={item}
           />
