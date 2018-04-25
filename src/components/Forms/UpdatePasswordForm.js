@@ -3,86 +3,92 @@ import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
 import FormInput from './FormInput';
 
-export default class UpdatePasswordForm extends Component {
+export default class UpdateProfileForm extends Component {
   render() {
     const {
-      email,
-      phone,
-      password,
-      onChangeEmail,
-      onChangePhone,
-      onChangePassword,
-      emailFeedBackError,
-      emailFeedBackMessage,
-      phoneFeedBackError,
-      phoneFeedBackMessage,
-      passwordFeedBackError,
-      passwordFeedBackMessage,
-      onSubmitLogin,
+      oldPwd,
+      newPwd,
+      confirmPwd,
+      onChangeOldPwd,
+      onChangeNewPwd,
+      onChangeConfirmPwd,
+      oldPwdFeedBackError,
+      oldPwdFeedBackMessage,
+      newPwdFeedBackError,
+      newPwdFeedBackMessage,
+      confirmPwdFeedBackError,
+      confirmPwdFeedBackMessage,
+      onSubmitUpdatePassword,
     } = this.props;
     return (
-      <form onSubmit={onSubmitLogin}>
+      <form onSubmit={onSubmitUpdatePassword}>
         <FormInput
-          label="Email ID"
-          type="text"
-          placeholder=""
-          onChange={onChangeEmail}
-          value={email}
-          feedBackError={emailFeedBackError}
-          feedBackMessage={emailFeedBackMessage}
-        />
-        <FormInput
-          label="Phone"
-          type="text"
-          placeholder=""
-          onChange={onChangePhone}
-          value={phone}
-          feedBackError={phoneFeedBackError}
-          feedBackMessage={phoneFeedBackMessage}
-        />
-        <FormInput
-          label="Password"
+          label="Old Password"
           type="password"
           placeholder=""
-          onChange={onChangePassword}
-          value={password}
-          feedBackError={passwordFeedBackError}
-          feedBackMessage={passwordFeedBackMessage}
+          onChange={onChangeOldPwd}
+          value={oldPwd}
+          feedBackError={oldPwdFeedBackError}
+          feedBackMessage={oldPwdFeedBackMessage}
         />
-        <Button size="block" btnType="primary" fontFamily="regular" height="42px" mt="1.5rem">LOGIN</Button>
+        <FormInput
+          label="New Password"
+          type="password"
+          placeholder=""
+          onChange={onChangeNewPwd}
+          value={newPwd}
+          feedBackError={newPwdFeedBackError}
+          feedBackMessage={newPwdFeedBackMessage}
+        />
+        <FormInput
+          label="Confirm Password"
+          type="password"
+          placeholder=""
+          onChange={onChangeConfirmPwd}
+          value={confirmPwd}
+          feedBackError={confirmPwdFeedBackError}
+          feedBackMessage={confirmPwdFeedBackMessage}
+        />
+        <Button
+          size="block"
+          btnType="primary"
+          fontFamily="regular"
+          height="42px"
+          mt="1.5rem"
+        >UPDATE INFORMATION</Button>
       </form>
     );
   }
 }
 
-UpdatePasswordForm.defaultProps = {
-  email: '',
-  phone: '',
-  password: '',
-  emailFeedBackError: false,
-  emailFeedBackMessage: '',
-  phoneFeedBackError: false,
-  phoneFeedBackMessage: '',
-  passwordFeedBackError: false,
-  passwordFeedBackMessage: '',
-  onChangeEmail: () => {},
-  onChangePhone: () => {},
-  onChangePassword: () => {},
-  onSubmitLogin: () => {}
+UpdateProfileForm.defaultProps = {
+  oldPwd: '',
+  newPwd: '',
+  confirmPwd: '',
+  oldPwdFeedBackError: false,
+  oldPwdFeedBackMessage: '',
+  confirmPwdFeedBackError: false,
+  confirmPwdFeedBackMessage: '',
+  newPwdFeedBackError: false,
+  newPwdFeedBackMessage: '',
+  onChangeOldPwd: () => {},
+  onChangeNewPwd: () => {},
+  onChangeConfirmPwd: () => {},
+  onSubmitUpdatePassword: () => {}
 };
 
-UpdatePasswordForm.propTypes = {
-  onChangeEmail: PropTypes.func,
-  onChangePhone: PropTypes.func,
-  onChangePassword: PropTypes.func,
-  onSubmitLogin: PropTypes.func,
-  email: PropTypes.string,
-  phone: PropTypes.string,
-  password: PropTypes.string,
-  emailFeedBackError: PropTypes.bool,
-  emailFeedBackMessage: PropTypes.string,
-  phoneFeedBackError: PropTypes.bool,
-  phoneFeedBackMessage: PropTypes.string,
-  passwordFeedBackError: PropTypes.bool,
-  passwordFeedBackMessage: PropTypes.string
+UpdateProfileForm.propTypes = {
+  onChangeOldPwd: PropTypes.func,
+  onChangeNewPwd: PropTypes.func,
+  onChangeConfirmPwd: PropTypes.func,
+  onSubmitUpdatePassword: PropTypes.func,
+  oldPwd: PropTypes.string,
+  newPwd: PropTypes.string,
+  confirmPwd: PropTypes.string,
+  oldPwdFeedBackError: PropTypes.bool,
+  oldPwdFeedBackMessage: PropTypes.string,
+  newPwdFeedBackError: PropTypes.bool,
+  newPwdFeedBackMessage: PropTypes.string,
+  confirmPwdFeedBackError: PropTypes.bool,
+  confirmPwdFeedBackMessage: PropTypes.string
 };

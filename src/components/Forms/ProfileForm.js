@@ -8,20 +8,29 @@ export default class ProfileForm extends Component {
     const {
       email,
       phone,
-      password,
+      fullName,
       onChangeEmail,
       onChangePhone,
-      onChangePassword,
+      onChangeFullName,
       emailFeedBackError,
       emailFeedBackMessage,
       phoneFeedBackError,
       phoneFeedBackMessage,
-      passwordFeedBackError,
-      passwordFeedBackMessage,
-      onSubmitLogin,
+      fullNameFeedBackError,
+      fullNameFeedBackMessage,
+      onSubmitProfile,
     } = this.props;
     return (
-      <form onSubmit={onSubmitLogin}>
+      <form onSubmit={onSubmitProfile}>
+        <FormInput
+          label="Full Name"
+          type="text"
+          placeholder=""
+          onChange={onChangeFullName}
+          value={fullName}
+          feedBackError={fullNameFeedBackError}
+          feedBackMessage={fullNameFeedBackMessage}
+        />
         <FormInput
           label="Email ID"
           type="text"
@@ -40,16 +49,13 @@ export default class ProfileForm extends Component {
           feedBackError={phoneFeedBackError}
           feedBackMessage={phoneFeedBackMessage}
         />
-        <FormInput
-          label="Password"
-          type="password"
-          placeholder=""
-          onChange={onChangePassword}
-          value={password}
-          feedBackError={passwordFeedBackError}
-          feedBackMessage={passwordFeedBackMessage}
-        />
-        <Button size="block" btnType="primary" fontFamily="regular" height="42px" mt="1.5rem">LOGIN</Button>
+        <Button
+          size="block"
+          btnType="primary"
+          fontFamily="regular"
+          height="42px"
+          mt="1.5rem"
+        >UPDATE INFORMATION</Button>
       </form>
     );
   }
@@ -58,31 +64,31 @@ export default class ProfileForm extends Component {
 ProfileForm.defaultProps = {
   email: '',
   phone: '',
-  password: '',
+  fullName: '',
   emailFeedBackError: false,
   emailFeedBackMessage: '',
   phoneFeedBackError: false,
   phoneFeedBackMessage: '',
-  passwordFeedBackError: false,
-  passwordFeedBackMessage: '',
+  fullNameFeedBackError: false,
+  fullNameFeedBackMessage: '',
   onChangeEmail: () => {},
   onChangePhone: () => {},
-  onChangePassword: () => {},
-  onSubmitLogin: () => {}
+  onChangeFullName: () => {},
+  onSubmitProfile: () => {}
 };
 
 ProfileForm.propTypes = {
   onChangeEmail: PropTypes.func,
   onChangePhone: PropTypes.func,
-  onChangePassword: PropTypes.func,
-  onSubmitLogin: PropTypes.func,
+  onChangeFullName: PropTypes.func,
+  onSubmitProfile: PropTypes.func,
   email: PropTypes.string,
   phone: PropTypes.string,
-  password: PropTypes.string,
+  fullName: PropTypes.string,
   emailFeedBackError: PropTypes.bool,
   emailFeedBackMessage: PropTypes.string,
   phoneFeedBackError: PropTypes.bool,
   phoneFeedBackMessage: PropTypes.string,
-  passwordFeedBackError: PropTypes.bool,
-  passwordFeedBackMessage: PropTypes.string
+  fullNameFeedBackError: PropTypes.bool,
+  fullNameFeedBackMessage: PropTypes.string
 };
