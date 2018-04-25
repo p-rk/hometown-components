@@ -22,7 +22,10 @@ module.exports = {
     'Text/index': './src/components/Text/',
     'Theme/index': './src/components/Theme/',
     'Forms/LoginForm': './src/components/Forms/LoginForm',
-    'Forms/SignupForm': './src/components/Forms/SignupForm'
+    'Forms/SignupForm': './src/components/Forms/SignupForm',
+    'Forms/ProfileForm': './src/components/Forms/ProfileForm',
+    'Forms/UpdatePasswordForm': './src/components/Forms/UpdatePasswordForm',
+    'Forms/PaymentMethodForm': './src/components/Forms/PaymentMethodForm'
   },
   output: {
     path: path.resolve(__dirname, 'lib'),

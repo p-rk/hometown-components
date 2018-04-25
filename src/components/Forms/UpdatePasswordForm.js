@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
 import FormInput from './FormInput';
 
-export default class SignupForm extends Component {
+export default class UpdatePasswordForm extends Component {
   render() {
     const {
       email,
@@ -18,10 +18,10 @@ export default class SignupForm extends Component {
       phoneFeedBackMessage,
       passwordFeedBackError,
       passwordFeedBackMessage,
-      onSubmitSignup,
+      onSubmitLogin,
     } = this.props;
     return (
-      <form onSubmit={onSubmitSignup}>
+      <form onSubmit={onSubmitLogin}>
         <FormInput
           label="Email ID"
           type="text"
@@ -55,7 +55,7 @@ export default class SignupForm extends Component {
   }
 }
 
-SignupForm.defaultProps = {
+UpdatePasswordForm.defaultProps = {
   email: '',
   phone: '',
   password: '',
@@ -68,14 +68,14 @@ SignupForm.defaultProps = {
   onChangeEmail: () => {},
   onChangePhone: () => {},
   onChangePassword: () => {},
-  onSubmitSignup: () => {}
+  onSubmitLogin: () => {}
 };
 
-SignupForm.propTypes = {
+UpdatePasswordForm.propTypes = {
   onChangeEmail: PropTypes.func,
   onChangePhone: PropTypes.func,
   onChangePassword: PropTypes.func,
-  onSubmitSignup: PropTypes.func,
+  onSubmitLogin: PropTypes.func,
   email: PropTypes.string,
   phone: PropTypes.string,
   password: PropTypes.string,
