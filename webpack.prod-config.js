@@ -25,7 +25,9 @@ module.exports = {
     'Forms/SignupForm': './src/components/Forms/SignupForm',
     'Forms/ProfileForm': './src/components/Forms/ProfileForm',
     'Forms/UpdatePasswordForm': './src/components/Forms/UpdatePasswordForm',
-    'Forms/PaymentMethodForm': './src/components/Forms/PaymentMethodForm'
+    'Forms/PaymentMethodForm': './src/components/Forms/PaymentMethodForm',
+    'ProductDetails/TitlePrice': './src/components/ProductDetails/TitlePrice',
+    'ProductDetails/ColorsOption': './src/components/ProductDetails/ColorsOption',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
