@@ -17,8 +17,8 @@ const ProductInline = ({
       <Link href={itemData.url}>
         <Div col="4">
           <Img
-            alt={itemData.title}
-            src={itemData.img}
+            alt={itemData.name}
+            src={itemData.image}
             width="100%"
           />
         </Div>
@@ -30,7 +30,7 @@ const ProductInline = ({
             fontFamily="SFPDSemiBold"
             fontSize="1.1rem"
             lh="1.3"
-          >{itemData.title}</Heading>
+          >{itemData.name}</Heading>
           <Div mb="0.25rem">
             <Text mt="0" mb="0.3125rem">
               <Span

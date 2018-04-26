@@ -14,7 +14,7 @@ const Product = ({
   <Row display="block" mr="0" ml="0" mb="30px">
     <Link href={itemData.url}>
       <Img
-        alt={itemData.title}
+        alt={itemData.name}
         src={itemData.image}
         width="100%"
       />
@@ -24,7 +24,7 @@ const Product = ({
           color={Theme.colors.text}
           fontFamily="SFPDSemiBold"
           fontSize="1rem"
-        >{itemData.title}</Heading>
+        >{itemData.name}</Heading>
         <Div mb="0.25rem">
           <Span mr="0.625rem" color={Theme.colors.textDark} fontFamily="SFPDSemiBold">Rs. {itemData.disc_price}</Span>
           <Span mr="0.625rem" fontSize="0.9rem">Rs. {itemData.price}</Span>
