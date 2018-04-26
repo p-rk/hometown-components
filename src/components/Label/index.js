@@ -7,8 +7,12 @@ const Label = styled.label`
   color: ${props => props.theme.colors[props.color]};
   text-align: ${props => props.ta};
   display: ${props => props.display};
-  ${props => props.mb && { marginBottom: props.mb }}
+
+  ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
+  ${props => props.mr && { marginRight: props.mr }}
+  ${props => props.mb && { marginBottom: props.mb }}
+  ${props => props.ml && { marginLeft: props.ml }}
 `;
 
 const FeedBackMessage = styled(Label)`
