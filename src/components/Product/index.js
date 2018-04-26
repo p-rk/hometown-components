@@ -15,7 +15,7 @@ const Product = ({
     <Link href={itemData.url}>
       <Img
         alt={itemData.title}
-        src={itemData.img}
+        src={itemData.image}
         width="100%"
       />
       <Div>
