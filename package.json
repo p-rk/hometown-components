@@ -8,7 +8,6 @@
     "dev-build": "webpack --config=webpack.prod-config.js --mode=production --watch --progress",
     "dev": "concurrently \"npm run start-dev\" \"npm run dev-build\" \"npm link\"",
     "build": "webpack --config=webpack.prod-config.js --mode=production",
-    "test": "jest",
     "prepublish": "npm run build",
     "release": "np"
   },
