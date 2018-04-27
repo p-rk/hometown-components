@@ -10,6 +10,8 @@ import { Label } from 'components/Label';
 import Input from 'components/Input';
 import Img from 'components/Img';
 import Container from 'components/Container';
+import Text from 'components/Text';
+import Heading from 'components/Heading';
 import Theme from 'components/Theme';
 // const = require('')
 
@@ -55,6 +57,17 @@ const Index = () => (
             <Div col="12">
               <Img src="/static/truck.png" />
               <Label fontSize="1em" color="secondary" ml="0.625rem">Free Shipping</Label>
+            </Div>
+          </Row>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <Row display="block" mb="0.9375rem">
+            <Div col="12">
+              <Heading>Description</Heading>
+              <Text>Add oodles of style to your home with an exciting range of designer furniture, furnishings, decor items and kitchenware. We promise to deliver best quality products at best prices.</Text>
             </Div>
           </Row>
         </Container>
