@@ -6,6 +6,7 @@ const Text = styled.p`
   font-weight: ${props => props.backgroundColor};
   color: ${props => props.backgroundColor};
   align: ${props => props.backgroundColor};
+  line-height: ${props => props.lh};
 
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
@@ -20,13 +21,14 @@ const Text = styled.p`
 `;
 
 Text.defaultProps = {
-  fontSize: '0.8rem',
+  fontSize: '0.875rem',
   textTransform: 'inherit',
   fontWeight: '400',
   color: '0 0 0, 0.75',
   align: 'left',
   mt: '0.625rem',
-  mb: '0.625rem'
+  mb: '0.625rem',
+  lh: '1.6',
 };
 
 export default Text;

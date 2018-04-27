@@ -3,23 +3,12 @@ import { render } from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import TitlePrice from 'components/ProductDetails/TitlePrice';
 import ColorOption from 'components/ProductDetails/ColorOption';
+import ServiceDetails from 'components/ProductDetails/ServiceDetails';
+import ProductDesc from 'components/ProductDetails/ProductDesc';
+import Specs from 'components/ProductDetails/Specs';
 import Div from 'components/Div';
-import Row from 'components/Row';
-import Section from 'components/Section';
-import { Label } from 'components/Label';
-import Input from 'components/Input';
-import Img from 'components/Img';
-import Container from 'components/Container';
-import Text from 'components/Text';
-import Heading from 'components/Heading';
+// import Span from 'components/Span';
 import Theme from 'components/Theme';
-
-
-import calendarImage from '../static/calendar.jpg';
-import creditCard from '../static/credit-card.jpg';
-import location from '../static/location.jpg';
-import truck from '../static/truck.jpg';
-// const = require('')
 
 const Index = () => (
   <ThemeProvider theme={Theme}>
@@ -28,56 +17,9 @@ const Index = () => (
       <Div col="6">
         <ColorOption />
       </Div>
-      <Section>
-        <Container>
-          <Row display="block" mb="0.9375rem">
-            <Div col="6">
-              <Img src={location} />
-              <Label fontSize="1em" color="secondary" ml="0.625rem">Enter PIN Code</Label>
-            </Div>
-            <Div col="6">
-              <Input
-                type="text"
-                placeholder=""
-                height="42px"
-              />
-            </Div>
-          </Row>
-          <Row display="block" mb="0.625rem">
-            <Div col="12">
-              <Img src={calendarImage} />
-              <Label
-                fontSize="1em"
-                color="secondary"
-                ml="0.625rem"
-              >Delivers by 16 Jan (Sunday) if you order today</Label>
-            </Div>
-          </Row>
-          <Row display="block" mb="0.625rem">
-            <Div col="12">
-              <Img src={creditCard} />
-              <Label fontSize="1em" color="secondary" ml="0.625rem">EMI starting from Rs.2,419 </Label>
-            </Div>
-          </Row>
-          <Row display="block" mb="0.625rem">
-            <Div col="12">
-              <Img src={truck} />
-              <Label fontSize="1em" color="secondary" ml="0.625rem">Free Shipping</Label>
-            </Div>
-          </Row>
-        </Container>
-      </Section>
-
-      <Section>
-        <Container>
-          <Row display="block" mb="0.9375rem">
-            <Div col="12">
-              <Heading>Description</Heading>
-              <Text>Add oodles of style to your home with an exciting range of designer furniture, furnishings, decor items and kitchenware. We promise to deliver best quality products at best prices.</Text>
-            </Div>
-          </Row>
-        </Container>
-      </Section>
+      <ServiceDetails />
+      <ProductDesc />
+      <Specs />
     </div>
   </ThemeProvider>
 );

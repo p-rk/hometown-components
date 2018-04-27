@@ -19,12 +19,6 @@ const ColorOption = () => (
         <ColorBlock bg="#000000" />
         <ColorBlock />
         <ColorBlock bg="#DDDDDD" />
-        <ColorBlock />
-        <ColorBlock />
-        <ColorBlock />
-        <ColorBlock />
-        <ColorBlock />
-        <ColorBlock />
       </Row>
     </Container>
   </Section>
