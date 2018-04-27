@@ -27,7 +27,7 @@ module.exports = {
     'Forms/UpdatePasswordForm': './src/components/Forms/UpdatePasswordForm',
     'Forms/PaymentMethodForm': './src/components/Forms/PaymentMethodForm',
     'ProductDetails/TitlePrice': './src/components/ProductDetails/TitlePrice',
-    'ProductDetails/ColorsOption': './src/components/ProductDetails/ColorsOption',
+    'ProductDetails/ColorOption': './src/components/ProductDetails/ColorOption',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
