@@ -13,6 +13,12 @@ import Container from 'components/Container';
 import Text from 'components/Text';
 import Heading from 'components/Heading';
 import Theme from 'components/Theme';
+
+
+import calendarImage from '../static/calendar.jpg';
+import creditCard from '../static/credit-card.jpg';
+import location from '../static/location.jpg';
+import truck from '../static/truck.jpg';
 // const = require('')
 
 const Index = () => (
@@ -26,7 +32,7 @@ const Index = () => (
         <Container>
           <Row display="block" mb="0.9375rem">
             <Div col="6">
-              <Img src="/static/location.png" />
+              <Img src={location} />
               <Label fontSize="1em" color="secondary" ml="0.625rem">Enter PIN Code</Label>
             </Div>
             <Div col="6">
@@ -39,7 +45,7 @@ const Index = () => (
           </Row>
           <Row display="block" mb="0.625rem">
             <Div col="12">
-              <Img src="/static/calendor.png" />
+              <Img src={calendarImage} />
               <Label
                 fontSize="1em"
                 color="secondary"
@@ -49,13 +55,13 @@ const Index = () => (
           </Row>
           <Row display="block" mb="0.625rem">
             <Div col="12">
-              <Img src="/static/credit-card.png" />
+              <Img src={creditCard} />
               <Label fontSize="1em" color="secondary" ml="0.625rem">EMI starting from Rs.2,419 </Label>
             </Div>
           </Row>
           <Row display="block" mb="0.625rem">
             <Div col="12">
-              <Img src="/static/truck.png" />
+              <Img src={truck} />
               <Label fontSize="1em" color="secondary" ml="0.625rem">Free Shipping</Label>
             </Div>
           </Row>
