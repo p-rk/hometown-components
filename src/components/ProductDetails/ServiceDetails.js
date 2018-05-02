@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Container from 'components/Container';
 import Row from 'components/Row';
 import Div from 'components/Div';
@@ -12,7 +13,7 @@ import creditCard from '../../static/credit-card.jpg';
 import location from '../../static/location.jpg';
 import truck from '../../static/truck.jpg';
 
-const ServiceDetails = () => (
+const ServiceDetails = ({ deliverBy, emiStarting }) => (
   <Section mb="0.3125rem" pr="0" pl="0">
     <Container type="container" pr="1rem" pl="1rem">
       <Row display="block" mb="0.9375rem" mr="0" ml="0">
@@ -35,13 +36,13 @@ const ServiceDetails = () => (
             fontSize="1em"
             color="secondary"
             ml="0.625rem"
-          >Delivers by 16 Jan (Sunday) if you order today</Label>
+          >Delivers by {deliverBy} if you order today</Label>
         </Div>
       </Row>
       <Row display="block" mb="0.625rem" mr="0" ml="0">
         <Div col="12">
           <Img height="1.5em" float="left" src={creditCard} />
-          <Label fontSize="1em" color="secondary" ml="0.625rem">EMI starting from Rs.2,419 </Label>
+          <Label fontSize="1em" color="secondary" ml="0.625rem">EMI starting from Rs.{emiStarting} </Label>
         </Div>
       </Row>
       <Row display="block" mb="0.625rem" mr="0" ml="0">
@@ -53,5 +54,10 @@ const ServiceDetails = () => (
     </Container>
   </Section>
 );
+
+ServiceDetails.propTypes = {
+  deliverBy: PropTypes.string.isRequired,
+  emiStarting: PropTypes.string.isRequired
+};
 
 export default ServiceDetails;

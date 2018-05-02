@@ -9,17 +9,18 @@ import Specs from 'components/ProductDetails/Specs';
 import Div from 'components/Div';
 // import Span from 'components/Span';
 import Theme from 'components/Theme';
+import prodDetails from '../data/ProductDetails';
 
 const Index = () => (
   <ThemeProvider theme={Theme}>
     <div>
-      <TitlePrice />
+      <TitlePrice prodDetails={prodDetails} />
       <Div col="6">
-        <ColorOption />
+        <ColorOption colors={prodDetails.colors} />
       </Div>
-      <ServiceDetails />
-      <ProductDesc />
-      <Specs />
+      <ServiceDetails deliverBy={prodDetails.deliver_by} emiStarting={prodDetails.emi_starting} />
+      <ProductDesc desc={prodDetails.description} />
+      <Specs specs={prodDetails.specs} />
     </div>
   </ThemeProvider>
 );

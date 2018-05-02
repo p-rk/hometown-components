@@ -15,6 +15,7 @@ const Span = styled.span`
   font-size: ${props => props.fontSize};
   text-align: ${props => props.ta};
   font-family: ${props => props.fontFamily};
+  float: ${props => props.float};
 
   ${props => types[props.type]};
 
@@ -40,7 +41,8 @@ Span.defaultProps = {
   fontSize: '1em',
   ta: 'left',
   fontFamily: 'SFPDRegular',
-  verticalAlign: 'initial'
+  verticalAlign: 'initial',
+  float: 'none'
 };
 
 export default Span;

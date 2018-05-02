@@ -1,13 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Div from 'components/Div';
 import Spec from 'components/ProductDetails/Spec';
 
-const ServiceDetails = () => (
+const SpecList = ({ specList }) => (
   <Div>
-    <Spec />
-    <Spec />
-    <Spec />
+    { specList.map(spec => (
+      <Spec spec={spec} />
+    )) }
   </Div>
 );
 
-export default ServiceDetails;
+SpecList.propTypes = {
+  specList: PropTypes.array.isRequired
+};
+
+export default SpecList;

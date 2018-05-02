@@ -44,28 +44,38 @@ const productDetails = {
 		},
 		{
 			"hex": "#F00"
+		},
+		{
+			"hex": "green"
 		}
 	],
-	"specs": [{
-		"Features": [{
-			"Design": "Standard",
-			"Assembly Required": "Yes"
-		}],
-		"Upholstery Material": [{
+	"specs": [
+		{
+			"name": "Features",
+			"spec": [{
+				"Design": "Standard",
+				"Assembly Required": "Yes"
+			}]
+		},
+		{
+			"name": "Upholstery Material",
+			"spec": [{
 				"Upholstery Material": "Microfiber"
 			},
 			{
 				"Upholstery Material Details": "Polyester"
-			}
-		],
-		"Weights & Dimensions": [{
+			}]
+		},
+		{
+			"name": "Weights & Dimensions",
+			"spec": [{
 				"Overall": "30'' H x 36'' W x 30'' D"
 			},
 			{
 				"Seat": "15'' H'"
-			}
-		]
-	}],
+			}]
+		}
+	],
 	"reviews": [{
 			"name": "Saurabh Suman",
 			"rating": "5",
