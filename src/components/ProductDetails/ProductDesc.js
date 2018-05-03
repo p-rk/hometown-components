@@ -8,7 +8,7 @@ import Text from 'components/Text';
 import Section from 'components/Section';
 
 const ProductDesc = ({ desc }) => (
-  <Section mb="0.3125rem" pr="0" pl="0">
+  <Section mb="0.3125rem" pr="0" pl="0" pt="0">
     <Container type="container" pr="1rem" pl="1rem">
       <Row display="block" mb="0" mr="0" ml="0">
         <Div col="12">
