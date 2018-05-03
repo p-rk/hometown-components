@@ -20,7 +20,7 @@ const Specs = ({ spec }) => (
 );
 
 Specs.propTypes = {
-  spec: PropTypes.object.isRequired
+  spec: PropTypes.object.isRequired,
 };
 
 export default Specs;
