@@ -15,8 +15,8 @@ const ColorOption = ({ colors }) => (
         </Heading>
       </Row>
       <Row mr="0" ml="0">
-        {colors.map(color => (
-          <ColorBlock bg={color.hex} key={color.key} />
+        {colors.map((color, index) => (
+          <ColorBlock bg={color.hex} key={String(index)} />
         ))}
       </Row>
     </Container>

@@ -5,8 +5,8 @@ import Spec from 'components/ProductDetails/Spec';
 
 const SpecList = ({ specList }) => (
   <Div>
-    { specList.map(spec => (
-      <Spec spec={spec} />
+    { specList.map((spec, index) => (
+      <Spec spec={spec} key={String(index)} />
     )) }
   </Div>
 );

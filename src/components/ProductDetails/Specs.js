@@ -11,10 +11,10 @@ import SpecList from 'components/ProductDetails/SpecList';
 const Specs = ({
   specs
 }) => (
-  <Section mb="0.3125rem" pr="0" pl="0">
+  <Section mb="0" p="0">
     <Container type="container" pr="1rem" pl="1rem">
-      {specs.map(spec => (
-        <Div mb="1.75rem">
+      {specs.map((spec, index) => (
+        <Div mb="1.25rem" key={String(index)}>
           <Row display="block" mb="0.625rem" mr="0" ml="0">
             <Div col="12" mb="0">
               <Heading mt="0" mb="0" color="text" fontSize="1.25em">

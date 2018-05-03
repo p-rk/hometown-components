@@ -13,7 +13,7 @@ const ProductDesc = ({ desc }) => (
       <Row display="block" mb="0" mr="0" ml="0">
         <Div col="12">
           <Heading mt="0rem" color="text" fontSize="1.25em">Description</Heading>
-          <Text>{desc}</Text>
+          <Text fontSize="1rem">{desc}</Text>
         </Div>
       </Row>
     </Container>

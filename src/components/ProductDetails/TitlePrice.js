@@ -7,7 +7,7 @@ import Span from 'components/Span';
 import Section from 'components/Section';
 
 const TitlePrice = ({ prodDetails }) => (
-  <Section mb="0.3125rem" pr="0" pl="0">
+  <Section mb="0.3125rem" p="0">
     <Container type="container" pr="1rem" pl="1rem">
       <Row display="block" mr="0" ml="0">
         <Heading fontSize="1.25rem" color="textDark" mb="0.625rem" mt="0px" fontFamily="SFPDLight">
