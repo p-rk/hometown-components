@@ -1,28 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { ThemeProvider } from 'styled-components';
-import TitlePrice from 'components/ProductDetails/TitlePrice';
-import ColorOption from 'components/ProductDetails/ColorOption';
-import ServiceDetails from 'components/ProductDetails/ServiceDetails';
-import ProductDesc from 'components/ProductDetails/ProductDesc';
-import Reviews from 'components/Reviews/';
-import Specs from 'components/ProductDetails/Specs';
-import Div from 'components/Div';
-// import Span from 'components/Span';
+import ShippedTo from 'components/ShippedTo';
 import Theme from 'components/Theme';
-import prodDetails from '../data/ProductDetails';
+
+import orderData from '../data/OrderDetails';
 
 const Index = () => (
   <ThemeProvider theme={Theme}>
     <div>
-      <TitlePrice prodDetails={prodDetails} />
-      <Div col="6">
-        <ColorOption colors={prodDetails.colors} />
-      </Div>
-      <ServiceDetails deliverBy={prodDetails.deliver_by} emiStarting={prodDetails.emi_starting} />
-      <ProductDesc desc={prodDetails.description} />
-      <Specs specs={prodDetails.specs} />
-      <Reviews reviewItems={prodDetails.reviews} />
+      <ShippedTo shipDetails={orderData.shipped_to} />
     </div>
   </ThemeProvider>
 );

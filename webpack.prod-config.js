@@ -35,6 +35,8 @@ module.exports = {
     'ProductDetails/Spec': './src/components/ProductDetails/Spec',
     'ProductDetails/TitlePrice': './src/components/ProductDetails/TitlePrice',
     'Reviews/index': './src/components/Reviews/',
+    'ShippedTo/index': './src/components/ShippedTo/',
+    'PaymentMethod/index': './src/components/PaymentMethod/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
