@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Div from 'components/Div';
 import Heading from 'components/Heading';
 import Container from 'components/Container';
-import ReviewItem from 'components/Review/ReviewItem';
+import ReviewItem from 'components/Reviews/ReviewItem';
 
 const Reviews = ({ reviewItems }) => (
   <Container type="container" pr="0.5rem" pl="0.5rem">
