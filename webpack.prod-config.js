@@ -13,6 +13,7 @@ module.exports = {
     'InputField/index': './src/components/InputField/',
     'Label/index': './src/components/Label/',
     'Link/index': './src/components/Link/',
+    'Pincode/index': './src/components/Pincode/',
     'Product/index': './src/components/Product/',
     'ProductInline/index': './src/components/ProductInline/',
     'ProductInlineWithQuantity/index': './src/components/ProductInlineWithQuantity/',

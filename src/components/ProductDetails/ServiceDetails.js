@@ -4,7 +4,7 @@ import Container from 'components/Container';
 import Row from 'components/Row';
 import Div from 'components/Div';
 import { Label } from 'components/Label';
-import Input from 'components/Input';
+import Pincode from 'components/Pincode';
 import Img from 'components/Img';
 import Section from 'components/Section';
 
@@ -22,9 +22,8 @@ const ServiceDetails = ({ deliverBy, emiStarting }) => (
           <Label fontSize="1em" color="secondary" ml="0.625rem" display="contents">Enter PIN Code</Label>
         </Div>
         <Div col="6">
-          <Input
+          <Pincode
             type="text"
-            placeholder=""
             height="42px"
           />
         </Div>
