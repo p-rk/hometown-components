@@ -33,6 +33,7 @@ module.exports = {
     'ProductDetails/SpecList': './src/components/ProductDetails/SpecList',
     'ProductDetails/Spec': './src/components/ProductDetails/Spec',
     'ProductDetails/TitlePrice': './src/components/ProductDetails/TitlePrice',
+    'Reviews/index': './src/components/Reviews/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),

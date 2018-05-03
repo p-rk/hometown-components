@@ -1,12 +1,12 @@
 /* eslint-disable */
 const productDetails = {
 	"id": 1,
-	"name": "Martin Half Leather Single Seater Sofa",
-	"price": "65,000",
-	"disc_price": "62,000",
+	"name": "Martin Half Leather",
+	"price": "25,000",
+	"disc_price": "22,000",
 	"saving": "3,000",
-	"percentage": "5%",
-	"rating": "5",
+	"discount": "15%",
+	"rating": "4",
 	"tags": "#minimalist   #garcia   #oneseater   #bachelorfriendly",
 	"url": "http://via.placeholder.com/720x448/FFC720?text=Slide%201",
 	"deliver_by": "16 Jan (Sunday)",

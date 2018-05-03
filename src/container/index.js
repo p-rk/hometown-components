@@ -5,6 +5,7 @@ import TitlePrice from 'components/ProductDetails/TitlePrice';
 import ColorOption from 'components/ProductDetails/ColorOption';
 import ServiceDetails from 'components/ProductDetails/ServiceDetails';
 import ProductDesc from 'components/ProductDetails/ProductDesc';
+import Reviews from 'components/Reviews/';
 import Specs from 'components/ProductDetails/Specs';
 import Div from 'components/Div';
 // import Span from 'components/Span';
@@ -21,6 +22,7 @@ const Index = () => (
       <ServiceDetails deliverBy={prodDetails.deliver_by} emiStarting={prodDetails.emi_starting} />
       <ProductDesc desc={prodDetails.description} />
       <Specs specs={prodDetails.specs} />
+      <Reviews reviewItems={prodDetails.reviews} />
     </div>
   </ThemeProvider>
 );

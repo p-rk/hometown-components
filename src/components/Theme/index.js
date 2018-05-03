@@ -20,6 +20,7 @@ const colors = {
   secondary: 'rgba(0, 0, 0, 0.7)',
   text: 'rgba(0, 0, 0, 0.75)',
   textDark: 'rgba(0, 0, 0, 0.8)',
+  textExtraDark: 'rgba(0, 0, 0, 0.9)',
   textLight: 'rgba(0, 0, 0, 0.6)',
   textExtraLight: 'rgba(0, 0, 0, 0.5)',
   border: '#979797',
