@@ -7,6 +7,7 @@ const Label = styled.label`
   color: ${props => props.theme.colors[props.color]};
   text-align: ${props => props.ta};
   display: ${props => props.display};
+  va: ${props => props.va};
 
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
@@ -28,7 +29,8 @@ Label.defaultProps = {
   type: 'note',
   color: 'textDark',
   ta: 'left',
-  display: 'inline-block'
+  display: 'inline-block',
+  va: 'inherit'
 };
 
 export { Label, FeedBackMessage };

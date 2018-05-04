@@ -12,7 +12,7 @@ import Theme from 'components/Theme';
 const ProductInline = ({
   itemData
 }) => (
-  <Div mr="0" ml="0" mb="1.25rem">
+  <Div mr="0" ml="0" mb="0.625rem">
     <Row display="block" mr="0" ml="0">
       <Link href={itemData.url}>
         <Div col="4">
