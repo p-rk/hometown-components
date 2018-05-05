@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
-const Img = styled.img`
-  display: block;
-  max-width: 100%;
-
+const ColorBlock = styled.div`
+  border-radius: 2px;
+  background-color: ${props => props.bg};
+  width: ${props => props.width};
   height: ${props => props.height};
-  float: ${props => props.float};
 
-  ${props => props.ta && { textAlign: props.ta }}
+  maxWidth: ${props => props.width};
+  flex: 0 0 ${props => props.width};
+  width: '100%';
+  border: 3px solid #FFF;
+
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}
@@ -18,11 +21,20 @@ const Img = styled.img`
   ${props => props.pr && { paddingRight: props.pr }}
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
+
+  ${props => props.active && {
+    boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.22)',
+    border: '3px solid #FFF'
+  }}
 `;
 
-Img.defaultProps = {
-  float: 'none',
-  height: 'auto'
+ColorBlock.defaultProps = {
+  display: 'block',
+  width: '30px',
+  height: '30px',
+  bg: '#d5c4b8',
+  mr: '0.625rem',
+  mb: '0.3125rem'
 };
 
-export default Img;
+export default ColorBlock;

@@ -25,7 +25,6 @@ const display = (props, type) => {
 };
 
 const Div = styled.div`
-  display: block;
   ${props => display(props, props.display)};
 
   ${props => props.ta && { textAlign: props.ta }}

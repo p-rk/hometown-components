@@ -13,6 +13,7 @@ module.exports = {
     'InputField/index': './src/components/InputField/',
     'Label/index': './src/components/Label/',
     'Link/index': './src/components/Link/',
+    'Pincode/index': './src/components/Pincode/',
     'Product/index': './src/components/Product/',
     'ProductInline/index': './src/components/ProductInline/',
     'ProductInlineWithQuantity/index': './src/components/ProductInlineWithQuantity/',
@@ -25,7 +26,17 @@ module.exports = {
     'Forms/SignupForm': './src/components/Forms/SignupForm',
     'Forms/ProfileForm': './src/components/Forms/ProfileForm',
     'Forms/UpdatePasswordForm': './src/components/Forms/UpdatePasswordForm',
-    'Forms/PaymentMethodForm': './src/components/Forms/PaymentMethodForm'
+    'Forms/PaymentMethodForm': './src/components/Forms/PaymentMethodForm',
+    'ProductDetails/ColorOption': './src/components/ProductDetails/ColorOption',
+    'ProductDetails/ProductDesc': './src/components/ProductDetails/ProductDesc',
+    'ProductDetails/ServiceDetails': './src/components/ProductDetails/ServiceDetails',
+    'ProductDetails/Specs': './src/components/ProductDetails/Specs',
+    'ProductDetails/SpecList': './src/components/ProductDetails/SpecList',
+    'ProductDetails/Spec': './src/components/ProductDetails/Spec',
+    'ProductDetails/TitlePrice': './src/components/ProductDetails/TitlePrice',
+    'Reviews/index': './src/components/Reviews/',
+    'ShippedTo/index': './src/components/ShippedTo/',
+    'PaymentMethod/index': './src/components/PaymentMethod/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
@@ -55,6 +66,15 @@ module.exports = {
         use: {
           loader: 'eslint-loader'
         }
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8192
+          }
+        }]
       }
     ]
   },
