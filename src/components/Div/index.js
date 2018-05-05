@@ -38,6 +38,7 @@ const Div = styled.div`
   ${props => props.pr && { paddingRight: props.pr }}
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
+  display: ${props => props.hide ? 'none' : 'initial'};
 
   box-sizing: border-box;
   > *, ::after, ::before {
@@ -47,7 +48,8 @@ const Div = styled.div`
 
 Div.defaultProps = {
   display: 'block',
-  col: '12'
+  col: '12',
+  hide: false
 };
 
 export default Div;

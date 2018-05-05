@@ -22,7 +22,14 @@ class SpecList extends Component {
       <Div mb="0.625rem">
         <Row display="block" m="0">
           <Div col="12" mb="0">
-            <Heading mt="0" mb="0" pb="0.625rem" color="text" fontSize="1.25em">
+            <Heading
+              mt="0"
+              mb="0"
+              pb="0.625rem"
+              color="text"
+              fontSize="1.25em"
+              fontFamily="SFPDLight"
+            >
               {specName}
               <Button
                 btnType="custom"

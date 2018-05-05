@@ -9,7 +9,13 @@ import ReviewItem from 'components/Reviews/ReviewItem';
 const Reviews = ({ reviewItems }) => (
   <Section mb="0.3125rem" p="0" pt="0.9375rem">
     <Container type="container">
-      <Heading fontSize="1.5rem" color="textDark" mb="0.9375rem" mt="0px" fontFamily="SFPDLight">
+      <Heading
+        fontSize="1.25rem"
+        color="textDark"
+        mb="0.9375rem"
+        mt="0px"
+        fontFamily="SFPDLight"
+      >
       Product Reviews
       </Heading>
       <Div display="block">
