@@ -5,7 +5,7 @@ import Div from 'components/Div';
 import { Label } from 'components/Label';
 
 const Specs = ({ spec }) => (
-  <Row display="block" mb="0" mr="0" ml="0">
+  <Row display="block" m="0" pb="0,625rem">
     { spec && Object.keys(spec).map((eachSpec, index) => (
       <div key={String(index)}>
         <Div col="6">
