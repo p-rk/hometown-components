@@ -6,12 +6,14 @@ import Div from 'components/Div';
 import Heading from 'components/Heading';
 import Img from 'components/Img';
 import Span from 'components/Span';
+import WishlistBtn from 'components/WishlistBtn';
 import Theme from 'components/Theme';
 
 const Product = ({
-  itemData, rating
+  itemData, rating, onClick, isWishList
 }) => (
   <Row display="block" mr="0" ml="0" mb="30px">
+    <WishlistBtn onClick={onClick(itemData.sku_id)} isWishList={isWishList} />
     <Link href={itemData.url}>
       <Img
         alt={itemData.name}
@@ -41,9 +43,15 @@ const Product = ({
   </Row>
 );
 
+Product.defaultProps = {
+  isWishList: false
+};
+
 Product.propTypes = {
   itemData: PropTypes.object.isRequired,
-  rating: PropTypes.bool.isRequired
+  rating: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  isWishList: PropTypes.bool
 };
 
 export default Product;

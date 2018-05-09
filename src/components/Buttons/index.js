@@ -42,6 +42,9 @@ const btnType = (props, type) => {
     link: {
       color: `${props.theme.colors.textExtraLight}`,
       border: 'none'
+    },
+    wishlist: {
+
     }
   };
 

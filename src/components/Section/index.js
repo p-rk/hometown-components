@@ -9,6 +9,7 @@ const Section = styled.section`
   box-shadow: ${props => props.boxShadow};
   height: ${props => props.height};
   overflow: auto;
+  position: relative;
 
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
