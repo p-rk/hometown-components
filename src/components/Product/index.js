@@ -42,7 +42,6 @@ const Product = ({
     </Link>
   </Row>
 );
-
 Product.defaultProps = {
   isWishList: false
 };
