@@ -36,6 +36,8 @@ module.exports = {
     'ProductDetails/TitlePrice': './src/components/ProductDetails/TitlePrice',
     'Reviews/index': './src/components/Reviews/',
     'ShippedTo/index': './src/components/ShippedTo/',
+    'WishlistBtn/index': './src/components/WishlistBtn/',
+    'ProductCarousel/index': './src/components/ProductCarousel/',
     'PaymentMethod/index': './src/components/PaymentMethod/',
   },
   output: {

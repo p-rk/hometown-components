@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Div from 'components/Div';
 import Row from 'components/Row';
+import Button from 'components/Buttons';
 import Heading from 'components/Heading';
 import Spec from 'components/ProductDetails/Spec';
 
@@ -18,12 +19,26 @@ class SpecList extends Component {
     const { list, specName } = this.props;
     const { show } = this.state;
     return (
-      <Div mb="1.25rem">
-        <Row display="block" mb="0.625rem" mr="0" ml="0">
+      <Div mb="0.625rem">
+        <Row display="block" m="0">
           <Div col="12" mb="0">
-            <Heading mt="0" mb="0" color="text" fontSize="1.25em">
+            <Heading
+              mt="0"
+              mb="0"
+              pb="0.625rem"
+              color="text"
+              fontSize="1.25em"
+              fontFamily="SFPDLight"
+            >
               {specName}
-              <button float="right" onClick={this.handleOnclick}>{show ? '-' : '+'}</button>
+              <Button
+                btnType="custom"
+                bg="transparent"
+                border="none"
+                p="0"
+                fl="right"
+                onClick={this.handleOnclick}
+              >{show ? '-' : '+'}</Button>
             </Heading>
             {show && <Div>
               { list.map((eachSpec, specIndex) => (

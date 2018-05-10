@@ -22,6 +22,7 @@ const Row = styled.div`
   box-sizing: border-box;
   margin-right: -15px;
   margin-left: -15px;
+  position: relative;
 
   ${props => display(props, props.display)};
   ${props => props.m && { margin: props.m }}

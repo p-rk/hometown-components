@@ -42,6 +42,9 @@ const btnType = (props, type) => {
     link: {
       color: `${props.theme.colors.textExtraLight}`,
       border: 'none'
+    },
+    wishlist: {
+
     }
   };
 
@@ -79,6 +82,7 @@ const Button = styled.button`
   ${props => props.pr && { paddingRight: props.pr }}
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
+  ${props => props.fl && { float: props.fl }}
 
   &:hover {
     background: ${props => props.type === 'default' ? '#ae8873' : 'transparent'};

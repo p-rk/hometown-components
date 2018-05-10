@@ -12,7 +12,12 @@ const ProductDesc = ({ desc }) => (
     <Container type="container" pr="1rem" pl="1rem">
       <Row display="block" mb="0" mr="0" ml="0">
         <Div col="12">
-          <Heading mt="0rem" color="text" fontSize="1.25em">Description</Heading>
+          <Heading
+            mt="0rem"
+            color="text"
+            fontSize="1.25em"
+            fontFamily="SFPDLight"
+          >Description</Heading>
           <Text fontSize="1rem">{desc}</Text>
         </Div>
       </Row>
