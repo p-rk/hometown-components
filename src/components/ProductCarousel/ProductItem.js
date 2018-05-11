@@ -8,8 +8,8 @@ import Div from 'components/Div';
 const ProductCarouselLi = styled.li`
   width: 100%;
   margin-left: 15px;
-  flex: 0 0 calc(${props => props.colSize} - 15px);
-  max-width: ${props => props.colSize};
+  flex: 0 0 calc(${props => props.colSize}% - 15px);
+  max-width: ${props => props.colSize}%;
 
   @media (min-width: ${props => props.theme.breakpoints('md')}) {
     margin-left: 7.5px;
