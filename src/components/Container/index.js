@@ -13,16 +13,16 @@ const Container = styled.div`
   }
 
   @media (min-width: ${props => props.theme.breakpoints('xs')}) {
-    max-width: 540px;
+    max-width: ${props => props.type === 'cf' ? '100%' : '540px'};
   }
   @media (min-width: ${props => props.theme.breakpoints('sm')}) {
-    max-width: 720px;
+    max-width: ${props => props.type === 'cf' ? '100%' : '720px'};
   }
   @media (min-width: ${props => props.theme.breakpoints('md')}) {
-    max-width: 960px;
+    max-width: ${props => props.type === 'cf' ? '100%' : '960px'};
   }
   @media (min-width: ${props => props.theme.breakpoints('lg')}) {
-    max-width: ${props => props.type === 'cf' ? '100%' : '1140px'};
+    max-width: ${props => props.type === 'cf' ? '100%' : '1170px'};
   }
 `;
 
