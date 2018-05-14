@@ -42,8 +42,7 @@ const Product = ({
   </Div>
 );
 Product.defaultProps = {
-  isWishList: false,
-  col: '12'
+  isWishList: false
 };
 
 Product.propTypes = {
@@ -55,8 +54,7 @@ Product.propTypes = {
   sku: PropTypes.string.isRequired,
   rating: PropTypes.bool.isRequired,
   isWishList: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
-  col: PropTypes.string
+  onClick: PropTypes.func.isRequired
 };
 
 export default Product;
