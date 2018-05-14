@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'components/Link';
-import Row from 'components/Row';
 import Div from 'components/Div';
 import Heading from 'components/Heading';
 import Img from 'components/Img';
@@ -12,7 +11,7 @@ import Theme from 'components/Theme';
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, onClick, isWishList
 }) => (
-  <Row display="block" mr="0" ml="0" mb="30px">
+  <Div display="block" mr="0" ml="0" mb="30px">
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
     <Link href="test">
       <Img
@@ -40,10 +39,11 @@ const Product = ({
         )}
       </Div>
     </Link>
-  </Row>
+  </Div>
 );
 Product.defaultProps = {
-  isWishList: false
+  isWishList: false,
+  col: '12'
 };
 
 Product.propTypes = {
@@ -54,8 +54,9 @@ Product.propTypes = {
   image: PropTypes.string.isRequired,
   sku: PropTypes.string.isRequired,
   rating: PropTypes.bool.isRequired,
+  isWishList: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
-  isWishList: PropTypes.bool
+  col: PropTypes.string
 };
 
 export default Product;

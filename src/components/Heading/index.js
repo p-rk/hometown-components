@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Heading = styled.h4`
-  white-space: nowrap; 
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
@@ -20,6 +20,7 @@ const Heading = styled.h4`
   ${props => props.pr && { paddingRight: props.pr }}
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
+  ${props => props.ls && { letterSpacing: props.ls }}
 `;
 
 Heading.defaultProps = {

@@ -30,6 +30,7 @@ const colors = {
   note: '#6c757d',
   sectionBG: '#FAFAFA',
   sectionBgDark: '#f7f7f7',
+  hashTags: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9))',
   gray: [
     '#f8f9fa',
     '#e9ecef',

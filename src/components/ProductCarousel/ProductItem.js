@@ -8,8 +8,13 @@ import Div from 'components/Div';
 const ProductCarouselLi = styled.li`
   width: 100%;
   margin-left: 15px;
-  flex: 0 0 40%;
-  max-width: 40%;
+  flex: 0 0 calc(${props => props.colSize}% - 15px);
+  max-width: ${props => props.colSize}%;
+
+  @media (min-width: ${props => props.theme.breakpoints('md')}) {
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+  }
 `;
 
 const A = styled.a`
@@ -17,9 +22,9 @@ const A = styled.a`
 `;
 
 const ProductItem = ({
-  itemData, contentStatus, typeOfSlider
+  itemData, contentStatus, typeOfSlider, colSize
 }) => (
-  <ProductCarouselLi className={typeOfSlider}>
+  <ProductCarouselLi className={typeOfSlider} colSize={colSize}>
     <A href={itemData.url}>
       {typeOfSlider !== 'menuSlider' &&
       <Img mb="5px" src={itemData.image} alt={itemData.title} />
@@ -33,10 +38,23 @@ const ProductItem = ({
   </ProductCarouselLi>
 );
 
+// ProductCarouselLi.defaultProps = {
+//   colSize: '100%'
+// };
+//
+// ProductCarouselLi.propTypes = {
+//   colSize: PropTypes.string,
+// };
+
+ProductItem.defaultProps = {
+  colSize: '100%'
+};
+
 ProductItem.propTypes = {
   itemData: PropTypes.object.isRequired,
   contentStatus: PropTypes.bool.isRequired,
-  typeOfSlider: PropTypes.string.isRequired
+  typeOfSlider: PropTypes.string.isRequired,
+  colSize: PropTypes.string
 };
 
 export default ProductItem;

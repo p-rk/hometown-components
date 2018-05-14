@@ -30,9 +30,12 @@ const ProductCarouselList = styled.ul`
     background-color: #FFF;
     border: none;
   }
+  @media (min-width: ${props => props.theme.breakpoints('md')}) {
+    overflow: hidden;
+  }
 `;
 
-const ProductCarousel = ({ itemData }) => (
+const ProductCarousel = ({ itemData, colSize }) => (
   <ProductCarouselWrapper>
     <ProductCarouselList>
       {itemData.map(item => (
@@ -41,6 +44,7 @@ const ProductCarousel = ({ itemData }) => (
           itemIndex={item.id}
           itemData={item}
           contentStatus
+          colSize={colSize}
           typeOfSlider="catSlider"
         />
       ))}
@@ -49,7 +53,8 @@ const ProductCarousel = ({ itemData }) => (
 );
 
 ProductCarousel.propTypes = {
-  itemData: PropTypes.object.isRequired
+  itemData: PropTypes.object.isRequired,
+  colSize: PropTypes.string.isRequired
 };
 
 export default ProductCarousel;

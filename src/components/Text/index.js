@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 const Text = styled.p`
   font-size: ${props => props.fontSize};
-  text-transform: ${props => props.backgroundColor};
-  font-weight: ${props => props.backgroundColor};
-  color: ${props => props.backgroundColor};
-  align: ${props => props.backgroundColor};
+  text-transform: ${props => props.textTransform};
+  font-weight: ${props => props.fontWeight};
+  color: ${props => props.color};
+  text-align: ${props => props.ta};
   line-height: ${props => props.lh};
 
   ${props => props.fontFamily && { fontFamily: props.fontFamily }}
@@ -26,7 +26,7 @@ Text.defaultProps = {
   textTransform: 'inherit',
   fontWeight: '400',
   color: '0 0 0, 0.75',
-  align: 'left',
+  ta: 'left',
   mt: '0.625rem',
   mb: '0.625rem',
   lh: '1.6',
