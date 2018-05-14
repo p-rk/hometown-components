@@ -10,14 +10,14 @@ import WishlistBtn from 'components/WishlistBtn';
 import Theme from 'components/Theme';
 
 const Product = ({
-  itemData, rating, onClick, isWishList
+  name, image, price, cutprice, saving, sku, rating, onClick, isWishList
 }) => (
   <Row display="block" mr="0" ml="0" mb="30px">
-    <WishlistBtn onClick={onClick(itemData.sku_id)} isWishList={isWishList} />
-    <Link href={itemData.url}>
+    <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
+    <Link href="test">
       <Img
-        alt={itemData.name}
-        src={itemData.image}
+        alt={name}
+        src={image}
         width="100%"
       />
       <Div>
@@ -26,16 +26,16 @@ const Product = ({
           color={Theme.colors.text}
           fontFamily="SFPDSemiBold"
           fontSize="1rem"
-        >{itemData.name}</Heading>
+        >{name}</Heading>
         <Div mb="0.25rem">
-          <Span mr="0.625rem" color={Theme.colors.textDark} fontFamily="SFPDSemiBold">Rs. {itemData.disc_price}</Span>
-          <Span mr="0.625rem" fontSize="0.9rem">Rs. {itemData.price}</Span>
-          <Span mr="0.625rem" fontSize="0.9rem">Saving Rs. {itemData.saving} ({itemData.percentage})</Span>
+          <Span mr="0.625rem" color={Theme.colors.textDark} fontFamily="SFPDSemiBold">{price}</Span>
+          <Span mr="0.625rem" fontSize="0.9rem"><s>{cutprice}</s></Span>
+          <Span mr="0.625rem" fontSize="0.9rem">({saving.replace('-', '')} OFF)</Span>
         </Div>
         {rating && (
           <Div>
             <Span color={Theme.colors.primary} fontSize="1.2rem" mr="0.3125em">★</Span>
-            <Span>{itemData.rating}</Span>
+            <Span>{rating}</Span>
           </Div>
         )}
       </Div>
@@ -47,7 +47,12 @@ Product.defaultProps = {
 };
 
 Product.propTypes = {
-  itemData: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  cutprice: PropTypes.string.isRequired,
+  saving: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  sku: PropTypes.string.isRequired,
   rating: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
   isWishList: PropTypes.bool
