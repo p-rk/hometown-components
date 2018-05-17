@@ -6,6 +6,7 @@ import Heading from 'components/Heading';
 import Img from 'components/Img';
 import Span from 'components/Span';
 import WishlistBtn from 'components/WishlistBtn';
+import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
 import Theme from 'components/Theme';
 
 const Product = ({
@@ -14,11 +15,13 @@ const Product = ({
   <Div display="block" mr="0" ml="0" mb="30px">
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
     <Link href="test">
-      <Img
-        alt={name}
-        src={image}
-        width="100%"
-      />
+      <ProgressiveImageSchemer src={image} minHeight="365">
+        {imageURL => (<Img
+          alt={name}
+          src={imageURL}
+          width="100%"
+        />)}
+      </ProgressiveImageSchemer>
       <Div>
         <Heading
           mb="0.4375rem"
