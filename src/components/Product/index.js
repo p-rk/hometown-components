@@ -1,22 +1,34 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Link from 'components/Link';
 import Div from 'components/Div';
 import Heading from 'components/Heading';
-import Img from 'components/Img';
 import Span from 'components/Span';
 import WishlistBtn from 'components/WishlistBtn';
 import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
 import Theme from 'components/Theme';
 
+const ProductImg = styled.img`
+  position: absolute;
+  max-width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: auto;
+`;
+
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, onClick, isWishList
 }) => (
-  <Div display="block" mr="0" ml="0" mb="30px">
+  <Div display="block" mr="0" ml="0" mb="320px">
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
     <Link href="test">
-      <ProgressiveImageSchemer src={image} minHeight="365">
-        {imageURL => (<Img
+      <ProgressiveImageSchemer src={image} minHeight="120px">
+        {imageURL => (<ProductImg
           alt={name}
           src={imageURL}
           width="100%"

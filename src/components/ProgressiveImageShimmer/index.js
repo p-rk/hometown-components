@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ImagePlaceHolder from 'components/Placeholders/ImagePlaceHolder';
+
+const ImagePlaceHolderWrapper = styled.div`
+  height: ${props => props.minHeight};
+  position: relative;
+`;
 
 export default class ProgressiveImageSchemer extends Component {
   static propTypes = {
@@ -65,10 +71,10 @@ export default class ProgressiveImageSchemer extends Component {
       throw new Error('ProgressiveImageSchemer requires a function as its only child');
     }
     return (
-      <div>
-        { !isLoaded && <ImagePlaceHolder minHeight={minHeight} /> }
+      <ImagePlaceHolderWrapper minHeight={minHeight}>
+        { !isLoaded && <ImagePlaceHolder /> }
         { isLoaded && children(src) }
-      </div>
+      </ImagePlaceHolderWrapper>
     );
   }
 }
