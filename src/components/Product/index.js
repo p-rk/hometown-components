@@ -24,10 +24,10 @@ const ProductImg = styled.img`
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, onClick, isWishList
 }) => (
-  <Div display="block" mr="0" ml="0" mb="320px">
+  <Div display="block" mr="0" ml="0" mb="30px">
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
     <Link href="test">
-      <ProgressiveImageSchemer src={image} minHeight="120px">
+      <ProgressiveImageSchemer src={image} minHeight="320px">
         {imageURL => (<ProductImg
           alt={name}
           src={imageURL}
