@@ -60,13 +60,14 @@ const Product = ({
           <Span mr="0.625rem" color={Theme.colors.textDark} fontFamily="SFPDSemiBold">{price}</Span>
           <Span mr="0.625rem" fontSize="0.9rem"><s>{cutprice}</s></Span>
           { saving &&
-            <p>
-              Savings Rs. {savingAmount}<Span mr="0.625rem" fontSize="0.9rem">({saving.replace('-', '')} OFF)</Span>
-            </p> }
+            <Span>
+              Savings Rs. {savingAmount}
+              <Span mr="0.625rem" fontSize="0.9rem">({saving.replace('-', '')} OFF)</Span>
+            </Span> }
         </Div>
         {rating > 0 && (
           <Div>
-            <Span color={Theme.colors.primary} fontSize="1.2rem" mr="0.3125em">★</Span>
+            <Span color={Theme.colors.primary} fontSize="1rem" mr="0.3125em">★</Span>
             <Span>{rating} ({reviewsCount})</Span>
           </Div>
         )}
