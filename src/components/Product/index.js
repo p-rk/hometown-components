@@ -37,7 +37,7 @@ const ProductWrapper = styled.div`
 `;
 
 const Product = ({
-  name, image, price, cutprice, saving, sku, rating, onClick, isWishList
+  name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount, onClick, isWishList
 }) => (
   <ProductWrapper col="12" display="block" mr="0" ml="0" mb="30px">
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
@@ -59,12 +59,14 @@ const Product = ({
         <Div mb="0.25rem">
           <Span mr="0.625rem" color={Theme.colors.textDark} fontFamily="SFPDSemiBold">{price}</Span>
           <Span mr="0.625rem" fontSize="0.9rem"><s>{cutprice}</s></Span>
-          <Span mr="0.625rem" fontSize="0.9rem">({saving.replace('-', '')} OFF)</Span>
+          { saving &&
+            <p>Savings Rs. {savingAmount} <Span mr="0.625rem" fontSize="0.9rem">({saving.replace('-', '')} OFF)</Span>
+            </p> }
         </Div>
-        {rating && (
+        {rating > 0 && (
           <Div>
             <Span color={Theme.colors.primary} fontSize="1.2rem" mr="0.3125em">★</Span>
-            <Span>{rating}</Span>
+            <Span>{rating} ({reviewsCount})</Span>
           </Div>
         )}
       </Div>
@@ -80,9 +82,11 @@ Product.propTypes = {
   price: PropTypes.string.isRequired,
   cutprice: PropTypes.string.isRequired,
   saving: PropTypes.string.isRequired,
+  savingAmount: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   sku: PropTypes.string.isRequired,
-  rating: PropTypes.bool.isRequired,
+  rating: PropTypes.number.isRequired,
+  reviewsCount: PropTypes.number.isRequired,
   isWishList: PropTypes.bool,
   onClick: PropTypes.func.isRequired
 };
