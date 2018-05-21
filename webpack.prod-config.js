@@ -40,6 +40,7 @@ module.exports = {
     'ProductCarousel/index': './src/components/ProductCarousel/',
     'PaymentMethod/index': './src/components/PaymentMethod/',
     'Alert/index': './src/components/Alert/',
+    'ScreenLoader/index': './src/components/ScreenLoader/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
