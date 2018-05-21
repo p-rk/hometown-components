@@ -39,6 +39,7 @@ module.exports = {
     'WishlistBtn/index': './src/components/WishlistBtn/',
     'ProductCarousel/index': './src/components/ProductCarousel/',
     'PaymentMethod/index': './src/components/PaymentMethod/',
+    'Alert/index': './src/components/Alert/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
@@ -77,6 +78,14 @@ module.exports = {
             limit: 8192
           }
         }]
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10240,
+          mimetype: 'image/svg+xml'
+        }
       }
     ]
   },

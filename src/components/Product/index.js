@@ -19,12 +19,27 @@ const ProductImg = styled.img`
   top: 0;
   margin: auto;
   width: auto;
+  @media (max-width: 767.98px) {
+    width: 100%;
+  }
+`;
+
+const ProductWrapper = styled.div`
+  width: ${props => props.theme.col[props.col]};
+  float: left;
+  position: relative;
+  margin-right: 0;
+  margin-bottom: 30px;
+  margin-left: 0;
+  display: initial;
+  box-sizing: border-box;
+  border: 1px solid #e6e6e6;
 `;
 
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, onClick, isWishList
 }) => (
-  <Div display="block" mr="0" ml="0" mb="30px">
+  <ProductWrapper col="12" display="block" mr="0" ml="0" mb="30px">
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
     <Link href="test">
       <ProgressiveImageSchemer src={image} minHeight="320px">
@@ -34,7 +49,7 @@ const Product = ({
           width="100%"
         />)}
       </ProgressiveImageSchemer>
-      <Div>
+      <Div p="0.25rem 0.75rem">
         <Heading
           mb="0.4375rem"
           color={Theme.colors.text}
@@ -54,7 +69,7 @@ const Product = ({
         )}
       </Div>
     </Link>
-  </Div>
+  </ProductWrapper>
 );
 Product.defaultProps = {
   isWishList: false

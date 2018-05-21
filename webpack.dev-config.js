@@ -37,6 +37,14 @@ module.exports = {
             limit: 8192
           }
         }]
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10240,
+          mimetype: 'image/svg+xml'
+        }
       }
     ]
   },
