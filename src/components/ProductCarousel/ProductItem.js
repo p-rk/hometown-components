@@ -18,7 +18,7 @@ const ProductCarouselLi = styled.li`
   }
 `;
 
-const A = styled.a`
+const Redirect = styled.a`
   display: block;
 `;
 
@@ -26,7 +26,7 @@ const ProductItem = ({
   itemData, contentStatus, typeOfSlider, colSize
 }) => (
   <ProductCarouselLi className={typeOfSlider} colSize={colSize}>
-    <A href={itemData.url}>
+    <Redirect href={itemData.url}>
       {typeOfSlider !== 'menuSlider' && (
         <ProgressiveImageSchemer src={itemData.image} minHeight="365">
           {imageURL => (<Img mb="5px" src={imageURL} alt={itemData.title} />)}
@@ -38,7 +38,7 @@ const ProductItem = ({
           <Text fontSize="0.8rem" fontFamily="SFPDSemiBold" mt="10px" mb="7px">{itemData.name}</Text>
         </Div>
       )}
-    </A>
+    </Redirect>
   </ProductCarouselLi>
 );
 
