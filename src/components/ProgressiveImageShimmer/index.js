@@ -49,7 +49,7 @@ export default class ProgressiveImageSchemer extends Component {
 
   onError(Error) {
     console.log(Error);
-    this.setStat({ isLoaded: false });
+    this.setState({ isLoaded: false });
   }
 
   loadImage(src) {

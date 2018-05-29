@@ -15,6 +15,7 @@ export default class LoginForm extends Component {
       passwordFeedBackError,
       passwordFeedBackMessage,
       onSubmitLogin,
+      loginResponse
     } = this.props;
     return (
       <form onSubmit={onSubmitLogin}>
@@ -36,7 +37,16 @@ export default class LoginForm extends Component {
           feedBackError={passwordFeedBackError}
           feedBackMessage={passwordFeedBackMessage}
         />
-        <Button size="block" btnType="primary" fontFamily="regular" height="42px" mt="1.5rem">LOGIN</Button>
+        <Button size="block" btnType="primary" fontFamily="regular" height="42px" mt="1.5rem">
+          {(loginResponse && !loginResponse.loggingIn) ? 'LOGIN' : 'Please wait...' }
+          {(loginResponse && loginResponse.loaded && loginResponse.isLoggedIn) && <p> Login Success ! </p> }
+          {(loginResponse
+            && !loginResponse.loggingIn
+            && ('loginError' in loginResponse)
+            && !loginResponse.isLoggedIn
+            && loginResponse.loginError.error === 'invalid_grant') ? <p>Invalid Credentials Provided !</p> : null
+          }
+        </Button>
       </form>
     );
   }
@@ -49,10 +59,10 @@ LoginForm.defaultProps = {
   emailFeedBackMessage: '',
   passwordFeedBackError: false,
   passwordFeedBackMessage: '',
+  loginResponse: {},
   onChangeEmail: () => {},
   onChangePassword: () => {},
   onSubmitLogin: () => {}
-
 };
 
 LoginForm.propTypes = {
@@ -64,5 +74,6 @@ LoginForm.propTypes = {
   emailFeedBackError: PropTypes.bool,
   emailFeedBackMessage: PropTypes.string,
   passwordFeedBackError: PropTypes.bool,
-  passwordFeedBackMessage: PropTypes.string
+  passwordFeedBackMessage: PropTypes.string,
+  loginResponse: PropTypes.object
 };
