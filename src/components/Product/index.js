@@ -37,9 +37,9 @@ const ProductWrapper = styled.div`
 `;
 
 const Product = ({
-  name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount, onClick, isWishList
+  name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount, onClick, isWishList, col
 }) => (
-  <ProductWrapper col="12" display="block" mr="0" ml="0" mb="30px">
+  <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px">
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
     <Link href="test">
       <ProgressiveImageSchemer src={image} minHeight="320px">
@@ -62,7 +62,7 @@ const Product = ({
           { saving &&
             <Span>
               Savings Rs. {savingAmount}
-              <Span mr="0.625rem" fontSize="0.9rem">({saving.replace('-', '')} OFF)</Span>
+              <Span mr="0.625rem" fontSize="0.9rem"> ({saving.replace('-', '')} OFF)</Span>
             </Span> }
         </Div>
         {rating > 0 && (
@@ -76,7 +76,8 @@ const Product = ({
   </ProductWrapper>
 );
 Product.defaultProps = {
-  isWishList: false
+  isWishList: false,
+  col: 12
 };
 
 Product.propTypes = {
@@ -90,7 +91,8 @@ Product.propTypes = {
   rating: PropTypes.number.isRequired,
   reviewsCount: PropTypes.number.isRequired,
   isWishList: PropTypes.bool,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  col: PropTypes.string
 };
 
 export default Product;
