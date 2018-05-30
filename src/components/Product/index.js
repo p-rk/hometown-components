@@ -39,7 +39,7 @@ const ProductWrapper = styled.div`
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount, onClick, isWishList, col
 }) => (
-  <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px">
+  <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px" pl="0.5rem" pr="0.5rem">
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
     <Link href="test">
       <ProgressiveImageSchemer src={image} minHeight="320px">
