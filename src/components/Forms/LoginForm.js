@@ -39,14 +39,14 @@ export default class LoginForm extends Component {
         />
         <Button size="block" btnType="primary" fontFamily="regular" height="42px" mt="1.5rem">
           {(loginResponse && !loginResponse.loggingIn) ? 'LOGIN' : 'Please wait...' }
-          {(loginResponse && loginResponse.loaded && loginResponse.isLoggedIn) && <p> Login Success ! </p> }
-          {(loginResponse
-            && !loginResponse.loggingIn
-            && ('loginError' in loginResponse)
-            && !loginResponse.isLoggedIn
-            && loginResponse.loginError.error === 'invalid_grant') ? <p>Invalid Credentials Provided !</p> : null
-          }
         </Button>
+        {(loginResponse && loginResponse.loaded && loginResponse.isLoggedIn) && <p> Login Success ! </p> }
+        {(loginResponse
+          && !loginResponse.loggingIn
+          && ('loginError' in loginResponse)
+          && !loginResponse.isLoggedIn
+          && loginResponse.loginError.error === 'invalid_grant') ? <p>Invalid Credentials Provided !</p> : null
+        }
       </form>
     );
   }
