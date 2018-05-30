@@ -37,7 +37,14 @@ export default class LoginForm extends Component {
           feedBackError={passwordFeedBackError}
           feedBackMessage={passwordFeedBackMessage}
         />
-        <Button size="block" btnType="primary" fontFamily="regular" height="42px" mt="1.5rem">
+        <Button
+          size="block"
+          btnType="primary"
+          fontFamily="regular"
+          height="42px"
+          mt="1.5rem"
+          disabled={loginResponse.loggingIn}
+        >
           {(loginResponse && !loginResponse.loggingIn) ? 'LOGIN' : 'Please wait...' }
         </Button>
         {(loginResponse && loginResponse.loaded && loginResponse.isLoggedIn) && <p> Login Success ! </p> }
