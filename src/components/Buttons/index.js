@@ -40,11 +40,9 @@ const btnType = (props, type) => {
       border: `${props.border}`
     },
     link: {
-      color: `${props.theme.colors.textExtraLight}`,
-      border: 'none'
-    },
-    wishlist: {
-
+      color: `${props.color}`,
+      border: 'none',
+      background: 'none'
     }
   };
 

@@ -25,7 +25,7 @@ Text.defaultProps = {
   fontSize: '0.875rem',
   textTransform: 'inherit',
   fontWeight: '400',
-  color: '0 0 0, 0.75',
+  color: 'rgba(0, 0, 0, 0.75)',
   ta: 'left',
   mt: '0.625rem',
   mb: '0.625rem',
