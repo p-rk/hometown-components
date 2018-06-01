@@ -55,7 +55,7 @@ export default class ProfileForm extends Component {
           fontFamily="regular"
           height="42px"
           mt="1.5rem"
-        >UPDATE INFORMATION</Button>
+        >UPDATE PROFILE</Button>
       </form>
     );
   }
