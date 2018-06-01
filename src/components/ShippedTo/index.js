@@ -6,7 +6,9 @@ import Heading from 'components/Heading';
 import Row from 'components/Row';
 import Text from 'components/Text';
 
-const ShippedTo = ({ shipDetails }) => (
+const ShippedTo = ({
+  name, address, city, pincode, state
+}) => (
   <Section mb="1.25rem" p="0">
     <Container type="container" pr="0" pl="0">
       <Row display="block" mr="0" ml="0" mb="0.3125rem">
@@ -15,17 +17,21 @@ const ShippedTo = ({ shipDetails }) => (
         </Heading>
       </Row>
       <Row display="block" mr="0" ml="0" >
-        <Text mb="0" mt="0.3125rem">{shipDetails.shipped_name}</Text>
-        <Text mb="0" mt="0.3125rem">{shipDetails.address},</Text>
-        <Text mb="0" mt="0.3125rem">{shipDetails.city}, {shipDetails.pincode}</Text>
-        <Text mb="0" mt="0.3125rem">{shipDetails.state}</Text>
+        <Text mb="0" mt="0.3125rem">{name}</Text>
+        <Text mb="0" mt="0.3125rem">{address},</Text>
+        <Text mb="0" mt="0.3125rem">{city}, {pincode}</Text>
+        <Text mb="0" mt="0.3125rem">{state}</Text>
       </Row>
     </Container>
   </Section>
 );
 
 ShippedTo.propTypes = {
-  shipDetails: PropTypes.array.isRequired
+  name: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  pincode: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired
 };
 
 export default ShippedTo;

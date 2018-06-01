@@ -9,11 +9,17 @@ const Label = styled.label`
   display: ${props => props.display};
   vertical-align: ${props => props.va};
 
+  ${props => props.bg && { background: props.bg }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}
   ${props => props.mb && { marginBottom: props.mb }}
   ${props => props.ml && { marginLeft: props.ml }}
+  ${props => props.p && { padding: props.p }}
+  ${props => props.pt && { paddingTop: props.pt }}
+  ${props => props.pr && { paddingRight: props.pr }}
+  ${props => props.pb && { paddingBottom: props.pb }}
+  ${props => props.pl && { paddingLeft: props.pl }}
 `;
 
 const FeedBackMessage = styled(Label)`
