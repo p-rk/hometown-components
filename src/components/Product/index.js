@@ -36,19 +36,27 @@ const ProductWrapper = styled.div`
   border: 1px solid #e6e6e6;
 `;
 
+const ImgWrapper = styled.div`
+  background: #FFF;
+  position: relative;
+  box-sizing: border-box;
+`;
+
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount, onClick, isWishList, col
 }) => (
   <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px" pl="0.5rem" pr="0.5rem">
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
     <Link href="test">
-      <ProgressiveImageSchemer src={image} minHeight="320px">
-        {imageURL => (<ProductImg
-          alt={name}
-          src={imageURL}
-          width="100%"
-        />)}
-      </ProgressiveImageSchemer>
+      <ImgWrapper>
+        <ProgressiveImageSchemer src={image} minHeight="320px">
+          {imageURL => (<ProductImg
+            alt={name}
+            src={imageURL}
+            width="100%"
+          />)}
+        </ProgressiveImageSchemer>
+      </ImgWrapper>
       <Div p="0.25rem 0.75rem">
         <Heading
           mb="0.4375rem"
