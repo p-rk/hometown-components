@@ -10,7 +10,6 @@ const types = {
 };
 
 const Span = styled.span`
-  vertical-align: middle;
   color: ${props => props.color};
   font-size: ${props => props.fontSize};
   text-align: ${props => props.ta};
@@ -19,6 +18,8 @@ const Span = styled.span`
 
   ${props => types[props.type]};
 
+  ${props => props.va && { verticalAlign: props.va }}
+  ${props => props.fontWeight && { fontWeight: props.fontWeight }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}
@@ -42,7 +43,7 @@ Span.defaultProps = {
   fontSize: '1em',
   ta: 'left',
   fontFamily: 'SFPDRegular',
-  verticalAlign: 'initial',
+  va: 'middle',
   float: 'none'
 };
 
