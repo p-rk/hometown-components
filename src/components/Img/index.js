@@ -5,6 +5,7 @@ const Img = styled.img`
   max-width: 100%;
 
   height: ${props => props.height};
+  width: ${props => props.width};
   float: ${props => props.float};
 
   ${props => props.ta && { textAlign: props.ta }}
@@ -22,7 +23,8 @@ const Img = styled.img`
 
 Img.defaultProps = {
   float: 'none',
-  height: 'auto'
+  height: 'auto',
+  width: 'inherit'
 };
 
 export default Img;
