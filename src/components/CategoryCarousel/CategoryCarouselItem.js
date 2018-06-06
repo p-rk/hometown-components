@@ -31,7 +31,7 @@ const CategoryCarouselItem = ({
         {imageURL => (<Img mb="5px" src={imageURL} alt={name} />)}
       </ProgressiveImageSchemer>
       <Div ta="left">
-        <Text fontSize="0.8rem" fontFamily="SFPDSemiBold" mt="5px" mb="0">{name}</Text>
+        <Text fontSize="1rem" fontFamily="SFPDSemiBold" mt="5px" mb="0">{name}</Text>
       </Div>
     </Redirect>
   </ProductCarouselLi>
