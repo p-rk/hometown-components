@@ -35,26 +35,28 @@ const ProductCarouselList = styled.ul`
   }
 `;
 
-const ProductCarousel = ({ itemData, colSize }) => (
+const ProductCarousel = ({
+  name, url, image, colSize
+}) => (
   <ProductCarouselWrapper>
     <ProductCarouselList>
-      {itemData.map(item => (
-        <ProductItem
-          key={item.id}
-          itemIndex={item.id}
-          itemData={item}
-          contentStatus
-          colSize={colSize}
-          typeOfSlider="catSlider"
-        />
-      ))}
+      <ProductItem
+        name={name}
+        url={url}
+        image={image}
+        contentStatus
+        colSize={colSize}
+        typeOfSlider="catSlider"
+      />
     </ProductCarouselList>
   </ProductCarouselWrapper>
 );
 
 ProductCarousel.propTypes = {
-  itemData: PropTypes.object.isRequired,
-  colSize: PropTypes.string.isRequired
+  colSize: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired
 };
 
 export default ProductCarousel;
