@@ -40,7 +40,7 @@ module.exports = {
     'ShippedTo/index': './src/components/ShippedTo/',
     'WishlistBtn/index': './src/components/WishlistBtn/',
     'CategoryCarousel/index': './src/components/CategoryCarousel/',
-    'CategoryCarousel/CategoryCarouselItem': './src/components/ProductCarousel/CategoryCarouselItem',
+    'CategoryCarousel/CategoryCarouselItem': './src/components/CategoryCarousel/CategoryCarouselItem',
     'PaymentMethod/index': './src/components/PaymentMethod/',
     'Alert/index': './src/components/Alert/',
     'ScreenLoader/index': './src/components/ScreenLoader/',
