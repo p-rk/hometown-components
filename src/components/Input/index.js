@@ -7,6 +7,7 @@ const Input = styled.input`
   background-color: ${props => props.backgroundColor};
   border: solid 1px ${props => props.borderColor};
   padding: 0 10px;
+  box-sizing: border-box;
   &:hover, &:focus {
     outline: none;
   }

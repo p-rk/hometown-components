@@ -40,11 +40,9 @@ const btnType = (props, type) => {
       border: `${props.border}`
     },
     link: {
-      color: `${props.theme.colors.textExtraLight}`,
-      border: 'none'
-    },
-    wishlist: {
-
+      color: `${props.color}`,
+      border: 'none',
+      background: 'none'
     }
   };
 
@@ -71,6 +69,7 @@ const Button = styled.button`
   ${props => sizes[props.size]};
   ${props => btnType(props, props.btnType)};
 
+  ${props => props.fontSize && { fontSize: props.fontSize }}
   ${props => props.height && { height: props.height }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
@@ -83,6 +82,7 @@ const Button = styled.button`
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
   ${props => props.fl && { float: props.fl }}
+  ${props => props.ls && { letterSpacing: props.ls }}
 
   &:hover {
     background: ${props => props.type === 'default' ? '#ae8873' : 'transparent'};

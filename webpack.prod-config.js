@@ -13,6 +13,7 @@ module.exports = {
     'InputField/index': './src/components/InputField/',
     'Label/index': './src/components/Label/',
     'Link/index': './src/components/Link/',
+    'Media/index': './src/components/Media/',
     'Pincode/index': './src/components/Pincode/',
     'Product/index': './src/components/Product/',
     'ProductInline/index': './src/components/ProductInline/',
@@ -27,6 +28,7 @@ module.exports = {
     'Forms/ProfileForm': './src/components/Forms/ProfileForm',
     'Forms/UpdatePasswordForm': './src/components/Forms/UpdatePasswordForm',
     'Forms/PaymentMethodForm': './src/components/Forms/PaymentMethodForm',
+    'Forms/FormInput': './src/components/Forms/FormInput',
     'ProductDetails/ColorOption': './src/components/ProductDetails/ColorOption',
     'ProductDetails/ProductDesc': './src/components/ProductDetails/ProductDesc',
     'ProductDetails/ServiceDetails': './src/components/ProductDetails/ServiceDetails',
@@ -39,6 +41,8 @@ module.exports = {
     'WishlistBtn/index': './src/components/WishlistBtn/',
     'ProductCarousel/index': './src/components/ProductCarousel/',
     'PaymentMethod/index': './src/components/PaymentMethod/',
+    'Alert/index': './src/components/Alert/',
+    'ScreenLoader/index': './src/components/ScreenLoader/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
@@ -77,6 +81,14 @@ module.exports = {
             limit: 8192
           }
         }]
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10240,
+          mimetype: 'image/svg+xml'
+        }
       }
     ]
   },
