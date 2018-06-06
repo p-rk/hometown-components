@@ -23,41 +23,32 @@ const Redirect = styled.a`
 `;
 
 const ProductItem = ({
-  itemData, contentStatus, typeOfSlider, colSize
+  image, name, url, contentStatus, typeOfSlider, colSize
 }) => (
   <ProductCarouselLi className={typeOfSlider} colSize={colSize}>
-    <Redirect href={itemData.url}>
-      {typeOfSlider !== 'menuSlider' && (
-        <ProgressiveImageSchemer src={itemData.image} minHeight="365">
-          {imageURL => (<Img mb="5px" src={imageURL} alt={itemData.title} />)}
-        </ProgressiveImageSchemer>
-      )
-      }
+    <Redirect href={url}>
+      <ProgressiveImageSchemer src={image} minHeight="365">
+        {imageURL => (<Img mb="5px" src={imageURL} alt={name} />)}
+      </ProgressiveImageSchemer>
       {contentStatus && (
         <Div ta="left">
-          <Text fontSize="0.8rem" fontFamily="SFPDSemiBold" mt="10px" mb="7px">{itemData.name}</Text>
+          <Text fontSize="0.8rem" fontFamily="SFPDSemiBold" mt="10px" mb="7px">{name}</Text>
         </Div>
       )}
     </Redirect>
   </ProductCarouselLi>
 );
 
-// ProductCarouselLi.defaultProps = {
-//   colSize: '100%'
-// };
-//
-// ProductCarouselLi.propTypes = {
-//   colSize: PropTypes.string,
-// };
-
 ProductItem.defaultProps = {
   colSize: '100%'
 };
 
 ProductItem.propTypes = {
-  itemData: PropTypes.object.isRequired,
   contentStatus: PropTypes.bool.isRequired,
   typeOfSlider: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
   colSize: PropTypes.string
 };
 
