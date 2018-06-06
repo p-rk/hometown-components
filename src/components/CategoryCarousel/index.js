@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import ProductItem from './ProductItem';
 
 const ProductCarouselWrapper = styled.div`
 
@@ -35,26 +34,18 @@ const ProductCarouselList = styled.ul`
   }
 `;
 
-const ProductCarousel = ({ itemData, colSize }) => (
+const ProductCarousel = ({
+  children
+}) => (
   <ProductCarouselWrapper>
     <ProductCarouselList>
-      {itemData.map(item => (
-        <ProductItem
-          key={item.id}
-          itemIndex={item.id}
-          itemData={item}
-          contentStatus
-          colSize={colSize}
-          typeOfSlider="catSlider"
-        />
-      ))}
+      {children}
     </ProductCarouselList>
   </ProductCarouselWrapper>
 );
 
 ProductCarousel.propTypes = {
-  itemData: PropTypes.object.isRequired,
-  colSize: PropTypes.string.isRequired
+  children: PropTypes.array.isRequired
 };
 
 export default ProductCarousel;
