@@ -9,8 +9,8 @@ import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
 const ProductCarouselLi = styled.li`
   width: 100%;
   margin-left: 15px;
-  flex: 0 0 calc(${props => props.colSize}% - 15px);
-  max-width: ${props => props.colSize}%;
+  flex: 0 0 calc(${props => props.colSize} - 15px);
+  max-width: ${props => props.colSize};
 
   @media (min-width: ${props => props.theme.breakpoints('md')}) {
     margin-left: 7.5px;
@@ -22,29 +22,26 @@ const Redirect = styled.a`
   display: block;
 `;
 
-const ProductItem = ({
-  image, name, url, contentStatus, typeOfSlider, colSize
+const CategoryCarouselItem = ({
+  image, name, url, typeOfSlider, colSize
 }) => (
   <ProductCarouselLi className={typeOfSlider} colSize={colSize}>
     <Redirect href={url}>
       <ProgressiveImageSchemer src={image} minHeight="365">
         {imageURL => (<Img mb="5px" src={imageURL} alt={name} />)}
       </ProgressiveImageSchemer>
-      {contentStatus && (
-        <Div ta="left">
-          <Text fontSize="0.8rem" fontFamily="SFPDSemiBold" mt="10px" mb="7px">{name}</Text>
-        </Div>
-      )}
+      <Div ta="left">
+        <Text fontSize="0.8rem" fontFamily="SFPDSemiBold" mt="10px" mb="7px">{name}</Text>
+      </Div>
     </Redirect>
   </ProductCarouselLi>
 );
 
-ProductItem.defaultProps = {
+CategoryCarouselItem.defaultProps = {
   colSize: '100%'
 };
 
-ProductItem.propTypes = {
-  contentStatus: PropTypes.bool.isRequired,
+CategoryCarouselItem.propTypes = {
   typeOfSlider: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -52,4 +49,4 @@ ProductItem.propTypes = {
   colSize: PropTypes.string
 };
 
-export default ProductItem;
+export default CategoryCarouselItem;
