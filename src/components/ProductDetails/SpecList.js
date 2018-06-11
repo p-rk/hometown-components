@@ -28,7 +28,7 @@ class SpecList extends Component {
               pb="0.625rem"
               color="text"
               fontSize="1.25em"
-              fontFamily="SFPDLight"
+              fontFamily="300"
             >
               {specName}
               <Button

@@ -78,10 +78,10 @@ const lineHeights = [
 
 // Font Family
 const fontFamily = {
-  light: 'SFPDLight',
-  regular: 'SFPDRegular',
-  medium: 'SFPDMedium',
-  semibold: 'SFPDSemiBold'
+  light: '300',
+  regular: '400',
+  medium: '600',
+  semibold: '700'
 };
 
 const letterSpacings = {

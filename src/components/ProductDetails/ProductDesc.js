@@ -16,7 +16,7 @@ const ProductDesc = ({ desc }) => (
             mt="0rem"
             color="text"
             fontSize="1.25em"
-            fontFamily="SFPDLight"
+            fontFamily="300"
           >Description</Heading>
           <Text fontSize="1rem">{desc}</Text>
         </Div>

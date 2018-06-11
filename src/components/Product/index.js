@@ -61,11 +61,11 @@ const Product = ({
         <Heading
           mb="0.4375rem"
           color={Theme.colors.text}
-          fontFamily="SFPDSemiBold"
+          fontFamily="700"
           fontSize="1rem"
         >{name}</Heading>
         <Div mb="0.25rem">
-          <Span mr="0.625rem" color={Theme.colors.textDark} fontFamily="SFPDSemiBold">{price}</Span>
+          <Span mr="0.625rem" color={Theme.colors.textDark} fontFamily="700">{price}</Span>
           <Span mr="0.625rem" fontSize="0.9rem"><s>{cutprice}</s></Span>
           { saving &&
             <Span>
