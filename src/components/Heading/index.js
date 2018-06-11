@@ -6,7 +6,7 @@ const Heading = styled.h4`
   text-overflow: ellipsis;
 
   font-size: ${props => props.fontSize};
-  font-weight: ${props => props.fontFamily};
+  font-weight: ${props => props.fontWeight};
   line-height: ${props => props.lh};
   color: ${props => props.theme.colors[props.color]};
 
@@ -25,7 +25,7 @@ const Heading = styled.h4`
 
 Heading.defaultProps = {
   fontSize: '1.5rem',
-  fontFamily: '400',
+  fontWeight: '400',
   mt: '0.625em',
   mb: '0.625em',
   lh: '1.2',

@@ -27,7 +27,7 @@ const ProductInline = ({
             mb="0.4375rem"
             mt="0"
             color={Theme.colors.text}
-            fontFamily="700"
+            fontWeight="700"
             fontSize="1.1rem"
             lh="1.3"
           >{itemData.name}</Heading>
@@ -37,7 +37,7 @@ const ProductInline = ({
                 mr="0.625rem"
                 fontSize="0.9rem"
                 color={Theme.colors.textDark}
-                fontFamily="700"
+                fontWeight="700"
               >Rs. {itemData.disc_price}</Span>
               <Span mr="0.625rem" fontSize="0.9rem">Rs. {itemData.price}</Span>
             </Text>

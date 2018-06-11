@@ -13,7 +13,7 @@ const Span = styled.span`
   color: ${props => props.color};
   font-size: ${props => props.fontSize};
   text-align: ${props => props.ta};
-  font-weight: ${props => props.fontFamily};
+  font-weight: ${props => props.fontWeight};
   float: ${props => props.float};
 
   ${props => types[props.type]};
@@ -42,7 +42,7 @@ Span.defaultProps = {
   color: 'rgba(0, 0, 0, 0.6)',
   fontSize: '1em',
   ta: 'left',
-  fontFamily: '400',
+  fontWeight: '400',
   va: 'middle',
   float: 'none'
 };

@@ -14,7 +14,7 @@ const Reviews = ({ reviewItems }) => (
         color="textDark"
         mb="0.9375rem"
         mt="0px"
-        fontFamily="300"
+        fontWeight="300"
       >
       Product Reviews
       </Heading>

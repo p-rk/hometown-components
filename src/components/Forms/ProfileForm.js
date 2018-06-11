@@ -52,7 +52,7 @@ export default class ProfileForm extends Component {
         <Button
           size="block"
           btnType="primary"
-          fontFamily="regular"
+          fontWeight="regular"
           height="42px"
           mt="1.5rem"
         >UPDATE PROFILE</Button>
