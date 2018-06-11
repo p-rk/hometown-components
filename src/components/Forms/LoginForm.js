@@ -42,7 +42,7 @@ export default class LoginForm extends Component {
           btnType="primary"
           fontFamily="regular"
           height="42px"
-          mt="1.5rem"
+          mt="1.25rem"
           disabled={loginResponse.loggingIn}
         >
           {(loginResponse && !loginResponse.loggingIn) ? 'LOGIN' : 'Please wait...' }

@@ -24,6 +24,9 @@ const Label = styled.label`
 
 const FeedBackMessage = styled(Label)`
   color: ${props => props.theme.colors[props.type]};
+  font-size: 13px;
+  margin-bottom: 0;
+  font-family: SFPDRegular;
 `;
 
 Label.defaultProps = {
