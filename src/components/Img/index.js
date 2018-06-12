@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const Img = styled.img`
-  display: block;
   max-width: 100%;
 
+  display: ${props => props.display};
   height: ${props => props.height};
   width: ${props => props.width};
   float: ${props => props.float};
@@ -24,6 +24,7 @@ const Img = styled.img`
 Img.defaultProps = {
   float: 'none',
   height: 'auto',
+  display: 'block',
   width: 'inherit'
 };
 
