@@ -103,7 +103,8 @@ Button.defaultProps = {
   btnType: 'default',
   border: '1px solid',
   fontWeight: 'medium',
-  lh: '1.5'
+  lh: '1.5',
+  bc: 'transparent'
 };
 
 export default Button;
