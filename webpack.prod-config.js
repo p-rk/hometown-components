@@ -27,6 +27,7 @@ module.exports = {
     'Theme/index': './src/components/Theme/',
     'Forms/LoginForm': './src/components/Forms/LoginForm',
     'Forms/SignupForm': './src/components/Forms/SignupForm',
+    'Forms/ForgotPasswordForm': './src/components/Forms/ForgotPasswordForm',
     'Forms/ProfileForm': './src/components/Forms/ProfileForm',
     'Forms/UpdatePasswordForm': './src/components/Forms/UpdatePasswordForm',
     'Forms/PaymentMethodForm': './src/components/Forms/PaymentMethodForm',
