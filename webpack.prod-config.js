@@ -28,6 +28,7 @@ module.exports = {
     'Forms/LoginForm': './src/components/Forms/LoginForm',
     'Forms/SignupForm': './src/components/Forms/SignupForm',
     'Forms/ForgotPasswordForm': './src/components/Forms/ForgotPasswordForm',
+    'Forms/ResetPasswordForm': './src/components/Forms/ResetPasswordForm',
     'Forms/ProfileForm': './src/components/Forms/ProfileForm',
     'Forms/UpdatePasswordForm': './src/components/Forms/UpdatePasswordForm',
     'Forms/PaymentMethodForm': './src/components/Forms/PaymentMethodForm',
