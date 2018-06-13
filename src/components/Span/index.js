@@ -19,7 +19,6 @@ const Span = styled.span`
   ${props => types[props.type]};
 
   ${props => props.va && { verticalAlign: props.va }}
-  ${props => props.fontWeight && { fontWeight: props.fontWeight }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}

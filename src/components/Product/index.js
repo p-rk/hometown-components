@@ -33,7 +33,8 @@ const ProductWrapper = styled.div`
   margin-left: 0;
   display: initial;
   box-sizing: border-box;
-  border: 1px solid #e6e6e6;
+  box-shadow: 0 3px 6px 0 rgba(8, 8, 8, 0.12);
+  // border: 1px solid #e6e6e6;
 `;
 
 const ImgWrapper = styled.div`
@@ -61,21 +62,21 @@ const Product = ({
         <Heading
           mb="0.4375rem"
           color={Theme.colors.text}
-          fontWeight="700"
-          fontSize="1rem"
+          fontWeight="400"
+          fontSize="0.875em"
         >{name}</Heading>
         <Div mb="0.25rem">
-          <Span mr="0.625rem" color={Theme.colors.textDark} fontWeight="700">{price}</Span>
-          <Span mr="0.625rem" fontSize="0.9rem"><s>{cutprice}</s></Span>
+          <Span mr="0.625rem" color={Theme.colors.textDark} fontSize="0.875em" fontWeight="600">{price}</Span>
+          <Span mr="0.625rem" fontSize="0.75em"><s>{cutprice}</s></Span>
           { saving &&
-            <Span>
+            <Span fontSize="0.75rem" fontWeight="600">
               Savings Rs. {savingAmount}
-              <Span mr="0.625rem" fontSize="0.9rem"> ({saving.replace('-', '')} OFF)</Span>
+              <Span mr="0.625rem"> ({saving.replace('-', '')} OFF)</Span>
             </Span> }
         </Div>
         {rating > 0 && (
           <Div>
-            <Span color={Theme.colors.primary} fontSize="1rem" mr="0.3125em">★</Span>
+            <Span color={Theme.colors.primary} fontSize="1em" mr="0.3125em">★</Span>
             <Span>{rating} ({reviewsCount})</Span>
           </Div>
         )}
