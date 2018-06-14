@@ -8,7 +8,7 @@ import Text from 'components/Text';
 
 const ReviewsItems = ({ review }) => (
   <Row display="block" m="0" mb="0.9375rem">
-    <Heading fontSize="0.875rem" color="secondary" mb="0.3125rem" mt="0px" fontFamily="SFPDMedium">
+    <Heading fontSize="0.875rem" color="secondary" mb="0.3125rem" mt="0px" fontWeight="600">
       {review.name}
     </Heading>
     <Div>

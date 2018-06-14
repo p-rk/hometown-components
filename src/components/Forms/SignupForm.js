@@ -49,7 +49,13 @@ export default class SignupForm extends Component {
           feedBackError={passwordFeedBackError}
           feedBackMessage={passwordFeedBackMessage}
         />
-        <Button size="block" btnType="primary" fontFamily="regular" height="42px" mt="1.5rem">LOGIN</Button>
+        <Button
+          size="block"
+          btnType="primary"
+          fontWeight="regular"
+          height="42px"
+          mt="1.25rem"
+        >LOGIN</Button>
       </form>
     );
   }

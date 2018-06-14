@@ -8,9 +8,9 @@ const Section = styled.section`
   background: ${props => props.theme.colors[props.bg]};
   box-shadow: ${props => props.boxShadow};
   height: ${props => props.height};
-  overflow: auto;
   position: relative;
 
+  ${props => props.of && { overflow: props.of }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}

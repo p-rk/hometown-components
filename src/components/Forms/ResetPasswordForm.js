@@ -3,17 +3,13 @@ import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
 import FormInput from './FormInput';
 
-export default class UpdateProfileForm extends Component {
+export default class ResetPasswordForm extends Component {
   render() {
     const {
-      oldPwd,
       newPwd,
       confirmPwd,
-      onChangeOldPwd,
       onChangeNewPwd,
       onChangeConfirmPwd,
-      oldPwdFeedBackError,
-      oldPwdFeedBackMessage,
       newPwdFeedBackError,
       newPwdFeedBackMessage,
       confirmPwdFeedBackError,
@@ -22,15 +18,6 @@ export default class UpdateProfileForm extends Component {
     } = this.props;
     return (
       <form onSubmit={onSubmitUpdatePassword}>
-        <FormInput
-          label="Old Password"
-          type="password"
-          placeholder=""
-          onChange={onChangeOldPwd}
-          value={oldPwd}
-          feedBackError={oldPwdFeedBackError}
-          feedBackMessage={oldPwdFeedBackMessage}
-        />
         <FormInput
           label="New Password"
           type="password"
@@ -55,38 +42,30 @@ export default class UpdateProfileForm extends Component {
           fontWeight="regular"
           height="42px"
           mt="1.5rem"
-        >UPDATE PASSWORD</Button>
+        >RESET PASSWORD</Button>
       </form>
     );
   }
 }
 
-UpdateProfileForm.defaultProps = {
-  oldPwd: '',
+ResetPasswordForm.defaultProps = {
   newPwd: '',
   confirmPwd: '',
-  oldPwdFeedBackError: false,
-  oldPwdFeedBackMessage: '',
   confirmPwdFeedBackError: false,
   confirmPwdFeedBackMessage: '',
   newPwdFeedBackError: false,
   newPwdFeedBackMessage: '',
-  onChangeOldPwd: () => {},
   onChangeNewPwd: () => {},
   onChangeConfirmPwd: () => {},
   onSubmitUpdatePassword: () => {}
 };
 
-UpdateProfileForm.propTypes = {
-  onChangeOldPwd: PropTypes.func,
+ResetPasswordForm.propTypes = {
   onChangeNewPwd: PropTypes.func,
   onChangeConfirmPwd: PropTypes.func,
   onSubmitUpdatePassword: PropTypes.func,
-  oldPwd: PropTypes.string,
   newPwd: PropTypes.string,
   confirmPwd: PropTypes.string,
-  oldPwdFeedBackError: PropTypes.bool,
-  oldPwdFeedBackMessage: PropTypes.string,
   newPwdFeedBackError: PropTypes.bool,
   newPwdFeedBackMessage: PropTypes.string,
   confirmPwdFeedBackError: PropTypes.bool,

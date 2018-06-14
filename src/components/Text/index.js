@@ -3,12 +3,11 @@ import styled from 'styled-components';
 const Text = styled.p`
   font-size: ${props => props.fontSize};
   text-transform: ${props => props.textTransform};
-  font-weight: ${props => props.fontWeight};
   color: ${props => props.color};
   text-align: ${props => props.ta};
   line-height: ${props => props.lh};
 
-  ${props => props.fontFamily && { fontFamily: props.fontFamily }}
+  ${props => props.fontWeight && { fontWeight: props.fontWeight }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}

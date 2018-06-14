@@ -29,6 +29,7 @@ const Div = styled.div`
 
   ${props => display(props, props.display)};
 
+  ${props => props.bg && { background: props.bg }}
   ${props => props.ta && { textAlign: props.ta }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}

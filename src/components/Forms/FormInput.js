@@ -7,7 +7,7 @@ import { Label, FeedBackMessage } from 'components/Label';
 const FormInput = ({
   label, type, placeholder, onChange, value, feedBackMessage, feedBackError
 }) => (
-  <InputField>
+  <InputField mb="0.625rem">
     <Label fontSize="0.875em" mb="0.625rem">{label}</Label>
     <Input
       type={type}
