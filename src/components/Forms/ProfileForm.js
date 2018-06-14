@@ -19,7 +19,11 @@ export default class ProfileForm extends Component {
       fullNameFeedBackError,
       fullNameFeedBackMessage,
       onSubmitProfile,
+      response
     } = this.props;
+    const {
+      loading, loaded, error, errorMessage, profileUpdated
+    } = response;
     return (
       <form onSubmit={onSubmitProfile}>
         <FormInput
@@ -55,7 +59,20 @@ export default class ProfileForm extends Component {
           fontWeight="regular"
           height="42px"
           mt="1.5rem"
-        >UPDATE PROFILE</Button>
+          disabled={loading}
+        >
+          {(response && !loading) ? 'UPDATE PROFILE' : 'Please wait...' }
+        </Button>
+        {(response
+          && loaded && profileUpdated) && <p> Profile Updated ! </p> }
+        {(error && !loaded) &&
+          <div>
+            {(errorMessage.email) && <p> Invalid Email </p>}
+            {(errorMessage.mobile) && <p> Invalid Mobile Number </p>}
+            {(errorMessage.full_name) && <p> Password should be 8 characters </p>}
+            {(errorMessage.error_message) && <p> Something went wrong !</p>}
+          </div>
+        }
       </form>
     );
   }
@@ -74,7 +91,8 @@ ProfileForm.defaultProps = {
   onChangeEmail: () => {},
   onChangePhone: () => {},
   onChangeFullName: () => {},
-  onSubmitProfile: () => {}
+  onSubmitProfile: () => {},
+  response: {}
 };
 
 ProfileForm.propTypes = {
@@ -90,5 +108,6 @@ ProfileForm.propTypes = {
   phoneFeedBackError: PropTypes.bool,
   phoneFeedBackMessage: PropTypes.string,
   fullNameFeedBackError: PropTypes.bool,
-  fullNameFeedBackMessage: PropTypes.string
+  fullNameFeedBackMessage: PropTypes.string,
+  response: PropTypes.object
 };
