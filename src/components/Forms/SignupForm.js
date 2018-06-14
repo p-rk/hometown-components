@@ -21,6 +21,9 @@ export default class SignupForm extends Component {
       onSubmitSignup,
       signUpResponse
     } = this.props;
+    const {
+      loading, loaded, error, errorMessage, signUpSuccess
+    } = signUpResponse;
     return (
       <form onSubmit={onSubmitSignup}>
         <FormInput
@@ -58,18 +61,18 @@ export default class SignupForm extends Component {
           mt="1.25rem"
           disabled={signUpResponse.loading}
         >
-          {(signUpResponse && !signUpResponse.loading) ? 'REGISTER' : 'Please wait...' }
+          {(signUpResponse && !loading) ? 'REGISTER' : 'Please wait...' }
         </Button>
         {(signUpResponse
-          && signUpResponse.loaded && signUpResponse.signUpSuccess) && <p> Registered SuccessFully ! </p> }
-        {(signUpResponse && !signUpResponse.loaded && signUpResponse.signUpError.email) && <p> Invalid Email </p> }
-        {(signUpResponse
-          && !signUpResponse.loaded && signUpResponse.signUpError.mobile) && <p> Invalid Mobile Number </p> }
-        {(signUpResponse
-          && !signUpResponse.loaded
-          && signUpResponse.signUpError.password) && <p> Password should be 8 characters </p> }
-        {(signUpResponse
-          && !signUpResponse.loaded && signUpResponse.signUpError.error_message) && <p> Account already exists. </p> }
+          && loaded && signUpSuccess) && <p> Registered SuccessFully ! </p> }
+        {(error && !loaded) &&
+          <div>
+            {(errorMessage.email) && <p> Invalid Email </p>}
+            {(errorMessage.mobile) && <p> Invalid Mobile Number </p>}
+            {(errorMessage.password) && <p> Password should be 8 characters </p>}
+            {(errorMessage.error_message) && <p> Account already exists.</p>}
+          </div>
+        }
       </form>
     );
   }
@@ -89,7 +92,14 @@ SignupForm.defaultProps = {
   onChangePhone: () => {},
   onChangePassword: () => {},
   onSubmitSignup: () => {},
-  signUpResponse: {}
+  signUpResponse: {
+    errorMessage: {
+      email: null,
+      password: null,
+      mobile: null,
+      error_message: null
+    }
+  }
 };
 
 SignupForm.propTypes = {
@@ -106,5 +116,5 @@ SignupForm.propTypes = {
   phoneFeedBackMessage: PropTypes.string,
   passwordFeedBackError: PropTypes.bool,
   passwordFeedBackMessage: PropTypes.string,
-  signUpResponse: PropTypes.object
+  signUpResponse: PropTypes.object,
 };
