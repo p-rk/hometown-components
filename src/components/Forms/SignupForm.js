@@ -59,7 +59,7 @@ export default class SignupForm extends Component {
           fontWeight="regular"
           height="42px"
           mt="1.25rem"
-          disabled={signUpResponse.loading}
+          disabled={loading}
         >
           {(signUpResponse && !loading) ? 'REGISTER' : 'Please wait...' }
         </Button>
