@@ -34,6 +34,7 @@ const ProductWrapper = styled.div`
   display: initial;
   box-sizing: border-box;
   box-shadow: 0 3px 6px 0 rgba(8, 8, 8, 0.12);
+  background: #FFF;
   // border: 1px solid #e6e6e6;
 `;
 
@@ -41,6 +42,15 @@ const ImgWrapper = styled.div`
   background: #FFF;
   position: relative;
   box-sizing: border-box;
+`;
+
+const Rating = styled.span`
+  margin-right: 0.3125rem;
+  background: #fa1b36;
+  color: #FFF;
+  font-size: 11px;
+  padding: 2px 5px;
+  vertical-align: text-bottom;
 `;
 
 const Product = ({
@@ -58,7 +68,7 @@ const Product = ({
           />)}
         </ProgressiveImageSchemer>
       </ImgWrapper>
-      <Div p="0.25rem 0.75rem">
+      <Div p="0.25rem 0.75rem 0.5rem">
         <Heading
           mb="0.4375rem"
           color={Theme.colors.text}
@@ -76,8 +86,8 @@ const Product = ({
         </Div>
         {rating > 0 && (
           <Div>
-            <Span color={Theme.colors.primary} fontSize="1em" mr="0.3125em">★</Span>
-            <Span>{rating} ({reviewsCount})</Span>
+            <Rating>★ {rating}</Rating>
+            <Span color={Theme.colors.textExtraLight}>({reviewsCount})</Span>
           </Div>
         )}
       </Div>

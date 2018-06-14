@@ -11,7 +11,7 @@ const EmptyPageContainer = styled.div`
   width: 100%;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     background: ${props => props.bg};
-    height: calc(100vh - 99px);
+    height: calc(100vh - 55px);
   }
 `;
 
@@ -41,6 +41,10 @@ const Btn = styled.a`
   @media (min-width: ${props => props.theme.breakpoints('sm')}) {
     padding: 0.625rem 2.5rem;
     font-size: 1rem;
+  }
+  &:hover {
+    background: ${props => props.theme.colors.primary};
+    color: #FFF;
   }
 `;
 
