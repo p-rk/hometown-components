@@ -19,7 +19,11 @@ export default class SignupForm extends Component {
       passwordFeedBackError,
       passwordFeedBackMessage,
       onSubmitSignup,
+      signUpResponse
     } = this.props;
+    const {
+      loading, loaded, error, errorMessage, signUpSuccess
+    } = signUpResponse;
     return (
       <form onSubmit={onSubmitSignup}>
         <FormInput
@@ -55,7 +59,20 @@ export default class SignupForm extends Component {
           fontWeight="regular"
           height="42px"
           mt="1.25rem"
-        >LOGIN</Button>
+          disabled={loading}
+        >
+          {(signUpResponse && !loading) ? 'REGISTER' : 'Please wait...' }
+        </Button>
+        {(signUpResponse
+          && loaded && signUpSuccess) && <p> Registered SuccessFully ! </p> }
+        {(error && !loaded) &&
+          <div>
+            {(errorMessage.email) && <p> Invalid Email </p>}
+            {(errorMessage.mobile) && <p> Invalid Mobile Number </p>}
+            {(errorMessage.password) && <p> Password should be 8 characters </p>}
+            {(errorMessage.error_message) && <p> Account already exists.</p>}
+          </div>
+        }
       </form>
     );
   }
@@ -74,7 +91,15 @@ SignupForm.defaultProps = {
   onChangeEmail: () => {},
   onChangePhone: () => {},
   onChangePassword: () => {},
-  onSubmitSignup: () => {}
+  onSubmitSignup: () => {},
+  signUpResponse: {
+    errorMessage: {
+      email: null,
+      password: null,
+      mobile: null,
+      error_message: null
+    }
+  }
 };
 
 SignupForm.propTypes = {
@@ -90,5 +115,6 @@ SignupForm.propTypes = {
   phoneFeedBackError: PropTypes.bool,
   phoneFeedBackMessage: PropTypes.string,
   passwordFeedBackError: PropTypes.bool,
-  passwordFeedBackMessage: PropTypes.string
+  passwordFeedBackMessage: PropTypes.string,
+  signUpResponse: PropTypes.object,
 };
