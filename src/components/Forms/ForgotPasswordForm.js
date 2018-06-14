@@ -34,12 +34,9 @@ export default class ForgotPasswordForm extends Component {
         >
           {(forgotResponse && !forgotResponse.loggingIn) ? 'SUBMIT' : 'Please wait...' }
         </Button>
-        {(forgotResponse && forgotResponse.loaded && forgotResponse.isLoggedIn) && <p> Login Success ! </p> }
         {(forgotResponse
           && !forgotResponse.loggingIn
-          && ('loginError' in forgotResponse)
-          && !forgotResponse.isLoggedIn
-          && forgotResponse.loginError.error === 'invalid_grant') ? <p>Invalid Credentials Provided !</p> : null
+          && forgotResponse.error) ? <p>Some Error Happened, Please Try Again</p> : null
         }
       </form>
     );
