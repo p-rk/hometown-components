@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
+import { FeedBackMessage } from 'components/Label';
 import FormInput from './FormInput';
 
 export default class SignupForm extends Component {
@@ -64,13 +65,28 @@ export default class SignupForm extends Component {
           {(signUpResponse && !loading) ? 'REGISTER' : 'Please wait...' }
         </Button>
         {(signUpResponse
-          && loaded && signUpSuccess) && <p> Registered SuccessFully ! </p> }
+          && loaded && signUpSuccess) &&
+          <FeedBackMessage
+            type="success"
+            ta="center"
+            fontSize="0.875rem"
+            mt="1rem"
+            display="block"
+          > Registered SuccessFully ! </FeedBackMessage> }
         {(error && !loaded) &&
           <div>
-            {(errorMessage.email) && <p> Invalid Email </p>}
-            {(errorMessage.mobile) && <p> Invalid Mobile Number </p>}
-            {(errorMessage.password) && <p> Password should be 8 characters </p>}
-            {(errorMessage.error_message) && <p> Account already exists.</p>}
+            <FeedBackMessage
+              type="error"
+              ta="center"
+              fontSize="0.875rem"
+              mt="1rem"
+              display="block"
+            >
+              {(errorMessage.email) && <p> Invalid Email </p>}
+              {(errorMessage.mobile) && <p> Invalid Mobile Number </p>}
+              {(errorMessage.password) && <p> Password should be 8 characters </p>}
+              {(errorMessage.error_message) && <p> Account already exists.</p>}
+            </FeedBackMessage>
           </div>
         }
       </form>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
+import { FeedBackMessage } from 'components/Label';
 import FormInput from './FormInput';
 
 export default class ProfileForm extends Component {
@@ -64,13 +65,28 @@ export default class ProfileForm extends Component {
           {(response && !loading) ? 'UPDATE PROFILE' : 'Please wait...' }
         </Button>
         {(response
-          && loaded && profileUpdated) && <p> Profile Updated ! </p> }
+          && loaded && profileUpdated) &&
+          <FeedBackMessage
+            type="success"
+            ta="center"
+            fontSize="0.875rem"
+            mt="1rem"
+            display="block"
+          > Profile Updated ! </FeedBackMessage> }
         {(error && !loaded) &&
           <div>
-            {(errorMessage.email) && <p> Invalid Email </p>}
-            {(errorMessage.mobile) && <p> Invalid Mobile Number </p>}
-            {(errorMessage.full_name) && <p> Password should be 8 characters </p>}
-            {(errorMessage.error_message) && <p> Something went wrong !</p>}
+            <FeedBackMessage
+              type="error"
+              ta="center"
+              fontSize="0.875rem"
+              mt="1rem"
+              display="block"
+            >
+              {(errorMessage.email) && 'Invalid Email'}
+              {(errorMessage.mobile) && 'Invalid Mobile Number'}
+              {(errorMessage.full_name) && 'Password should be 8 characters'}
+              {(errorMessage.error_message) && 'Something went wrong !'}
+            </FeedBackMessage>
           </div>
         }
       </form>
