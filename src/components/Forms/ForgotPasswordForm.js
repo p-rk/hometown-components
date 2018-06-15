@@ -14,6 +14,7 @@ export default class ForgotPasswordForm extends Component {
       onSubmitForgot,
       forgotResponse
     } = this.props;
+    const { loading, error } = forgotResponse;
     return (
       <form onSubmit={onSubmitForgot}>
         <FormInput
@@ -31,28 +32,19 @@ export default class ForgotPasswordForm extends Component {
           fontWeight="regular"
           height="42px"
           mt="1.25rem"
-          disabled={forgotResponse.loggingIn}
+          disabled={loading}
         >
-          {(forgotResponse && !forgotResponse.loggingIn) ? 'SUBMIT' : 'Please wait...' }
+          {(forgotResponse && !loading) ? 'SUBMIT' : 'Please wait...' }
         </Button>
-        {(forgotResponse && forgotResponse.loaded && forgotResponse.isLoggedIn) && <FeedBackMessage
-          type="success"
-          ta="center"
-          fontSize="0.875rem"
-          mt="1rem"
-          display="block"
-        > Login Success ! </FeedBackMessage> }
         {(forgotResponse
-          && !forgotResponse.loggingIn
-          && ('loginError' in forgotResponse)
-          && !forgotResponse.isLoggedIn
-          && forgotResponse.loginError.error === 'invalid_grant') ? <FeedBackMessage
+          && !loading
+          && error) ? <FeedBackMessage
             type="error"
             ta="center"
             fontSize="0.875rem"
             mt="1rem"
             display="block"
-          >Invalid Credentials Provided !</FeedBackMessage> : null
+          >Some Error Happened, Please Try Again</FeedBackMessage> : null
         }
       </form>
     );
