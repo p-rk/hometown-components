@@ -13,6 +13,7 @@ export default class ForgotPasswordForm extends Component {
       onSubmitForgot,
       forgotResponse
     } = this.props;
+    const { loading, error } = forgotResponse;
     return (
       <form onSubmit={onSubmitForgot}>
         <FormInput
@@ -30,13 +31,13 @@ export default class ForgotPasswordForm extends Component {
           fontWeight="regular"
           height="42px"
           mt="1.25rem"
-          disabled={forgotResponse.loggingIn}
+          disabled={loading}
         >
-          {(forgotResponse && !forgotResponse.loggingIn) ? 'SUBMIT' : 'Please wait...' }
+          {(forgotResponse && !loading) ? 'SUBMIT' : 'Please wait...' }
         </Button>
         {(forgotResponse
-          && !forgotResponse.loggingIn
-          && forgotResponse.error) ? <p>Some Error Happened, Please Try Again</p> : null
+          && !loading
+          && error) ? <p>Some Error Happened, Please Try Again</p> : null
         }
       </form>
     );
