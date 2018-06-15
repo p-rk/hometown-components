@@ -5,7 +5,7 @@ import Fav from 'components/Icons/Fav';
 
 const WishlistBtn = ({ onClick, isWishList }) => (
   <Button onClick={onClick} p="0" border="none" className="wishListBtn">
-    <Fav width={32} height={32} fill={isWishList ? '#FF5722' : '#7f7f7f'} />
+    <Fav width={32} height={32} fill={isWishList ? '#ae8873' : '#c2c2c2'} />
   </Button>
 );
 

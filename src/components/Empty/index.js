@@ -11,7 +11,7 @@ const EmptyPageContainer = styled.div`
   width: 100%;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     background: ${props => props.bg};
-    height: calc(100vh - 99px);
+    height: calc(100vh - 55px);
   }
 `;
 
@@ -25,6 +25,11 @@ const EmptyPageWrapper = styled.div`
     padding-top: 4%;
     padding-bottom: 5%;
   }
+  h4 {
+    @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+      font-size: 1.4rem !important;
+    }
+  }
 `;
 
 const Btn = styled.a`
@@ -37,6 +42,10 @@ const Btn = styled.a`
     padding: 0.625rem 2.5rem;
     font-size: 1rem;
   }
+  &:hover {
+    background: ${props => props.theme.colors.primary};
+    color: #FFF;
+  }
 `;
 
 const EmptyPages = ({
@@ -47,7 +56,7 @@ const EmptyPages = ({
       <Row m="0">
         <Div>
           {children}
-          <Heading color="text" fontWeight="700" fontSize="2rem" mb="1.25rem">{title}</Heading>
+          <Heading color="text" fontWeight="700" fontSize="2rem" mb="1.25rem" mt="1rem">{title}</Heading>
           <Text ta="center" fontSize="1.25rem" color="rgba(93, 91, 91, 0.75)" mb="1rem">{subTitle}</Text>
         </Div>
         <Div mt="1rem">

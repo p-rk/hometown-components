@@ -10,6 +10,7 @@ const Section = styled.section`
   height: ${props => props.height};
   position: relative;
 
+  ${props => props.minHeight && { minHeight: props.minHeight }}
   ${props => props.of && { overflow: props.of }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}

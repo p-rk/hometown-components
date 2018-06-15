@@ -19,7 +19,12 @@ export default class UpdateProfileForm extends Component {
       confirmPwdFeedBackError,
       confirmPwdFeedBackMessage,
       onSubmitUpdatePassword,
+      response
     } = this.props;
+    const {
+      loading, loaded, error, errorMessage, passwordUpdated
+    } = response;
+    console.log(response);
     return (
       <form onSubmit={onSubmitUpdatePassword}>
         <FormInput
@@ -55,7 +60,20 @@ export default class UpdateProfileForm extends Component {
           fontWeight="regular"
           height="42px"
           mt="1.5rem"
-        >UPDATE PASSWORD</Button>
+          disabled={loading}
+        >
+          {(response && !loading) ? 'UPDATE PASSWORD' : 'Please wait...' }
+        </Button>
+        {(response
+          && loaded && passwordUpdated) && <p> Password Updated ! </p> }
+        {(error && !loaded) &&
+          <div>
+            {(errorMessage.new_password) && <p> Invalid new password ! </p>}
+            {(errorMessage.current_password) && <p> Invalid Current Password ! </p>}
+            {(errorMessage.repeat_password) && <p> Confirm password not match ! </p>}
+            {(errorMessage.error_message) && <p> Something went wrong !</p>}
+          </div>
+        }
       </form>
     );
   }
@@ -74,7 +92,8 @@ UpdateProfileForm.defaultProps = {
   onChangeOldPwd: () => {},
   onChangeNewPwd: () => {},
   onChangeConfirmPwd: () => {},
-  onSubmitUpdatePassword: () => {}
+  onSubmitUpdatePassword: () => {},
+  response: {}
 };
 
 UpdateProfileForm.propTypes = {
@@ -90,5 +109,6 @@ UpdateProfileForm.propTypes = {
   newPwdFeedBackError: PropTypes.bool,
   newPwdFeedBackMessage: PropTypes.string,
   confirmPwdFeedBackError: PropTypes.bool,
-  confirmPwdFeedBackMessage: PropTypes.string
+  confirmPwdFeedBackMessage: PropTypes.string,
+  response: PropTypes.object
 };
