@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
+import { FeedBackMessage } from 'components/Label';
 import FormInput from './FormInput';
 
 export default class LoginForm extends Component {
@@ -47,12 +48,28 @@ export default class LoginForm extends Component {
         >
           {(loginResponse && !loginResponse.loggingIn) ? 'LOGIN' : 'Please wait...' }
         </Button>
-        {(loginResponse && loginResponse.loaded && loginResponse.isLoggedIn) && <p> Login Success ! </p> }
+        {(loginResponse && loginResponse.loaded && loginResponse.isLoggedIn) &&
+          <FeedBackMessage
+            type="success"
+            ta="center"
+            fontSize="0.875rem"
+            mt="1rem"
+            display="block"
+          > Login Success ! </FeedBackMessage>
+        }
         {(loginResponse
           && !loginResponse.loggingIn
           && ('loginError' in loginResponse)
           && !loginResponse.isLoggedIn
-          && loginResponse.loginError.error === 'invalid_grant') ? <p>Invalid Credentials Provided !</p> : null
+          && loginResponse.loginError.error === 'invalid_grant')
+          ? <FeedBackMessage
+            type="error"
+            ta="center"
+            fontSize="0.875rem"
+            mt="1rem"
+            display="block"
+          >Invalid Credentials Provided !</FeedBackMessage>
+          : null
         }
       </form>
     );

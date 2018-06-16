@@ -18,10 +18,7 @@ const ProductImg = styled.img`
   bottom: 0;
   top: 0;
   margin: auto;
-  width: auto;
-  @media (max-width: 767.98px) {
-    width: 100%;
-  }
+  width: 100%;
 `;
 
 const ProductWrapper = styled.div`
@@ -61,7 +58,7 @@ const Product = ({
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
     <Link href="test">
       <ImgWrapper>
-        <ProgressiveImageSchemer src={image} minHeight="320px">
+        <ProgressiveImageSchemer src={image} minHeight="360px">
           {imageURL => (<ProductImg
             alt={name}
             src={imageURL}
