@@ -54,7 +54,8 @@ const Rating = styled.span`
 `;
 
 const Product = ({
-  name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount, onClick, isWishList, col
+  name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
+  onClick, isWishList, col, onOpenQuickViewModal
 }) => (
   <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px" pl="0.5rem" pr="0.5rem">
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
@@ -92,6 +93,7 @@ const Product = ({
         )}
       </Div>
     </Link>
+    <button onClick={onOpenQuickViewModal}>Quick</button>
   </ProductWrapper>
 );
 Product.defaultProps = {
@@ -111,6 +113,7 @@ Product.propTypes = {
   reviewsCount: PropTypes.number.isRequired,
   isWishList: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
+  onOpenQuickViewModal: PropTypes.func.isRequired,
   col: PropTypes.string
 };
 
