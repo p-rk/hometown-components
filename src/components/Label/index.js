@@ -32,7 +32,7 @@ const FeedBackMessage = styled(Label)`
 Label.defaultProps = {
   fontSize: '0.875rem',
   fontStyle: 'normal',
-  fontWeight: 'medium',
+  fontWeight: 'regular',
   mb: '5px',
   mt: '5px',
   type: 'note',

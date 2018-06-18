@@ -52,10 +52,9 @@ const btnType = (props, type) => {
 const Button = styled.button`
   border: ${props => props.border};
   font-weight: ${props => props.theme.fontWeight[props.fontWeight]};
-  line-height: ${props => props.lh};;
+  line-height: ${props => props.lh};
   display: inline-block;
   cursor: pointer;
-  font-weight: 400;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -83,6 +82,7 @@ const Button = styled.button`
   ${props => props.pl && { paddingLeft: props.pl }}
   ${props => props.fl && { float: props.fl }}
   ${props => props.ls && { letterSpacing: props.ls }}
+  ${props => props.tt && { textTransform: props.tt }}
 
   &:hover {
     background: ${props => props.type === 'default' ? '#ae8873' : 'transparent'};
