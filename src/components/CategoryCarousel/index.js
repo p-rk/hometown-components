@@ -17,16 +17,16 @@ const ProductCarouselList = styled.ul`
   &::-webkit-scrollbar-track
   {
     -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0);
-    background-color: #FFF;
+    background-color: transparent !important;
   }
   &::-webkit-scrollbar
   {
     width: 0;
-    background-color: #FFF;
+    background-color: transparent !important;
   }
   &::-webkit-scrollbar-thumb
   {
-    background-color: #FFF;
+    background-color:  transparent !important;
     border: none;
   }
   @media (min-width: ${props => props.theme.breakpoints('md')}) {
