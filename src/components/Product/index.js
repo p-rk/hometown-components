@@ -5,7 +5,9 @@ import Link from 'components/Link';
 import Div from 'components/Div';
 import Heading from 'components/Heading';
 import Span from 'components/Span';
+import Button from 'components/Buttons';
 import WishlistBtn from 'components/WishlistBtn';
+import AddCart from 'components/Icons/AddCart';
 import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
 import Theme from 'components/Theme';
 
@@ -38,6 +40,13 @@ const ProductWrapper = styled.div`
       visibility: visible;
       opacity: 1;
     }
+  }
+`;
+
+const ProductInner = styled.div`
+  height: 125px;
+  svg {
+    vertical-align: middle;
   }
 `;
 
@@ -95,27 +104,36 @@ const Product = ({
         </ProgressiveImageSchemer>
       </ImgWrapper>
       <Div p="0.25rem 0.75rem 0.5rem">
-        <Heading
-          mb="0.4375rem"
-          color={Theme.colors.text}
-          fontWeight="400"
-          fontSize="0.875em"
-        >{name}</Heading>
-        <Div mb="0.25rem">
-          <Span mr="0.625rem" color={Theme.colors.textDark} fontSize="0.875em" fontWeight="600">{price}</Span>
-          <Span mr="0.625rem" fontSize="0.75em"><s>{cutprice}</s></Span>
-          { saving &&
+        <ProductInner>
+          <Heading
+            mb="0.4375rem"
+            color={Theme.colors.text}
+            fontWeight="600"
+            fontSize="0.9375em"
+          >{name}</Heading>
+          <Div mb="0.25rem">
+            <Span mr="0.625rem" color={Theme.colors.textDark} fontSize="0.875em" fontWeight="600">{price}</Span>
+            <Span mr="0.625rem" fontSize="0.75em" fontWeight="600"><s>{cutprice}</s></Span>
+            { saving &&
             <Span fontSize="0.75rem" fontWeight="600">
               Savings Rs. {savingAmount}
-              <Span mr="0.625rem"> ({saving.replace('-', '')} OFF)</Span>
+              <Span mr="0.625rem" fontSize="0.75rem" border="none"> ({saving.replace('-', '')} OFF)</Span>
             </Span> }
-        </Div>
-        {rating > 0 && (
-          <Div>
-            <Rating>★ {rating}</Rating>
-            <Span color={Theme.colors.textExtraLight}>({reviewsCount})</Span>
           </Div>
-        )}
+          {rating > 0 && (
+            <Div>
+              <Rating>★ {rating}</Rating>
+              <Span mr="0.625rem" fontSize="0.875rem" color={Theme.colors.textExtraLight}>({reviewsCount})</Span>
+              <Span fontSize="0.75rem" color={Theme.colors.textExtraLight}>To be Delivered by 17th Jan</Span>
+            </Div>
+          )}
+          <Div mt="0.3125rem">
+            <Button p="0" btnType="link" color="#ae8873">
+              <AddCart fill="#ae8873" />
+              <Span ml="0.625rem" fontSize="0.857rem" fontWeight="600" color="#ae8873">ADD TO CART</Span>
+            </Button>
+          </Div>
+        </ProductInner>
       </Div>
     </Link>
     <QuickViewBtn onClick={onOpenQuickViewModal}>QUICK VIEW</QuickViewBtn>
