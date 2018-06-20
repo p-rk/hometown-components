@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
+import { FeedBackMessage } from 'components/Label';
 import FormInput from './FormInput';
 
 export default class ForgotPasswordForm extends Component {
@@ -37,7 +38,13 @@ export default class ForgotPasswordForm extends Component {
         </Button>
         {(forgotResponse
           && !loading
-          && error) ? <p>Some Error Happened, Please Try Again</p> : null
+          && error) ? <FeedBackMessage
+            type="error"
+            ta="center"
+            fontSize="0.875rem"
+            mt="1rem"
+            display="block"
+          >Some Error Happened, Please Try Again</FeedBackMessage> : null
         }
       </form>
     );

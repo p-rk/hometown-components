@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
+import { FeedBackMessage } from 'components/Label';
 import FormInput from './FormInput';
 
 export default class UpdateProfileForm extends Component {
@@ -65,13 +66,28 @@ export default class UpdateProfileForm extends Component {
           {(response && !loading) ? 'UPDATE PASSWORD' : 'Please wait...' }
         </Button>
         {(response
-          && loaded && passwordUpdated) && <p> Password Updated ! </p> }
+          && loaded && passwordUpdated) &&
+          <FeedBackMessage
+            type="success"
+            ta="center"
+            fontSize="0.875rem"
+            mt="1rem"
+            display="block"
+          > Password Updated ! </FeedBackMessage> }
         {(error && !loaded) &&
           <div>
-            {(errorMessage.new_password) && <p> Invalid new password ! </p>}
-            {(errorMessage.current_password) && <p> Invalid Current Password ! </p>}
-            {(errorMessage.repeat_password) && <p> Confirm password not match ! </p>}
-            {(errorMessage.error_message) && <p> Something went wrong !</p>}
+            <FeedBackMessage
+              type="error"
+              ta="center"
+              fontSize="0.875rem"
+              mt="1rem"
+              display="block"
+            >
+              {(errorMessage.new_password) && 'Invalid new password !'}
+              {(errorMessage.current_password) && 'Invalid Current Password !'}
+              {(errorMessage.repeat_password) && 'Confirm password not match !'}
+              {(errorMessage.error_message) && 'Something went wrong !'}
+            </FeedBackMessage>
           </div>
         }
       </form>

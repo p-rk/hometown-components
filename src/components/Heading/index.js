@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 const Heading = styled.h4`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  ${props => props.ellipsis && {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
+  }}
 
   font-size: ${props => props.fontSize};
   font-weight: ${props => props.fontWeight};
@@ -29,7 +31,8 @@ Heading.defaultProps = {
   mt: '0.625em',
   mb: '0.625em',
   lh: '1.2',
-  color: 'primary'
+  color: 'primary',
+  ellipsis: true
 };
 
 export default Heading;

@@ -18,10 +18,7 @@ const ProductImg = styled.img`
   bottom: 0;
   top: 0;
   margin: auto;
-  width: auto;
-  @media (max-width: 767.98px) {
-    width: 100%;
-  }
+  width: 100%;
 `;
 
 const ProductWrapper = styled.div`
@@ -36,12 +33,19 @@ const ProductWrapper = styled.div`
   box-shadow: 0 3px 6px 0 rgba(8, 8, 8, 0.12);
   background: #FFF;
   // border: 1px solid #e6e6e6;
+  &:hover {
+    button {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 `;
 
 const ImgWrapper = styled.div`
   background: #FFF;
   position: relative;
   box-sizing: border-box;
+  position: relative;
 `;
 
 const Rating = styled.span`
@@ -53,14 +57,36 @@ const Rating = styled.span`
   vertical-align: text-bottom;
 `;
 
+const QuickViewBtn = styled.button`
+  border-radius: 2px;
+  box-shadow: 2px 2px 1px 0 rgba(214, 214, 214, 0.5);
+  background-color: #ffffff;
+  border: solid 1px #dadada;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s linear;
+  width: 130px;
+  left: calc(50% - 65px);
+  height: 40px;
+  top: 170px;
+  @media (mxa-width: ${props => props.theme.breakpoints('sm')}) {
+    display: none !important;
+  }
+`;
+
 const Product = ({
-  name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount, onClick, isWishList, col
+  name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
+  onClick, isWishList, col, onOpenQuickViewModal
 }) => (
   <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px" pl="0.5rem" pr="0.5rem">
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
     <Link href="test">
       <ImgWrapper>
-        <ProgressiveImageSchemer src={image} minHeight="320px">
+        <ProgressiveImageSchemer src={image} minHeight="360px">
           {imageURL => (<ProductImg
             alt={name}
             src={imageURL}
@@ -92,11 +118,13 @@ const Product = ({
         )}
       </Div>
     </Link>
+    <QuickViewBtn onClick={onOpenQuickViewModal}>QUICK VIEW</QuickViewBtn>
   </ProductWrapper>
 );
 Product.defaultProps = {
   isWishList: false,
-  col: 12
+  col: 12,
+  onOpenQuickViewModal: () => {}
 };
 
 Product.propTypes = {
@@ -111,6 +139,7 @@ Product.propTypes = {
   reviewsCount: PropTypes.number.isRequired,
   isWishList: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
+  onOpenQuickViewModal: PropTypes.func,
   col: PropTypes.string
 };
 
