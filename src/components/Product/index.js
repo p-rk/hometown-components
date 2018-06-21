@@ -8,6 +8,7 @@ import Span from 'components/Span';
 import Button from 'components/Buttons';
 import WishlistBtn from 'components/WishlistBtn';
 import AddCart from 'components/Icons/AddCart';
+import Rating from 'components/Rating';
 import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
 import Theme from 'components/Theme';
 
@@ -44,7 +45,7 @@ const ProductWrapper = styled.div`
 `;
 
 const ProductInner = styled.div`
-  height: 125px;
+  height: 105px;
   svg {
     vertical-align: middle;
   }
@@ -55,15 +56,6 @@ const ImgWrapper = styled.div`
   position: relative;
   box-sizing: border-box;
   position: relative;
-`;
-
-const Rating = styled.span`
-  margin-right: 0.3125rem;
-  background: #fa1b36;
-  color: #FFF;
-  font-size: 11px;
-  padding: 2px 5px;
-  vertical-align: text-bottom;
 `;
 
 const QuickViewBtn = styled.button`
@@ -89,10 +81,14 @@ const QuickViewBtn = styled.button`
 
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
-  onClick, isWishList, col, onOpenQuickViewModal, deliveredBy
+  onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy
 }) => (
   <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px" pl="0.5rem" pr="0.5rem">
-    <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
+    <WishlistBtn
+      onClick={onClick(sku)}
+      isWishList={isWishList}
+      wishlistLoading={wishlistLoading}
+    />
     <Link href="test">
       <ImgWrapper>
         <ProgressiveImageSchemer src={image} minHeight="360px">
@@ -122,12 +118,12 @@ const Product = ({
           </Div>
           {rating > 0 && (
             <Div>
-              <Rating>★ {rating}</Rating>
+              <Rating rating={rating}>★ {rating}</Rating>
               <Span mr="0.625rem" fontSize="0.875rem" color={Theme.colors.textExtraLight}>({reviewsCount})</Span>
             </Div>
           )}
           <Span fontSize="0.75rem" color={Theme.colors.textExtraLight}>{deliveredBy}</Span>
-          <Div mt="0.3125rem">
+          <Div mt="0.375rem">
             <Button p="0" btnType="link" color="#ae8873">
               <AddCart fill="#ae8873" />
               <Span ml="0.625rem" fontSize="0.857rem" fontWeight="600" color="#ae8873">ADD TO CART</Span>
@@ -142,6 +138,7 @@ const Product = ({
 Product.defaultProps = {
   isWishList: false,
   col: 12,
+  wishlistLoading: false,
   onOpenQuickViewModal: () => {}
 };
 
@@ -159,6 +156,7 @@ Product.propTypes = {
   onClick: PropTypes.func.isRequired,
   onOpenQuickViewModal: PropTypes.func,
   col: PropTypes.string,
+  wishlistLoading: PropTypes.bool,
   deliveredBy: PropTypes.string.isRequired
 };
 

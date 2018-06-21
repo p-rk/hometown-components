@@ -40,6 +40,7 @@ module.exports = {
     'ProductDetails/SpecList': './src/components/ProductDetails/SpecList',
     'ProductDetails/Spec': './src/components/ProductDetails/Spec',
     'ProductDetails/TitlePrice': './src/components/ProductDetails/TitlePrice',
+    'Rating/index': './src/components/Rating/',
     'Reviews/index': './src/components/Reviews/',
     'ShippedTo/index': './src/components/ShippedTo/',
     'WishlistBtn/index': './src/components/WishlistBtn/',

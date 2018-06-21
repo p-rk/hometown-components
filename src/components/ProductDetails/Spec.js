@@ -8,10 +8,10 @@ const Specs = ({ spec }) => (
   <Row display="block" m="0" pb="0.625rem">
     { spec && Object.keys(spec).map((eachSpec, index) => (
       <div key={String(index)}>
-        <Div col="6">
+        <Div col="3">
           <Label color="secondary">{eachSpec}</Label>
         </Div>
-        <Div col="6">
+        <Div col="9">
           <Label color="textDark" fontWeight="600">{spec[eachSpec]}</Label>
         </Div>
       </div>

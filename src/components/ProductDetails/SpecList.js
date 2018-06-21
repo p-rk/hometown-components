@@ -14,7 +14,7 @@ const SpecRow = styled.div`
   display: block;
   clear: both;
   margin: 0;
-  background-color: #f8f8f8;
+  background-color: #f6f6f6;
   box-shadow: 7px 7px 14px -9px rgba(124, 122, 122, 0.5);
   padding: 20px;
   display: flex;
@@ -40,9 +40,9 @@ class SpecList extends Component {
               mt="0"
               mb="0"
               pb="0"
-              color="primary"
-              fontSize="1.25em"
-              fontWeight="300"
+              color="textLight"
+              fontSize="1em"
+              fontWeight="600"
             >
               {specName}
               <Button
