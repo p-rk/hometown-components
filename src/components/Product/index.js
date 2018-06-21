@@ -85,7 +85,7 @@ const Product = ({
     />
     <Link href="test">
       <ImgWrapper>
-        <ProgressiveImageSchemer src={image} minHeight="360px">
+        <ProgressiveImageSchemer src={image} minHeight="270px">
           {imageURL => (<ProductImg
             alt={name}
             src={imageURL}
