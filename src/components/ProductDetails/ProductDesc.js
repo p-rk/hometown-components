@@ -14,9 +14,9 @@ const ProductDesc = ({ desc }) => (
         <Div col="12">
           <Heading
             mt="0rem"
-            color="text"
             fontSize="1.25em"
             fontWeight="300"
+            color="primary"
           >Description</Heading>
           <Text fontSize="1rem">{desc}</Text>
         </Div>
