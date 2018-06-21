@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Div from 'components/Div';
-import Row from 'components/Row';
 import Button from 'components/Buttons';
 import Heading from 'components/Heading';
 import Spec from 'components/ProductDetails/Spec';
+
+const SpecRow = styled.div`
+  box-sizing: border-box;
+  margin-right: -15px;
+  margin-left: -15px;
+  position: relative;
+  display: block;
+  clear: both;
+  margin: 0;
+  background-color: #f8f8f8;
+  box-shadow: 7px 7px 14px -9px rgba(124, 122, 122, 0.5);
+  padding: 20px;
+  display: flex;
+`;
 
 class SpecList extends Component {
   state = {
@@ -20,13 +34,13 @@ class SpecList extends Component {
     const { show } = this.state;
     return (
       <Div mb="0.625rem">
-        <Row display="block" m="0">
+        <SpecRow display="block" m="0">
           <Div col="12" mb="0">
             <Heading
               mt="0"
               mb="0"
-              pb="0.625rem"
-              color="text"
+              pb="0"
+              color="primary"
               fontSize="1.25em"
               fontWeight="300"
             >
@@ -37,16 +51,19 @@ class SpecList extends Component {
                 border="none"
                 p="0"
                 fl="right"
+                fontSize="1.5rem"
+                lh="1"
+                height="20px"
                 onClick={this.handleOnclick}
               >{show ? '-' : '+'}</Button>
             </Heading>
-            {show && <Div>
+            {show && <Div p="1rem" pb="0">
               { list.map((eachSpec, specIndex) => (
                 <Spec spec={eachSpec} key={String(specIndex)} />
               )) }
             </Div>}
           </Div>
-        </Row>
+        </SpecRow>
       </Div>
     );
   }
