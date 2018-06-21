@@ -89,7 +89,7 @@ const QuickViewBtn = styled.button`
 
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
-  onClick, isWishList, col, onOpenQuickViewModal
+  onClick, isWishList, col, onOpenQuickViewModal, deliveredBy
 }) => (
   <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px" pl="0.5rem" pr="0.5rem">
     <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
@@ -124,9 +124,9 @@ const Product = ({
             <Div>
               <Rating>★ {rating}</Rating>
               <Span mr="0.625rem" fontSize="0.875rem" color={Theme.colors.textExtraLight}>({reviewsCount})</Span>
-              <Span fontSize="0.75rem" color={Theme.colors.textExtraLight}>To be Delivered by 17th Jan</Span>
             </Div>
           )}
+          <Span fontSize="0.75rem" color={Theme.colors.textExtraLight}>{deliveredBy}</Span>
           <Div mt="0.3125rem">
             <Button p="0" btnType="link" color="#ae8873">
               <AddCart fill="#ae8873" />
@@ -158,7 +158,8 @@ Product.propTypes = {
   isWishList: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   onOpenQuickViewModal: PropTypes.func,
-  col: PropTypes.string
+  col: PropTypes.string,
+  deliveredBy: PropTypes.string.isRequired
 };
 
 export default Product;
