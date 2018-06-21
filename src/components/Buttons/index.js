@@ -104,7 +104,8 @@ Button.defaultProps = {
   border: '1px solid',
   fontWeight: 'medium',
   lh: '1.5',
-  bc: 'transparent'
+  bc: 'transparent',
+  bg: 'transparent'
 };
 
 export default Button;
