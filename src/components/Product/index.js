@@ -5,9 +5,7 @@ import Link from 'components/Link';
 import Div from 'components/Div';
 import Heading from 'components/Heading';
 import Span from 'components/Span';
-import Button from 'components/Buttons';
 import WishlistBtn from 'components/WishlistBtn';
-import AddCart from 'components/Icons/AddCart';
 import Rating from 'components/Rating';
 import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
 import Theme from 'components/Theme';
@@ -29,13 +27,10 @@ const ProductWrapper = styled.div`
   float: left;
   position: relative;
   margin-right: 0;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   margin-left: 0;
   display: initial;
   box-sizing: border-box;
-  box-shadow: 0 3px 6px 0 rgba(8, 8, 8, 0.12);
-  background: #FFF;
-  // border: 1px solid #e6e6e6;
   &:hover {
     button {
       visibility: visible;
@@ -45,7 +40,6 @@ const ProductWrapper = styled.div`
 `;
 
 const ProductInner = styled.div`
-  height: 105px;
   svg {
     vertical-align: middle;
   }
@@ -123,12 +117,6 @@ const Product = ({
             </Div>
           )}
           <Span fontSize="0.75rem" color={Theme.colors.textExtraLight}>{deliveredBy}</Span>
-          <Div mt="0.375rem">
-            <Button p="0" btnType="link" color="#ae8873">
-              <AddCart fill="#ae8873" />
-              <Span ml="0.625rem" fontSize="0.857rem" fontWeight="600" color="#ae8873">ADD TO CART</Span>
-            </Button>
-          </Div>
         </ProductInner>
       </Div>
     </Link>

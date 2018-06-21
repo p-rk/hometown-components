@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
-import Fav from 'components/Icons/Fav';
+import WisListIcon from 'components/Icons/WisListIcon';
 
 const WishlistBtn = ({ onClick, isWishList, wishlistLoading }) => (
   <Button
@@ -10,7 +10,7 @@ const WishlistBtn = ({ onClick, isWishList, wishlistLoading }) => (
     border="none"
     className={`wishListBtn ${wishlistLoading ? 'loading' : ''} ${isWishList ? 'loaded' : ''}`}
   >
-    <Fav width={32} height={32} fill={isWishList ? '#f15924' : '#ffffffcc'} />
+    <WisListIcon />
   </Button>
 );
 

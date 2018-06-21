@@ -7,6 +7,7 @@ module.exports = {
     'Buttons/index': './src/components/Buttons/',
     'Container/index': './src/components/Container/',
     'Div/index': './src/components/Div/',
+    'Icons/AddCart': './src/components/Icons/AddCart',
     'Empty/index': './src/components/Empty/',
     'Heading/index': './src/components/Heading/',
     'Icons/Fav': './src/components/Icons/Fav',
