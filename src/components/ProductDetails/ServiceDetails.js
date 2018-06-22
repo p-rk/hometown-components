@@ -18,8 +18,8 @@ const ServiceDetails = ({ deliverBy, emiStarting }) => (
     <Container type="container" pr="1rem" pl="1rem">
       <Row display="block" mb="0.9375rem" mr="0" ml="0">
         <Div col="6" pt="0.625rem">
-          <Img height="1.5em" mr="0.625rem" float="left" src={location} />
-          <Label fontSize="1em" color="secondary" ml="0.625rem" display="contents">Enter PIN Code</Label>
+          <Img width="initial" height="1.5em" mr="0.625rem" float="left" src={location} />
+          <Label fontSize="0.825em" color="secondary" ml="0.625rem" display="contents">Enter PIN Code</Label>
         </Div>
         <Div col="6">
           <Pincode
@@ -30,9 +30,9 @@ const ServiceDetails = ({ deliverBy, emiStarting }) => (
       </Row>
       <Row display="block" mb="0.625rem" mr="0" ml="0">
         <Div col="12">
-          <Img height="1.5em" mr="0.625rem" float="left" src={calendarImage} />
+          <Img width="initial" height="1.5em" mr="0.625rem" float="left" src={calendarImage} />
           <Label
-            fontSize="1em"
+            fontSize="0.825em"
             color="secondary"
             display="contents"
           >Delivers by {deliverBy} if you order today</Label>
@@ -40,9 +40,9 @@ const ServiceDetails = ({ deliverBy, emiStarting }) => (
       </Row>
       <Row display="block" mb="0.625rem" mr="0" ml="0">
         <Div col="12">
-          <Img height="1.5em" mr="0.625rem" float="left" src={creditCard} />
+          <Img width="initial" height="1.5em" mr="0.625rem" float="left" src={creditCard} />
           <Label
-            fontSize="1em"
+            fontSize="0.825em"
             color="secondary"
             display="contents"
           >EMI starting from Rs.{emiStarting} </Label>
@@ -50,9 +50,9 @@ const ServiceDetails = ({ deliverBy, emiStarting }) => (
       </Row>
       <Row display="block" mb="0.625rem" mr="0" ml="0">
         <Div col="12">
-          <Img height="1.5em" mr="0.625rem" float="left" src={truck} />
+          <Img width="initial" height="1.5em" mr="0.625rem" float="left" src={truck} />
           <Label
-            fontSize="1em"
+            fontSize="0.825em"
             color="secondary"
             display="contents"
           >Free Shipping</Label>
