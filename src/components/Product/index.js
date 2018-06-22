@@ -93,30 +93,40 @@ const Product = ({
           />)}
         </ProgressiveImageSchemer>
       </ImgWrapper>
-      <Div p="0.25rem 0.75rem 0.5rem">
+      <Div p="0.25rem 0 0.25rem">
         <ProductInner>
           <Heading
-            mb="0.4375rem"
+            mb="5px"
             color={Theme.colors.text}
             fontWeight="600"
             fontSize="0.9375em"
           >{name}</Heading>
-          <Div mb="0.25rem">
+          <Div mb="0px">
             <Span mr="0.625rem" color={Theme.colors.textDark} fontSize="0.875em" fontWeight="600">{price}</Span>
-            <Span mr="0.625rem" fontSize="0.75em" fontWeight="600"><s>{cutprice}</s></Span>
+            <Span mr="0" fontSize="0.75em" fontWeight="600"><s>{cutprice}</s></Span>
+            {rating > 0 && (
+              <Span ml="0.625rem">
+                <Rating rating={rating}>★ {rating}</Rating>
+                <Span
+                  mr="0.625rem"
+                  fontSize="0.75rem"
+                  lh="1.7"
+                  va="text-top"
+                  color={Theme.colors.textExtraLight}
+                >({reviewsCount})</Span>
+              </Span>
+            )}
+          </Div>
+          <Div mb="0px">
             { saving &&
             <Span fontSize="0.75rem" fontWeight="600">
               Savings Rs. {savingAmount}
-              <Span mr="0.625rem" fontSize="0.75rem" border="none"> ({saving.replace('-', '')} OFF)</Span>
+              <Span mr="0px" fontSize="0.75rem" border="none" fontWeight="600"> ({saving.replace('-', '')} OFF)</Span>
             </Span> }
           </Div>
-          {rating > 0 && (
-            <Div>
-              <Rating rating={rating}>★ {rating}</Rating>
-              <Span mr="0.625rem" fontSize="0.875rem" color={Theme.colors.textExtraLight}>({reviewsCount})</Span>
-            </Div>
-          )}
-          <Span fontSize="0.75rem" color={Theme.colors.textExtraLight}>{deliveredBy}</Span>
+          <Div>
+            <Span fontSize="0.75rem" color={Theme.colors.textExtraLight}>{deliveredBy}</Span>
+          </Div>
         </ProductInner>
       </Div>
     </Link>
