@@ -5,9 +5,8 @@ import Link from 'components/Link';
 import Div from 'components/Div';
 import Heading from 'components/Heading';
 import Span from 'components/Span';
-import Button from 'components/Buttons';
 import WishlistBtn from 'components/WishlistBtn';
-import AddCart from 'components/Icons/AddCart';
+import Rating from 'components/Rating';
 import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
 import Theme from 'components/Theme';
 
@@ -28,13 +27,10 @@ const ProductWrapper = styled.div`
   float: left;
   position: relative;
   margin-right: 0;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   margin-left: 0;
   display: initial;
   box-sizing: border-box;
-  box-shadow: 0 3px 6px 0 rgba(8, 8, 8, 0.12);
-  background: #FFF;
-  // border: 1px solid #e6e6e6;
   &:hover {
     button {
       visibility: visible;
@@ -44,7 +40,6 @@ const ProductWrapper = styled.div`
 `;
 
 const ProductInner = styled.div`
-  height: 125px;
   svg {
     vertical-align: middle;
   }
@@ -55,15 +50,6 @@ const ImgWrapper = styled.div`
   position: relative;
   box-sizing: border-box;
   position: relative;
-`;
-
-const Rating = styled.span`
-  margin-right: 0.3125rem;
-  background: #fa1b36;
-  color: #FFF;
-  font-size: 11px;
-  padding: 2px 5px;
-  vertical-align: text-bottom;
 `;
 
 const QuickViewBtn = styled.button`
@@ -81,7 +67,7 @@ const QuickViewBtn = styled.button`
   width: 130px;
   left: calc(50% - 65px);
   height: 40px;
-  top: 170px;
+  top: calc((270px - 40px)/2);
   @media (mxa-width: ${props => props.theme.breakpoints('sm')}) {
     display: none !important;
   }
@@ -89,13 +75,17 @@ const QuickViewBtn = styled.button`
 
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
-  onClick, isWishList, col, onOpenQuickViewModal, deliveredBy
+  onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy
 }) => (
   <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px" pl="0.5rem" pr="0.5rem">
-    <WishlistBtn onClick={onClick(sku)} isWishList={isWishList} />
+    <WishlistBtn
+      onClick={onClick(sku)}
+      isWishList={isWishList}
+      wishlistLoading={wishlistLoading}
+    />
     <Link href="test">
       <ImgWrapper>
-        <ProgressiveImageSchemer src={image} minHeight="360px">
+        <ProgressiveImageSchemer src={image} minHeight="270px">
           {imageURL => (<ProductImg
             alt={name}
             src={imageURL}
@@ -103,35 +93,39 @@ const Product = ({
           />)}
         </ProgressiveImageSchemer>
       </ImgWrapper>
-      <Div p="0.25rem 0.75rem 0.5rem">
+      <Div p="0.25rem 0 0.25rem">
         <ProductInner>
           <Heading
-            mb="0.4375rem"
+            mb="5px"
             color={Theme.colors.text}
             fontWeight="600"
             fontSize="0.9375em"
           >{name}</Heading>
-          <Div mb="0.25rem">
+          <Div mb="0px">
             <Span mr="0.625rem" color={Theme.colors.textDark} fontSize="0.875em" fontWeight="600">{price}</Span>
-            <Span mr="0.625rem" fontSize="0.75em" fontWeight="600"><s>{cutprice}</s></Span>
+            <Span mr="0" fontSize="0.75em" fontWeight="600"><s>{cutprice}</s></Span>
+            {rating > 0 && (
+              <Span ml="0.625rem">
+                <Rating rating={rating}>★ {rating}</Rating>
+                <Span
+                  mr="0.625rem"
+                  fontSize="0.75rem"
+                  lh="1.7"
+                  va="text-top"
+                  color={Theme.colors.textExtraLight}
+                >({reviewsCount})</Span>
+              </Span>
+            )}
+          </Div>
+          <Div mb="0px">
             { saving &&
             <Span fontSize="0.75rem" fontWeight="600">
               Savings Rs. {savingAmount}
-              <Span mr="0.625rem" fontSize="0.75rem" border="none"> ({saving.replace('-', '')} OFF)</Span>
+              <Span mr="0px" fontSize="0.75rem" border="none" fontWeight="600"> ({saving.replace('-', '')} OFF)</Span>
             </Span> }
           </Div>
-          {rating > 0 && (
-            <Div>
-              <Rating>★ {rating}</Rating>
-              <Span mr="0.625rem" fontSize="0.875rem" color={Theme.colors.textExtraLight}>({reviewsCount})</Span>
-            </Div>
-          )}
-          <Span fontSize="0.75rem" color={Theme.colors.textExtraLight}>{deliveredBy}</Span>
-          <Div mt="0.3125rem">
-            <Button p="0" btnType="link" color="#ae8873">
-              <AddCart fill="#ae8873" />
-              <Span ml="0.625rem" fontSize="0.857rem" fontWeight="600" color="#ae8873">ADD TO CART</Span>
-            </Button>
+          <Div>
+            <Span fontSize="0.75rem" color={Theme.colors.textExtraLight}>{deliveredBy}</Span>
           </Div>
         </ProductInner>
       </Div>
@@ -142,6 +136,7 @@ const Product = ({
 Product.defaultProps = {
   isWishList: false,
   col: 12,
+  wishlistLoading: false,
   onOpenQuickViewModal: () => {}
 };
 
@@ -159,6 +154,7 @@ Product.propTypes = {
   onClick: PropTypes.func.isRequired,
   onOpenQuickViewModal: PropTypes.func,
   col: PropTypes.string,
+  wishlistLoading: PropTypes.bool,
   deliveredBy: PropTypes.string.isRequired
 };
 

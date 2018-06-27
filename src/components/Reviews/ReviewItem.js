@@ -4,6 +4,7 @@ import { Label } from 'components/Label';
 import Heading from 'components/Heading';
 import Div from 'components/Div';
 import Text from 'components/Text';
+import Rating from 'components/Rating';
 
 const ReviewsItems = ({ review, col }) => (
   <Div col={col} display="block" m="0" mb="0.9375rem" pd="2rem">
@@ -11,9 +12,12 @@ const ReviewsItems = ({ review, col }) => (
       {review.nickname || review.customer_name || null}
     </Heading>
     <Div>
-      <Label>{review.options[0].option_value || null}/5</Label>
+      <Label va="middle" mt="0" ml="0.625rem">
+        <Rating rating={review.options[0].option_value || null}>★ {review.rating}
+        </Rating>
+      </Label>
     </Div>
-    <Text>{review.detail || null}</Text>
+    <Text color="rgba(0, 0, 0, 0.7)">{review.detail || null}</Text>
   </Div>
 );
 
