@@ -9,6 +9,8 @@ const Label = styled.label`
   display: ${props => props.display};
   vertical-align: ${props => props.va};
 
+  ${props => props.position && { position: props.position }}
+  ${props => props.top && { top: props.top }}
   ${props => props.bg && { background: props.bg }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
