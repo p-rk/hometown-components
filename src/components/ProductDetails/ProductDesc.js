@@ -14,9 +14,9 @@ const ProductDesc = ({ desc }) => (
         <Div col="12">
           <Heading
             mt="0rem"
-            fontSize="1.25em"
-            fontWeight="300"
-            color="primary"
+            color="textLight"
+            fontSize="1em"
+            fontWeight="600"
           >Description</Heading>
           <Text fontSize="1rem" dangerouslySetInnerHTML={{ __html: desc }} />
         </Div>

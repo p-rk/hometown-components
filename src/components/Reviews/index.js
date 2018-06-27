@@ -10,11 +10,11 @@ const Reviews = ({ reviewItems, col }) => (
   <Section mb="0.3125rem" p="0" pt="0.9375rem" display="inline-block" mt="1rem">
     <Container type="container">
       <Heading
-        fontSize="1.25rem"
         mb="0.9375rem"
         mt="0px"
-        color="primary"
-        fontWeight="300"
+        color="textLight"
+        fontSize="1em"
+        fontWeight="600"
       >
       Reviews
       </Heading>
