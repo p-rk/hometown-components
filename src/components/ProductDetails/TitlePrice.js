@@ -6,27 +6,32 @@ import Row from 'components/Row';
 import Span from 'components/Span';
 import Section from 'components/Section';
 
-const TitlePrice = ({ prodDetails }) => (
+const calculateDiscount = (price, discPrice) => ((price - discPrice) / price) * 100;
+
+const TitlePrice = ({ name, price, discPrice }) => (
   <Section mb="0.3125rem" p="0">
     <Container type="container" pr="1rem" pl="1rem">
       <Row display="block" mr="0" ml="0">
         <Heading fontSize="1.25em" color="textDark" mb="0.75rem" mt="0px" fontWeight="300">
-          {prodDetails.name}
+          {name}
         </Heading>
         <Heading fontSize="1em" color="textDark" mb="0px" mt="0px" fontWeight="600">
-            Rs. {prodDetails.price}
+            Rs. {discPrice}
           <Span
             fontSize="0.8125em"
             color="rgba(0, 0, 0, 0.4)"
             ml="1rem"
             fontWeight="600"
-          >Rs. {prodDetails.disc_price}</Span>
+            type="lt"
+          >Rs. {price}</Span>
           <Span
             fontSize="0.8125em"
             color="rgba(0, 0, 0, 0.4)"
             ml="1rem"
             fontWeight="600"
-          >Saving Rs. {prodDetails.saving} ({prodDetails.discount}%)</Span>
+          >Saving Rs. {parseInt(price, 10) - parseInt(discPrice, 10) }
+           ({calculateDiscount(parseInt(price, 10), parseInt(discPrice, 10))}%)
+          </Span>
         </Heading>
       </Row>
     </Container>
@@ -34,7 +39,15 @@ const TitlePrice = ({ prodDetails }) => (
 );
 
 TitlePrice.propTypes = {
-  prodDetails: PropTypes.array.isRequired
+  name: PropTypes.string,
+  price: PropTypes.string,
+  discPrice: PropTypes.string
+};
+
+TitlePrice.defaultProps = {
+  name: '',
+  price: '',
+  discPrice: '',
 };
 
 export default TitlePrice;
