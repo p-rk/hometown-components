@@ -8,12 +8,12 @@ import Text from 'components/Text';
 const ReviewsItems = ({ review, col }) => (
   <Div col={col} display="block" m="0" mb="0.9375rem" pd="2rem">
     <Heading fontSize="0.875rem" color="secondary" mb="0.3125rem" mt="0px" fontWeight="600">
-      {review.name}
+      {review.nickname || review.customer_name || null}
     </Heading>
     <Div>
-      <Label>{review.rating}/5</Label>
+      <Label>{review.options[0].option_value || null}/5</Label>
     </Div>
-    <Text>{review.message}</Text>
+    <Text>{review.detail || null}</Text>
   </Div>
 );
 

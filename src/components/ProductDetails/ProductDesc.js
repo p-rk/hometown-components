@@ -18,7 +18,7 @@ const ProductDesc = ({ desc }) => (
             fontWeight="300"
             color="primary"
           >Description</Heading>
-          <Text fontSize="1rem">{desc}</Text>
+          <Text fontSize="1rem" dangerouslySetInnerHTML={{ __html: desc }} />
         </Div>
       </Row>
     </Container>
@@ -26,7 +26,7 @@ const ProductDesc = ({ desc }) => (
 );
 
 ProductDesc.propTypes = {
-  desc: PropTypes.string.isRequired
+  desc: PropTypes.string.isRequired,
 };
 
 export default ProductDesc;

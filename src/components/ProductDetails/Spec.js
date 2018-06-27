@@ -4,23 +4,24 @@ import Row from 'components/Row';
 import Div from 'components/Div';
 import { Label } from 'components/Label';
 
-const Specs = ({ spec }) => (
-  <Row display="block" m="0" pb="0.625rem">
-    { spec && Object.keys(spec).map((eachSpec, index) => (
-      <div key={String(index)}>
+const Spec = ({ spec }) => {
+  const { label, value } = spec;
+  return (
+    <Row display="block" m="0" pb="0.625rem">
+      <div>
         <Div col="6">
-          <Label color="secondary">{eachSpec}</Label>
+          <Label color="secondary">{label}</Label>
         </Div>
         <Div col="6">
-          <Label color="textDark" fontWeight="600">{spec[eachSpec]}</Label>
+          <Label color="textDark" fontWeight="600">{value}</Label>
         </Div>
       </div>
-    ))}
-  </Row>
-);
+    </Row>
+  );
+};
 
-Specs.propTypes = {
+Spec.propTypes = {
   spec: PropTypes.object.isRequired,
 };
 
-export default Specs;
+export default Spec;

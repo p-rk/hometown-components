@@ -8,7 +8,7 @@ const Specs = ({ specs }) => (
   <Section mb="0" p="0">
     <Container type="container" pr="1rem" pl="1rem">
       {specs.map((spec, index) => (
-        <SpecList list={spec.spec} specName={spec.name} key={String(index)} />
+        <SpecList list={spec} key={String(index)} />
       ))}
     </Container>
   </Section>
