@@ -30,7 +30,7 @@ const TitlePrice = ({ name, price, discPrice }) => (
             ml="1rem"
             fontWeight="600"
           >Saving Rs. {parseInt(price, 10) - parseInt(discPrice, 10) }
-           ({calculateDiscount(parseInt(price, 10), parseInt(discPrice, 10))}%)
+           ({ Math.round(calculateDiscount(parseInt(price, 10), parseInt(discPrice, 10))) }%)
           </Span>
         </Heading>
       </Row>
