@@ -27,7 +27,7 @@ class WriteReview extends React.Component {
   }
 
   render() {
-    const { onClickSubmit, sku } = this.props;
+    const { onClickSubmit, catalogId } = this.props;
     const {
       addReviewOpen, name, rating, review
     } = this.state;
@@ -35,7 +35,7 @@ class WriteReview extends React.Component {
       <Div>
         <button onClick={this.toggleAddReview}>WRITE A REVIEW</button>
         {addReviewOpen &&
-          <form onSubmit={onClickSubmit(sku, { name, rating, review })}>
+          <form onSubmit={onClickSubmit(catalogId, { name, rating, review })}>
 
             <Div>
               <Div>
@@ -65,7 +65,7 @@ WriteReview.defaultProps = {
 
 WriteReview.propTypes = {
   onClickSubmit: PropTypes.func.isRequired,
-  sku: PropTypes.string.isRequired,
+  catalogId: PropTypes.string.isRequired,
 
 };
 export default WriteReview;
