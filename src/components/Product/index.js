@@ -83,7 +83,7 @@ const Product = ({
       isWishList={isWishList}
       wishlistLoading={wishlistLoading}
     />
-    <Link href="test">
+    <Link href={`/product-details/${sku}`}>
       <ImgWrapper>
         <ProgressiveImageSchemer src={image} minHeight="270px">
           {imageURL => (<ProductImg
