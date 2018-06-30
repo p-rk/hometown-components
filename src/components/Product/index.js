@@ -75,13 +75,13 @@ const QuickViewBtn = styled.button`
 
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
-  onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy
+  onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy, wishlistKey
 }) => (
   <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px" pl="0.5rem" pr="0.5rem">
     <WishlistBtn
       onClick={onClick(sku)}
       isWishList={isWishList}
-      wishlistLoading={wishlistLoading}
+      wishlistLoading={(wishlistLoading && wishlistKey === sku)}
     />
     <Link href={`/product-details/${sku}`}>
       <ImgWrapper>
@@ -137,7 +137,8 @@ Product.defaultProps = {
   isWishList: false,
   col: 12,
   wishlistLoading: false,
-  onOpenQuickViewModal: () => {}
+  onOpenQuickViewModal: () => {},
+  wishlistKey: ''
 };
 
 Product.propTypes = {
@@ -155,7 +156,8 @@ Product.propTypes = {
   onOpenQuickViewModal: PropTypes.func,
   col: PropTypes.string,
   wishlistLoading: PropTypes.bool,
-  deliveredBy: PropTypes.string.isRequired
+  deliveredBy: PropTypes.string.isRequired,
+  wishlistKey: PropTypes.string
 };
 
 export default Product;
