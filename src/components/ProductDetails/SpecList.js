@@ -30,8 +30,10 @@ class SpecList extends Component {
     });
   }
   render() {
-    const { list, specName } = this.props;
+    const { list } = this.props;
     const { show } = this.state;
+    const specName = Object.keys(list)[0];
+    const values = Object.values(list)[0];
     return (
       <Div mb="0.625rem">
         <SpecRow display="block" m="0">
@@ -58,10 +60,11 @@ class SpecList extends Component {
               >{show ? '-' : '+'}</Button>
             </Heading>
             {show && <Div p="1rem" pb="0">
-              { list.map((eachSpec, specIndex) => (
+              { values.map((eachSpec, specIndex) => (
                 <Spec spec={eachSpec} key={String(specIndex)} />
               )) }
-            </Div>}
+            </Div>
+            }
           </Div>
         </SpecRow>
       </Div>
@@ -71,7 +74,6 @@ class SpecList extends Component {
 
 SpecList.propTypes = {
   list: PropTypes.array.isRequired,
-  specName: PropTypes.string.isRequired,
 };
 
 export default SpecList;

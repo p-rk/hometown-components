@@ -50,6 +50,7 @@ module.exports = {
     'PaymentMethod/index': './src/components/PaymentMethod/',
     'Alert/index': './src/components/Alert/',
     'ScreenLoader/index': './src/components/ScreenLoader/',
+    'Reviews/WriteReview': './src/components/Reviews/WriteReview',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
