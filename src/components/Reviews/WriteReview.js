@@ -30,7 +30,7 @@ class WriteReview extends React.Component {
   }
 
   render() {
-    const { onClickSubmit, catalogId } = this.props;
+    const { onClickSubmit, catalogId, col } = this.props;
     const {
       addReviewOpen, name, rating, review
     } = this.state;
@@ -38,10 +38,16 @@ class WriteReview extends React.Component {
       <Row display="block" mt="0.625rem" mb="0.625rem" mr="1.25rem" ml="1.25rem">
         <Div>
           <Label color="textExtraLight">Already bought this product?</Label>
-          <Button onClick={this.toggleAddReview} btnType="link" color={Theme.colors.primary}>Write a Review</Button>
+          <Button
+            onClick={this.toggleAddReview}
+            btnType="link"
+            color={Theme.colors.primary}
+            fontSize="0.875rem"
+            lh="1"
+          >Write a Review</Button>
           {addReviewOpen &&
           <form onSubmit={onClickSubmit(catalogId, { name, rating, review })}>
-            <Div col="8">
+            <Div col={col} mt="0.5rem">
               <Div mb="0.625rem">
                 <Label>Name</Label>
                 <Input name="name" onChange={this.handleChange} />
@@ -75,11 +81,12 @@ class WriteReview extends React.Component {
 }
 
 WriteReview.defaultProps = {
+  col: '12'
 };
 
 WriteReview.propTypes = {
   onClickSubmit: PropTypes.func.isRequired,
   catalogId: PropTypes.string.isRequired,
-
+  col: PropTypes.string
 };
 export default WriteReview;

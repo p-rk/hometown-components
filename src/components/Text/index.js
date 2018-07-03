@@ -18,7 +18,7 @@ const Text = styled.p`
   ${props => props.pr && { paddingRight: props.pr }}
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
-  ${props => props.ww && { wordWrap: props.ww }}
+  ${props => props.wb && { wordBreak: props.wb }}
 `;
 
 Text.defaultProps = {
@@ -29,7 +29,7 @@ Text.defaultProps = {
   ta: 'left',
   mt: '0.625rem',
   mb: '0.625rem',
-  lh: '1.6',
+  lh: '1.6'
 };
 
 export default Text;

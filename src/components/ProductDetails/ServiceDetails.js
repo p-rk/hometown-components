@@ -17,13 +17,18 @@ const ServiceDetails = ({
   <Section mb="0" pr="0" pl="0">
     <Row display="block" mb="0.9375rem" mr="0" ml="0">
       <Div col="12" pt="0.625rem">
-        <Img width="initial" height="1.5em" mr="0.625rem" mt="0.5rem" float="left" src={location} />
+        <Img width="initial" height="1.5em" mr="0.625rem" mt="0" float="left" src={location} />
+        <Label
+          fontSize="0.825em"
+          color="secondary"
+          display="contents"
+        >Enter PIN Code</Label>
         {children}
       </Div>
     </Row>
     <Row display="block" mb="0.625rem" mr="0" ml="0">
       <Div col="12">
-        <Img width="initial" height="1.5em" mr="0.625rem" mt="0.625rem" float="left" src={calendarImage} />
+        <Img width="initial" height="1.5em" mr="0.625rem" mt="0" float="left" src={calendarImage} />
         {pincode ? <Label
           fontSize="0.825em"
           color="secondary"

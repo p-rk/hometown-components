@@ -6,8 +6,8 @@ import Div from 'components/Div';
 import Text from 'components/Text';
 import Rating from 'components/Rating';
 
-const ReviewsItems = ({ review, col }) => (
-  <Div col={col} display="block" m="0" mb="0.9375rem" pr="2.5rem">
+const ReviewsItems = ({ review, col, pr }) => (
+  <Div col={col} display="block" m="0" mb="0.9375rem" pr={pr}>
     <Heading fontSize="0.875rem" color="secondary" mb="0.3125rem" mt="0px" fontWeight="600">
       {review.nickname || review.customer_name || null}
     </Heading>
@@ -16,7 +16,7 @@ const ReviewsItems = ({ review, col }) => (
         <Rating rating={review.options[0].option_value || null}>★ {review.rating}</Rating>
       </Label>
     </Div>
-    <Text ww="break-word" color="rgba(0, 0, 0, 0.7)" fontSize="0.75rem">{review.detail || null}</Text>
+    <Text wb="break-word" color="rgba(0, 0, 0, 0.7)" fontSize="0.75rem">{review.detail || null}</Text>
   </Div>
 );
 
@@ -26,7 +26,8 @@ ReviewsItems.defaultProps = {
 
 ReviewsItems.propTypes = {
   review: PropTypes.array.isRequired,
-  col: PropTypes.string
+  col: PropTypes.string,
+  pr: PropTypes.string.isRequired,
 };
 
 export default ReviewsItems;
