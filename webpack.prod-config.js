@@ -63,6 +63,9 @@ module.exports = {
     },
     react: {
       commonjs2: 'react'
+    },
+    'react-router-dom': {
+      commonjs2: 'react-router-dom'
     }
   },
   module: {

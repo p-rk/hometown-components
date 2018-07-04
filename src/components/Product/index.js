@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Link from 'components/Link';
+import { Link } from 'react-router-dom';
 import Div from 'components/Div';
 import Heading from 'components/Heading';
 import Span from 'components/Span';
@@ -83,7 +83,7 @@ const Product = ({
       isWishList={isWishList}
       wishlistLoading={(wishlistLoading && wishlistKey === sku)}
     />
-    <Link href={`/product-details/${sku}`}>
+    <Link to={`/product-details/${sku}`}>
       <ImgWrapper>
         <ProgressiveImageSchemer src={image} minHeight="270px">
           {imageURL => (<ProductImg
