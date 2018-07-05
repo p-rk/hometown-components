@@ -51,6 +51,7 @@ module.exports = {
     'Alert/index': './src/components/Alert/',
     'ScreenLoader/index': './src/components/ScreenLoader/',
     'Reviews/WriteReview': './src/components/Reviews/WriteReview',
+    'Shimmer/index': './src/components/Shimmer/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
