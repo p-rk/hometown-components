@@ -6,7 +6,7 @@ import Container from 'components/Container';
 import Section from 'components/Section';
 import ReviewItem from 'components/Reviews/ReviewItem';
 
-const Reviews = ({ reviewItems, col }) => (
+const Reviews = ({ reviewItems, col, pr }) => (
   <Section mb="0.3125rem" p="0" pt="0.9375rem" display="inline-block" mt="1rem">
     <Container type="container">
       <Heading
@@ -18,9 +18,9 @@ const Reviews = ({ reviewItems, col }) => (
       >
       Reviews
       </Heading>
-      <Row display="block" m="0" mb="0.9375rem">
+      <Row display="block" m="0" mb="0">
         {reviewItems.map((review, index) => (
-          <ReviewItem col={col} review={review} key={String(index)} />
+          <ReviewItem col={col} review={review} key={String(index)} pr={pr} />
         ))}
       </Row>
     </Container>
@@ -28,12 +28,14 @@ const Reviews = ({ reviewItems, col }) => (
 );
 
 Reviews.defaultProps = {
-  col: '12'
+  col: '12',
+  pr: '0',
 };
 
 Reviews.propTypes = {
   reviewItems: PropTypes.array.isRequired,
-  col: PropTypes.string
+  col: PropTypes.string,
+  pr: PropTypes.string
 };
 
 export default Reviews;

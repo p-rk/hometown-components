@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Div from 'components/Div';
 import Button from 'components/Buttons';
-import Heading from 'components/Heading';
 import Spec from 'components/ProductDetails/Spec';
 
 const SpecRow = styled.div`
@@ -14,10 +13,41 @@ const SpecRow = styled.div`
   display: block;
   clear: both;
   margin: 0;
-  background-color: #f6f6f6;
-  box-shadow: 7px 7px 14px -9px rgba(124, 122, 122, 0.5);
-  padding: 20px;
   display: flex;
+`;
+
+const SpecHeading = styled.h4`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.2;
+  color: rgba(0,0,0,0.6);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  background-color: #f6f6f6;
+  box-shadow: 7px 7px 14px -9px rgba(124,122,122,0.5);
+  padding: 20px;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    background-color: #fff;
+  }
+`;
+
+const SpecListWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  float: left;
+  display: initial;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+  box-shadow: 7px 7px 14px -9px rgba(124,122,122,0.5);
+  padding: 1rem 1.25rem 0.375rem;
+  margin-top: 0.4375rem;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    background-color: #fff;
+  }
 `;
 
 class SpecList extends Component {
@@ -35,17 +65,10 @@ class SpecList extends Component {
     const specName = Object.keys(list)[0];
     const values = Object.values(list)[0];
     return (
-      <Div mb="0.625rem">
+      <Div mb="0.75rem">
         <SpecRow display="block" m="0">
           <Div col="12" mb="0">
-            <Heading
-              mt="0"
-              mb="0"
-              pb="0"
-              color="textLight"
-              fontSize="1em"
-              fontWeight="600"
-            >
+            <SpecHeading>
               {specName}
               <Button
                 btnType="custom"
@@ -54,16 +77,16 @@ class SpecList extends Component {
                 p="0"
                 fl="right"
                 fontSize="1.5rem"
-                lh="1"
-                height="20px"
+                lh="0.4"
+                height="18px"
                 onClick={this.handleOnclick}
               >{show ? '-' : '+'}</Button>
-            </Heading>
-            {show && <Div p="1rem" pb="0">
+            </SpecHeading>
+            {show && <SpecListWrapper p="1rem" pb="0">
               { values.map((eachSpec, specIndex) => (
                 <Spec spec={eachSpec} key={String(specIndex)} />
               )) }
-            </Div>
+            </SpecListWrapper>
             }
           </Div>
         </SpecRow>

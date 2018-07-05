@@ -10,7 +10,6 @@ const Rating = styled.span`
   vertical-align: text-bottom;
   background: #fa1b36;
   position: relative;
-  top: -4px;
 `;
 
 const RatingContainer = ({ rating }) => (

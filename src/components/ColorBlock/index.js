@@ -2,14 +2,12 @@ import styled from 'styled-components';
 
 const ColorBlock = styled.div`
   border-radius: 2px;
+  border: 3px solid #FFF;
   background-color: ${props => props.bg};
   width: ${props => props.width};
   height: ${props => props.height};
-
-  maxWidth: ${props => props.width};
+  max-width: ${props => props.width};
   flex: 0 0 ${props => props.width};
-  width: '100%';
-  border: 3px solid #FFF;
 
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
@@ -30,10 +28,10 @@ const ColorBlock = styled.div`
 
 ColorBlock.defaultProps = {
   display: 'block',
-  width: '30px',
-  height: '30px',
+  width: '24px',
+  height: '24px',
   bg: '#d5c4b8',
-  mr: '0.625rem',
+  mr: '0.3125rem',
   mb: '0.3125rem'
 };
 
