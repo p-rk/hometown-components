@@ -7,9 +7,10 @@ const Rating = styled.span`
   color: #FFF;
   font-size: 11px;
   padding: 2px 5px;
-  vertical-align: text-bottom;
+  vertical-align: middle;
   background: #fa1b36;
   position: relative;
+  top: -2px;
 `;
 
 const RatingContainer = ({ rating }) => (

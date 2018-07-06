@@ -7,23 +7,27 @@ import Heading from 'components/Heading';
 import Text from 'components/Text';
 import Section from 'components/Section';
 
-const ProductDesc = ({ desc }) => (
-  <Section mb="0.3125rem" pr="0" pl="0" pt="0">
-    <Container type="container" pr="1rem" pl="1rem">
-      <Row display="block" mb="0" mr="0" ml="0">
-        <Div col="12">
-          <Heading
-            mt="0rem"
-            color="textLight"
-            fontSize="1em"
-            fontWeight="600"
-          >Description</Heading>
-          <Text fontSize="1rem" dangerouslySetInnerHTML={{ __html: desc }} />
-        </Div>
-      </Row>
-    </Container>
-  </Section>
-);
+const formatDescription = desc => desc.split('<br>').join('').split('&nbsp;').join('');
+const ProductDesc = ({ desc }) => {
+  desc = formatDescription(desc);
+  return (
+    <Section mb="0.3125rem" pr="0" pl="0" pt="0">
+      <Container type="container" pr="1rem" pl="1rem">
+        <Row display="block" mb="0" mr="0" ml="0">
+          <Div col="12">
+            <Heading
+              mt="0rem"
+              color="textLight"
+              fontSize="1em"
+              fontWeight="600"
+            >Description</Heading>
+            <Text fontSize="1rem" dangerouslySetInnerHTML={{ __html: desc }} />
+          </Div>
+        </Row>
+      </Container>
+    </Section>
+  );
+};
 
 ProductDesc.propTypes = {
   desc: PropTypes.string.isRequired,
