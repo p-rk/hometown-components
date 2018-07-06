@@ -73,9 +73,19 @@ const QuickViewBtn = styled.button`
   }
 `;
 
+const Colors = styled.span`
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  margin-top: 2px;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: 600;
+`;
+
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
-  onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy, wishlistKey
+  onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy, wishlistKey, colors
 }) => (
   <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px" pl="0.5rem" pr="0.5rem">
     <WishlistBtn
@@ -92,6 +102,7 @@ const Product = ({
             width="100%"
           />)}
         </ProgressiveImageSchemer>
+        <Colors>{colors}</Colors>
       </ImgWrapper>
       <Div p="0.25rem 0 0.25rem">
         <ProductInner>
@@ -138,7 +149,8 @@ Product.defaultProps = {
   col: 12,
   wishlistLoading: false,
   onOpenQuickViewModal: () => {},
-  wishlistKey: ''
+  wishlistKey: '',
+  colors: '',
 };
 
 Product.propTypes = {
@@ -157,7 +169,8 @@ Product.propTypes = {
   col: PropTypes.string,
   wishlistLoading: PropTypes.bool,
   deliveredBy: PropTypes.string.isRequired,
-  wishlistKey: PropTypes.string
+  wishlistKey: PropTypes.string,
+  colors: PropTypes.string
 };
 
 export default Product;
