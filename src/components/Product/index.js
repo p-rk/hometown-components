@@ -9,6 +9,7 @@ import WishlistBtn from 'components/WishlistBtn';
 import Rating from 'components/Rating';
 import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
 import Theme from 'components/Theme';
+import colorIcon from '../../static/pantone.svg';
 
 const ProductImg = styled.img`
   position: absolute;
@@ -76,11 +77,16 @@ const QuickViewBtn = styled.button`
 const Colors = styled.span`
   position: absolute;
   right: 10px;
-  bottom: 10px;
-  font-size: 12px;
+  bottom: 15px;
+  font-size: 14px;
   margin-top: 2px;
   color: rgba(0, 0, 0, 0.75);
   font-weight: 600;
+  img {
+    width: 22px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
 `;
 
 const Product = ({
@@ -102,7 +108,10 @@ const Product = ({
             width="100%"
           />)}
         </ProgressiveImageSchemer>
-        <Colors>{colors}</Colors>
+        <Colors>
+          <img src={colorIcon} alt="" />
+          {colors}
+        </Colors>
       </ImgWrapper>
       <Div p="0.25rem 0 0.25rem">
         <ProductInner>
