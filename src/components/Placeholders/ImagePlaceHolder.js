@@ -20,10 +20,10 @@ const ImagePlaceHolder = styled.div`
   bottom: 0;
   position: absolute;
   width: 100%;
-  min-height: ${props => props.minHeight}`;
+  min-height: ${props => props.height}`;
 
 ImagePlaceHolder.defaultProps = {
-  minHeight: '100%'
+  height: '100%'
 };
 
 export default ImagePlaceHolder;

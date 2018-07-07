@@ -91,9 +91,9 @@ const Colors = styled.span`
 
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
-  onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy, wishlistKey, colors
+  onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy, wishlistKey, colors, imgHeight
 }) => (
-  <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px" pl="0.5rem" pr="0.5rem">
+  <ProductWrapper col={col}>
     <WishlistBtn
       onClick={onClick(sku)}
       isWishList={isWishList}
@@ -101,7 +101,7 @@ const Product = ({
     />
     <Link to={`/product-details/${sku}`}>
       <ImgWrapper>
-        <ProgressiveImageSchemer src={image} minHeight="270px">
+        <ProgressiveImageSchemer src={image} height={imgHeight}>
           {imageURL => (<ProductImg
             alt={name}
             src={imageURL}
@@ -162,6 +162,7 @@ Product.defaultProps = {
   onOpenQuickViewModal: () => {},
   wishlistKey: '',
   colors: '',
+  imgHeight: '270px',
 };
 
 Product.propTypes = {
@@ -181,7 +182,8 @@ Product.propTypes = {
   wishlistLoading: PropTypes.bool,
   deliveredBy: PropTypes.string.isRequired,
   wishlistKey: PropTypes.string,
-  colors: PropTypes.string
+  colors: PropTypes.string,
+  imgHeight: PropTypes.string
 };
 
 export default Product;
