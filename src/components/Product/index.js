@@ -108,10 +108,12 @@ const Product = ({
             width="100%"
           />)}
         </ProgressiveImageSchemer>
-        <Colors>
-          <img src={colorIcon} alt="" />
-          {colors}
-        </Colors>
+        { colors &&
+          <Colors>
+            <img src={colorIcon} alt="" />
+            {colors}
+          </Colors>
+        }
       </ImgWrapper>
       <Div p="0.25rem 0 0.25rem">
         <ProductInner>
