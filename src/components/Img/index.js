@@ -9,6 +9,7 @@ const Img = styled.img`
   float: ${props => props.float};
 
   ${props => props.ta && { textAlign: props.ta }}
+  ${props => props.va && { verticalAlign: props.va }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}
