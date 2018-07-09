@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ImagePlaceHolder from 'components/Placeholders/ImagePlaceHolder';
 
 const ImagePlaceHolderWrapper = styled.div`
-  height: ${props => props.minHeight};
+  height: ${props => props.height};
   position: relative;
 `;
 
@@ -12,7 +12,7 @@ export default class ProgressiveImageSchemer extends Component {
   static propTypes = {
     children: PropTypes.func.isRequired,
     src: PropTypes.string.isRequired,
-    minHeight: PropTypes.string.isRequired
+    height: PropTypes.string.isRequired
   };
 
   constructor(props) {
@@ -65,13 +65,13 @@ export default class ProgressiveImageSchemer extends Component {
   }
 
   render() {
-    const { children, src, minHeight } = this.props;
+    const { children, src, height } = this.props;
     const { isLoaded } = this.state;
     if (!children || typeof children !== 'function') {
       throw new Error('ProgressiveImageSchemer requires a function as its only child');
     }
     return (
-      <ImagePlaceHolderWrapper minHeight={minHeight}>
+      <ImagePlaceHolderWrapper height={height}>
         { !isLoaded && <ImagePlaceHolder /> }
         { isLoaded && children(src) }
       </ImagePlaceHolderWrapper>

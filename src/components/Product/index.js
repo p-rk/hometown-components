@@ -9,6 +9,7 @@ import WishlistBtn from 'components/WishlistBtn';
 import Rating from 'components/Rating';
 import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
 import Theme from 'components/Theme';
+import colorIcon from '../../static/pantone.svg';
 
 const ProductImg = styled.img`
   position: absolute;
@@ -73,11 +74,26 @@ const QuickViewBtn = styled.button`
   }
 `;
 
+const Colors = styled.span`
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  font-size: 14px;
+  margin-top: 2px;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: 600;
+  img {
+    width: 22px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+`;
+
 const Product = ({
   name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
-  onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy, wishlistKey
+  onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy, wishlistKey, colors, imgHeight
 }) => (
-  <ProductWrapper col={col} display="block" mr="0" ml="0" mb="30px" pl="0.5rem" pr="0.5rem">
+  <ProductWrapper col={col}>
     <WishlistBtn
       onClick={onClick(sku)}
       isWishList={isWishList}
@@ -85,13 +101,19 @@ const Product = ({
     />
     <Link to={`/product-details/${sku}`}>
       <ImgWrapper>
-        <ProgressiveImageSchemer src={image} minHeight="270px">
+        <ProgressiveImageSchemer src={image} height={imgHeight}>
           {imageURL => (<ProductImg
             alt={name}
             src={imageURL}
             width="100%"
           />)}
         </ProgressiveImageSchemer>
+        { colors &&
+          <Colors>
+            <img src={colorIcon} alt="" />
+            {colors}
+          </Colors>
+        }
       </ImgWrapper>
       <Div p="0.25rem 0 0.25rem">
         <ProductInner>
@@ -138,7 +160,9 @@ Product.defaultProps = {
   col: 12,
   wishlistLoading: false,
   onOpenQuickViewModal: () => {},
-  wishlistKey: ''
+  wishlistKey: '',
+  colors: '',
+  imgHeight: '270px',
 };
 
 Product.propTypes = {
@@ -157,7 +181,9 @@ Product.propTypes = {
   col: PropTypes.string,
   wishlistLoading: PropTypes.bool,
   deliveredBy: PropTypes.string.isRequired,
-  wishlistKey: PropTypes.string
+  wishlistKey: PropTypes.string,
+  colors: PropTypes.string,
+  imgHeight: PropTypes.string
 };
 
 export default Product;
