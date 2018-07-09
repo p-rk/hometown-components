@@ -7,6 +7,7 @@ const Container = styled.div`
   margin-left: auto;
   padding-right: ${props => props.pr};
   padding-left: ${props => props.pl};
+  ${props => props.display && { display: props.display }}
 
   > *, ::after, ::before {
     box-sizing: border-box;
