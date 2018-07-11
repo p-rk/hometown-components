@@ -55,7 +55,7 @@ const Button = styled.button`
   line-height: ${props => props.lh};
   display: inline-block;
   cursor: pointer;
-  text-align: center;
+  text-align: ${props => props.ta};
   white-space: nowrap;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -105,7 +105,8 @@ Button.defaultProps = {
   fontWeight: 'medium',
   lh: '1.5',
   bc: 'transparent',
-  bg: 'transparent'
+  bg: 'transparent',
+  ta: 'center'
 };
 
 export default Button;

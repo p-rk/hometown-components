@@ -17,7 +17,7 @@ const ProductInline = ({
     }
   } = itemData;
   return (
-    <Div mr="0" ml="0" mb="0.625rem">
+    <Div mr="0" ml="0" mb="0">
       <Row display="block" mr="0" ml="0">
         <Div col="4">
           <Img
@@ -31,28 +31,28 @@ const ProductInline = ({
             mb="0.4375rem"
             mt="0"
             color={Theme.colors.text}
-            fontWeight="700"
-            fontSize="1.1rem"
+            fontWeight={Theme.fontWeight.semibold}
+            fontSize="1rem"
             lh="1.3"
           >{data.name}</Heading>
           <Div mb="0.25rem">
-            <Text mt="0" mb="0.3125rem">
+            <Text mt="0" mb="0">
               <Span
                 mr="0.625rem"
                 fontSize="0.9rem"
                 color={Theme.colors.textDark}
-                fontWeight="700"
+                fontWeight={Theme.fontWeight.semibold}
               >{netprice}</Span>
             </Text>
-            {saving && <Text mt="0" mb="0.3125rem">
+            {saving && <Text mt="0" mb="0">
               <Span
-                fontSize="0.9rem"
+                fontSize="0.75rem"
               >Saving
                   ({saving})
               </Span>
             </Text>}
             <Text mt="0" mb="0">
-              <Span fontSize="0.9rem">{data.delivery_details.length &&
+              <Span fontSize="0.75rem">{data.delivery_details.length &&
                               data.delivery_details[0].value}</Span>
             </Text>
           </Div>
