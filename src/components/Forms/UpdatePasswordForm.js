@@ -25,7 +25,6 @@ export default class UpdateProfileForm extends Component {
     const {
       loading, loaded, error, errorMessage, passwordUpdated
     } = response;
-    console.log(response);
     return (
       <form onSubmit={onSubmitUpdatePassword}>
         <FormInput
