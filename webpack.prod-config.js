@@ -67,6 +67,9 @@ module.exports = {
     },
     'react-router-dom': {
       commonjs2: 'react-router-dom'
+    },
+    'react-stars': {
+      commonjs2: 'react-stars'
     }
   },
   module: {
