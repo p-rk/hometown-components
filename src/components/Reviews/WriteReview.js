@@ -40,7 +40,6 @@ class WriteReview extends React.Component {
     const {
       addReviewOpen, name, review, rating
     } = this.state;
-    console.log(rating);
     return (
       <Row display="block" mt="0.625rem" mb="0.625rem" mr="1.25rem" ml="1.25rem">
         <Div>
