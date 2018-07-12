@@ -9,7 +9,7 @@ import WishlistBtn from 'components/WishlistBtn';
 import Rating from 'components/Rating';
 import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
 import Theme from 'components/Theme';
-import colorIcon from '../../static/pantone.svg';
+import colorIcon from '../../static/pantone.jpg';
 
 const ProductImg = styled.img`
   position: absolute;
@@ -83,9 +83,9 @@ const Colors = styled.span`
   color: rgba(0, 0, 0, 0.75);
   font-weight: 600;
   img {
-    width: 22px;
+    width: 70px;
     margin-right: 5px;
-    vertical-align: middle;
+    vertical-align: baseline;
   }
 `;
 
