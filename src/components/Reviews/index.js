@@ -14,7 +14,7 @@ const Reviews = ({ reviewItems, col, pr }) => (
     display="block"
     mt="1rem"
   >
-    <Container type="container">
+    <Container type="container" pl="1rem" pr="1rem">
       <Heading
         mb="0.9375rem"
         mt="0px"
