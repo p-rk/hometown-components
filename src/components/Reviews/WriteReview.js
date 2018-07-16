@@ -40,7 +40,6 @@ class WriteReview extends React.Component {
     const {
       addReviewOpen, name, review, rating
     } = this.state;
-    console.log(rating);
     return (
       <Row display="block" mt="0.625rem" mb="0.625rem" mr="1.25rem" ml="1.25rem">
         <Div>
@@ -56,10 +55,6 @@ class WriteReview extends React.Component {
           <form onSubmit={onClickSubmit(catalogId, { name, rating, review })}>
             <Div col={col} mt="0.5rem">
               <Div mb="0.625rem">
-                <Label>Name</Label>
-                <Input name="name" onChange={this.handleChange} />
-              </Div>
-              <Div mb="0.625rem">
                 <Label>Rating</Label>
                 <ReactStars
                   count={5}
@@ -69,6 +64,10 @@ class WriteReview extends React.Component {
                   half={false}
                   color2="#ffd700"
                 />
+              </Div>
+              <Div mb="0.625rem">
+                <Label>Name</Label>
+                <Input name="name" onChange={this.handleChange} />
               </Div>
               <Div mb="1rem">
                 <Label>Review</Label>
