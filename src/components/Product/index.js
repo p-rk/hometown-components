@@ -7,7 +7,7 @@ import Heading from 'components/Heading';
 import Span from 'components/Span';
 import WishlistBtn from 'components/WishlistBtn';
 import Rating from 'components/Rating';
-import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
+import ProgressiveImageSchemer from 'components/ProgressiveImageSchemer';
 import Theme from 'components/Theme';
 import colorIcon from '../../static/pantone.jpg';
 
