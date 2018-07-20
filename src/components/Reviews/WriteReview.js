@@ -41,15 +41,17 @@ class WriteReview extends React.Component {
       addReviewOpen, name, review, rating
     } = this.state;
     return (
-      <Row display="block" mt="0.625rem" mb="0.625rem" mr="1.25rem" ml="1.25rem">
+      <Row display="block" mt="0.625rem" mb="0.625rem" mr="1rem" ml="1rem">
         <Div>
           <Label color="textExtraLight">Already bought this product?</Label>
           <Button
             onClick={this.toggleAddReview}
-            btnType="link"
+            btnType="custom"
             color={Theme.colors.primary}
             fontSize="0.875rem"
             lh="1"
+            p="0.75rem 1rem"
+            ml="0.625rem"
           >Write a Review</Button>
           {addReviewOpen &&
           <form onSubmit={onClickSubmit(catalogId, { name, rating, review })}>

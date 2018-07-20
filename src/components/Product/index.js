@@ -7,9 +7,9 @@ import Heading from 'components/Heading';
 import Span from 'components/Span';
 import WishlistBtn from 'components/WishlistBtn';
 import Rating from 'components/Rating';
-import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
+import ProgressiveImageSchemer from 'components/ProgressiveImageSchemer';
 import Theme from 'components/Theme';
-import colorIcon from '../../static/pantone.svg';
+import colorIcon from '../../static/pantone.jpg';
 
 const ProductImg = styled.img`
   position: absolute;
@@ -69,7 +69,7 @@ const QuickViewBtn = styled.button`
   left: calc(50% - 65px);
   height: 40px;
   top: calc((270px - 40px)/2);
-  @media (mxa-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     display: none !important;
   }
 `;
@@ -83,9 +83,9 @@ const Colors = styled.span`
   color: rgba(0, 0, 0, 0.75);
   font-weight: 600;
   img {
-    width: 22px;
+    width: 70px;
     margin-right: 5px;
-    vertical-align: middle;
+    vertical-align: baseline;
   }
 `;
 
