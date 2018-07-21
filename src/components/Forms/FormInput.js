@@ -5,7 +5,7 @@ import InputField from 'components/InputField';
 import { Label, FeedBackMessage } from 'components/Label';
 
 const FormInput = ({
-  label, type, placeholder, onChange, value, feedBackMessage, feedBackError, required, name
+  label, type, placeholder, onChange, value, feedBackMessage, feedBackError, required, name, onBlur
 }) => (
   <InputField mb="0.625rem">
     <Label fontSize="0.875em" mb="0.625rem">{label}</Label>
@@ -13,6 +13,7 @@ const FormInput = ({
       type={type}
       placeholder={placeholder}
       onChange={onChange}
+      onBlur={onBlur}
       value={value}
       height="42px"
       name={name}
@@ -27,6 +28,7 @@ FormInput.propTypes = {
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
   value: PropTypes.string,
   feedBackMessage: PropTypes.string,
   feedBackError: PropTypes.bool,
