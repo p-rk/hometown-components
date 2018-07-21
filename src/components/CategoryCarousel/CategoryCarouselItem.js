@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Img from 'components/Img';
 import Div from 'components/Div';
-import ProgressiveImageSchemer from 'components/ProgressiveImageShimmer';
+import ProgressiveImageSchemer from 'components/ProgressiveImageSchemer';
 
 const ProductCarouselLi = styled.li`
   width: 100%;

@@ -7,8 +7,14 @@ import Section from 'components/Section';
 import ReviewItem from 'components/Reviews/ReviewItem';
 
 const Reviews = ({ reviewItems, col, pr }) => (
-  <Section mb="0.3125rem" p="0" pt="0.9375rem" display="inline-block" mt="1rem">
-    <Container type="container">
+  <Section
+    mb="0.3125rem"
+    p="0"
+    pt="0.9375rem"
+    display="block"
+    mt="1rem"
+  >
+    <Container type="container" pl="1rem" pr="1rem">
       <Heading
         mb="0.9375rem"
         mt="0px"

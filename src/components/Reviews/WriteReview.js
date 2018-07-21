@@ -6,12 +6,13 @@ import Row from 'components/Row';
 import Button from 'components/Buttons';
 import Theme from 'components/Theme';
 import { Label } from 'components/Label';
+import ReactStars from 'react-stars';
 
 class WriteReview extends React.Component {
   state={
     addReviewOpen: false,
     name: '',
-    rating: '',
+    rating: 0,
     review: '',
   }
   handleChange=e => {
@@ -19,6 +20,11 @@ class WriteReview extends React.Component {
     const { name, value } = e.target;
     this.setState({
       [name]: value
+    });
+  }
+  ratingChanged = newRating => {
+    this.setState({
+      rating: newRating
     });
   }
 
@@ -32,18 +38,20 @@ class WriteReview extends React.Component {
   render() {
     const { onClickSubmit, catalogId, col } = this.props;
     const {
-      addReviewOpen, name, rating, review
+      addReviewOpen, name, review, rating
     } = this.state;
     return (
-      <Row display="block" mt="0.625rem" mb="0.625rem" mr="1.25rem" ml="1.25rem">
+      <Row display="block" mt="0.625rem" mb="0.625rem" mr="1rem" ml="1rem">
         <Div>
           <Label color="textExtraLight">Already bought this product?</Label>
           <Button
             onClick={this.toggleAddReview}
-            btnType="link"
+            btnType="custom"
             color={Theme.colors.primary}
             fontSize="0.875rem"
             lh="1"
+            p="0.75rem 1rem"
+            ml="0.625rem"
           >Write a Review</Button>
           {addReviewOpen &&
           <form onSubmit={onClickSubmit(catalogId, { name, rating, review })}>
@@ -54,7 +62,14 @@ class WriteReview extends React.Component {
               </Div>
               <Div mb="0.625rem">
                 <Label>Rating</Label>
-                <Input name="rating" onChange={this.handleChange} />
+                <ReactStars
+                  count={5}
+                  onChange={this.ratingChanged}
+                  size={30}
+                  value={this.state.rating}
+                  half={false}
+                  color2="#ffd700"
+                />
               </Div>
               <Div mb="1rem">
                 <Label>Review</Label>

@@ -52,6 +52,7 @@ module.exports = {
     'ScreenLoader/index': './src/components/ScreenLoader/',
     'Reviews/WriteReview': './src/components/Reviews/WriteReview',
     'Shimmer/index': './src/components/Shimmer/',
+    'ProgressiveImageSchemer/index': './src/components/ProgressiveImageSchemer/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
@@ -67,6 +68,9 @@ module.exports = {
     },
     'react-router-dom': {
       commonjs2: 'react-router-dom'
+    },
+    'react-stars': {
+      commonjs2: 'react-stars'
     }
   },
   module: {

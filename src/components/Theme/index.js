@@ -17,12 +17,14 @@ const colors = {
   white: '#fff',
   black: '#000',
   primary: '#ae8873',
+  primaryLight: 'rgba(174, 136, 115, 0.8)',
   textExtraLight: 'rgba(0, 0, 0, 0.5)',
   textLight: 'rgba(0, 0, 0, 0.6)',
   secondary: 'rgba(0, 0, 0, 0.7)',
   text: 'rgba(0, 0, 0, 0.75)',
   textDark: 'rgba(0, 0, 0, 0.8)',
   textExtraDark: 'rgba(0, 0, 0, 0.9)',
+  yellowDark: '#f5a623',
   border: '#979797',
   success: '#28a745',
   error: '#dc3545',
@@ -34,6 +36,7 @@ const colors = {
   footerBottom: 'rgba(0, 0, 0, 0.95)',
   footerText: '#a6a6a6',
   hashTags: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9))',
+
   gray: [
     '#f8f9fa',
     '#e9ecef',
