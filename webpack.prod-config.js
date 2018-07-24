@@ -13,6 +13,7 @@ module.exports = {
     'Icons/Fav': './src/components/Icons/Fav',
     'Img/index': './src/components/Img/',
     'Input/index': './src/components/Input/',
+    'TextArea/index': './src/components/TextArea/',
     'InputField/index': './src/components/InputField/',
     'Label/index': './src/components/Label/',
     'Link/index': './src/components/Link/',
