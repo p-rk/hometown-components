@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ImagePlaceHolder from 'components/Placeholders/ImagePlaceHolder';
 
+const defaultImage = require('../../static/placeholder.jpg');
+
 const ImagePlaceHolderWrapper = styled.div`
   height: ${props => props.height};
   position: relative;
@@ -18,7 +20,8 @@ export default class ProgressiveImageSchemer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoaded: false
+      isLoaded: false,
+      error: false
     };
   }
 
@@ -31,7 +34,10 @@ export default class ProgressiveImageSchemer extends Component {
     const { src } = nextProps;
     // We only invalidate the current image if the src has changed.
     if (src !== this.props.src) {
-      this.setState({ isLoaded: false });
+      this.setState({
+        isLoaded: false,
+        error: false
+      });
       this.loadImage(src);
     }
   }
@@ -47,9 +53,11 @@ export default class ProgressiveImageSchemer extends Component {
     this.setState({ isLoaded: true });
   }
 
-  onError(Error) {
-    console.log(Error);
-    this.setState({ isLoaded: false });
+  onError() {
+    this.setState({
+      isLoaded: false,
+      error: true
+    });
   }
 
   loadImage(src) {
@@ -66,7 +74,7 @@ export default class ProgressiveImageSchemer extends Component {
 
   render() {
     const { children, src, height } = this.props;
-    const { isLoaded } = this.state;
+    const { isLoaded, error } = this.state;
     if (!children || typeof children !== 'function') {
       throw new Error('ProgressiveImageSchemer requires a function as its only child');
     }
@@ -74,6 +82,7 @@ export default class ProgressiveImageSchemer extends Component {
       <ImagePlaceHolderWrapper height={height}>
         { !isLoaded && <ImagePlaceHolder /> }
         { isLoaded && children(src) }
+        { !isLoaded && error && children(defaultImage) }
       </ImagePlaceHolderWrapper>
     );
   }
