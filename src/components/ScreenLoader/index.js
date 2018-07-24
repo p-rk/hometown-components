@@ -64,7 +64,7 @@ const LoaderLineMask = styled.div`
   -ms-transform-origin: 60px 60px;
   -o-transform-origin: 60px 60px;
   transform-origin: 60px 60px;
-  -webkit-mask-image: -webkit-linear-gradient(top,#ae8873,rgba(78, 12, 12, 0));
+  -webkit-mask-image: -webkit-linear-gradient(top,#f98d29,rgba(78, 12, 12, 0));
   -webkit-animation: ${rotate} 1.2s infinite linear;
   -moz-animation: ${rotate} 1.2s infinite linear;
   -o-animation: ${rotate} 1.2s infinite linear;
@@ -75,7 +75,7 @@ const LoaderLine = styled.div`
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 1px #ae8873;
+  box-shadow: inset 0 0 0 1px #f98d29;
 `;
 
 const ScreenLoader = () => (

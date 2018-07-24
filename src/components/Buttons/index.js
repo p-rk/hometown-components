@@ -85,8 +85,8 @@ const Button = styled.button`
   ${props => props.tt && { textTransform: props.tt }}
 
   &:hover {
-    background: ${props => props.type === 'default' ? '#ae8873' : 'transparent'};
-    color: ${props => props.type === 'default' ? '#FFF' : '#ae8873'};
+    background: ${props => props.type === 'default' ? '#f98d29' : 'transparent'};
+    color: ${props => props.type === 'default' ? '#FFF' : '#f98d29'};
   }
 
   &:disabled {
