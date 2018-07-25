@@ -67,7 +67,7 @@ const CatRoundTitle = styled.a`
   z-index: 1;
   text-align: center;
   width: 100%;
-  background: #ae8873ab;
+  background: #f98d29ab;
   padding: 5px 10px;
   left: calc(50% - 72px);
 `;
