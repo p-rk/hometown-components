@@ -10,7 +10,7 @@ const FormInput = ({
 }) => (
   <InputField mb="0.625rem">
     <Label fontSize="0.875em" mb="0.625rem">{label}</Label>
-    {type === 'text' && (
+    {(type === 'text' || type === 'password' || type === 'email' || type === 'number') && (
       <Input
         type={type}
         placeholder={placeholder}
@@ -39,7 +39,7 @@ const FormInput = ({
 
 FormInput.propTypes = {
   label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
@@ -58,6 +58,7 @@ FormInput.defaultProps = {
   required: false,
   name: null,
   rows: 3,
+  type: 'text'
 };
 
 export default FormInput;
