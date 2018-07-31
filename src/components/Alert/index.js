@@ -8,7 +8,7 @@ const AlertWrapper = styled.div`
   color: #FFF;
   background: #222222;
   padding: 10px;
-  position: absolute;
+  position: fixed;
   bottom: 24px;
   padding: 11px 15px 6px;
   border-radius: 3px;
