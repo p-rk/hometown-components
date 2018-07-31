@@ -13,7 +13,7 @@ const ReviewsItems = ({ review, col, pr }) => (
     </Heading>
     <Div>
       <Label va="middle" mt="0" ml="0">
-        <Rating rating={review.options[0].option_value || null}>★ {review.rating}</Rating>
+        <Rating rating={review.options[0].option_value || null} />
       </Label>
     </Div>
     <Text wb="break-word" color="rgba(0, 0, 0, 0.7)" fontSize="0.75rem">{review.detail || null}</Text>
