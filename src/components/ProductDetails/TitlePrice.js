@@ -50,7 +50,7 @@ const TitlePrice = ({
           fontWeight="600"
         >
           <span itemProp="priceCurrency" content="INR">₹</span>
-          <span itemProp="price" content={discPrice}>{discPrice}</span>
+          <span itemProp="price" content={discPrice}> {discPrice}</span>
           { price !== discPrice &&
             <span>
               <Span
