@@ -9,6 +9,7 @@ const WishlistBtn = ({ onClick, isWishList, wishlistLoading }) => (
     p="0"
     border="none"
     className={`wishListBtn ${wishlistLoading ? 'loading' : ''} ${isWishList ? 'loaded' : ''}`}
+    disabled={wishlistLoading}
   >
     <WisListIcon />
   </Button>
