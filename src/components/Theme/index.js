@@ -16,9 +16,11 @@ const breakpoints = val => {
 const colors = {
   white: '#fff',
   black: '#000',
+  prime: '#ae8873',
   primary: '#f98d29',
   oldMont: '#a19a92',
   primaryLight: 'rgba(249, 141, 41, 0.8)',
+  lightGray: 'rgba(0,0,0,0.05)',
   textExtraLight: 'rgba(0, 0, 0, 0.5)',
   textLight: 'rgba(0, 0, 0, 0.6)',
   secondary: 'rgba(0, 0, 0, 0.7)',

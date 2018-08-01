@@ -26,7 +26,9 @@ const Reviews = ({ reviewItems, col, pr }) => (
       </Heading>
       <Row display="block" m="0" mb="0">
         {reviewItems.map((review, index) => (
-          <ReviewItem col={col} review={review} key={String(index)} pr={pr} />
+          <div>
+            <ReviewItem col={col} review={review} key={String(index)} pr={pr} />
+          </div>
         ))}
       </Row>
     </Container>
