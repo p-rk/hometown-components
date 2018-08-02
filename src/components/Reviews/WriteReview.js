@@ -61,7 +61,7 @@ class WriteReview extends React.Component {
                 <ReactStars
                   count={5}
                   onChange={this.ratingChanged}
-                  size={30}
+                  size={20}
                   value={this.state.rating}
                   half={false}
                   color2="#ffd700"

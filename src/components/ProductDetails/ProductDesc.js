@@ -21,7 +21,7 @@ const ProductDesc = ({ desc }) => {
               fontSize="1em"
               fontWeight="600"
             >Description</Heading>
-            <Text fontSize="1rem" dangerouslySetInnerHTML={{ __html: desc }} />
+            <Text itemProp="description" fontSize="1rem" dangerouslySetInnerHTML={{ __html: desc }} />
           </Div>
         </Row>
       </Container>
