@@ -89,72 +89,82 @@ const Colors = styled.span`
   }
 `;
 
-const Product = ({
-  name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
-  onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy, wishlistKey, colors, imgHeight
-}) => (
-  <ProductWrapper col={col}>
-    <WishlistBtn
-      onClick={onClick(sku)}
-      isWishList={isWishList}
-      wishlistLoading={(wishlistLoading && wishlistKey === sku)}
-    />
-    <Link to={`/product-details/${sku}`}>
-      <ImgWrapper>
-        <ProgressiveImageSchemer src={image} height={imgHeight}>
-          {imageURL => (<ProductImg
-            alt={name}
-            src={imageURL}
-            width="100%"
-          />)}
-        </ProgressiveImageSchemer>
-        { colors &&
+const handleClick = (dispatcher, position) => () => {
+  dispatcher(position + 1);
+};
+
+const Product = props => {
+  const {
+    name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
+    onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy, wishlistKey, colors, imgHeight,
+    position, setProductPosition
+  } = props;
+  const urlName = name.split(' ').join('-').toLowerCase();
+  return (
+    <ProductWrapper col={col}>
+      <WishlistBtn
+        onClick={onClick(sku)}
+        isWishList={isWishList}
+        wishlistLoading={(wishlistLoading && wishlistKey === sku)}
+      />
+
+      <Link onClick={handleClick(setProductPosition, position)} to={`/${urlName}/sku/${sku}`}>
+        <ImgWrapper>
+          <ProgressiveImageSchemer src={image} height={imgHeight}>
+            {imageURL => (<ProductImg
+              alt={name}
+              src={imageURL}
+              width="100%"
+            />)}
+          </ProgressiveImageSchemer>
+          { colors &&
           <Colors>
             <img src={colorIcon} alt="" />
             {colors}
           </Colors>
-        }
-      </ImgWrapper>
-      <Div p="0.25rem 0 0.25rem">
-        <ProductInner>
-          <Heading
-            mb="5px"
-            color={Theme.colors.text}
-            fontWeight="600"
-            fontSize="0.9375em"
-          >{name}</Heading>
-          <Div mb="0px">
-            <Span mr="0.625rem" color={Theme.colors.textDark} fontSize="0.875em" fontWeight="600">{price}</Span>
-            <Span mr="0" fontSize="0.75em" fontWeight="600"><s>{cutprice}</s></Span>
-            {rating > 0 && (
-              <Span ml="0.625rem">
-                <Rating rating={rating}>★ {rating}</Rating>
-                <Span
-                  mr="0.625rem"
-                  fontSize="0.75rem"
-                  lh="1.7"
-                  va="text-top"
-                  color={Theme.colors.textExtraLight}
-                >({reviewsCount})</Span>
-              </Span>
-            )}
-          </Div>
-          <Div mb="0px">
-            { saving &&
-            <Span fontSize="0.75rem" fontWeight="600">
+          }
+        </ImgWrapper>
+        <Div p="0.25rem 0 0.25rem">
+          <ProductInner>
+            <Heading
+              mb="5px"
+              color={Theme.colors.text}
+              fontWeight="600"
+              fontSize="0.9375em"
+            >{name}</Heading>
+            <Div mb="0px">
+              <Span mr="0.625rem" color={Theme.colors.textDark} fontSize="0.875em" fontWeight="600">{price}</Span>
+              <Span mr="0" fontSize="0.75em" fontWeight="600"><s>{cutprice}</s></Span>
+              {rating > 0 && (
+                <Span ml="0.625rem">
+                  <Rating rating={rating}>★ {rating}</Rating>
+                  <Span
+                    mr="0.625rem"
+                    fontSize="0.75rem"
+                    lh="1.7"
+                    va="text-top"
+                    color={Theme.colors.textExtraLight}
+                  >({reviewsCount})</Span>
+                </Span>
+              )}
+            </Div>
+            <Div mb="0px">
+              { saving &&
+              <Span fontSize="0.75rem" fontWeight="600">
               Savings Rs. {savingAmount}
-              <Span mr="0px" fontSize="0.75rem" border="none" fontWeight="600"> ({saving.replace('-', '')} OFF)</Span>
-            </Span> }
-          </Div>
-          <Div>
-            <Span fontSize="0.75rem" color={Theme.colors.textExtraLight}>{deliveredBy}</Span>
-          </Div>
-        </ProductInner>
-      </Div>
-    </Link>
-    <QuickViewBtn onClick={onOpenQuickViewModal}>QUICK VIEW</QuickViewBtn>
-  </ProductWrapper>
-);
+                <Span mr="0px" fontSize="0.75rem" border="none" fontWeight="600"> ({saving.replace('-', '')} OFF)</Span>
+              </Span> }
+            </Div>
+            <Div>
+              <Span fontSize="0.75rem" color={Theme.colors.textExtraLight}>{deliveredBy}</Span>
+            </Div>
+          </ProductInner>
+        </Div>
+      </Link>
+      <QuickViewBtn onClick={onOpenQuickViewModal}>QUICK VIEW</QuickViewBtn>
+    </ProductWrapper>
+  );
+};
 Product.defaultProps = {
   isWishList: false,
   col: 12,
@@ -183,7 +193,10 @@ Product.propTypes = {
   deliveredBy: PropTypes.string.isRequired,
   wishlistKey: PropTypes.string,
   colors: PropTypes.string,
-  imgHeight: PropTypes.string
+  imgHeight: PropTypes.string,
+  position: PropTypes.string.isRequired,
+  setProductPosition: PropTypes.func.isRequired
+
 };
 
 export default Product;
