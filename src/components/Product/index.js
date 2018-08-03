@@ -96,7 +96,7 @@ const handleClick = (dispatcher, position) => () => {
 const Product = props => {
   const {
     name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
-    onClick, isWishList, col, wishlistLoading, onOpenQuickViewModal, deliveredBy, wishlistKey, colors, imgHeight,
+    onClick, isWishList, col, skuLoading, onOpenQuickViewModal, deliveredBy, colors, imgHeight,
     position, setProductPosition
   } = props;
   const urlName = name.split(' ').join('-').toLowerCase();
@@ -105,7 +105,7 @@ const Product = props => {
       <WishlistBtn
         onClick={onClick(sku)}
         isWishList={isWishList}
-        wishlistLoading={(wishlistLoading && wishlistKey === sku)}
+        wishlistLoading={skuLoading}
       />
 
       <Link onClick={handleClick(setProductPosition, position)} to={`/${urlName}/sku/${sku}`}>
@@ -168,9 +168,8 @@ const Product = props => {
 Product.defaultProps = {
   isWishList: false,
   col: 12,
-  wishlistLoading: false,
+  skuLoading: false,
   onOpenQuickViewModal: () => {},
-  wishlistKey: '',
   colors: '',
   imgHeight: '270px',
 };
@@ -189,9 +188,8 @@ Product.propTypes = {
   onClick: PropTypes.func.isRequired,
   onOpenQuickViewModal: PropTypes.func,
   col: PropTypes.string,
-  wishlistLoading: PropTypes.bool,
+  skuLoading: PropTypes.bool,
   deliveredBy: PropTypes.string.isRequired,
-  wishlistKey: PropTypes.string,
   colors: PropTypes.string,
   imgHeight: PropTypes.string,
   position: PropTypes.string.isRequired,
