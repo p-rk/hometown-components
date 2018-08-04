@@ -8,7 +8,7 @@ import Section from 'components/Section';
 import ReactStars from 'react-stars';
 
 const TitlePrice = ({
-  name, price, discPrice, savingsRs, savingsPercentage
+  name, price, discPrice, savingsRs, savingsPercentage, count, ratings
 }) => (
   <Section mb="0.3125rem" p="0">
     <Container type="container" pr="1rem" pl="1rem">
@@ -22,22 +22,26 @@ const TitlePrice = ({
           fontWeight="500"
         >
           {name}
-          <ReactStars
-            count={5}
-            className="ratings"
-            size={18}
-            value="3.5"
-            half
-            edit={false}
-            color2="#ffd700"
-          />
-          <Span fontSize="1rem" color="rgba(0, 0, 0, 0.4)">(5)</Span>
-          <div className="hide" itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
-            Rated
-            <span itemProp="ratingValue">4.5</span>/5 based on
-            <span itemProp="reviewCount">5</span>
-            customer reviews
-          </div>
+          {ratings !== 0 &&
+            <Span>
+              <ReactStars
+                count={5}
+                className="ratings"
+                size={18}
+                value={String(ratings)}
+                half
+                edit={false}
+                color2="#ffd700"
+              />
+              <Span fontSize="1rem" color="rgba(0, 0, 0, 0.4)">({count})</Span>
+              <div className="hide" itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
+                Rated
+                <span itemProp="ratingValue">({ratings})</span>/5 based on
+                <span itemProp="reviewCount">{count}</span>
+                customer reviews
+              </div>
+            </Span>
+          }
         </Heading>
         <Heading
           itemProp="offers"
@@ -81,7 +85,9 @@ TitlePrice.propTypes = {
   price: PropTypes.string,
   discPrice: PropTypes.string,
   savingsPercentage: PropTypes.string,
-  savingsRs: PropTypes.string
+  savingsRs: PropTypes.string,
+  ratings: PropTypes.number,
+  count: PropTypes.number,
 };
 
 TitlePrice.defaultProps = {
@@ -89,7 +95,9 @@ TitlePrice.defaultProps = {
   price: '',
   discPrice: '',
   savingsPercentage: '',
-  savingsRs: ''
+  savingsRs: '',
+  count: 0,
+  ratings: 0
 };
 
 export default TitlePrice;
