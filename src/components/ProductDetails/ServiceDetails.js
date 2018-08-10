@@ -11,6 +11,8 @@ import creditCard from '../../static/credit-card.jpg';
 import location from '../../static/location.jpg';
 import truck from '../../static/truck.jpg';
 
+const getComponent = (children, key) => children.filter(comp => comp.key === key);
+
 const ServiceDetails = ({
   children, deliverBy, shipping, pincode, emiStarting
 }) => (
@@ -23,7 +25,7 @@ const ServiceDetails = ({
           color="secondary"
           display="contents"
         >Enter PIN Code</Label>
-        {children}
+        {getComponent(children, 'pincode')}
       </Div>
     </Row>
     <Row display="block" mb="0.625rem" mr="0" ml="0">
@@ -50,7 +52,7 @@ const ServiceDetails = ({
           fontSize="0.825em"
           color="secondary"
           display="contents"
-        >EMI starting from Rs.{emiStarting} </Label>
+        >EMI starting from Rs.{emiStarting} {getComponent(children, 'emi')} </Label>
       </Div>
     </Row>
     <Row display="block" mb="0.625rem" mr="0" ml="0">
