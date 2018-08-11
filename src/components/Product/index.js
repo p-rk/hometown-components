@@ -99,7 +99,8 @@ const Product = props => {
     onClick, isWishList, col, skuLoading, onOpenQuickViewModal, deliveredBy, colors, imgHeight,
     position, setProductPosition
   } = props;
-  const urlName = name.split(' ').join('-').toLowerCase();
+  const urlName = name.split(' ').join('-').toLowerCase().split('%')
+    .join('');
   return (
     <ProductWrapper col={col}>
       <WishlistBtn
