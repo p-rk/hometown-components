@@ -11,8 +11,10 @@ import creditCard from '../../static/credit-card.jpg';
 import location from '../../static/location.jpg';
 import truck from '../../static/truck.jpg';
 
+const getComponent = (children, key) => children.filter(comp => comp.key === key);
+
 const ServiceDetails = ({
-  children, deliverBy, shipping, pincode, emiStarting
+  children, deliverBy, shipping, pincode, emiStarting, isEmiAvailable
 }) => (
   <Section mb="0" pr="0" pl="0">
     <Row display="block" mb="0.9375rem" mr="0" ml="0">
@@ -23,7 +25,7 @@ const ServiceDetails = ({
           color="secondary"
           display="contents"
         >Enter PIN Code</Label>
-        {children}
+        {getComponent(children, 'pincode')}
       </Div>
     </Row>
     <Row display="block" mb="0.625rem" mr="0" ml="0">
@@ -43,7 +45,7 @@ const ServiceDetails = ({
         }
       </Div>
     </Row>
-    <Row display="block" mb="0.625rem" mr="0" ml="0">
+    {isEmiAvailable && <Row display="block" mb="0.625rem" mr="0" ml="0">
       <Div col="12">
         <Img width="initial" height="1.5em" mr="0.625rem" float="left" src={creditCard} />
         <Label
@@ -51,8 +53,9 @@ const ServiceDetails = ({
           color="secondary"
           display="contents"
         >EMI starting from Rs.{emiStarting} </Label>
+        {getComponent(children, 'emi')}
       </Div>
-    </Row>
+    </Row>}
     <Row display="block" mb="0.625rem" mr="0" ml="0">
       <Div col="12">
         <Img width="initial" height="1.5em" mr="0.625rem" float="left" src={truck} />
@@ -72,6 +75,7 @@ ServiceDetails.propTypes = {
   shipping: PropTypes.string.isRequired,
   children: PropTypes.objectOf(PropTypes.any).isRequired,
   pincode: PropTypes.string.isRequired,
+  isEmiAvailable: PropTypes.bool.isRequired
 };
 
 export default ServiceDetails;

@@ -99,7 +99,8 @@ const Product = props => {
     onClick, isWishList, col, skuLoading, onOpenQuickViewModal, deliveredBy, colors, imgHeight,
     position, setProductPosition
   } = props;
-  const urlName = name.split(' ').join('-').toLowerCase();
+  const urlName = name.split(' ').join('-').toLowerCase().split('%')
+    .join('');
   return (
     <ProductWrapper col={col}>
       <WishlistBtn
@@ -133,7 +134,7 @@ const Product = props => {
               fontSize="0.9375em"
             >{name}</Heading>
             <Div mb="0px">
-              <Span mr="0.625rem" color={Theme.colors.textDark} fontSize="0.875em" fontWeight="600">{price}</Span>
+              <Span mr="0.625rem" color={Theme.colors.text} fontSize="0.875em" fontWeight="600">{price}</Span>
               <Span mr="0" fontSize="0.75em" fontWeight="600"><s>{cutprice}</s></Span>
               {rating > 0 && (
                 <Span ml="0.625rem">
