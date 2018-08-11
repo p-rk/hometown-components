@@ -4,15 +4,16 @@ import styled from 'styled-components';
 import AlertContent from 'components/Alert/AlertContent';
 
 const AlertWrapper = styled.div`
-  width: calc(90% - 16px);
+  width: 100%;
   color: #FFF;
   background: #222222;
   padding: 10px;
   position: fixed;
-  bottom: 24px;
   padding: 11px 15px 6px;
-  border-radius: 3px;
-  left: calc(5% + 8px);
+  border-radius: 0;
+  left: 0;
+  right: 0;
+  bottom: -70px;
   text-align: center;
   opacity: 0;
   display: none;
@@ -20,13 +21,12 @@ const AlertWrapper = styled.div`
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all  0.4s ease-in-out;
-  transform: 'translateY(1000%)';
 
   ${props => props.show && {
     display: 'block',
     boxSizing: 'border-box',
-    transform: 'translateY(0)',
-    opacity: 1
+    opacity: 1,
+    bottom: '0px'
   }}
 
   box-sizing: border-box;
