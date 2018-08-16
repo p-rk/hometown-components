@@ -7,7 +7,7 @@ const Text = styled.p`
   text-align: ${props => props.ta};
   line-height: ${props => props.lh};
 
-  ${props => props.fontWeight && { fontWeight: props.fontWeight }}
+  ${props => props.fontFamily && { fontFamily: props.fontFamily }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}
@@ -24,7 +24,7 @@ const Text = styled.p`
 Text.defaultProps = {
   fontSize: '0.875rem',
   textTransform: 'inherit',
-  fontWeight: '400',
+  fontFamily: 'regular',
   color: 'rgba(0, 0, 0, 0.75)',
   ta: 'left',
   mt: '0.625rem',

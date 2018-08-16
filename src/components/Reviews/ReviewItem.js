@@ -8,7 +8,7 @@ import Rating from 'components/Rating';
 
 const ReviewsItems = ({ review, col, pr }) => (
   <Div col={col} display="block" m="0" mb="0.9375rem" pr={pr}>
-    <Heading fontSize="0.875rem" color="secondary" mb="0.3125rem" mt="0px" fontWeight="600">
+    <Heading fontSize="0.875rem" color="secondary" mb="0.3125rem" mt="0px" fontFamily="medium">
       {review.nickname || review.customer_name || null}
     </Heading>
     <Div>

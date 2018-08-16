@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Label = styled.label`
   font-size: ${props => props.fontSize};
   font-style: ${props => props.fontStyle};
-  font-weight: ${props => props.theme.fontWeight[props.fontWeight]};
+  font-family: ${props => props.theme.fontFamily[props.fontFamily]};
   color: ${props => props.theme.colors[props.color]};
   text-align: ${props => props.ta};
   display: ${props => props.display};
@@ -28,13 +28,13 @@ const FeedBackMessage = styled(Label)`
   color: ${props => props.theme.colors[props.type]};
   font-size: 13px;
   margin-bottom: 0;
-  font-weight: 400;
+  font-family: regular;
 `;
 
 Label.defaultProps = {
   fontSize: '0.875rem',
   fontStyle: 'normal',
-  fontWeight: 'regular',
+  fontFamily: 'regular',
   mb: '5px',
   mt: '5px',
   type: 'note',

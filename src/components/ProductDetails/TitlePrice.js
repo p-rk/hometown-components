@@ -19,7 +19,7 @@ const TitlePrice = ({
           color="textDark"
           mb="0.75rem"
           mt="0px"
-          fontWeight="500"
+          fontFamily="500"
         >
           {name}
           {ratings !== 0 &&
@@ -50,8 +50,9 @@ const TitlePrice = ({
           fontSize="1em"
           color="textDark"
           mb="0px"
+          pb="2px"
           mt="0px"
-          fontWeight="600"
+          fontFamily="medium"
         >
           <span itemProp="priceCurrency" content="INR">₹</span>
           <span itemProp="price" content={discPrice}> {discPrice}</span>
@@ -61,16 +62,16 @@ const TitlePrice = ({
                 fontSize="0.8125em"
                 color="rgba(0, 0, 0, 0.4)"
                 ml="1rem"
-                fontWeight="600"
+                fontFamily="regular"
                 type="lt"
               >₹ {price}</Span>
               <Span
                 fontSize="0.8125em"
                 color="rgba(0, 0, 0, 0.4)"
                 ml="1rem"
-                fontWeight="600"
+                fontFamily="regular"
               >Saving ₹ {savingsRs}
-              ({savingsPercentage}% OFF)
+                {' '}({savingsPercentage}% OFF)
               </Span>
             </span>
           }
