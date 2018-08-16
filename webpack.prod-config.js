@@ -54,6 +54,7 @@ module.exports = {
     'Reviews/WriteReview': './src/components/Reviews/WriteReview',
     'Shimmer/index': './src/components/Shimmer/',
     'ProgressiveImageSchemer/index': './src/components/ProgressiveImageSchemer/',
+    'SeoContent/index': './src/components/SeoContent/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
