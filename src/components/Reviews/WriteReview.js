@@ -80,7 +80,7 @@ class WriteReview extends React.Component {
                   type="submit"
                   btnType="primary"
                   size="large"
-                  fontWeight="regular"
+                  fontFamily="regular"
                   fontSize="0.875em"
                   height="42px"
                   lh="2"

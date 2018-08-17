@@ -19,7 +19,7 @@ const ProductDesc = ({ desc }) => {
               mt="0rem"
               color="textLight"
               fontSize="1em"
-              fontWeight="600"
+              fontFamily="medium"
             >Description</Heading>
             <Text itemProp="description" fontSize="1rem" dangerouslySetInnerHTML={{ __html: desc }} />
           </Div>

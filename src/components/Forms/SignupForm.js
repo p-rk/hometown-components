@@ -57,7 +57,7 @@ export default class SignupForm extends Component {
         <Button
           size="block"
           btnType="primary"
-          fontWeight="regular"
+          fontFamily="regular"
           height="42px"
           mt="1.25rem"
           disabled={loading}

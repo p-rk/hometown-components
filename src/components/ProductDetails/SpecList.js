@@ -21,7 +21,7 @@ const SpecHeading = styled.h4`
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 1em;
-  font-weight: 600;
+  font-family: medium;
   line-height: 1.2;
   color: rgba(0,0,0,0.6);
   margin-top: 0;

@@ -49,7 +49,7 @@ const CatTitle = styled.a`
   color: rgba(0,0,0,0.75);
   text-align: left;
   line-height: 1.6;
-  font-weight: 400;
+  font-family: regular;
   margin-top: 5px;
   margin-bottom: 0;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {

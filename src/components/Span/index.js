@@ -13,7 +13,7 @@ const Span = styled.span`
   color: ${props => props.color};
   font-size: ${props => props.fontSize};
   text-align: ${props => props.ta};
-  font-weight: ${props => props.fontWeight};
+  font-family: ${props => props.fontFamily};
   float: ${props => props.float};
 
   ${props => types[props.type]};
@@ -30,6 +30,7 @@ const Span = styled.span`
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
   ${props => props.display && { display: props.display }}
+  ${props => props.lh && { lineHeight: props.lh }}
 
   > * {
     box-sizing: border-box;
@@ -41,7 +42,7 @@ Span.defaultProps = {
   color: 'rgba(0, 0, 0, 0.6)',
   fontSize: '1em',
   ta: 'left',
-  fontWeight: '400',
+  fontFamily: 'regular',
   va: 'middle',
   float: 'none'
 };

@@ -85,11 +85,10 @@ const lineHeights = [
 ];
 
 // Font Family
-const fontWeight = {
-  light: '300',
-  regular: '400',
-  medium: '600',
-  semibold: '700'
+const fontFamily = {
+  light: 'light',
+  regular: 'regular',
+  medium: 'medium'
 };
 
 const letterSpacings = {
@@ -142,7 +141,7 @@ const theme = {
   sizes,
   fontSizes,
   lineHeights,
-  fontWeight,
+  fontFamily,
   letterSpacings,
   radius,
   borderWidths,

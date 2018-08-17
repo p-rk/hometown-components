@@ -31,7 +31,7 @@ const ProductInline = ({
             mb="0.4375rem"
             mt="0"
             color={Theme.colors.text}
-            fontWeight={Theme.fontWeight.semibold}
+            fontFamily={Theme.fontFamily.medium}
             fontSize="1rem"
             lh="1.3"
           >{data.name}</Heading>
@@ -41,7 +41,7 @@ const ProductInline = ({
                 mr="0.625rem"
                 fontSize="0.9rem"
                 color={Theme.colors.textDark}
-                fontWeight={Theme.fontWeight.semibold}
+                fontFamily={Theme.fontFamily.medium}
               >{netprice}</Span>
             </Text>
             {saving && <Text mt="0" mb="0">

@@ -8,7 +8,7 @@ const Heading = styled.h1`
   }}
 
   font-size: ${props => props.fontSize};
-  font-weight: ${props => props.fontWeight};
+  font-family: ${props => props.fontFamily};
   line-height: ${props => props.lh};
   color: ${props => props.theme.colors[props.color]};
 
@@ -28,7 +28,7 @@ const Heading = styled.h1`
 
 Heading.defaultProps = {
   fontSize: '1.5rem',
-  fontWeight: '400',
+  fontFamily: 'regular',
   mt: '0.625em',
   mb: '0.625em',
   lh: '1.2',

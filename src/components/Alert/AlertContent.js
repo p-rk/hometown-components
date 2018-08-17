@@ -9,7 +9,7 @@ const Msg = styled.p`
   display: inline-block;
   margin: 10px 10px;
   vertical-align: bottom;
-  font-weight: 600;
+  font-family: regular;
 `;
 
 /*eslint-disable */

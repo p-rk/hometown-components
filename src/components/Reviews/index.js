@@ -20,7 +20,7 @@ const Reviews = ({ reviewItems, col, pr }) => (
         mt="0px"
         color="textLight"
         fontSize="1em"
-        fontWeight="600"
+        fontFamily="medium"
       >
       Reviews
       </Heading>

@@ -41,7 +41,7 @@ export default class LoginForm extends Component {
         <Button
           size="block"
           btnType="primary"
-          fontWeight="regular"
+          fontFamily="regular"
           height="42px"
           mt="1.25rem"
           disabled={loginResponse.loggingIn}

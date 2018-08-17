@@ -56,7 +56,7 @@ const EmptyPages = ({
       <Row m="0">
         <Div>
           {children}
-          <Heading color="text" fontWeight="700" fontSize="1.6rem" mb="1.25rem" mt="1rem">{title}</Heading>
+          <Heading color="text" fontFamily="medium" fontSize="1.6rem" mb="1.25rem" mt="1rem">{title}</Heading>
           <Text ta="center" fontSize="1.125rem" color="rgba(93, 91, 91, 0.75)" mb="1rem">{subTitle}</Text>
         </Div>
         <Div mt="1rem">

@@ -13,7 +13,7 @@ const Spec = ({ spec }) => {
           <Label color="secondary">{label}</Label>
         </Div>
         <Div col="6">
-          <Label color="textDark" fontWeight="600">{value}</Label>
+          <Label color="textDark" fontFamily="medium">{value}</Label>
         </Div>
       </div>
     </Row>

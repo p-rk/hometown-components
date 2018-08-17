@@ -81,7 +81,7 @@ const Colors = styled.span`
   font-size: 14px;
   margin-top: 2px;
   color: rgba(0, 0, 0, 0.75);
-  font-weight: 600;
+  font-family: medium;
   img {
     width: 70px;
     margin-right: 5px;
@@ -128,14 +128,14 @@ const Product = props => {
         <Div p="0.25rem 0 0.25rem">
           <ProductInner>
             <Heading
-              mb="5px"
+              pb="5px"
+              mb="0"
               color={Theme.colors.text}
-              fontWeight="600"
               fontSize="0.9375em"
             >{name}</Heading>
             <Div mb="0px">
-              <Span mr="0.625rem" color={Theme.colors.text} fontSize="0.875em" fontWeight="600">{price}</Span>
-              <Span mr="0" fontSize="0.75em" fontWeight="600"><s>{cutprice}</s></Span>
+              <Span mr="0.625rem" color={Theme.colors.text} fontSize="0.875em" fontFamily="medium">{price}</Span>
+              <Span mr="0" fontSize="0.75em" fontFamily="medium"><s>{cutprice}</s></Span>
               {rating > 0 && (
                 <Span ml="0.625rem">
                   <Rating rating={rating}>★ {rating}</Rating>
@@ -151,13 +151,12 @@ const Product = props => {
             </Div>
             <Div mb="0px">
               { saving &&
-              <Span fontSize="0.75rem" fontWeight="600">
-              Savings Rs. {savingAmount}
-                <Span mr="0px" fontSize="0.75rem" border="none" fontWeight="600"> ({saving.replace('-', '')} OFF)</Span>
+              <Span fontSize="0.75rem" fontFamily="medium">
+                Savings Rs. {savingAmount} ({saving.replace('-', '')} OFF)
               </Span> }
             </Div>
             <Div>
-              <Span fontSize="0.75rem" color={Theme.colors.textExtraLight}>{deliveredBy}</Span>
+              <Span fontSize="0.75rem" lh="0.1" color={Theme.colors.textExtraLight}>{deliveredBy}</Span>
             </Div>
           </ProductInner>
         </Div>
