@@ -20,6 +20,7 @@ const Img = styled.img`
   ${props => props.pr && { paddingRight: props.pr }}
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
+  ${props => props.border && { border: props.border }}
 `;
 
 Img.defaultProps = {
