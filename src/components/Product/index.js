@@ -89,7 +89,7 @@ const Colors = styled.span`
   }
 `;
 
-const handleClick = (dispatcher, position) => () => {
+const handleClick = (dispatcher, position = 0) => () => {
   dispatcher(position + 1);
 };
 
