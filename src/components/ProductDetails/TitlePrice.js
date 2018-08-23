@@ -68,7 +68,7 @@ const TitlePrice = ({
               <Span
                 fontSize="0.8125em"
                 color="rgba(0, 0, 0, 0.4)"
-                ml="1rem"
+                ml="0.625rem"
                 fontFamily="regular"
               >Saving ₹ {savingsRs}
                 {' '}({savingsPercentage}% OFF)

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Row from 'components/Row/';
 import Div from 'components/Div/';
@@ -60,7 +61,9 @@ const EmptyPages = ({
           <Text ta="center" fontSize="1.125rem" color="rgba(93, 91, 91, 0.75)" mb="1rem">{subTitle}</Text>
         </Div>
         <Div mt="1rem">
-          <Btn href={url} alt={btnName}>{btnName}</Btn>
+          <Link to={url}>
+            <Btn alt={btnName}>{btnName}</Btn>
+          </Link>
         </Div>
       </Row>
     </EmptyPageWrapper>

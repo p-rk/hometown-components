@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'components/Link';
-import Button from 'components/Buttons';
-import { Label } from 'components/Label';
+// import Button from 'components/Buttons';
+// import { Label } from 'components/Label';
 import Row from 'components/Row';
 import Div from 'components/Div';
 import Heading from 'components/Heading';
@@ -11,81 +11,67 @@ import Span from 'components/Span';
 import Text from 'components/Text';
 import Theme from 'components/Theme';
 
+const calculateSavings = (cp, sp) => cp - sp;
+const getProductUrl = name => name.split(' ').join('-').split('%').join('');
 const ProductInlineWithQuantity = ({
   itemData
-}) => (
-  <Div mr="0" ml="0" mb="1.375rem">
-    <Row display="block" mr="0" ml="0">
-      <Link href={itemData.url}>
-        <Div col="4">
-          <Img
-            alt={itemData.name}
-            src={itemData.image}
-            width="100%"
-          />
-        </Div>
-        <Div col="8" pl="0.9375rem">
-          <Heading
-            mb="0.4375rem"
-            mt="0"
-            color={Theme.colors.text}
-            fontFamily="medium"
-            fontSize="1.1rem"
-            lh="1.3"
-          >{itemData.name}</Heading>
-          <Div mb="0.25rem">
-            <Text mt="0" mb="0.3125rem">
-              <Span
-                mr="0.625rem"
-                fontSize="0.9rem"
-                color={Theme.colors.textDark}
-                fontFamily="medium"
-              >Rs. {itemData.disc_price}</Span>
-              <Span mr="0.625rem" fontSize="0.9rem">Rs. {itemData.price}</Span>
-            </Text>
-            <Text mt="0" mb="0.3125rem">
-              <Span fontSize="0.9rem">Saving Rs. {itemData.saving} ({itemData.percentage})</Span>
-            </Text>
-            <Text mt="0" mb="0">
-              <Span fontSize="0.9rem">Delivers by 12th January</Span>
-            </Text>
+}) => {
+  const {
+    product_info: {
+      name, image, special_price: specialPrice, unit_price: unitPrice, discount,
+      shipping_time_text: shippingTime
+    }
+  } = itemData;
+  return (
+    <Div mr="0" ml="0" mb="1.375rem">
+      {itemData && <Row display="block" mr="0" ml="0">
+        <Link to={getProductUrl(name)}>
+          <Div col="4">
+            <Img
+              alt={name}
+              src={image}
+              width="100%"
+            />
           </Div>
-        </Div>
-      </Link>
-    </Row>
-    <Row display="block" mr="0" ml="0" mt="0.75rem">
-      <Div col="6">
-        <Img src="http://via.placeholder.com/24x24" alt="" float="left" />
-        <Span fontSize="0.9em" ml="0.625rem">Remove from cart</Span>
-      </Div>
-      <Div col="6" ta="right">
-        <Button
-          type="custom"
-          color={Theme.colors.textDark}
-          border="none"
-          bg={Theme.colors.white}
-          bc="transparent"
-          pt="0"
-          pb="0"
-        >
-          <Img src="http://via.placeholder.com/24x24" alt="" float="left" />
-        </Button>
-        <Label color={Theme.colors.textDark} mb="0" mt="0">Test</Label>
-        <Button
-          type="custom"
-          color={Theme.colors.textDark}
-          border="none"
-          bg={Theme.colors.white}
-          bc="transparent"
-          pt="0"
-          pb="0"
-        >
-          <Img src="http://via.placeholder.com/24x24" alt="" float="left" />
-        </Button>
-      </Div>
-    </Row>
-  </Div>
-);
+          <Div col="8" pl="0.9375rem">
+            <Heading
+              mb="0.4375rem"
+              mt="0"
+              color={Theme.colors.text}
+              fontFamily="medium"
+              fontSize="1.1rem"
+              lh="1.3"
+            >{name}</Heading>
+            <Div mb="0.25rem">
+              <Text mt="0" mb="0.3125rem">
+                <Span
+                  mr="0.625rem"
+                  fontSize="0.9rem"
+                  color={Theme.colors.textDark}
+                  fontFamily="medium"
+                >Rs. {specialPrice}</Span>
+                <Span mr="0.625rem" fontSize="0.9rem">Rs. {unitPrice}</Span>
+              </Text>
+              <Text mt="0" mb="0.3125rem">
+                <Span
+                  fontSize="0.9rem"
+                >Saving Rs. {calculateSavings(unitPrice, specialPrice) }({discount}%)</Span>
+              </Text>
+              <Text mt="0" mb="0.3125rem">
+                <Span
+                  fontSize="0.9rem"
+                >Quantity {itemData.qty}</Span>
+              </Text>
+              <Text mt="0" mb="0">
+                <Span fontSize="0.9rem">{shippingTime}</Span>
+              </Text>
+            </Div>
+          </Div>
+        </Link>
+      </Row>}
+    </Div>
+  );
+};
 
 ProductInlineWithQuantity.propTypes = {
   itemData: PropTypes.object.isRequired

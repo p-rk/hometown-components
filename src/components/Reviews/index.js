@@ -10,7 +10,7 @@ const Reviews = ({ reviewItems, col, pr }) => (
   <Section
     mb="0.3125rem"
     p="0"
-    pt="0.9375rem"
+    pt="0"
     display="block"
     mt="1rem"
   >

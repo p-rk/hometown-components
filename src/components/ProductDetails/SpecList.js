@@ -22,7 +22,7 @@ const SpecHeading = styled.h4`
   text-overflow: ellipsis;
   font-size: 1em;
   font-family: medium;
-  line-height: 1.2;
+  line-height: 1;
   color: rgba(0,0,0,0.6);
   margin-top: 0;
   margin-bottom: 0;
@@ -77,8 +77,9 @@ class SpecList extends Component {
                 p="0"
                 fl="right"
                 fontSize="1.5rem"
-                lh="0.4"
+                lh="0"
                 height="18px"
+                mt="-5px"
                 onClick={this.handleOnclick}
               >{show ? '-' : '+'}</Button>
             </SpecHeading>

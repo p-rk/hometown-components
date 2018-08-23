@@ -13,7 +13,7 @@ const ProductInline = ({
 }) => {
   const {
     product_info: {
-      data, images, netprice, saving
+      name, image, net_price: netprice, shipping_time_text: shippingTime, saving
     }
   } = itemData;
   return (
@@ -21,8 +21,8 @@ const ProductInline = ({
       <Row display="block" mr="0" ml="0">
         <Div col="4">
           <Img
-            alt={data.name}
-            src={images[0].path}
+            alt={name}
+            src={image}
             width="100%"
           />
         </Div>
@@ -34,7 +34,7 @@ const ProductInline = ({
             fontFamily={Theme.fontFamily.medium}
             fontSize="1rem"
             lh="1.3"
-          >{data.name}</Heading>
+          >{name}</Heading>
           <Div mb="0.25rem">
             <Text mt="0" mb="0">
               <Span
@@ -52,8 +52,7 @@ const ProductInline = ({
               </Span>
             </Text>}
             <Text mt="0" mb="0">
-              <Span fontSize="0.75rem">{data.delivery_details.length &&
-                              data.delivery_details[0].value}</Span>
+              <Span fontSize="0.75rem">{shippingTime}</Span>
             </Text>
           </Div>
         </Div>
