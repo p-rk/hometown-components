@@ -97,10 +97,8 @@ const Product = props => {
   const {
     name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
     onClick, isWishList, col, skuLoading, onOpenQuickViewModal, deliveredBy, colors, imgHeight,
-    position, setProductPosition
+    position, setProductPosition, productURL
   } = props;
-  const urlName = name.split(' ').join('-').toLowerCase().split('%')
-    .join('');
   return (
     <ProductWrapper col={col}>
       <WishlistBtn
@@ -109,7 +107,7 @@ const Product = props => {
         wishlistLoading={skuLoading}
       />
 
-      <Link onClick={handleClick(setProductPosition, position)} to={`/${urlName}/sku/${sku}`}>
+      <Link onClick={handleClick(setProductPosition, position)} to={productURL}>
         <ImgWrapper>
           <ProgressiveImageSchemer src={image} height={imgHeight}>
             {imageURL => (<ProductImg
@@ -193,8 +191,8 @@ Product.propTypes = {
   colors: PropTypes.string,
   imgHeight: PropTypes.string,
   position: PropTypes.string.isRequired,
-  setProductPosition: PropTypes.func.isRequired
-
+  setProductPosition: PropTypes.func.isRequired,
+  productURL: PropTypes.string.isRequired,
 };
 
 export default Product;
