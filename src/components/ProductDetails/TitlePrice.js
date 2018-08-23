@@ -19,7 +19,9 @@ const TitlePrice = ({
           color="textDark"
           mb="0.75rem"
           mt="0px"
-          fontFamily="500"
+          lh="1.5"
+          fontFamily="regular"
+          ellipsis={false}
         >
           {name}
           {ratings !== 0 &&
