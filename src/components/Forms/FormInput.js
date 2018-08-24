@@ -6,36 +6,34 @@ import TextArea from 'components/TextArea';
 import { Label, FeedBackMessage } from 'components/Label';
 
 const FormInput = ({
-  label, type, placeholder, onChange, value, feedBackMessage, feedBackError, required, name, onBlur, rows
-}) => (
-  <InputField mb="0.625rem">
-    <Label fontSize="0.875em" mb="0.625rem">{label}</Label>
-    {(type === 'text' || type === 'password' || type === 'email' || type === 'number') && (
-      <Input
-        type={type}
-        placeholder={placeholder}
-        onChange={onChange}
-        onBlur={onBlur}
-        value={value}
-        height="42px"
-        name={name}
-        required={required}
-      />
-    )}
-    {type === 'textarea' && (
-      <TextArea
-        placeholder={placeholder}
-        onChange={onChange}
-        onBlur={onBlur}
-        value={value}
-        name={name}
-        required={required}
-        rows={rows}
-      />
-    )}
-    {feedBackError && <FeedBackMessage type="error">{feedBackMessage}</FeedBackMessage>}
-  </InputField>
-);
+  label,
+  type,
+  feedBackMessage,
+  feedBackError, ...rest
+}) => {
+  const inputProps = {
+    type,
+    feedBackMessage,
+    feedBackError,
+    ...rest
+  };
+  return (
+    <InputField mb="0.625rem">
+      <Label fontSize="0.875em" mb="0.625rem">{label}</Label>
+      {(type === 'text' || type === 'password' || type === 'email' || type === 'number') && (
+        <Input
+          {...inputProps}
+        />
+      )}
+      {type === 'textarea' && (
+        <TextArea
+          {...inputProps}
+        />
+      )}
+      {feedBackError && <FeedBackMessage type="error">{feedBackMessage}</FeedBackMessage>}
+    </InputField>
+  );
+};
 
 FormInput.propTypes = {
   label: PropTypes.string.isRequired,
