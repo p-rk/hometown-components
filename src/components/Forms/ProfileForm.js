@@ -44,6 +44,7 @@ export default class ProfileForm extends Component {
           value={email}
           feedBackError={emailFeedBackError}
           feedBackMessage={emailFeedBackMessage}
+          readOnly
         />
         <FormInput
           label="Phone"

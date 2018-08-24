@@ -16,7 +16,7 @@ const getComponent = (children, key) => children.filter(comp => comp.key === key
 const ServiceDetails = ({
   children, deliverBy, shipping, pincode, emiStarting, isEmiAvailable
 }) => (
-  <Section mb="0" pr="0" pl="0" pt="0">
+  <Section mb="0" pr="0" pl="0" pt="0" pb="0.625rem">
     <Row display="block" mb="0.9375rem" mr="0" ml="0">
       <Div col="12" pt="0.625rem">
         <Img width="initial" height="1.5em" mr="0.625rem" mt="0" float="left" src={location} />

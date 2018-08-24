@@ -2,6 +2,7 @@
   "presets": ["env", "react"],
   "plugins": [
     ["babel-plugin-styled-components", { "ssr": true, "displayName": true, "preprocess": false } ],
-    "babel-plugin-transform-class-properties"
+    "babel-plugin-transform-class-properties",
+    "transform-object-rest-spread"
   ]
 }
