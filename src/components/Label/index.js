@@ -22,6 +22,7 @@ const Label = styled.label`
   ${props => props.pr && { paddingRight: props.pr }}
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
+  ${props => props.lh && { lineHeight: props.lh }}
 `;
 
 const FeedBackMessage = styled(Label)`

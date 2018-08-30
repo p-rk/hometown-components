@@ -6,10 +6,9 @@ import { Label } from 'components/Label';
 import Img from 'components/Img';
 import Section from 'components/Section';
 
-import calendarImage from '../../static/calendar.jpg';
-import creditCard from '../../static/credit-card.jpg';
-import location from '../../static/location.jpg';
-import truck from '../../static/truck.jpg';
+import calendarImage from '../../static/calendar.svg';
+import creditCard from '../../static/credit-card.svg';
+import truck from '../../static/truck.svg';
 
 const getComponent = (children, key) => children.filter(comp => comp.key === key);
 
@@ -19,12 +18,6 @@ const ServiceDetails = ({
   <Section mb="0" pr="0" pl="0" pt="0" pb="0.625rem">
     <Row display="block" mb="0.9375rem" mr="0" ml="0">
       <Div col="12" pt="0.625rem">
-        <Img width="initial" height="1.5em" mr="0.625rem" mt="0" float="left" src={location} />
-        <Label
-          fontSize="0.825em"
-          color="secondary"
-          display="contents"
-        >Enter PIN Code</Label>
         {getComponent(children, 'pincode')}
       </Div>
     </Row>

@@ -41,7 +41,7 @@ const colors = {
   footerBottom: 'rgb(51, 51, 51)',
   footerText: '#a6a6a6',
   hashTags: 'rgba(51, 51, 51, 0.85)',
-
+  bgPDP: '#f6f6f6',
   gray: [
     '#f8f9fa',
     '#e9ecef',
