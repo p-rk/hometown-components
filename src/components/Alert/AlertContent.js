@@ -1,20 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Div from 'components/Div';
 
 const Msg = styled.p`
-  color: ${props => props.color ? props.color : '#FFF'};
+  color: ${props => props.color ? props.color : '#fff'};
   position: relative;
   display: inline-block;
-  margin: 10px 10px;
+  margin: 10px;
   vertical-align: bottom;
   font-family: regular;
 `;
 
+const AlertContentWrapper = styled.div`
+  width: auto;
+  color: #fff;
+  background: #222222;
+  display: inline-block;
+  padding: 10px 40px;
+`;
+
 /*eslint-disable */
 const AlertContent = ({ type, msg }) => (
-  <Div>
+  <AlertContentWrapper>
     {type == 'success' && (
       <svg
         x="0px"
@@ -170,7 +177,7 @@ const AlertContent = ({ type, msg }) => (
       </svg>
     )}
     <Msg type={type}>{msg}</Msg>
-  </Div>
+  </AlertContentWrapper>
 );
 
 AlertContent.propTypes = {
