@@ -30,15 +30,20 @@ class WriteReview extends React.Component {
 
   toggleAddReview = e => {
     e.preventDefault();
+    const { toggleReview } = this.props;
     this.setState({
-      addReviewOpen: !this.state.addReviewOpen
+      addReviewOpen: !this.state.addReviewOpen,
+      rating: 0
     });
+    toggleReview();
   }
 
   render() {
-    const { onClickSubmit, catalogId, col } = this.props;
     const {
-      addReviewOpen, name, review, rating
+      onClickSubmit, catalogId, col, added
+    } = this.props;
+    const {
+      name, review, rating, addReviewOpen
     } = this.state;
     return (
       <Row display="block" mt="0.625rem" mb="0.625rem" mr="1rem" ml="1rem">
@@ -53,7 +58,7 @@ class WriteReview extends React.Component {
             p="0.75rem 1rem"
             ml="0.625rem"
           >Write a Review</Button>
-          {addReviewOpen &&
+          {(addReviewOpen && !added) &&
           <form onSubmit={onClickSubmit(catalogId, { name, rating, review })}>
             <Div col={col} mt="0.5rem">
               <Div mb="0.625rem">
@@ -102,6 +107,8 @@ WriteReview.defaultProps = {
 WriteReview.propTypes = {
   onClickSubmit: PropTypes.func.isRequired,
   catalogId: PropTypes.string.isRequired,
-  col: PropTypes.string
+  col: PropTypes.string,
+  added: PropTypes.bool.isRequired,
+  toggleReview: PropTypes.func.isRequired,
 };
 export default WriteReview;
