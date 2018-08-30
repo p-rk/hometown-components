@@ -9,10 +9,10 @@ const Spec = ({ spec }) => {
   return (
     <Row display="block" m="0" pb="0.625rem">
       <div>
-        <Div col="6">
+        <Div col="5">
           <Label color="secondary">{label}</Label>
         </Div>
-        <Div col="6">
+        <Div col="7">
           <Label color="textDark" fontFamily="medium">{value}</Label>
         </Div>
       </div>
