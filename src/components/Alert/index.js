@@ -5,11 +5,8 @@ import AlertContent from 'components/Alert/AlertContent';
 
 const AlertWrapper = styled.div`
   width: 100%;
-  color: #FFF;
-  background: #222222;
-  padding: 10px;
+  padding: 0;
   position: fixed;
-  padding: 11px 15px 6px;
   border-radius: 0;
   left: 0;
   right: 0;
@@ -26,7 +23,7 @@ const AlertWrapper = styled.div`
     display: 'block',
     boxSizing: 'border-box',
     opacity: 1,
-    bottom: '0px'
+    bottom: '20px'
   }}
 
   box-sizing: border-box;
