@@ -17,6 +17,7 @@ const AlertContentWrapper = styled.div`
   background: #222222;
   display: inline-block;
   padding: 10px 40px;
+  border-radius: 5px;
 `;
 
 /*eslint-disable */
