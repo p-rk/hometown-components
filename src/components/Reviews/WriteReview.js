@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Input from 'components/Input';
+import TextArea from 'components/TextArea';
 import Div from 'components/Div';
 import Row from 'components/Row';
 import Button from 'components/Buttons';
@@ -78,7 +79,7 @@ class WriteReview extends React.Component {
               </Div>
               <Div mb="1rem">
                 <Label>Review</Label>
-                <Input name="review" onChange={this.handleChange} />
+                <TextArea rows="5" name="review" onChange={this.handleChange} />
               </Div>
               <Div>
                 <Button

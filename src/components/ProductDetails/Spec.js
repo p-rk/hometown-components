@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Row from 'components/Row';
 import Div from 'components/Div';
 import { Label } from 'components/Label';
+import Text from 'components/Text';
 
 const Spec = ({ spec }) => {
   const { label, value } = spec;
@@ -13,7 +14,7 @@ const Spec = ({ spec }) => {
           <Label color="secondary">{label}</Label>
         </Div>
         <Div col="7">
-          <Label color="textDark" fontFamily="medium">{value}</Label>
+          <Text itemProp="description" fontSize="0.875rem" dangerouslySetInnerHTML={{ __html: value }} />
         </Div>
       </div>
     </Row>

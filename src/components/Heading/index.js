@@ -31,6 +31,7 @@ Heading.defaultProps = {
   fontFamily: 'regular',
   mt: '0.625em',
   mb: '0.625em',
+  pb: '2px',
   lh: '1.2',
   color: 'primary',
   ellipsis: true

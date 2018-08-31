@@ -49,7 +49,7 @@ const Row = styled.div`
 
 Row.defaultProps = {
   display: 'flex',
-  flexWrap: 'nowrap',
+  flexWrap: 'wrap',
   flexDirection: 'flex-start',
   justifyContent: 'flex-start',
   alignItems: 'wrap'
