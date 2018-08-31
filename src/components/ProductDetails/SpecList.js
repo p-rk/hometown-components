@@ -65,7 +65,7 @@ class SpecList extends Component {
     return (
       <SpecRow display="block" m="0" mb="0.625rem">
         <Div col="12" mb="0">
-          <SpecHeading>
+          <SpecHeading onClick={this.handleOnclick}>
             {specName}
             <Button
               btnType="custom"
@@ -77,7 +77,6 @@ class SpecList extends Component {
               lh="0"
               height="18px"
               mt="-5px"
-              onClick={this.handleOnclick}
             >{show ? '-' : '+'}</Button>
           </SpecHeading>
           {show && <SpecListWrapper p="1rem" pb="0">

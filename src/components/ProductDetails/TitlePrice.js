@@ -57,7 +57,7 @@ const TitlePrice = ({
           fontFamily="medium"
         >
           <span itemProp="priceCurrency" content="INR">₹</span>
-          <span itemProp="price" content={discPrice}> {discPrice}</span>
+          <span itemProp="price" content={discPrice.split(',').join('')}> {discPrice}</span>
           { price !== discPrice &&
             <span>
               <Span
