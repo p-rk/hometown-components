@@ -6,6 +6,10 @@ import Img from 'components/Img';
 import { Link } from 'react-router-dom';
 import ProgressiveImageSchemer from 'components/ProgressiveImageSchemer';
 
+const LinkCustom = styled(Link)`
+  display: inline-block;
+`;
+
 const ProductImg = styled(Img)`
   position: absolute;
   max-width: 100%;
@@ -30,9 +34,9 @@ const ImgWrapper = styled.div`
 const urlName = name => name.split(' ').join('-').toLowerCase();
 
 const ColorOption = ({ data }) => (
-  <Row mr="0" ml="0">
+  <Row mr="0" ml="0" display="block">
     {data.map((item, index) => (
-      <Link to={`/${urlName(item.meta.name)}/sku/${item.groupedattributes.sku}`} key={String(index)}>
+      <LinkCustom to={`/${urlName(item.meta.name)}/sku/${item.groupedattributes.sku}`} key={String(index)}>
         <ImgWrapper>
           <ProgressiveImageSchemer src={`${item.image}.jpg`} height="60px">
             {imageURL => (<ProductImg
@@ -42,7 +46,7 @@ const ColorOption = ({ data }) => (
             />)}
           </ProgressiveImageSchemer>
         </ImgWrapper>
-      </Link>
+      </LinkCustom>
     ))}
   </Row>
 );
