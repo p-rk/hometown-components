@@ -155,7 +155,11 @@ const Product = props => {
               </Span> }
             </Div>
             <Div>
-              <Span fontSize="0.75rem" lh="0.1" color={Theme.colors.textExtraLight}>{deliveredBy}</Span>
+              <Span
+                fontSize={deliveredBy.indexOf('Sorry') === 0 ? '0.65rem' : '0.75rem'}
+                lh="0.1"
+                color={Theme.colors.textExtraLight}
+              >{deliveredBy}</Span>
             </Div>
           </ProductInner>
         </Div>
