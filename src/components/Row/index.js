@@ -49,10 +49,10 @@ const Row = styled.div`
 
 Row.defaultProps = {
   display: 'flex',
-  flexWrap: 'wrap',
+  flexWrap: 'nowrap',
   flexDirection: 'flex-start',
   justifyContent: 'flex-start',
-  alignItems: 'npwrap'
+  alignItems: 'wrap'
 };
 
 export default Row;
