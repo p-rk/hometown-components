@@ -8,13 +8,19 @@ import Text from 'components/Text';
 const Spec = ({ spec }) => {
   const { label, value } = spec;
   return (
-    <Row display="block" m="0" pb="0.625rem">
+    <Row display="block" m="0" pb="2px">
       <div>
         <Div col="5">
           <Label color="secondary">{label}</Label>
         </Div>
         <Div col="7">
-          <Text itemProp="description" fontSize="0.875rem" dangerouslySetInnerHTML={{ __html: value }} />
+          <Text
+            mt="5px"
+            mb="5px"
+            itemProp="description"
+            fontSize="0.875rem"
+            dangerouslySetInnerHTML={{ __html: value }}
+          />
         </Div>
       </div>
     </Row>
