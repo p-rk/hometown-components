@@ -11,7 +11,7 @@ const Spec = ({ spec }) => {
     <Row display="block" m="0" pb="2px">
       <div>
         <Div col="5">
-          <Label color="secondary">{label}</Label>
+          <Label color="secondary" lh="1.6">{label}</Label>
         </Div>
         <Div col="7">
           <Text
@@ -20,7 +20,7 @@ const Spec = ({ spec }) => {
             itemProp="description"
             fontSize="0.875rem"
             dangerouslySetInnerHTML={{ __html: value }}
-            lh="1"
+            lh="1.6"
           />
         </Div>
       </div>
