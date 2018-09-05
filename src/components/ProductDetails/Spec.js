@@ -20,6 +20,7 @@ const Spec = ({ spec }) => {
             itemProp="description"
             fontSize="0.875rem"
             dangerouslySetInnerHTML={{ __html: value }}
+            lh="1"
           />
         </Div>
       </div>
