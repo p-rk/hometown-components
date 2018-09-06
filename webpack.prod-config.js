@@ -25,6 +25,7 @@ module.exports = {
     'Row/index': './src/components/Row/',
     'Section/index': './src/components/Section/',
     'Span/index': './src/components/Span/',
+    'Select/index': './src/components/Select/',
     'Text/index': './src/components/Text/',
     'Theme/index': './src/components/Theme/',
     'Forms/LoginForm': './src/components/Forms/LoginForm',

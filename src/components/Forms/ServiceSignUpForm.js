@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import { FeedBackMessage } from 'components/Label';
 import Button from 'components/Buttons';
+import Select from 'components/Select';
+import InputField from 'components/InputField';
+import { Label } from 'components/Label';
 import FormInput from './FormInput';
 
 const options = [
@@ -76,12 +79,15 @@ const ServiceSignUpForm = ({
       value={pincode}
       required
     />
-    <select onChange={onChangeService} value={service} required>
-      <option value="">Choose Service</option>
-      {options.map(option => (
-        <option key={option.id} value={option.id}>{option.option}</option>
-      ))}
-    </select>
+    <InputField mb="0.625rem">
+      <Label fontSize="0.875em" mb="0.625rem">Service</Label>
+      <Select onChange={onChangeService} value={service} required>
+        <option value="">Choose Service</option>
+        {options.map(option => (
+          <option key={option.id} value={option.id}>{option.option}</option>
+        ))}
+      </Select>
+    </InputField>
     <Button
       size="block"
       btnType="primary"
