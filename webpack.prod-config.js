@@ -55,6 +55,7 @@ module.exports = {
     'Shimmer/index': './src/components/Shimmer/',
     'ProgressiveImageSchemer/index': './src/components/ProgressiveImageSchemer/',
     'SeoContent/index': './src/components/SeoContent/',
+    'Forms/ServiceSignUpForm': './src/components/Forms/ServiceSignUpForm',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
