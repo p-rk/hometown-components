@@ -57,20 +57,6 @@ export default class LoginForm extends Component {
             display="block"
           > Login Success ! </FeedBackMessage>
         }
-        {(loginResponse
-          && !loginResponse.loggingIn
-          && ('loginError' in loginResponse)
-          && !loginResponse.isLoggedIn
-          && loginResponse.loginError.error === 'invalid_grant')
-          ? <FeedBackMessage
-            type="error"
-            ta="center"
-            fontSize="0.875rem"
-            mt="1rem"
-            display="block"
-          >Invalid Credentials Provided !</FeedBackMessage>
-          : null
-        }
       </form>
     );
   }

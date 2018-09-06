@@ -93,13 +93,28 @@ const Colors = styled.span`
 const handleClick = (dispatcher, position = 0) => () => {
   dispatcher(position + 1);
 };
-
+const judgeColor = rating => {
+  if (!rating) {
+    return '';
+  }
+  rating = parseInt(rating, 10);
+  if (rating < 2) {
+    return 'red';
+  }
+  if (rating >= 2 && rating < 3) {
+    return 'yellow';
+  }
+  if (rating >= 3) {
+    return 'green';
+  }
+};
 const Product = props => {
   const {
     name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
     onClick, isWishList, col, skuLoading, onOpenQuickViewModal, deliveredBy, colors, imgHeight,
     position, setProductPosition, productURL
   } = props;
+  const color = judgeColor(rating);
   return (
     <ProductWrapper col={col}>
       <WishlistBtn
@@ -137,7 +152,7 @@ const Product = props => {
               <Span mr="0" fontSize="0.75em" fontFamily="medium"><s>{cutprice}</s></Span>
               {rating > 0 && (
                 <Span ml="0.625rem">
-                  <Rating rating={rating}>★ {rating}</Rating>
+                  <Rating color={color} rating={rating}>★ {rating}</Rating>
                   <Span
                     mr="0.625rem"
                     fontSize="0.75rem"

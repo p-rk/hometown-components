@@ -8,21 +8,23 @@ const Rating = styled.span`
   font-size: 11px;
   padding: 2px 5px;
   vertical-align: middle;
-  background: #fa1b36;
+  background: ${props => props.color};
   position: relative;
   top: -2px;
 `;
 
-const RatingContainer = ({ rating }) => (
-  <Rating>★ {rating}</Rating>
+const RatingContainer = ({ rating, color }) => (
+  <Rating color={color}>★ {rating}</Rating>
 );
 
 RatingContainer.defaultProps = {
-  rating: ''
+  rating: '',
+  color: '#fa1b36',
 };
 
 RatingContainer.propTypes = {
-  rating: PropTypes.string
+  rating: PropTypes.string,
+  color: PropTypes.string,
 };
 
 export default RatingContainer;
