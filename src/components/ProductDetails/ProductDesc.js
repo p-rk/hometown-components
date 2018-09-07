@@ -9,7 +9,10 @@ import Section from 'components/Section';
 import Button from 'components/Buttons';
 import Theme from 'components/Theme';
 
-const formatDescription = desc => desc.split('<br>').join('').split('&nbsp;').join('');
+const formatDescription = desc => {
+  desc.split('<br>').join('').split('&nbsp;').join('');
+  return desc && desc.trim();
+};
 
 const ProductDesc = ({ desc, showmore, toggleShowMore }) => {
   desc = formatDescription(desc);
