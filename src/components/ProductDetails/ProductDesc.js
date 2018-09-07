@@ -29,13 +29,13 @@ const ProductDesc = ({ desc, showmore, toggleShowMore }) => {
           <Button
             pl="0"
             pr="0"
-            mb="0.625rem"
+            mb="0"
             size="block"
             ta="left"
             color={Theme.colors.primary}
             btnType="link"
             onClick={toggleShowMore}
-            fontSize="1rem"
+            fontSize="0.875rem"
           >{showmore ? 'Show More...' : 'Show Less'}</Button>
         </Row>
       </Container>
