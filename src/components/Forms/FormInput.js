@@ -19,8 +19,10 @@ const FormInput = ({
   };
   return (
     <InputField mb="0.625rem">
+      {!(type === 'hidden') &&
       <Label fontSize="0.875em" mb="0.625rem">{label}</Label>
-      {(type === 'text' || type === 'password' || type === 'email' || type === 'number') && (
+      }
+      {(type === 'text' || type === 'password' || type === 'email' || type === 'number' || type === 'hidden') && (
         <Input
           {...inputProps}
         />
