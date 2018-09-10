@@ -17,13 +17,14 @@ const TitlePrice = ({
           itemProp="name"
           fontSize="1.25em"
           color="textDark"
-          mb="0.75rem"
-          mt="0px"
+          mb="0"
+          mt="0"
           lh="1.5"
           fontFamily="regular"
           ellipsis={false}
         >
           {name}
+          <br />
           {ratings !== 0 &&
             <Span>
               <ReactStars
@@ -35,7 +36,7 @@ const TitlePrice = ({
                 edit={false}
                 color2="#ffd700"
               />
-              <Span fontSize="1rem" color="rgba(0, 0, 0, 0.4)">({count})</Span>
+              <Span className="ratingsCount" fontSize="0.875rem" color="rgba(0, 0, 0, 0.6)" va="super">({count})</Span>
               <div className="hide" itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
                 Rated
                 <span itemProp="ratingValue">({ratings})</span>/5 based on
