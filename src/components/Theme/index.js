@@ -28,6 +28,7 @@ const colors = {
   textDark: 'rgba(0, 0, 0, 0.8)',
   textExtraDark: 'rgba(0, 0, 0, 0.9)',
   block10: 'rgba(0, 0, 0, 0.10)',
+  blockefefef: '#e1ded9',
   yellowDark: '#f5a623',
   border: '#979797',
   success: '#28a745',
