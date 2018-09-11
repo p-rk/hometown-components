@@ -64,6 +64,7 @@ const Button = styled.button`
   user-select: none;
   transition: color .15s ease-in-out, background-color .15s ease-in-out,
   border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  border-radius: 3px;
 
   ${props => sizes[props.size]};
   ${props => btnType(props, props.btnType)};
@@ -85,8 +86,10 @@ const Button = styled.button`
   ${props => props.tt && { textTransform: props.tt }}
 
   &:hover {
-    background: ${props => props.type === 'default' ? '#f98d29' : 'transparent'};
-    color: ${props => props.type === 'default' ? '#FFF' : '#f98d29'};
+    ${props => props.btnType === 'link' && {
+    background: 'transparent',
+    color: '#f98d29'
+  }}
   }
 
   &:disabled {
