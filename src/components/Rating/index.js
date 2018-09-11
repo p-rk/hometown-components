@@ -6,7 +6,7 @@ const Rating = styled.span`
   margin-right: 0.3125rem;
   color: #FFF;
   font-size: 11px;
-  padding: 2px 5px;
+  padding: 2px 5px 3px;
   vertical-align: middle;
   background: ${props => props.color};
   position: relative;

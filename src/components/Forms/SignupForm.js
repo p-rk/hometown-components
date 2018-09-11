@@ -24,7 +24,7 @@ export default class SignupForm extends Component {
     return (
       <form onSubmit={onSubmitSignup}>
         <FormInput
-          label="Email ID"
+          label="Email ID *"
           type="text"
           placeholder=""
           onChange={onChangeEmail}
@@ -42,7 +42,7 @@ export default class SignupForm extends Component {
           feedBackMessage={phoneFeedBackMessage}
         />
         <FormInput
-          label="Password"
+          label="Password *"
           type="password"
           placeholder=""
           onChange={onChangePassword}

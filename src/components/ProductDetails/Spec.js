@@ -11,7 +11,7 @@ const Spec = ({ spec }) => {
     <Row display="block" m="0" pb="2px">
       <div>
         <Div col="5">
-          <Label color="secondary" lh="1.6">{label}</Label>
+          <Label color="secondary" lh="1.6" fontFamily="medium">{label}</Label>
         </Div>
         <Div col="7">
           <Text

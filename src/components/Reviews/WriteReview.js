@@ -63,6 +63,7 @@ class WriteReview extends React.Component {
             lh="1"
             p="0.75rem 1rem"
             ml="0.625rem"
+            className="btn-primary"
           >Write a Review</Button>
           {(addreview) &&
           <form onSubmit={onClickSubmit(catalogId, { name, rating, review })}>

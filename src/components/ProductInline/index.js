@@ -11,7 +11,7 @@ import Theme from 'components/Theme';
 const ProductInline = ({
   name, image, netPrice, shipping,
 }) => (
-  <Div mr="0" ml="0" mb="0">
+  <Div mr="0" ml="0" mb="0.3125rem">
     <Row display="block" mr="0" ml="0">
       <Div col="4">
         <Img
@@ -22,18 +22,19 @@ const ProductInline = ({
       </Div>
       <Div col="8" pl="0.9375rem">
         <Heading
-          mb="0.4375rem"
+          mb="0"
           mt="0"
           color={Theme.colors.text}
           fontFamily={Theme.fontFamily.medium}
-          fontSize="1rem"
-          lh="1.3"
+          fontSize="0.875rem"
+          lh="1.5"
+          ellipsis={false}
         >{name}</Heading>
         <Div mb="0.25rem">
           <Text mt="0" mb="0">
             <Span
               mr="0.625rem"
-              fontSize="0.9rem"
+              fontSize="0.875rem"
               color={Theme.colors.textDark}
               fontFamily={Theme.fontFamily.medium}
             >{netPrice}</Span>
