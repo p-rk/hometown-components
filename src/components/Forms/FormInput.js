@@ -7,12 +7,14 @@ import { Label, FeedBackMessage } from 'components/Label';
 
 const FormInput = ({
   label,
+  name,
   type,
   feedBackMessage,
   feedBackError, ...rest
 }) => {
   const inputProps = {
     type,
+    name,
     feedBackMessage,
     feedBackError,
     ...rest
@@ -25,11 +27,14 @@ const FormInput = ({
       {(type === 'text' || type === 'password' || type === 'email' || type === 'number' || type === 'hidden') && (
         <Input
           {...inputProps}
+          name={name}
+
         />
       )}
       {type === 'textarea' && (
         <TextArea
           {...inputProps}
+          name={name}
         />
       )}
       {feedBackError && <FeedBackMessage type="error">{feedBackMessage}</FeedBackMessage>}
