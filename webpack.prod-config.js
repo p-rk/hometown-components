@@ -36,6 +36,8 @@ module.exports = {
     'Forms/UpdatePasswordForm': './src/components/Forms/UpdatePasswordForm',
     'Forms/PaymentMethodForm': './src/components/Forms/PaymentMethodForm',
     'Forms/FormInput': './src/components/Forms/FormInput',
+    'Forms/FeedBackForm': './src/components/Forms/FeedBackForm',
+    'Forms/ServiceRequestForm': './src/components/Forms/ServiceRequestForm',
     'ProductDetails/ColorOption': './src/components/ProductDetails/ColorOption',
     'ProductDetails/ProductDesc': './src/components/ProductDetails/ProductDesc',
     'ProductDetails/ServiceDetails': './src/components/ProductDetails/ServiceDetails',
