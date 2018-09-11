@@ -86,8 +86,6 @@ const Button = styled.button`
   ${props => props.tt && { textTransform: props.tt }}
 
   &:hover {
-    background: #f98d29;
-    color: #FFF;
     ${props => props.btnType === 'link' && {
     background: 'transparent',
     color: '#f98d29'
