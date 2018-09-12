@@ -16,7 +16,7 @@ const Reviews = ({ reviewItems, col, pr }) => (
   >
     <Container type="container" pl="1rem" pr="1rem">
       <Heading
-        mb="0.3125rem"
+        mb="0.625rem"
         mt="0px"
         color="textLight"
         fontSize="1em"
