@@ -27,7 +27,7 @@
     "react/no-multi-comp": ["error", {"ignoreStateless": true}],
     "react/no-unescaped-entities": "off",
     "react/prefer-stateless-function": "off",
-    "jsx-a11y/label-has-for": ["error", {"allowChildren": true}],
+    "jsx-a11y/label-has-for": ["off", {"allowChildren": true}],
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
