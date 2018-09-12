@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
 import Div from 'components/Div';
-import { /* FeedBackMessage, */ Label } from 'components/Label';
+import { Label } from 'components/Label';
 import FormInput from './FormInput';
 
 export default class FeedBackForm extends Component {
@@ -126,8 +126,6 @@ export default class FeedBackForm extends Component {
           />
           <Div mb="0.3125rem">
             <div className="checkbox">
-              { /* eslint-disable */}
-
               <input onClick={handleCheckBoxChange} name="instore" type="checkbox" id="instore" />
               <label htmlFor="instore" />
             </div>
@@ -141,7 +139,7 @@ export default class FeedBackForm extends Component {
           </Div>
           <Div mb="0.3125rem">
             <div className="checkbox">
-              <input onClick={handleCheckBoxChange}  name="delivery" type="checkbox" id="delivery" />
+              <input onClick={handleCheckBoxChange} name="delivery" type="checkbox" id="delivery" />
               <label htmlFor="delivery" />
             </div>
             <Label fontSize="0.875em" ml="0.625rem" htmlFor="delivery">
@@ -150,7 +148,7 @@ export default class FeedBackForm extends Component {
           </Div>
           <Div mb="0.3125rem">
             <div className="checkbox">
-              <input onClick={handleCheckBoxChange} name="fitment"  type="checkbox" id="fitment" />
+              <input onClick={handleCheckBoxChange} name="fitment" type="checkbox" id="fitment" />
               <label htmlFor="fitment" />
             </div>
             <Label fontSize="0.875em" ml="0.625rem" htmlFor="fitment">
@@ -167,7 +165,6 @@ export default class FeedBackForm extends Component {
             </Label>
           </Div>
         </Div>
-        {/* eslint-enable */}
         <Div col="8" pr="0.625rem" pl="0.625rem">
           <FormInput
             label="Review"
@@ -202,7 +199,6 @@ export default class FeedBackForm extends Component {
             {loading ? 'Please Wait ...' : 'SUBMIT'}
           </Button>
         </Div>
-        { /* eslint-disable */}
       </form>
     );
   }
@@ -210,33 +206,41 @@ export default class FeedBackForm extends Component {
 
 FeedBackForm.defaultProps = {
   email: '',
-  password: '',
   emailFeedBackError: false,
   emailFeedBackMessage: '',
-  passwordFeedBackError: false,
-  passwordFeedBackMessage: '',
-  loginResponse: {},
-  onChangeEmail: () => {},
-  onChangePassword: () => {},
-  onSubmitLogin: () => {}
+  firstName: '',
+  firstNameFeedBackError: false,
+  firstNameFeedBackMessage: '',
+  lastName: '',
+  lastNameFeedBackError: false,
+  lastNameFeedBackMessage: '',
+  phone: '',
+  phoneFeedBackError: false,
+  phoneFeedBackMessage: '',
+  order: '',
+  orderFeedBackError: false,
+  orderFeedBackMessage: '',
+  storeName: '',
+  storeNameFeedBackError: false,
+  storeNameFeedBackMessage: '',
+  city: '',
+  cityFeedBackError: false,
+  cityFeedBackMessage: '',
+  review: '',
+  reviewFeedBackError: false,
+  reviewFeedBackMessage: '',
+  loading: false,
+  loaded: false,
+  handleCheckBoxChange: () => {},
+  onSubmitForm: () => {},
 };
 
 FeedBackForm.propTypes = {
-  handleChange: PropTypes.func,
-  onChangeLastName: PropTypes.func,
-  onChangePhone: PropTypes.func,
-  onChangeCity: PropTypes.func,
-  onChangeEmail: PropTypes.func,
-  onChangeOrder: PropTypes.func,
-  onChangeStoreName: PropTypes.func,
+  handleChange: PropTypes.func.isRequired,
   onSubmitForm: PropTypes.func,
   email: PropTypes.string,
-  password: PropTypes.string,
   emailFeedBackError: PropTypes.bool,
   emailFeedBackMessage: PropTypes.string,
-  passwordFeedBackError: PropTypes.bool,
-  passwordFeedBackMessage: PropTypes.string,
-  loginResponse: PropTypes.object,
   firstName: PropTypes.string,
   firstNameFeedBackError: PropTypes.bool,
   firstNameFeedBackMessage: PropTypes.string,
@@ -256,9 +260,9 @@ FeedBackForm.propTypes = {
   cityFeedBackError: PropTypes.bool,
   cityFeedBackMessage: PropTypes.string,
   review: PropTypes.string,
-  reviewFeedBackError:PropTypes.bool,
-  reviewFeedBackMessage:PropTypes.string,
-  handleCheckBoxChange:PropTypes.func,
-  loading:PropTypes.bool,
+  reviewFeedBackError: PropTypes.bool,
+  reviewFeedBackMessage: PropTypes.string,
+  handleCheckBoxChange: PropTypes.func,
+  loading: PropTypes.bool,
   loaded: PropTypes.bool
 };
