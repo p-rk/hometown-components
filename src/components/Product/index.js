@@ -7,7 +7,7 @@ import Heading from 'components/Heading';
 import Span from 'components/Span';
 import WishlistBtn from 'components/WishlistBtn';
 import Rating from 'components/Rating';
-import ProgressiveImageSchemer from 'components/ProgressiveImageSchemer';
+import ImageShimmer from 'components/ImageShimmer';
 import Theme from 'components/Theme';
 import colorIcon from '../../static/pantone.jpg';
 
@@ -125,13 +125,13 @@ const Product = props => {
 
       <Link onClick={handleClick(setProductPosition, position)} to={productURL}>
         <ImgWrapper>
-          <ProgressiveImageSchemer src={image} height={imgHeight}>
+          <ImageShimmer src={image} height={imgHeight}>
             {imageURL => (<ProductImg
               alt={name}
               src={imageURL}
               width="100%"
             />)}
-          </ProgressiveImageSchemer>
+          </ImageShimmer>
           { colors &&
           <Colors>
             <img src={colorIcon} alt="" />

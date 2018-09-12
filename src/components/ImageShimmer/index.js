@@ -11,7 +11,7 @@ const ImagePlaceHolderWrapper = styled.div`
   ${props => props.width && { width: props.width }}
 `;
 
-export default class ProgressiveImageSchemer extends Component {
+export default class ImageShimmer extends Component {
   static propTypes = {
     children: PropTypes.func.isRequired,
     src: PropTypes.string.isRequired,
@@ -77,11 +77,11 @@ export default class ProgressiveImageSchemer extends Component {
     const { children, src, height } = this.props;
     const { isLoaded, error } = this.state;
     if (!children || typeof children !== 'function') {
-      throw new Error('ProgressiveImageSchemer requires a function as its only child');
+      throw new Error('ImageShimmer requires a function as its only child');
     }
     return (
       <ImagePlaceHolderWrapper height={height}>
-        { !isLoaded && <ImagePlaceHolder /> }
+        { !isLoaded && !error && <ImagePlaceHolder /> }
         { isLoaded && children(src) }
         { !isLoaded && error && children(defaultImage) }
       </ImagePlaceHolderWrapper>
