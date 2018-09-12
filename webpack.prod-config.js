@@ -57,7 +57,7 @@ module.exports = {
     'ScreenLoader/index': './src/components/ScreenLoader/',
     'Reviews/WriteReview': './src/components/Reviews/WriteReview',
     'Shimmer/index': './src/components/Shimmer/',
-    'ProgressiveImageSchemer/index': './src/components/ProgressiveImageSchemer/',
+    'ImageShimmer/index': './src/components/ImageShimmer/',
     'SeoContent/index': './src/components/SeoContent/',
     'Forms/ServiceSignUpForm': './src/components/Forms/ServiceSignUpForm',
   },

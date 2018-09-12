@@ -9,7 +9,7 @@ import Text from 'components/Text';
 const ShippedTo = ({
   name, address, city, pincode, state
 }) => (
-  <Section mb="1.25rem" p="0">
+  <Section mb="1.125rem" p="0">
     <Container type="container" pr="0" pl="0">
       <Row display="block" mr="0" ml="0" mb="0.3125rem">
         <Heading fontSize="1.25rem" color="textDark" mb="0px" mt="0px" fontFamily="regular">
