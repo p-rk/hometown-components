@@ -38,7 +38,7 @@ const colors = {
   note: '#6c757d',
   sectionBG: '#FAFAFA',
   sectionBgDark: '#f7f7f7',
-  offerRibbon: 'rgba(241, 241, 241, 0.6)',
+  offerRibbon: 'rgba(241, 241, 241, 0.45)',
   footerTop: 'rgba(51, 51, 51, 0.85)',
   footerBottom: 'rgb(51, 51, 51)',
   footerText: '#a6a6a6',
