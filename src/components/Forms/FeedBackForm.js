@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
 import Div from 'components/Div';
-import { /* FeedBackMessage, */ Label } from 'components/Label';
+import { Label } from 'components/Label';
 import FormInput from './FormInput';
 
 export default class FeedBackForm extends Component {
