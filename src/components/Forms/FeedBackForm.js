@@ -126,8 +126,6 @@ export default class FeedBackForm extends Component {
           />
           <Div mb="0.3125rem">
             <div className="checkbox">
-              { /* eslint-disable */}
-
               <input onClick={handleCheckBoxChange} name="instore" type="checkbox" id="instore" />
               <label htmlFor="instore" />
             </div>
@@ -141,7 +139,7 @@ export default class FeedBackForm extends Component {
           </Div>
           <Div mb="0.3125rem">
             <div className="checkbox">
-              <input onClick={handleCheckBoxChange}  name="delivery" type="checkbox" id="delivery" />
+              <input onClick={handleCheckBoxChange} name="delivery" type="checkbox" id="delivery" />
               <label htmlFor="delivery" />
             </div>
             <Label fontSize="0.875em" ml="0.625rem" htmlFor="delivery">
@@ -150,7 +148,7 @@ export default class FeedBackForm extends Component {
           </Div>
           <Div mb="0.3125rem">
             <div className="checkbox">
-              <input onClick={handleCheckBoxChange} name="fitment"  type="checkbox" id="fitment" />
+              <input onClick={handleCheckBoxChange} name="fitment" type="checkbox" id="fitment" />
               <label htmlFor="fitment" />
             </div>
             <Label fontSize="0.875em" ml="0.625rem" htmlFor="fitment">
@@ -167,7 +165,6 @@ export default class FeedBackForm extends Component {
             </Label>
           </Div>
         </Div>
-        {/* eslint-enable */}
         <Div col="8" pr="0.625rem" pl="0.625rem">
           <FormInput
             label="Review"
