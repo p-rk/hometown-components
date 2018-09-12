@@ -202,7 +202,6 @@ export default class FeedBackForm extends Component {
             {loading ? 'Please Wait ...' : 'SUBMIT'}
           </Button>
         </Div>
-        { /* eslint-disable */}
       </form>
     );
   }
