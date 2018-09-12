@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Row from 'components/Row';
 import Img from 'components/Img';
 import { Link } from 'react-router-dom';
-import ProgressiveImageSchemer from 'components/ProgressiveImageSchemer';
+import ImageShimmer from 'components/ImageShimmer';
 
 const LinkCustom = styled(Link)`
   display: inline-block;
@@ -38,13 +38,13 @@ const ColorOption = ({ data }) => (
     {data.map((item, index) => (
       <LinkCustom to={`/${urlName(item.meta.name)}/sku/${item.groupedattributes.sku}`} key={String(index)}>
         <ImgWrapper>
-          <ProgressiveImageSchemer src={`${item.image}.jpg`} height="60px">
+          <ImageShimmer src={`${item.image}.jpg`} height="60px">
             {imageURL => (<ProductImg
               src={imageURL}
               alt={item.meta.name}
               width="60px"
             />)}
-          </ProgressiveImageSchemer>
+          </ImageShimmer>
         </ImgWrapper>
       </LinkCustom>
     ))}

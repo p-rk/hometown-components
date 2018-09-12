@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Img from 'components/Img';
 import Div from 'components/Div';
-import ProgressiveImageSchemer from 'components/ProgressiveImageSchemer';
+import ImageShimmer from 'components/ImageShimmer';
 
 const ProductCarouselLi = styled.li`
   width: 100%;
@@ -88,13 +88,13 @@ const CategoryCarouselItem = ({
 }) => (
   <ProductCarouselLi className={typeOfSlider} colSize={colSize} layout={layout}>
     <HyperLink href={url}>
-      <ProgressiveImageSchemer src={image} minHeight="365">
+      <ImageShimmer src={image} minHeight="365">
         {imageURL => (
           layout === 'square' ?
             <Img mb="5px" src={imageURL} alt={name} />
             : <RoundImg src={imageURL} alt={name} />
         )}
-      </ProgressiveImageSchemer>
+      </ImageShimmer>
       {layout === 'square' ?
         <Div ta="left">
           <CatTitle>{name}</CatTitle>

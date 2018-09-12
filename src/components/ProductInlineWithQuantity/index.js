@@ -8,7 +8,7 @@ import Heading from 'components/Heading';
 import Img from 'components/Img';
 import Span from 'components/Span';
 import Text from 'components/Text';
-import ProgressiveImageSchemer from 'components/ProgressiveImageSchemer';
+import ImageShimmer from 'components/ImageShimmer';
 import Theme from 'components/Theme';
 
 const Wrapper = styled(Div)`
@@ -36,13 +36,13 @@ const ProductInlineWithQuantity = ({
       {itemData && <Row display="block" mr="0" ml="0">
         <Link to={getProductUrl(name)}>
           <Div col="3">
-            <ProgressiveImageSchemer src={image} height="80px">
+            <ImageShimmer src={image} height="80px">
               {imageURL => (<Img
                 src={imageURL}
                 alt={name}
                 width="100%"
               />)}
-            </ProgressiveImageSchemer>
+            </ImageShimmer>
           </Div>
           <Div col="9" pl="0.9375rem">
             <Heading
