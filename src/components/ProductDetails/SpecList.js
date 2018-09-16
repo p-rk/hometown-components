@@ -18,16 +18,16 @@ const SpecHeading = styled.h4`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 1em;
-  font-family: regular;
+  font-size: 0.875rem;
+  font-family: light;
   line-height: 1;
   color: rgba(0,0,0,0.6);
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 0;
-  background-color: #fff;
+  background-color: rgba(238, 238, 199, 0.68);
   box-shadow: 7px 7px 14px -9px rgba(124,122,122,0.5);
-  padding: 20px;
+  padding: 15px 20px;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     background-color: #fff;
   }
@@ -73,10 +73,11 @@ class SpecList extends Component {
               border="none"
               p="0"
               fl="right"
-              fontSize="1.5rem"
+              fontSize="1.25rem"
+              fontFamily="light"
               lh="0"
               height="18px"
-              mt="-5px"
+              mt="-4px"
             >{show ? '-' : '+'}</Button>
           </SpecHeading>
           {show && <SpecListWrapper p="1rem" pb="0">
