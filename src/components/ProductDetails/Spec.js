@@ -11,7 +11,7 @@ const Spec = ({ spec }) => {
     <Row display="block" m="0" pb="2px">
       <div>
         <Div col="5">
-          <Label color="secondary" lh="1.6" fontFamily="medium">{label}</Label>
+          <Label color="black" lh="1.6" fontFamily="regular">{label}</Label>
         </Div>
         <Div col="7">
           <Text
@@ -21,6 +21,7 @@ const Spec = ({ spec }) => {
             fontSize="0.875rem"
             dangerouslySetInnerHTML={{ __html: value }}
             lh="1.6"
+            color="rgba(0, 0, 0, 0.6)"
           />
         </Div>
       </div>

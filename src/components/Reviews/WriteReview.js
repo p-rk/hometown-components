@@ -14,7 +14,7 @@ class WriteReview extends React.Component {
     name: '',
     rating: 0,
     review: '',
-    addreview: false
+    addreview: true
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.added && nextProps.added !== this.props.added) {

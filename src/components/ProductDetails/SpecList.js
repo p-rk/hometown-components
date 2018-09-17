@@ -19,15 +19,16 @@ const SpecHeading = styled.h4`
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 0.875rem;
-  font-family: light;
+  font-family: regular;
   line-height: 1;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0,0,0,0.7);
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 0;
   background-color: rgba(238, 238, 199, 0.68);
   box-shadow: 7px 7px 14px -9px rgba(124,122,122,0.5);
   padding: 15px 20px;
+  border: 1px solid rgb(238, 238, 199);
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     background-color: #fff;
   }
@@ -39,10 +40,11 @@ const SpecListWrapper = styled.div`
   float: left;
   display: initial;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: rgba(238,238,199,0.68);
   box-shadow: 7px 7px 14px -9px rgba(124,122,122,0.5);
   padding: 1rem 1.25rem 0.375rem;
   margin-top: 1px;
+  border: 1px solid rgb(238, 238, 199);
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     background-color: #fff;
   }
