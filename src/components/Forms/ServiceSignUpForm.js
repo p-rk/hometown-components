@@ -18,11 +18,23 @@ const options = [
 
 const ServiceSignUpForm = ({
   name,
+  nameError,
+  nameErrorMessage,
   email,
+  emailError,
+  emailErrorMessage,
   phone,
+  phoneError,
+  phoneErrorMessage,
   address,
+  addressError,
+  addressErrorMessage,
   location,
+  locationError,
+  locationErrorMessage,
   pincode,
+  pincodeError,
+  pincodeErrorMessage,
   service,
   onChangeName,
   onChangeAddress,
@@ -47,7 +59,8 @@ const ServiceSignUpForm = ({
           placeholder=""
           onChange={onChangeName}
           value={name}
-          required
+          feedBackError={nameError}
+          feedBackMessage={nameErrorMessage}
         />
       </Div>
       <Div col="6" pr="0.625rem" pl="0.625rem">
@@ -57,7 +70,8 @@ const ServiceSignUpForm = ({
           placeholder=""
           onChange={onChangeEmail}
           value={email}
-          required
+          feedBackError={emailError}
+          feedBackMessage={emailErrorMessage}
         />
       </Div>
     </Row>
@@ -69,7 +83,8 @@ const ServiceSignUpForm = ({
           placeholder=""
           onChange={onChangePhone}
           value={phone}
-          required
+          feedBackError={phoneError}
+          feedBackMessage={phoneErrorMessage}
         />
       </Div>
       <Div col="6" pr="0.625rem" pl="0.625rem">
@@ -79,7 +94,8 @@ const ServiceSignUpForm = ({
           placeholder=""
           onChange={onChangeLocation}
           value={location}
-          required
+          feedBackError={locationError}
+          feedBackMessage={locationErrorMessage}
         />
       </Div>
     </Row>
@@ -91,7 +107,8 @@ const ServiceSignUpForm = ({
           placeholder=""
           onChange={onChangeAddress}
           value={address}
-          required
+          feedBackError={addressError}
+          feedBackMessage={addressErrorMessage}
         />
       </Div>
     </Row>
@@ -103,13 +120,14 @@ const ServiceSignUpForm = ({
           placeholder=""
           onChange={onChangePincode}
           value={pincode}
-          required
+          feedBackError={pincodeError}
+          feedBackMessage={pincodeErrorMessage}
         />
       </Div>
       <Div col="6" pr="0.625rem" pl="0.625rem">
         <InputField mb="0.625rem">
           <Label fontSize="0.875em" mb="0.625rem">Service</Label>
-          <Select onChange={onChangeService} value={service} required>
+          <Select onChange={onChangeService} value={service} required >
             <option value="">Choose Service</option>
             {options.map(option => (
               <option key={option.id} value={option.id}>{option.option}</option>
@@ -139,21 +157,45 @@ ServiceSignUpForm.defaultProps = {
   pincode: '',
   location: '',
   address: '',
-  service: ''
+  service: '',
+  nameError: false,
+  emailError: false,
+  phoneError: false,
+  pincodeError: false,
+  locationError: false,
+  addressError: false,
+  nameErrorMessage: '',
+  emailErrorMessage: '',
+  phoneErrorMessage: '',
+  locationErrorMessage: '',
+  addressErrorMessage: '',
+  pincodeErrorMessage: '',
 };
 
 ServiceSignUpForm.propTypes = {
   name: PropTypes.string,
+  nameError: PropTypes.bool,
+  nameErrorMessage: PropTypes.string,
   onChangeName: PropTypes.func.isRequired,
   email: PropTypes.string,
+  emailError: PropTypes.bool,
+  emailErrorMessage: PropTypes.string,
   onChangeEmail: PropTypes.func.isRequired,
   phone: PropTypes.string,
+  phoneError: PropTypes.bool,
+  phoneErrorMessage: PropTypes.string,
   onChangePhone: PropTypes.func.isRequired,
   location: PropTypes.string,
+  locationError: PropTypes.bool,
+  locationErrorMessage: PropTypes.string,
   onChangeLocation: PropTypes.string.isRequired,
   address: PropTypes.string,
+  addressError: PropTypes.bool,
+  addressErrorMessage: PropTypes,
   onChangeAddress: PropTypes.func.isRequired,
   pincode: PropTypes.string,
+  pincodeError: PropTypes.bool,
+  pincodeErrorMessage: PropTypes.string,
   onChangePincode: PropTypes.func.isRequired,
   service: PropTypes.string,
   onChangeService: PropTypes.func.isRequired,
