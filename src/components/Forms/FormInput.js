@@ -37,7 +37,7 @@ const FormInput = ({
           name={name}
         />
       )}
-      {feedBackError && <FeedBackMessage type="error">{feedBackMessage}</FeedBackMessage>}
+      {feedBackError && !(type === 'hidden') && <FeedBackMessage type="error">{feedBackMessage}</FeedBackMessage>}
     </InputField>
   );
 };
