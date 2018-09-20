@@ -24,6 +24,7 @@ const Heading = styled.h1`
   ${props => props.pl && { paddingLeft: props.pl }}
   ${props => props.ls && { letterSpacing: props.ls }}
   ${props => props.ta && { textAlign: props.ta }}
+  ${props => props.fontWeight && { fontWeight: props.fontWeight }}
 `;
 
 Heading.defaultProps = {

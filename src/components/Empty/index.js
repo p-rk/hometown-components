@@ -38,7 +38,7 @@ const Btn = styled.a`
   color: #FFF;
   padding: 0.75rem 2.5rem;
   text-decoration: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
   @media (min-width: ${props => props.theme.breakpoints('sm')}) {
     padding: 0.625rem 2.5rem;
     font-size: 1rem;
@@ -58,7 +58,7 @@ const EmptyPages = ({
         <Div>
           {children}
           <Heading color="text" fontFamily="medium" fontSize="1.6rem" mb="1.25rem" mt="1rem">{title}</Heading>
-          <Text ta="center" fontSize="1.125rem" color="rgba(93, 91, 91, 0.75)" mb="1rem">{subTitle}</Text>
+          <Text ta="center" fontSize="1.125rem" color="rgba(93, 91, 91, 0.75)" mb="0.625rem">{subTitle}</Text>
         </Div>
         <Div mt="1rem">
           <Link to={url}>

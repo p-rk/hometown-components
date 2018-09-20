@@ -60,23 +60,25 @@ const TitlePrice = ({
           <span itemProp="priceCurrency" content="INR">₹</span>
           <span itemProp="price" content={discPrice.split(',').join('')}> {discPrice}</span>
           { price !== discPrice &&
-            <span>
+            <Span>
               <Span
                 fontSize="0.8125em"
                 color="rgba(0, 0, 0, 0.4)"
                 ml="1rem"
                 fontFamily="regular"
                 type="lt"
+                va="text-top"
               >₹ {price}</Span>
               <Span
                 fontSize="0.8125em"
                 color="rgba(0, 0, 0, 0.4)"
                 ml="0.625rem"
                 fontFamily="regular"
+                va="text-top"
               >Saving ₹ {savingsRs}
                 {' '}({savingsPercentage}% OFF)
               </Span>
-            </span>
+            </Span>
           }
         </Heading>
       </Row>

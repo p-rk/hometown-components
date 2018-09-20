@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Button from 'components/Buttons';
-import { FeedBackMessage } from 'components/Label';
+import Row from 'components/Row';
+import Div from 'components/Div';
+import { FeedBackMessage, Label } from 'components/Label';
 import FormInput from './FormInput';
 
 export default class ForgotPasswordForm extends Component {
@@ -12,7 +15,8 @@ export default class ForgotPasswordForm extends Component {
       emailFeedBackError,
       emailFeedBackMessage,
       onSubmitForgot,
-      forgotResponse
+      forgotResponse,
+      loginUrl
     } = this.props;
     const { loading, error } = forgotResponse;
     return (
@@ -26,16 +30,28 @@ export default class ForgotPasswordForm extends Component {
           feedBackError={emailFeedBackError}
           feedBackMessage={emailFeedBackMessage}
         />
-        <Button
-          size="block"
-          btnType="primary"
-          fontFamily="regular"
-          height="42px"
-          mt="1.25rem"
-          disabled={loading}
-        >
-          {(forgotResponse && !loading) ? 'SUBMIT' : 'Please wait...' }
-        </Button>
+        <Row ml="0" mr="0" mt="1.25rem">
+          <Div col="8" pt="6px">
+            <Label color="textDark" mr="0.3126rem">
+              Continue to
+            </Label>
+            <Link to={loginUrl}>
+              <Label color="primary">Sign in</Label>
+            </Link>
+          </Div>
+          <Div col="4">
+            <Button
+              size="block"
+              btnType="primary"
+              fontFamily="regular"
+              height="42px"
+              disabled={loading}
+            >
+              {(forgotResponse && !loading) ? 'SUBMIT' : 'Please wait...' }
+            </Button>
+          </Div>
+        </Row>
+
         {(forgotResponse
           && !loading
           && error) ? <FeedBackMessage
@@ -57,7 +73,8 @@ ForgotPasswordForm.defaultProps = {
   emailFeedBackMessage: '',
   forgotResponse: {},
   onChangeEmail: () => {},
-  onSubmitForgot: () => {}
+  onSubmitForgot: () => {},
+  loginUrl: ''
 };
 
 ForgotPasswordForm.propTypes = {
@@ -66,5 +83,6 @@ ForgotPasswordForm.propTypes = {
   email: PropTypes.string,
   emailFeedBackError: PropTypes.bool,
   emailFeedBackMessage: PropTypes.string,
-  forgotResponse: PropTypes.object
+  forgotResponse: PropTypes.object,
+  loginUrl: PropTypes.string
 };
