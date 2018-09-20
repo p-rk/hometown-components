@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
+import Row from 'components/Row';
+import Div from 'components/Div';
+import { Label } from 'components/Label';
+import { Link } from 'react-router-dom';
 import FormInput from './FormInput';
 
 export default class SignupForm extends Component {
@@ -20,6 +24,7 @@ export default class SignupForm extends Component {
       passwordFeedBackMessage,
       onSubmitSignup,
       loading,
+      loginUrl,
     } = this.props;
     return (
       <form onSubmit={onSubmitSignup}>
@@ -50,16 +55,27 @@ export default class SignupForm extends Component {
           feedBackError={passwordFeedBackError}
           feedBackMessage={passwordFeedBackMessage}
         />
-        <Button
-          size="block"
-          btnType="primary"
-          fontFamily="regular"
-          height="42px"
-          mt="1.25rem"
-          disabled={loading}
-        >
-          {!loading ? 'REGISTER' : 'Please wait...' }
-        </Button>
+        <Row ml="0" mr="0" mt="1.25rem">
+          <Div col="8" pt="6px">
+            <Label color="textDark" mr="0.3126rem">
+              Already have an account.?
+            </Label>
+            <Link to={loginUrl}>
+              <Label color="primary">Sign in</Label>
+            </Link>
+          </Div>
+          <Div col="4">
+            <Button
+              size="block"
+              btnType="primary"
+              fontFamily="regular"
+              height="42px"
+              disabled={loading}
+            >
+              {!loading ? 'SIGN UP' : 'Please wait...' }
+            </Button>
+          </Div>
+        </Row>
       </form>
     );
   }
@@ -79,7 +95,8 @@ SignupForm.defaultProps = {
   onChangePhone: () => {},
   onChangePassword: () => {},
   onSubmitSignup: () => {},
-  loading: false
+  loading: false,
+  loginUrl: '',
 };
 
 SignupForm.propTypes = {
@@ -97,4 +114,5 @@ SignupForm.propTypes = {
   passwordFeedBackError: PropTypes.bool,
   passwordFeedBackMessage: PropTypes.string,
   loading: PropTypes.bool,
+  loginUrl: PropTypes.string,
 };

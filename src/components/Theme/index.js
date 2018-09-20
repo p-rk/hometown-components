@@ -44,6 +44,9 @@ const colors = {
   footerText: '#a6a6a6',
   hashTags: 'rgba(51, 51, 51, 0.85)',
   bgPDP: '#f6f6f6',
+  color676767: '#676767',
+  color79716c: '#79716c',
+  colora39994: '#a39994',
   gray: [
     '#f8f9fa',
     '#e9ecef',
