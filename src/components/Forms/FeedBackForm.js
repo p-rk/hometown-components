@@ -35,6 +35,10 @@ export default class FeedBackForm extends Component {
       review,
       reviewFeedBackError,
       reviewFeedBackMessage,
+      instore,
+      aftersale,
+      fitment,
+      delivery,
       loading,
       loaded,
     } = this.props;
@@ -126,7 +130,7 @@ export default class FeedBackForm extends Component {
           />
           <Div mb="0.3125rem">
             <div className="checkbox">
-              <input onClick={handleCheckBoxChange} name="instore" type="checkbox" id="instore" />
+              <input onClick={handleCheckBoxChange} checked={instore} name="instore" type="checkbox" id="instore" />
               <label htmlFor="instore" />
             </div>
             <Label
@@ -139,7 +143,7 @@ export default class FeedBackForm extends Component {
           </Div>
           <Div mb="0.3125rem">
             <div className="checkbox">
-              <input onClick={handleCheckBoxChange} name="delivery" type="checkbox" id="delivery" />
+              <input onClick={handleCheckBoxChange} checked={delivery} name="delivery" type="checkbox" id="delivery" />
               <label htmlFor="delivery" />
             </div>
             <Label fontSize="0.875em" ml="0.625rem" htmlFor="delivery">
@@ -148,7 +152,7 @@ export default class FeedBackForm extends Component {
           </Div>
           <Div mb="0.3125rem">
             <div className="checkbox">
-              <input onClick={handleCheckBoxChange} name="fitment" type="checkbox" id="fitment" />
+              <input onClick={handleCheckBoxChange} checked={fitment} name="fitment" type="checkbox" id="fitment" />
               <label htmlFor="fitment" />
             </div>
             <Label fontSize="0.875em" ml="0.625rem" htmlFor="fitment">
@@ -157,7 +161,13 @@ export default class FeedBackForm extends Component {
           </Div>
           <Div mb="0.3125rem">
             <div className="checkbox">
-              <input onClick={handleCheckBoxChange} name="aftersale" type="checkbox" id="aftersale" />
+              <input
+                onClick={handleCheckBoxChange}
+                checked={aftersale}
+                name="aftersale"
+                type="checkbox"
+                id="aftersale"
+              />
               <label htmlFor="aftersale" />
             </div>
             <Label fontSize="0.875em" ml="0.625rem" htmlFor="aftersale">
@@ -229,6 +239,10 @@ FeedBackForm.defaultProps = {
   review: '',
   reviewFeedBackError: false,
   reviewFeedBackMessage: '',
+  instore: false,
+  aftersale: false,
+  fitment: false,
+  delivery: false,
   loading: false,
   loaded: false,
   handleCheckBoxChange: () => {},
@@ -262,6 +276,10 @@ FeedBackForm.propTypes = {
   review: PropTypes.string,
   reviewFeedBackError: PropTypes.bool,
   reviewFeedBackMessage: PropTypes.string,
+  instore: PropTypes.bool,
+  aftersale: PropTypes.bool,
+  fitment: PropTypes.bool,
+  delivery: PropTypes.bool,
   handleCheckBoxChange: PropTypes.func,
   loading: PropTypes.bool,
   loaded: PropTypes.bool
