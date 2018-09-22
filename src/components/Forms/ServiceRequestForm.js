@@ -35,6 +35,11 @@ export default class ServiceRequestForm extends Component {
       review,
       reviewFeedBackError,
       reviewFeedBackMessage,
+      /* eslint-disable camelcase */
+      under_warranty,
+      out_of_warranty,
+      assembly_dismatling,
+      /* eslint-enable camelcase */
       loading,
       loaded
     } = this.props;
@@ -127,7 +132,7 @@ export default class ServiceRequestForm extends Component {
           { /* eslint-disable */}
           <Div mb="0.3125rem">
             <div className="checkbox">
-              <input onClick={handleCheckBoxChange}  name="under_warranty" type="checkbox" id="under_warranty" />
+              <input onClick={handleCheckBoxChange} checked={under_warranty}  name="under_warranty" type="checkbox" id="under_warranty" />
               <label htmlFor="under_warranty" />
             </div>
             <Label fontSize="0.875em" ml="0.625rem" htmlFor="under_warranty">
@@ -136,7 +141,7 @@ export default class ServiceRequestForm extends Component {
           </Div>
           <Div mb="0.3125rem">
             <div className="checkbox">
-              <input onClick={handleCheckBoxChange} name="out_of_warranty"  type="checkbox" id="out_of_warranty" />
+              <input onClick={handleCheckBoxChange} checked={out_of_warranty} name="out_of_warranty"  type="checkbox" id="out_of_warranty" />
               <label htmlFor="out_of_warranty" />
             </div>
             <Label fontSize="0.875em" ml="0.625rem" htmlFor="out_of_warranty">
@@ -145,7 +150,7 @@ export default class ServiceRequestForm extends Component {
           </Div>
           <Div mb="0.3125rem">
             <div className="checkbox">
-              <input onClick={handleCheckBoxChange} name="assembly_dismatling" type="checkbox" id="assembly_dismatling" />
+              <input onClick={handleCheckBoxChange} checked={assembly_dismatling} name="assembly_dismatling" type="checkbox" id="assembly_dismatling" />
               <label htmlFor="assembly_dismatling" />
             </div>
             <Label fontSize="0.875em" ml="0.625rem" htmlFor="assembly_dismatling">
@@ -244,6 +249,9 @@ ServiceRequestForm.propTypes = {
   review: PropTypes.string,
   reviewFeedBackError:PropTypes.bool,
   reviewFeedBackMessage:PropTypes.string,
+  under_warranty:PropTypes.bool,
+  out_of_warranty:PropTypes.bool,
+  assembly_dismatling:PropTypes.bool,
   handleCheckBoxChange:PropTypes.func,
   loading:PropTypes.bool,
   loaded: PropTypes.bool
