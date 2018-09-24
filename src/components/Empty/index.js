@@ -33,7 +33,7 @@ const EmptyPageWrapper = styled.div`
   }
 `;
 
-const Btn = styled.a`
+const Btn = styled(Link)`
   background: ${props => props.theme.colors.primary};
   color: #FFF;
   padding: 0.75rem 2.5rem;
@@ -76,9 +76,7 @@ const EmptyPages = ({
           <Text ta="center" fontSize="1.125rem" color="rgba(93, 91, 91, 0.75)" mb="0.625rem">{subTitle}</Text>
         </Div>
         <Div mt="1rem">
-          <Link to={url}>
-            <Btn alt={btnName}>{btnName}</Btn>
-          </Link>
+          <Btn alt={btnName} to={url}>{btnName}</Btn>
         </Div>
       </Row>
     </EmptyPageWrapper>

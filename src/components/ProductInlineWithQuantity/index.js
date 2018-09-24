@@ -65,12 +65,12 @@ const ProductInlineWithQuantity = ({
               </Text>
               <Text mt="0" mb="0" lh="1.4">
                 <Span
-                  fontSize="0.75rem"
+                  fontSize="0.875rem"
                 >Saving Rs. {calculateSavings(unitPrice, specialPrice) }({discount}%)</Span>
               </Text>
               <Text mt="0" mb="0" lh="1.4">
                 <Span
-                  fontSize="0.75rem"
+                  fontSize="0.875rem"
                 >Quantity {itemData.qty}</Span>
               </Text>
               <Text mt="0" mb="0" lh="1.4">

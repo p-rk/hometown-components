@@ -9,7 +9,7 @@ import Text from 'components/Text';
 import Theme from 'components/Theme';
 
 const ProductInline = ({
-  name, image, netPrice, shipping,
+  name, image, netPrice, shipping, qty
 }) => (
   <Div mr="0" ml="0" mb="0.3125rem">
     <Row display="block" mr="0" ml="0">
@@ -37,8 +37,13 @@ const ProductInline = ({
               fontSize="0.875rem"
               color={Theme.colors.textDark}
               fontFamily={Theme.fontFamily.medium}
-            >{netPrice}</Span>
+            >Rs. {netPrice}</Span>
           </Text>
+          {qty > 0 &&
+            <Text mt="0" mb="0">
+              <Span fontSize="0.75rem">Quantity: {qty}</Span>
+            </Text>
+          }
           <Text mt="0" mb="0">
             <Span fontSize="0.75rem">{shipping}</Span>
           </Text>
@@ -53,6 +58,7 @@ ProductInline.defaultProps = {
   name: '',
   netPrice: '',
   shipping: '',
+  qty: 0
 };
 
 ProductInline.propTypes = {
@@ -60,6 +66,7 @@ ProductInline.propTypes = {
   name: PropTypes.string,
   netPrice: PropTypes.string,
   shipping: PropTypes.string,
+  qty: PropTypes.number,
 };
 
 export default ProductInline;
