@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
 import Div from 'components/Div';
+import Row from 'components/Row';
 import { Label } from 'components/Label';
 import FormInput from './FormInput';
 
@@ -44,171 +45,187 @@ export default class FeedBackForm extends Component {
     } = this.props;
     return (
       <form onSubmit={onSubmitForm}>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="First name"
-            type="text"
-            placeholder=""
-            name="firstName"
-            onChange={handleChange}
-            value={firstName}
-            feedBackError={firstNameFeedBackError}
-            feedBackMessage={firstNameFeedBackMessage}
-          />
-        </Div>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="Last name"
-            type="text"
-            placeholder=""
-            onChange={handleChange}
-            name="lastName"
-            value={lastName}
-            feedBackError={lastNameFeedBackError}
-            feedBackMessage={lastNameFeedBackMessage}
-          />
-        </Div>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="Registered mobile no"
-            type="text"
-            maxlength="10"
-            placeholder=""
-            onChange={handleChange}
-            name="phone"
-            value={phone}
-            feedBackError={phoneFeedBackError}
-            feedBackMessage={phoneFeedBackMessage}
-          />
-        </Div>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="Email Address"
-            type="text"
-            placeholder=""
-            onChange={handleChange}
-            name="email"
-            value={email}
-            feedBackError={emailFeedBackError}
-            feedBackMessage={emailFeedBackMessage}
-          />
-        </Div>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="Order number *"
-            type="text"
-            placeholder=""
-            onChange={handleChange}
-            name="order"
-            value={order}
-            feedBackError={orderFeedBackError}
-            feedBackMessage={orderFeedBackMessage}
-          />
-        </Div>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="Store*"
-            type="text"
-            placeholder=""
-            onChange={handleChange}
-            name="storeName"
-            value={storeName}
-            feedBackError={storeNameFeedBackError}
-            feedBackMessage={storeNameFeedBackMessage}
-          />
-        </Div>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="City*"
-            type="text"
-            placeholder=""
-            onChange={handleChange}
-            name="city"
-            value={city}
-            feedBackError={cityFeedBackError}
-            feedBackMessage={cityFeedBackMessage}
-          />
-          <Div mb="0.3125rem">
-            <div className="checkbox">
-              <input onClick={handleCheckBoxChange} checked={instore} name="instore" type="checkbox" id="instore" />
-              <label htmlFor="instore" />
-            </div>
-            <Label
-              fontSize="0.875em"
-              ml="0.625rem"
-              htmlFor="checkbox"
-            >
+        <Row ml="0" mr="0">
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="First name"
+              type="text"
+              placeholder=""
+              name="firstName"
+              onChange={handleChange}
+              value={firstName}
+              feedBackError={firstNameFeedBackError}
+              feedBackMessage={firstNameFeedBackMessage}
+            />
+          </Div>
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="Last name"
+              type="text"
+              placeholder=""
+              onChange={handleChange}
+              name="lastName"
+              value={lastName}
+              feedBackError={lastNameFeedBackError}
+              feedBackMessage={lastNameFeedBackMessage}
+            />
+          </Div>
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="Registered mobile no"
+              type="text"
+              maxlength="10"
+              placeholder=""
+              onChange={handleChange}
+              name="phone"
+              value={phone}
+              feedBackError={phoneFeedBackError}
+              feedBackMessage={phoneFeedBackMessage}
+            />
+          </Div>
+        </Row>
+        <Row ml="0" mr="0">
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="Email Address"
+              type="text"
+              placeholder=""
+              onChange={handleChange}
+              name="email"
+              value={email}
+              feedBackError={emailFeedBackError}
+              feedBackMessage={emailFeedBackMessage}
+            />
+          </Div>
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="Order number *"
+              type="text"
+              placeholder=""
+              onChange={handleChange}
+              name="order"
+              value={order}
+              feedBackError={orderFeedBackError}
+              feedBackMessage={orderFeedBackMessage}
+            />
+          </Div>
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="Store*"
+              type="text"
+              placeholder=""
+              onChange={handleChange}
+              name="storeName"
+              value={storeName}
+              feedBackError={storeNameFeedBackError}
+              feedBackMessage={storeNameFeedBackMessage}
+            />
+          </Div>
+        </Row>
+        <Row ml="0" mr="0">
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="City*"
+              type="text"
+              placeholder=""
+              onChange={handleChange}
+              name="city"
+              value={city}
+              feedBackError={cityFeedBackError}
+              feedBackMessage={cityFeedBackMessage}
+            />
+            <Div mb="0.3125rem">
+              <div className="checkbox">
+                <input onClick={handleCheckBoxChange} checked={instore} name="instore" type="checkbox" id="instore" />
+                <label htmlFor="instore" />
+              </div>
+              <Label
+                fontSize="0.875em"
+                ml="0.625rem"
+                htmlFor="checkbox"
+              >
                   Instore Experience
-            </Label>
-          </Div>
-          <Div mb="0.3125rem">
-            <div className="checkbox">
-              <input onClick={handleCheckBoxChange} checked={delivery} name="delivery" type="checkbox" id="delivery" />
-              <label htmlFor="delivery" />
-            </div>
-            <Label fontSize="0.875em" ml="0.625rem" htmlFor="delivery">
+              </Label>
+            </Div>
+            <Div mb="0.3125rem">
+              <div className="checkbox">
+                <input
+                  onClick={handleCheckBoxChange}
+                  checked={delivery}
+                  name="delivery"
+                  type="checkbox"
+                  id="delivery"
+                />
+                <label htmlFor="delivery" />
+              </div>
+              <Label fontSize="0.875em" ml="0.625rem" htmlFor="delivery">
                   Delivery Experience
-            </Label>
-          </Div>
-          <Div mb="0.3125rem">
-            <div className="checkbox">
-              <input onClick={handleCheckBoxChange} checked={fitment} name="fitment" type="checkbox" id="fitment" />
-              <label htmlFor="fitment" />
-            </div>
-            <Label fontSize="0.875em" ml="0.625rem" htmlFor="fitment">
+              </Label>
+            </Div>
+            <Div mb="0.3125rem">
+              <div className="checkbox">
+                <input onClick={handleCheckBoxChange} checked={fitment} name="fitment" type="checkbox" id="fitment" />
+                <label htmlFor="fitment" />
+              </div>
+              <Label fontSize="0.875em" ml="0.625rem" htmlFor="fitment">
                   Fitment Experience
-            </Label>
-          </Div>
-          <Div mb="0.3125rem">
-            <div className="checkbox">
-              <input
-                onClick={handleCheckBoxChange}
-                checked={aftersale}
-                name="aftersale"
-                type="checkbox"
-                id="aftersale"
-              />
-              <label htmlFor="aftersale" />
-            </div>
-            <Label fontSize="0.875em" ml="0.625rem" htmlFor="aftersale">
+              </Label>
+            </Div>
+            <Div mb="0.3125rem">
+              <div className="checkbox">
+                <input
+                  onClick={handleCheckBoxChange}
+                  checked={aftersale}
+                  name="aftersale"
+                  type="checkbox"
+                  id="aftersale"
+                />
+                <label htmlFor="aftersale" />
+              </div>
+              <Label fontSize="0.875em" ml="0.625rem" htmlFor="aftersale">
                   After Sale service Experience
-            </Label>
+              </Label>
+            </Div>
           </Div>
-        </Div>
-        <Div col="8" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="Review"
-            onChange={handleChange}
-            name="review"
-            value={review}
-            rows={5}
-            type="textarea"
-            placeholder=""
-            feedBackError={reviewFeedBackError}
-            feedBackMessage={reviewFeedBackMessage}
-          />
-        </Div>
-        <Div col="12" pr="0.625rem" pl="0.625rem" mt="0.3125rem">
-          <Div mb="0.3125rem">
-            <Label fontSize="0.875em" ml="0" htmlFor="checkbox">
-              <b>Note:</b> Order number / Invoice required for scheduling the service visit.
-            </Label>
+          <Div col="8" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="Review"
+              onChange={handleChange}
+              name="review"
+              value={review}
+              rows={5}
+              type="textarea"
+              placeholder=""
+              feedBackError={reviewFeedBackError}
+              feedBackMessage={reviewFeedBackMessage}
+            />
           </Div>
-        </Div>
-        <Div col="2" pr="0.625rem" pl="0.625rem" mt="1rem">
-          <Button
-            size="block"
-            btnType="primary"
-            fontFamily="regular"
-            height="42px"
-            mt="0.625rem"
-            rows={5}
-            onClick={onSubmitForm}
-            disable={loading || loaded}
-          >
-            {loading ? 'Please Wait ...' : 'SUBMIT'}
-          </Button>
-        </Div>
+        </Row>
+        <Row ml="0" mr="0">
+          <Div col="12" pr="0.625rem" pl="0.625rem" mt="0.3125rem">
+            <Div mb="0.3125rem">
+              <Label fontSize="0.875em" ml="0" htmlFor="checkbox">
+                <b>Note:</b> Order number / Invoice required for scheduling the service visit.
+              </Label>
+            </Div>
+          </Div>
+        </Row>
+        <Row ml="0" mr="0">
+          <Div col="2" pr="0.625rem" pl="0.625rem" mt="1rem">
+            <Button
+              size="block"
+              btnType="primary"
+              fontFamily="regular"
+              height="42px"
+              mt="0.625rem"
+              rows={5}
+              onClick={onSubmitForm}
+              disable={loading || loaded}
+            >
+              {loading ? 'Please Wait ...' : 'SUBMIT'}
+            </Button>
+          </Div>
+        </Row>
       </form>
     );
   }
