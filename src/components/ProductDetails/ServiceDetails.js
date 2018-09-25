@@ -58,7 +58,7 @@ const ServiceDetails = ({
           fontSize="0.825em"
           color="secondary"
           display="contents"
-        >{shipping === '0' ? 'Free Shipping' : `Shipping Cost : ${shipping}`}</Label>
+        >{shipping && Number(shipping) > 499 ? 'Free Shipping' : 'Shipping Charge Rs. 50 ' }</Label>
       </Div>
     </Row>
   </Section>
