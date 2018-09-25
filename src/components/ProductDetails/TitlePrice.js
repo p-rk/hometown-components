@@ -39,7 +39,7 @@ const TitlePrice = ({
               <Span className="ratingsCount" fontSize="0.875rem" color="rgba(0, 0, 0, 0.6)" va="super">({count})</Span>
               <div className="hide" itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
                 Rated
-                <span itemProp="ratingValue">({ratings})</span>/5 based on
+                <span itemProp="ratingValue">{ratings}</span>/5 based on
                 <span itemProp="reviewCount">{count}</span>
                 customer reviews
               </div>
