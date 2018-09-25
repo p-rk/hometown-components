@@ -82,8 +82,8 @@ export default class ImageShimmer extends Component {
     return (
       <ImagePlaceHolderWrapper height={height}>
         { !isLoaded && !error && <ImagePlaceHolder /> }
-        { isLoaded && children(src) }
-        { !isLoaded && error && children(defaultImage) }
+        { isLoaded && children(src, error) }
+        { !isLoaded && error && children(defaultImage, error) }
       </ImagePlaceHolderWrapper>
     );
   }
