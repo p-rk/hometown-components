@@ -7,6 +7,7 @@ module.exports = {
     'Buttons/index': './src/components/Buttons/',
     'Container/index': './src/components/Container/',
     'Div/index': './src/components/Div/',
+    'Wrapper/index': './src/components/Wrapper/',
     'Icons/AddCart': './src/components/Icons/AddCart',
     'Icons/WishListIcon': './src/components/Icons/WishListIcon',
     'Empty/index': './src/components/Empty/',
@@ -60,6 +61,7 @@ module.exports = {
     'ImageShimmer/index': './src/components/ImageShimmer/',
     'SeoContent/index': './src/components/SeoContent/',
     'Forms/ServiceSignUpForm': './src/components/Forms/ServiceSignUpForm',
+    'Extend/index': './src/components/Extend/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),

@@ -47,6 +47,7 @@ const colors = {
   color676767: '#676767',
   color79716c: '#79716c',
   colora39994: '#a39994',
+  mkPrimary: '#dc4c3a',
   gray: [
     '#f8f9fa',
     '#e9ecef',
