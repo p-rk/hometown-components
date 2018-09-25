@@ -9,7 +9,6 @@ import { FeedBackMessage, Label } from 'components/Label';
 import FormInput from './FormInput';
 
 const ForgotPasswordLink = styled(Label)`
-  position: absolute;
   right: 10px;
   top: 43px;
   font-size: 10px;
@@ -57,7 +56,7 @@ export default class LoginForm extends Component {
               feedBackError={passwordFeedBackError}
               feedBackMessage={passwordFeedBackMessage}
             />
-            <ForgotPasswordLink color="primary">
+            <ForgotPasswordLink color="primary" display="block" ta="right">
               <Link to={forgotUrl} color="primary">Forgot Password?</Link>
             </ForgotPasswordLink>
           </Div>

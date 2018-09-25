@@ -5,6 +5,7 @@ import Div from 'components/Div';
 import { Label } from 'components/Label';
 import Img from 'components/Img';
 import Section from 'components/Section';
+import { Shimmer } from 'components/Shimmer';
 
 import calendarImage from '../../static/calendar.svg';
 import creditCard from '../../static/credit-card.svg';
@@ -13,7 +14,8 @@ import truck from '../../static/truck.svg';
 const getComponent = (children, key) => children.filter(comp => comp.key === key);
 
 const ServiceDetails = ({
-  children, deliverBy, shipping, pincode, emiStarting, isEmiAvailable
+  children, deliverBy, shipping, pincode, emiStarting, isEmiAvailable,
+  loading
 }) => (
   <Section mb="0" pr="0" pl="0" pt="0" pb="0.625rem">
     <Row display="block" mb="0.9375rem" mr="0" ml="0">
@@ -28,12 +30,12 @@ const ServiceDetails = ({
           fontSize="0.825em"
           color="secondary"
           display="contents"
-        >{deliverBy}</Label> : <Label
+        >{loading ? <Shimmer height="24px" width="200px" /> : deliverBy}</Label> : <Label
           fontSize="0.825em"
           color="secondary"
           display="contents"
         >
-              Please Enter Pincode To Check Delivery Date
+          Enter pincode to check delivery date
         </Label>
         }
       </Div>
@@ -68,7 +70,12 @@ ServiceDetails.propTypes = {
   shipping: PropTypes.string.isRequired,
   children: PropTypes.objectOf(PropTypes.any).isRequired,
   pincode: PropTypes.string.isRequired,
-  isEmiAvailable: PropTypes.bool.isRequired
+  isEmiAvailable: PropTypes.bool.isRequired,
+  loading: PropTypes.bool,
+};
+
+ServiceDetails.defaultProps = {
+  loading: false,
 };
 
 export default ServiceDetails;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Input from 'components/Input';
 import TextArea from 'components/TextArea';
 import Div from 'components/Div';
@@ -8,6 +9,13 @@ import Button from 'components/Buttons';
 import Theme from 'components/Theme';
 import { Label } from 'components/Label';
 import ReactStars from 'react-stars';
+
+const WriteReviewBtn = styled(Button)`
+  &:hover {
+    background: #f98d29;
+    color: #fff;
+  }
+`;
 
 class WriteReview extends React.Component {
   state={
@@ -55,7 +63,7 @@ class WriteReview extends React.Component {
       <Row display="block" mt="0.625rem" mb="0.625rem" mr="1rem" ml="1rem">
         <Div>
           <Label color="textExtraLight">Already bought this product?</Label>
-          <Button
+          <WriteReviewBtn
             onClick={this.toggleAddReview}
             btnType="custom"
             color={Theme.colors.primary}
@@ -64,7 +72,7 @@ class WriteReview extends React.Component {
             p="0.75rem 1rem"
             ml="0.625rem"
             className="btn-primary"
-          >Write a Review</Button>
+          >Write a Review</WriteReviewBtn>
           {(addreview) &&
           <form onSubmit={onClickSubmit(catalogId, { name, rating, review })}>
             <Div col={col} mt="0.5rem">

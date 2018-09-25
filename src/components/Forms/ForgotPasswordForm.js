@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from 'components/Buttons';
 import Row from 'components/Row';
 import Div from 'components/Div';
-import { FeedBackMessage, Label } from 'components/Label';
+import { Label } from 'components/Label';
 import FormInput from './FormInput';
 
 export default class ForgotPasswordForm extends Component {
@@ -18,7 +18,7 @@ export default class ForgotPasswordForm extends Component {
       forgotResponse,
       loginUrl
     } = this.props;
-    const { loading, error } = forgotResponse;
+    const { loading } = forgotResponse;
     return (
       <form onSubmit={onSubmitForgot}>
         <FormInput
@@ -51,17 +51,6 @@ export default class ForgotPasswordForm extends Component {
             </Button>
           </Div>
         </Row>
-
-        {(forgotResponse
-          && !loading
-          && error) ? <FeedBackMessage
-            type="error"
-            ta="center"
-            fontSize="0.875rem"
-            mt="1rem"
-            display="block"
-          >Some Error Happened, Please Try Again</FeedBackMessage> : null
-        }
       </form>
     );
   }
