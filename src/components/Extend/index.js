@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const abc = styled.div`
+const Abc = styled.div`
   position: relative;
   box-sizing: border-box;
   > *, ::after, ::before {
@@ -8,4 +8,4 @@ const abc = styled.div`
   }
 `;
 
-export default abc;
+export default Abc;
