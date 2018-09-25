@@ -8,4 +8,4 @@ const abc = styled.div`
   }
 `;
 
-export default { abc };
+export default abc;
