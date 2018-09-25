@@ -15,8 +15,7 @@ const display = (props, type) => {
     flexEqual: {
       flexBasis: 0,
       flexGrow: 1,
-      maxWidth: `${props.theme.col[props.col]}`,
-      flex: `0 0 ${props.theme.col[props.col]}`,
+      maxWidth: '100%',
       width: '100%'
     }
   };
