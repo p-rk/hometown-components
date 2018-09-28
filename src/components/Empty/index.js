@@ -76,7 +76,7 @@ const EmptyPages = ({
           <Text ta="center" fontSize="1.125rem" color="rgba(93, 91, 91, 0.75)" mb="0.625rem">{subTitle}</Text>
         </Div>
         <Div mt="1rem">
-          <Btn alt={btnName} to={url}>{btnName}</Btn>
+          {btnName && <Btn alt={btnName} to={url}>{btnName}</Btn>}
         </Div>
       </Row>
     </EmptyPageWrapper>
