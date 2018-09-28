@@ -13,7 +13,9 @@ import FormInput from './FormInput';
 const options = [
   { id: 1, option: 'Modular Kitchen' },
   { id: 2, option: 'Design & Build' },
-  { id: 3, option: 'Modular Wardrobes' }
+  { id: 3, option: 'Modular Wardrobes' },
+  { id: 4, option: 'Electronics' },
+  { id: 5, option: 'Appliances' }
 ];
 
 const ServiceSignUpForm = ({
