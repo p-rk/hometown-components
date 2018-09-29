@@ -49,7 +49,7 @@ const colors = {
   colora39994: '#a39994',
   mkPrimary: '#dc4c3a',
   filterTitle: '#515151',
-  uspTitle: '#7c7c7b',
+  uspTitle: '#7c7c7c',
   microBg: '#f2f2f2',
   gray: [
     '#f8f9fa',
