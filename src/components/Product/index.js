@@ -169,7 +169,7 @@ const Product = props => {
                 Savings Rs. {savingAmount} ({saving.replace('-', '')} OFF)
               </Span> }
             </Div>
-            {deliveredBy && deliveredBy.indexOf('out') === -1 && <Div>
+            {deliveredBy && <Div>
               <Span
                 fontSize={deliveredBy.indexOf('Sorry') === 0 ? '0.65rem' : '0.75rem'}
                 lh="0.1"
