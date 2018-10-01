@@ -22,6 +22,7 @@ const TitlePrice = ({
           lh="1.5"
           fontFamily="regular"
           ellipsis={false}
+          pb="10px"
         >
           {name}
           <br />

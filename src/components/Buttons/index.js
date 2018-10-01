@@ -64,7 +64,7 @@ const Button = styled.button`
   user-select: none;
   transition: color .15s ease-in-out, background-color .15s ease-in-out,
   border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-  border-radius: 3px;
+  border-radius: ${props => props.borderRadius};
 
   ${props => sizes[props.size]};
   ${props => btnType(props, props.btnType)};
@@ -109,7 +109,8 @@ Button.defaultProps = {
   lh: '1.5',
   bc: 'transparent',
   bg: 'transparent',
-  ta: 'center'
+  ta: 'center',
+  borderRadius: '3px',
 };
 
 export default Button;

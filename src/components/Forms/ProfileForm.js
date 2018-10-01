@@ -23,7 +23,7 @@ export default class ProfileForm extends Component {
       response
     } = this.props;
     const {
-      loading, loaded, error, errorMessage, profileUpdated
+      loading, loaded, error, errorMessage
     } = response;
     return (
       <form onSubmit={onSubmitProfile}>
@@ -65,15 +65,6 @@ export default class ProfileForm extends Component {
         >
           {(response && !loading) ? 'UPDATE PROFILE' : 'Please wait...' }
         </Button>
-        {(response
-          && loaded && profileUpdated) &&
-          <FeedBackMessage
-            type="success"
-            ta="center"
-            fontSize="0.875rem"
-            mt="1rem"
-            display="block"
-          > Profile Updated ! </FeedBackMessage> }
         {(error && !loaded) &&
           <div>
             <FeedBackMessage

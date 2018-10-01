@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Label } from 'components/Label';
+import styled from 'styled-components';
 import Heading from 'components/Heading';
 import Div from 'components/Div';
 import Text from 'components/Text';
-// import Rating from 'components/Rating';
 import Span from 'components/Span';
 import ReactStars from 'react-stars';
+
+const ReviewsItemsWrapper = styled(Div)`
+  border-bottom: 1px solid #ddd;
+  &:last-child {
+    border: none;
+  }
+`;
 
 // const judgeColor = rating => {
 //   if (!rating) {
@@ -27,7 +33,7 @@ import ReactStars from 'react-stars';
 const ReviewsItems = ({ review, col, pr }) =>
   // const color = judgeColor(review.options[0].option_value);
   (
-    <Div col={col} display="block" m="0" mb="0.9375rem" pr={pr}>
+    <ReviewsItemsWrapper col={col} display="block" m="0" mb="0.9375rem" pr={pr} pb="0.625rem">
       <Heading fontSize="0.875rem" color="secondary" mb="0" pb="5px" mt="0" fontFamily="medium">
         {review.nickname || review.customer_name || null}
       </Heading>
@@ -52,11 +58,12 @@ const ReviewsItems = ({ review, col, pr }) =>
         <Text
           wb="break-word"
           mt="0"
+          mb="0"
           color="rgba(0, 0, 0, 0.7)"
           fontSize="0.75rem"
         >{review.detail || null}</Text>
       </Div>
-    </Div>
+    </ReviewsItemsWrapper>
   );
 ReviewsItems.defaultProps = {
   col: '12'
