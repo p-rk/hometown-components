@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Input from 'components/Input';
-import TextArea from 'components/TextArea';
 import Div from 'components/Div';
 import Row from 'components/Row';
 import Button from 'components/Buttons';
 import Theme from 'components/Theme';
 import { Label } from 'components/Label';
 import ReactStars from 'react-stars';
+import FormInput from '../Forms/FormInput';
 
 const WriteReviewBtn = styled(Button)`
   &:hover {
@@ -22,6 +21,10 @@ class WriteReview extends React.Component {
     name: '',
     rating: 0,
     review: '',
+    nameError: false,
+    nameErrorMessage: 'Name Cannot Be Blank',
+    reviewError: false,
+    reviewErrorMessage: 'Review cannot be left Blank',
     addreview: true
   }
   componentWillReceiveProps(nextProps) {
@@ -33,7 +36,8 @@ class WriteReview extends React.Component {
     e.preventDefault();
     const { name, value } = e.target;
     this.setState({
-      [name]: value
+      [name]: value,
+      [`${name}Error`]: false
     });
   }
   ratingChanged = newRating => {
@@ -44,21 +48,36 @@ class WriteReview extends React.Component {
 
   toggleAddReview = e => {
     e.preventDefault();
-    // const { toggleReview } = this.props;
     this.setState({
       rating: 0,
       addreview: !this.state.addreview
     });
-    // toggleReview();
   }
-
+  handleSubmit =e => {
+    e.preventDefault();
+    const { onClickSubmit, catalogId } = this.props;
+    const {
+      name, review, rating,
+    } = this.state;
+    const nameError = !(name.length > 0);
+    const reviewError = !(review.length > 0);
+    if (nameError || reviewError) {
+      return this.setState({
+        nameError,
+        reviewError
+      });
+    }
+    onClickSubmit(catalogId, { name, rating, review });
+  }
   render() {
     const {
-      onClickSubmit, catalogId, col
+      col
     } = this.props;
     const {
-      name, review, rating, addreview
+      addreview,
+      nameError, nameErrorMessage, reviewError, reviewErrorMessage, name, review
     } = this.state;
+
     return (
       <Row display="block" mt="0.625rem" mb="0.625rem" mr="1rem" ml="1rem">
         <Div>
@@ -74,7 +93,7 @@ class WriteReview extends React.Component {
             className="btn-primary"
           >Write a Review</WriteReviewBtn>
           {(addreview) &&
-          <form onSubmit={onClickSubmit(catalogId, { name, rating, review })}>
+          <form onSubmit={this.handleSubmit}>
             <Div col={col} mt="0.5rem">
               <Div mb="0.625rem">
                 <Label>Rating</Label>
@@ -88,12 +107,28 @@ class WriteReview extends React.Component {
                 />
               </Div>
               <Div mb="0.625rem">
-                <Label>Name</Label>
-                <Input name="name" onChange={this.handleChange} />
+                <FormInput
+                  label="Name"
+                  type="text"
+                  placeholder=""
+                  name="name"
+                  value={name}
+                  feedBackError={nameError}
+                  feedBackMessage={nameErrorMessage}
+                  onChange={this.handleChange}
+                />
               </Div>
               <Div mb="1rem">
-                <Label>Review</Label>
-                <TextArea rows="5" name="review" onChange={this.handleChange} />
+                <FormInput
+                  type="textarea"
+                  label="Review"
+                  rows="5"
+                  name="review"
+                  value={review}
+                  feedBackError={reviewError}
+                  feedBackMessage={reviewErrorMessage}
+                  onChange={this.handleChange}
+                />
               </Div>
               <Div>
                 <Button
