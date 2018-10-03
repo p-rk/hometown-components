@@ -7,7 +7,8 @@ import Img from 'components/Img';
 import Section from 'components/Section';
 import { Shimmer } from 'components/Shimmer';
 
-import calendarImage from '../../static/calendar.svg';
+import calendarImageGreen from '../../static/calendar-green.svg';
+import calendarImageRed from '../../static/calendar-red.svg';
 import creditCard from '../../static/credit-card.svg';
 import truck from '../../static/truck.svg';
 
@@ -25,7 +26,10 @@ const ServiceDetails = ({
     </Row>
     <Row display="block" mb="0.625rem" mr="0" ml="0">
       <Div col="12">
-        <Img width="initial" height="1.5em" mr="0.625rem" mt="0" float="left" src={calendarImage} />
+        {!loading && deliverBy.indexOf('Sorry') === 0 ?
+          <Img width="initial" height="1.5em" mr="0.625rem" float="left" src={calendarImageGreen} /> :
+          <Img width="initial" height="1.5em" mr="0.625rem" float="left" src={calendarImageRed} />
+        }
         {pincode ? <Label
           fontSize="0.825em"
           color="secondary"
