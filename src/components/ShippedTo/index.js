@@ -22,7 +22,7 @@ const ShippedTo = ({
       <Div col="12" bg="#f5f5f5">
         <Heading fontSize="1rem" ls="1px" mb="0.625rem" color="text" p="10px 20px" pb="10px">
           Shipping Address
-          <Link to="/checkout/cart">
+          <Link to="/checkout/delivery-address">
             <Label float="right" fontSize="0.875rem" fontFamily="light" color="linkBlue" p="0" mt="5px" mb="0">
                 edit
             </Label>
