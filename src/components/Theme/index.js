@@ -28,7 +28,7 @@ const colors = {
   textDark: 'rgba(0, 0, 0, 0.8)',
   textExtraDark: 'rgba(0, 0, 0, 0.9)',
   block10: 'rgba(0, 0, 0, 0.10)',
-  bg: 'rgba(238, 238, 199, 0.9)',
+  bg: '#f5f5f5',
   blockefefef: '#e1ded9',
   yellowDark: '#f5a623',
   border: '#979797',
@@ -51,6 +51,7 @@ const colors = {
   filterTitle: '#515151',
   uspTitle: '#7c7c7c',
   microBg: '#f2f2f2',
+  linkBlue: '#3cc0dc',
   gray: [
     '#f8f9fa',
     '#e9ecef',
