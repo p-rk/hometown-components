@@ -23,6 +23,7 @@ const Label = styled.label`
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
   ${props => props.lh && { lineHeight: props.lh }}
+  ${props => props.float && { float: props.float }}
 `;
 
 const FeedBackMessage = styled(Label)`

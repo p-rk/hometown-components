@@ -1,26 +1,39 @@
 import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Container from 'components/Container';
 import Section from 'components/Section';
+import { Label } from 'components/Label';
 import Heading from 'components/Heading';
+import Div from 'components/Div';
 import Row from 'components/Row';
 import Text from 'components/Text';
 
+const PaymentMethodWrapper = styled(Section)`
+  border: 1px solid #ededed;
+  min-height: 220px;
+`;
+
 const PaymentMethod = ({ gateway }) => (
-  <Section mb="1.5rem" p="0">
-    <Container type="container" pr="0" pl="0">
-      <Row display="block" mr="0" ml="0" mb="0.3125rem">
-        <Heading fontSize="1.125rem" color="textDark" mb="0px" mt="0px" fontFamily="light">
+  <PaymentMethodWrapper mb="0" p="0">
+    <Row display="block" mr="0" ml="0" mb="0.3125rem">
+      <Div col="12" bg="#f5f5f5">
+        <Heading fontSize="1rem" ls="1px" mb="0.625rem" color="text" p="10px 20px" pb="10px">
           Payment Method
+          <Link to="/checkout/cart">
+            <Label float="right" fontSize="0.875rem" fontFamily="light" color="linkBlue" p="0" mt="5px" mb="0">
+              edit
+            </Label>
+          </Link>
         </Heading>
-      </Row>
-      <Row display="block" mr="0" ml="0" >
-        <Text mb="0" mt="0.3125rem">
-          {gateway}
-        </Text>
-      </Row>
-    </Container>
-  </Section>
+      </Div>
+    </Row>
+    <Row display="block" mr="0" ml="0" p="5px 20px 15px">
+      <Text mb="0" mt="0.3125rem">
+        {gateway}
+      </Text>
+    </Row>
+  </PaymentMethodWrapper>
 );
 
 PaymentMethod.defaultProps = {
