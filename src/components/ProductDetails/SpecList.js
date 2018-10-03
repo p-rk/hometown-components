@@ -25,10 +25,10 @@ const SpecHeading = styled.h4`
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 0;
-  background-color: rgba(238, 238, 199, 0.68);
+  background-color: #f5f5f5;
   box-shadow: 7px 7px 14px -9px rgba(124,122,122,0.5);
   padding: 15px 20px;
-  border: 1px solid rgb(238, 238, 199);
+  border: 1px solid #f5f5f5;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     background-color: #fff;
   }
@@ -40,11 +40,11 @@ const SpecListWrapper = styled.div`
   float: left;
   display: initial;
   box-sizing: border-box;
-  background-color: rgba(238,238,199,0.68);
+  background-color: #f5f5f5;
   box-shadow: 7px 7px 14px -9px rgba(124,122,122,0.5);
   padding: 1rem 1.25rem 0.375rem;
   margin-top: 1px;
-  border: 1px solid rgb(238, 238, 199);
+  border: 1px solid #f5f5f5;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     background-color: #fff;
   }
