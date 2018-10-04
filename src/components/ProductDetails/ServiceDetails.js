@@ -27,12 +27,12 @@ const ServiceDetails = ({
     <Row display="block" mb="0.625rem" mr="0" ml="0">
       <Div col="12">
         {!loading && deliverBy.indexOf('Sorry') === 0 ?
-          <Img width="initial" height="1.5em" mr="0.625rem" float="left" src={calendarImageGreen} /> :
-          <Img width="initial" height="1.5em" mr="0.625rem" float="left" src={calendarImageRed} />
+          <Img width="initial" height="1.5em" mr="0.625rem" float="left" src={calendarImageRed} /> :
+          <Img width="initial" height="1.5em" mr="0.625rem" float="left" src={calendarImageGreen} />
         }
         {pincode ? <Label
           fontSize="0.825em"
-          color="secondary"
+          color={deliverBy.indexOf('Sorry') === 0 ? 'error' : 'success'}
           display="contents"
         >{loading ? <Shimmer height="24px" width="200px" /> : deliverBy}</Label> : <Label
           fontSize="0.825em"
