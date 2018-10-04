@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
 import Div from 'components/Div';
+import Row from 'components/Row';
 import { /* FeedBackMessage, */ Label } from 'components/Label';
 import FormInput from './FormInput';
 
@@ -45,91 +46,96 @@ export default class ServiceRequestForm extends Component {
     } = this.props;
     return (
       <form onSubmit={onSubmitForm}>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="First name"
-            type="text"
-            placeholder=""
-            name="firstName"
-            onChange={handleChange}
-            value={firstName}
-            feedBackError={firstNameFeedBackError}
-            feedBackMessage={firstNameFeedBackMessage}
-          />
-        </Div>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="Last name"
-            type="text"
-            placeholder=""
-            onChange={handleChange}
-            name="lastName"
-            value={lastName}
-            feedBackError={lastNameFeedBackError}
-            feedBackMessage={lastNameFeedBackMessage}
-          />
-        </Div>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="Registered mobile no"
-            type="text"
-            maxlength="10"
-            placeholder=""
-            onChange={handleChange}
-            name="phone"
-            value={phone}
-            feedBackError={phoneFeedBackError}
-            feedBackMessage={phoneFeedBackMessage}
-          />
-        </Div>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="Email Address"
-            type="text"
-            placeholder=""
-            onChange={handleChange}
-            name="email"
-            value={email}
-            feedBackError={emailFeedBackError}
-            feedBackMessage={emailFeedBackMessage}
-          />
-        </Div>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="Order number *"
-            type="text"
-            placeholder=""
-            onChange={handleChange}
-            name="order"
-            value={order}
-            feedBackError={orderFeedBackError}
-            feedBackMessage={orderFeedBackMessage}
-          />
-        </Div>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="Store*"
-            type="text"
-            placeholder=""
-            onChange={handleChange}
-            name="storeName"
-            value={storeName}
-            feedBackError={storeNameFeedBackError}
-            feedBackMessage={storeNameFeedBackMessage}
-          />
-        </Div>
-        <Div col="4" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="City*"
-            type="text"
-            placeholder=""
-            onChange={handleChange}
-            name="city"
-            value={city}
-            feedBackError={cityFeedBackError}
-            feedBackMessage={cityFeedBackMessage}
-          />
-          { /* eslint-disable */}
+        <Row ml="0" mr="0">
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="First Name*"
+              type="text"
+              placeholder=""
+              name="firstName"
+              onChange={handleChange}
+              value={firstName}
+              feedBackError={firstNameFeedBackError}
+              feedBackMessage={firstNameFeedBackMessage}
+            />
+          </Div>
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="Last Name*"
+              type="text"
+              placeholder=""
+              onChange={handleChange}
+              name="lastName"
+              value={lastName}
+              feedBackError={lastNameFeedBackError}
+              feedBackMessage={lastNameFeedBackMessage}
+            />
+          </Div>
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="Registered Mobile No*"
+              type="text"
+              maxlength="10"
+              placeholder=""
+              onChange={handleChange}
+              name="phone"
+              value={phone}
+              feedBackError={phoneFeedBackError}
+              feedBackMessage={phoneFeedBackMessage}
+            />
+          </Div>
+        </Row>
+        <Row ml="0" mr="0">
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="Email Address*"
+              type="text"
+              placeholder=""
+              onChange={handleChange}
+              name="email"
+              value={email}
+              feedBackError={emailFeedBackError}
+              feedBackMessage={emailFeedBackMessage}
+            />
+          </Div>
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="Order Number*"
+              type="text"
+              placeholder=""
+              onChange={handleChange}
+              name="order"
+              value={order}
+              feedBackError={orderFeedBackError}
+              feedBackMessage={orderFeedBackMessage}
+            />
+          </Div>
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="Store*"
+              type="text"
+              placeholder=""
+              onChange={handleChange}
+              name="storeName"
+              value={storeName}
+              feedBackError={storeNameFeedBackError}
+              feedBackMessage={storeNameFeedBackMessage}
+            />
+          </Div>
+        </Row>
+        <Row ml="0" mr="0">
+          <Div col="4" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="City*"
+              type="text"
+              placeholder=""
+              onChange={handleChange}
+              name="city"
+              value={city}
+              feedBackError={cityFeedBackError}
+              feedBackMessage={cityFeedBackMessage}
+            />
+            { /* eslint-disable */}
           <Div mb="0.3125rem">
             <div className="checkbox">
               <input onClick={handleCheckBoxChange} checked={under_warranty}  name="under_warranty" type="checkbox" id="under_warranty" />
@@ -159,40 +165,43 @@ export default class ServiceRequestForm extends Component {
           </Div>
         </Div>
         {/* eslint-enable */}
-        <Div col="8" pr="0.625rem" pl="0.625rem">
-          <FormInput
-            label="Review"
-            onChange={handleChange}
-            name="review"
-            value={review}
-            rows={5}
-            type="textarea"
-            placeholder=""
-            feedBackError={reviewFeedBackError}
-            feedBackMessage={reviewFeedBackMessage}
-          />
-        </Div>
-        <Div col="12" pr="0.625rem" pl="0.625rem" mt="0.3125rem">
-          <Div mb="0.3125rem">
-            <Label fontSize="0.875em" ml="0" htmlFor="checkbox">
-              <b>Note:</b> Order number / Invoice required for scheduling the service visit.
-            </Label>
+          <Div col="8" pr="0.625rem" pl="0.625rem">
+            <FormInput
+              label="Review*"
+              onChange={handleChange}
+              name="review"
+              value={review}
+              rows={5}
+              type="textarea"
+              placeholder=""
+              feedBackError={reviewFeedBackError}
+              feedBackMessage={reviewFeedBackMessage}
+            />
           </Div>
-        </Div>
-        <Div col="2" pr="0.625rem" pl="0.625rem" mt="1rem">
-          <Button
-            size="block"
-            btnType="primary"
-            fontFamily="regular"
-            height="42px"
-            mt="0.625rem"
-            rows={5}
-            onClick={onSubmitForm}
-            disable={loading || loaded}
-          >
-            {loading ? 'Please Wait ...' : 'SUBMIT'}
-          </Button>
-        </Div>
+        </Row>
+        <Row ml="0" mr="0">
+          <Div col="12" pr="0.625rem" pl="0.625rem" mt="0.3125rem">
+            <Div mb="0.3125rem">
+              <Label fontSize="0.875em" ml="0" htmlFor="checkbox">
+                <b>Note:</b> Order number / Invoice required for scheduling the service visit.
+              </Label>
+            </Div>
+          </Div>
+          <Div col="2" pr="0.625rem" pl="0.625rem" mt="1rem">
+            <Button
+              size="block"
+              btnType="primary"
+              fontFamily="regular"
+              height="42px"
+              mt="0.625rem"
+              rows={5}
+              onClick={onSubmitForm}
+              disable={loading || loaded}
+            >
+              {loading ? 'Please Wait ...' : 'SUBMIT'}
+            </Button>
+          </Div>
+        </Row>
         { /* eslint-disable */}
       </form>
     );
