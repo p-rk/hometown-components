@@ -112,13 +112,13 @@ const Product = props => {
   const {
     name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
     onClick, isWishList, col, skuLoading, onOpenQuickViewModal, deliveredBy, colors, imgHeight,
-    position, setProductPosition, productURL
+    position, setProductPosition, productURL, simpleSku
   } = props;
   const color = judgeColor(rating);
   return (
     <ProductWrapper col={col}>
       <WishlistBtn
-        onClick={onClick(sku)}
+        onClick={onClick(sku, simpleSku)}
         isWishList={isWishList}
         wishlistLoading={skuLoading}
       />
@@ -213,6 +213,7 @@ Product.propTypes = {
   position: PropTypes.string.isRequired,
   setProductPosition: PropTypes.func.isRequired,
   productURL: PropTypes.string.isRequired,
+  simpleSku: PropTypes.string.isRequired
 };
 
 export default Product;
