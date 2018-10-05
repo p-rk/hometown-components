@@ -4,7 +4,7 @@ import Container from 'components/Container';
 import Row from 'components/Row';
 import Div from 'components/Div';
 import Heading from 'components/Heading';
-import Text from 'components/Text';
+// import Text from 'components/Text';
 import Section from 'components/Section';
 import Button from 'components/Buttons';
 import Theme from 'components/Theme';
@@ -14,6 +14,7 @@ const formatDescription = desc => {
   return desc && desc.trim();
 };
 
+/* eslint-disable react/no-danger */
 const ProductDesc = ({ desc, showmore, toggleShowMore }) => {
   desc = formatDescription(desc);
   return (
@@ -27,7 +28,11 @@ const ProductDesc = ({ desc, showmore, toggleShowMore }) => {
               fontSize="1em"
               fontFamily="medium"
             >Description</Heading>
-            <Text itemProp="description" fontSize="0.875rem" dangerouslySetInnerHTML={{ __html: desc }} />
+            <div
+              itemProp="description"
+              fontSize="0.875rem"
+              dangerouslySetInnerHTML={{ __html: desc }}
+            />
           </Div>
           {desc.length > 120 && <Button
             pl="0"
