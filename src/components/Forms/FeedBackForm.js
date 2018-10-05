@@ -48,7 +48,7 @@ export default class FeedBackForm extends Component {
         <Row ml="0" mr="0">
           <Div col="4" pr="0.625rem" pl="0.625rem">
             <FormInput
-              label="First name"
+              label="First Name*"
               type="text"
               placeholder=""
               name="firstName"
@@ -60,7 +60,7 @@ export default class FeedBackForm extends Component {
           </Div>
           <Div col="4" pr="0.625rem" pl="0.625rem">
             <FormInput
-              label="Last name"
+              label="Last Name*"
               type="text"
               placeholder=""
               onChange={handleChange}
@@ -72,7 +72,7 @@ export default class FeedBackForm extends Component {
           </Div>
           <Div col="4" pr="0.625rem" pl="0.625rem">
             <FormInput
-              label="Registered mobile no"
+              label="Registered mobile no*"
               type="text"
               maxlength="10"
               placeholder=""
@@ -87,7 +87,7 @@ export default class FeedBackForm extends Component {
         <Row ml="0" mr="0">
           <Div col="4" pr="0.625rem" pl="0.625rem">
             <FormInput
-              label="Email Address"
+              label="Email*"
               type="text"
               placeholder=""
               onChange={handleChange}
@@ -99,7 +99,7 @@ export default class FeedBackForm extends Component {
           </Div>
           <Div col="4" pr="0.625rem" pl="0.625rem">
             <FormInput
-              label="Order number *"
+              label="Order Number*"
               type="text"
               placeholder=""
               onChange={handleChange}
@@ -189,7 +189,7 @@ export default class FeedBackForm extends Component {
           </Div>
           <Div col="8" pr="0.625rem" pl="0.625rem">
             <FormInput
-              label="Review"
+              label="Review*"
               onChange={handleChange}
               name="review"
               value={review}

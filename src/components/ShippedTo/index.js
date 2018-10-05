@@ -15,18 +15,20 @@ const ShippedToWrapper = styled(Section)`
 `;
 
 const ShippedTo = ({
-  name, address, city, pincode, state
+  name, address, city, pincode, state, edit
 }) => (
   <ShippedToWrapper mb="0" p="0">
     <Row display="block" mr="0" ml="0" mb="0.3125rem">
       <Div col="12" bg="#f5f5f5">
         <Heading fontSize="1rem" ls="1px" mb="0.625rem" color="text" p="10px 20px" pb="10px">
           Shipping Address
+          {edit &&
           <Link to="/checkout/delivery-address">
             <Label float="right" fontSize="0.875rem" fontFamily="light" color="linkBlue" p="0" mt="5px" mb="0">
                 edit
             </Label>
           </Link>
+          }
         </Heading>
       </Div>
     </Row>
@@ -39,12 +41,17 @@ const ShippedTo = ({
   </ShippedToWrapper>
 );
 
+ShippedTo.defaultProps = {
+  edit: true
+};
+
 ShippedTo.propTypes = {
   name: PropTypes.string.isRequired,
   address: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   pincode: PropTypes.string.isRequired,
-  state: PropTypes.string.isRequired
+  state: PropTypes.string.isRequired,
+  edit: PropTypes.bool,
 };
 
 export default ShippedTo;
