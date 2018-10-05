@@ -34,17 +34,16 @@ const ProductWrapper = styled.div`
   box-sizing: border-box;
   &:hover {
     button {
-      visibility: visible;
-      opacity: 1;
+      display: block !important;
     }
   }
 `;
 
-const ProductInner = styled.div`
-  svg {
-    vertical-align: middle;
-  }
-`;
+// const ProductInner = styled.div`
+//   svg {
+//     vertical-align: middle;
+//   }
+// `;
 
 const ImgWrapper = styled.div`
   background: #FFF;
@@ -62,16 +61,14 @@ const QuickViewBtn = styled.button`
   position: absolute;
   left: 0;
   top: 0;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.3s linear;
   width: 130px;
   left: calc(50% - 65px);
   height: 40px;
   top: calc((270px - 40px)/2);
   font-size: 0.875rem;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    display: none !important;
+  transition: 0.3s all ease;
+  @media (min-width: ${props => props.theme.breakpoints('sm')}) {
+    display: none;
   }
 `;
 
@@ -140,43 +137,41 @@ const Product = props => {
           }
         </ImgWrapper>
         <Div p="0.25rem 0 0.25rem">
-          <ProductInner>
-            <Heading
-              pb="5px"
-              mb="0"
-              color={Theme.colors.text}
-              fontSize="0.9375rem"
-            >{name}</Heading>
-            <Div mb="0px">
-              <Span mr="0.625rem" color={Theme.colors.text} fontSize="0.875rem" fontFamily="medium">{price}</Span>
-              <Span mr="0" fontSize="0.75rem" fontFamily="medium"><s>{cutprice}</s></Span>
-              {rating > 0 && (
-                <Span ml="0.625rem">
-                  <Rating color={color} rating={rating}>★ {rating}</Rating>
-                  <Span
-                    mr="0.625rem"
-                    fontSize="0.875rem"
-                    lh="1.7"
-                    va="bottom"
-                    color={Theme.colors.textExtraLight}
-                  >({reviewsCount})</Span>
-                </Span>
-              )}
-            </Div>
-            <Div mb="0px">
-              { saving &&
+          <Heading
+            pb="5px"
+            mb="0"
+            color={Theme.colors.text}
+            fontSize="0.9375rem"
+          >{name}</Heading>
+          <Div mb="0px">
+            <Span mr="0.625rem" color={Theme.colors.text} fontSize="0.875rem" fontFamily="medium">{price}</Span>
+            <Span mr="0" fontSize="0.75rem" fontFamily="medium"><s>{cutprice}</s></Span>
+            {rating > 0 && (
+              <Span ml="0.625rem">
+                <Rating color={color} rating={rating}>★ {rating}</Rating>
+                <Span
+                  mr="0.625rem"
+                  fontSize="0.875rem"
+                  lh="1.7"
+                  va="bottom"
+                  color={Theme.colors.textExtraLight}
+                >({reviewsCount})</Span>
+              </Span>
+            )}
+          </Div>
+          <Div mb="0px">
+            { saving &&
               <Span fontSize="0.75rem" fontFamily="medium">
                 Savings Rs. {savingAmount} ({saving.replace('-', '')} OFF)
               </Span> }
-            </Div>
-            {deliveredBy && <Div>
-              <Span
-                fontSize={deliveredBy.indexOf('Sorry') === 0 ? '0.65rem' : '0.75rem'}
-                lh="0.1"
-                color={Theme.colors.textExtraLight}
-              >{deliveredBy}</Span>
-            </Div>}
-          </ProductInner>
+          </Div>
+          {deliveredBy && <Div>
+            <Span
+              fontSize={deliveredBy.indexOf('Sorry') === 0 ? '0.65rem' : '0.75rem'}
+              lh="0.1"
+              color={Theme.colors.textExtraLight}
+            >{deliveredBy}</Span>
+          </Div>}
         </Div>
       </Link>
       <QuickViewBtn onClick={onOpenQuickViewModal}>QUICK VIEW</QuickViewBtn>
