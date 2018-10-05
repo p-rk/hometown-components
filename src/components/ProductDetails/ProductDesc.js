@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Container from 'components/Container';
 import Row from 'components/Row';
@@ -14,6 +15,16 @@ const formatDescription = desc => {
   return desc && desc.trim();
 };
 
+const Description = styled.div`
+ul {
+  padding-left: 20px;
+  li {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+}
+`;
+
 /* eslint-disable react/no-danger */
 const ProductDesc = ({ desc, showmore, toggleShowMore }) => {
   desc = formatDescription(desc);
@@ -28,7 +39,7 @@ const ProductDesc = ({ desc, showmore, toggleShowMore }) => {
               fontSize="1em"
               fontFamily="medium"
             >Description</Heading>
-            <div
+            <Description
               itemProp="description"
               fontSize="0.875rem"
               dangerouslySetInnerHTML={{ __html: desc }}
