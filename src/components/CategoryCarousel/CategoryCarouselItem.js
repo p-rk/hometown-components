@@ -44,7 +44,7 @@ const HyperLink = styled.a`
   display: block;
 `;
 
-const CatTitle = styled.a`
+const CatTitle = styled.p`
   font-size: 1rem;
   color: rgba(0,0,0,0.75);
   text-align: left;
