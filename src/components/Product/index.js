@@ -145,7 +145,7 @@ const Product = props => {
           >{name}</Heading>
           <Div mb="0px">
             <Span mr="0.625rem" color={Theme.colors.text} fontSize="0.875rem" fontFamily="medium">{price}</Span>
-            <Span mr="0" fontSize="0.75rem" fontFamily="medium"><s>{cutprice}</s></Span>
+            {price !== cutprice && <Span mr="0" fontSize="0.75rem" fontFamily="medium"><s>{cutprice}</s></Span>}
             {rating > 0 && (
               <Span ml="0.625rem">
                 <Rating color={color} rating={rating}>★ {rating}</Rating>
@@ -160,7 +160,7 @@ const Product = props => {
             )}
           </Div>
           <Div mb="0px">
-            { saving &&
+            { saving && price !== cutprice &&
               <Span fontSize="0.75rem" fontFamily="medium">
                 Savings Rs. {savingAmount} ({saving.replace('-', '')} OFF)
               </Span> }
