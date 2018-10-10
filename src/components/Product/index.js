@@ -34,8 +34,7 @@ const ProductWrapper = styled.div`
   box-sizing: border-box;
   &:hover {
     button {
-      visibility: visible;
-      opacity: 1;
+      display: block !important;
     }
   }
 `;
@@ -63,16 +62,14 @@ const QuickViewBtn = styled.button`
   position: absolute;
   left: 0;
   top: 0;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.3s linear;
   width: 130px;
   left: calc(50% - 65px);
   height: 40px;
   top: calc((270px - 40px)/2);
   font-size: 0.875rem;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    display: none !important;
+  transition: 0.3s all ease;
+  @media (min-width: ${props => props.theme.breakpoints('sm')}) {
+    display: none;
   }
 `;
 
