@@ -1,20 +1,31 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Row from 'components/Row';
 import Div from 'components/Div';
 import { Label } from 'components/Label';
 import Text from 'components/Text';
 
+const Description = styled(Text)`
+  ol {
+    list-style:none;
+    margin-top: 0;
+    padding-left: 0;
+  }
+`;
+
 const Spec = ({ spec }) => {
   const { label, value } = spec;
   return (
     <Row display="block" m="0" pb="2px">
       <div>
-        <Div col="5">
-          <Label color="black" lh="1.6" fontFamily="regular">{label}</Label>
-        </Div>
-        <Div col="7">
-          <Text
+        {label !== 'Care Instructions' && (
+          <Div col="5">
+            <Label color="black" lh="1.6" fontFamily="regular">{label}</Label>
+          </Div>
+        )}
+        <Div col={label === 'Care Instructions' ? '12' : '7'}>
+          <Description
             mt="5px"
             mb="5px"
             itemProp="description"

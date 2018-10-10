@@ -5,6 +5,7 @@ import Heading from 'components/Heading';
 import Row from 'components/Row';
 import Span from 'components/Span';
 import Section from 'components/Section';
+import Div from 'components/Div';
 import ReactStars from 'react-stars';
 
 const TitlePrice = ({
@@ -22,66 +23,105 @@ const TitlePrice = ({
           lh="1.5"
           fontFamily="regular"
           ellipsis={false}
-          pb="10px"
+          pb="5px"
         >
           {name}
-          <br />
-          {ratings !== 0 &&
-            <Span>
-              <ReactStars
-                count={5}
-                className="ratings"
-                size={18}
-                value={String(ratings)}
-                half
-                edit={false}
-                color2="#ffd700"
-              />
-              <Span className="ratingsCount" fontSize="0.875rem" color="rgba(0, 0, 0, 0.6)" va="super">({count})</Span>
-              <div className="hide" itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
-                Rated
-                <span itemProp="ratingValue">{ratings}</span>/5 based on
-                <span itemProp="reviewCount">{count}</span>
-                customer reviews
-              </div>
-            </Span>
-          }
         </Heading>
-        <Heading
-          itemProp="offers"
-          itemScope
-          itemType="http://schema.org/Offer"
-          fontSize="1em"
-          color="textDark"
-          mb="0px"
-          pb="2px"
-          mt="0px"
-          fontFamily="medium"
-        >
-          <span itemProp="priceCurrency" content="INR">₹</span>
-          <span itemProp="price" content={discPrice.split(',').join('')}> {discPrice}</span>
-          { price !== discPrice &&
-            <Span>
+        <Row display="block" mr="0" ml="0">
+          <Div col="8">
+            <Heading
+              itemProp="offers"
+              itemScope
+              itemType="http://schema.org/Offer"
+              fontSize="1.6rem"
+              color="primary"
+              mb="0px"
+              pb="5px"
+              mt="0px"
+              fontFamily="medium"
+            >
               <Span
-                fontSize="0.8125em"
+                va="text-top"
+                itemProp="priceCurrency"
+                content="INR"
+                color="#f98d29"
+                fontSize="1.6rem"
+              >₹</Span>
+              <Span
+                itemProp="price"
+                va="text-top"
+                content={discPrice.split(',').join('')}
+                color="#f98d29"
+                fontSize="1.6rem"
+              > {discPrice}</Span>
+              { price !== discPrice &&
+              <Span
+                fontSize="0.875rem"
                 color="rgba(0, 0, 0, 0.4)"
                 ml="1rem"
                 fontFamily="regular"
                 type="lt"
                 va="text-top"
+                lh="2.2"
               >₹ {price}</Span>
+              }
+            </Heading>
+            <Heading
+              itemProp="offers"
+              itemScope
+              itemType="http://schema.org/Offer"
+              fontSize="1rem"
+              color="textDark"
+              mb="0px"
+              pb="2px"
+              mt="0px"
+              fontFamily="medium"
+            >
+              { price !== discPrice &&
               <Span
                 fontSize="0.8125em"
                 color="rgba(0, 0, 0, 0.4)"
-                ml="0.625rem"
+                ml="0"
                 fontFamily="regular"
                 va="text-top"
               >Saving ₹ {savingsRs}
                 {' '}({savingsPercentage}% OFF)
               </Span>
-            </Span>
-          }
-        </Heading>
+              }
+            </Heading>
+          </Div>
+          <Div col="4" ta="right">
+            {ratings !== 0 &&
+            <Row display="block" mr="0" ml="0">
+              <Div right="-10px">
+                <ReactStars
+                  count={5}
+                  className="ratings"
+                  size={18}
+                  value={String(ratings)}
+                  half
+                  edit={false}
+                  color2="#f98d29"
+                />
+              </Div>
+              <Div>
+                <Span
+                  className="ratingsCount"
+                  fontSize="0.875rem"
+                  color="#29d"
+                  va="super"
+                >({count} Review)</Span>
+                <div className="hide" itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
+                Rated
+                  <span itemProp="ratingValue">{ratings}</span>/5 based on
+                  <span itemProp="reviewCount">{count}</span>
+                customer reviews
+                </div>
+              </Div>
+            </Row>
+            }
+          </Div>
+        </Row>
       </Row>
     </Container>
   </Section>

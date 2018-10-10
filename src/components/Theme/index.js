@@ -51,6 +51,7 @@ const colors = {
   filterTitle: '#515151',
   uspTitle: '#7c7c7c',
   microBg: '#f2f2f2',
+  mkFormHeading: '#5e5e5e',
   linkBlue: '#3cc0dc',
   gray: [
     '#f8f9fa',
