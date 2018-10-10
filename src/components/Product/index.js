@@ -39,11 +39,12 @@ const ProductWrapper = styled.div`
   }
 `;
 
-// const ProductInner = styled.div`
-//   svg {
-//     vertical-align: middle;
-//   }
-// `;
+const ProductInner = styled(Div)`
+  height: 102px;
+  svg {
+    vertical-align: middle;
+  }
+`;
 
 const ImgWrapper = styled.div`
   background: #FFF;
@@ -136,12 +137,13 @@ const Product = props => {
           </Colors>
           }
         </ImgWrapper>
-        <Div p="0.25rem 0 0.25rem">
+        <ProductInner p="0.25rem 0 0.25rem">
           <Heading
             pb="5px"
             mb="0"
             color={Theme.colors.text}
             fontSize="0.9375rem"
+            mt="0.3125em"
           >{name}</Heading>
           <Div mb="0px">
             <Span mr="0.625rem" color={Theme.colors.text} fontSize="0.875rem" fontFamily="medium">{price}</Span>
@@ -172,7 +174,7 @@ const Product = props => {
               color={Theme.colors.textExtraLight}
             >{deliveredBy}</Span>
           </Div>}
-        </Div>
+        </ProductInner>
       </Link>
       <QuickViewBtn onClick={onOpenQuickViewModal}>QUICK VIEW</QuickViewBtn>
     </ProductWrapper>
