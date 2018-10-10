@@ -61,6 +61,7 @@ module.exports = {
     'ImageShimmer/index': './src/components/ImageShimmer/',
     'SeoContent/index': './src/components/SeoContent/',
     'Forms/ServiceSignUpForm': './src/components/Forms/ServiceSignUpForm',
+    'Forms/ModularKitchenForm': './src/components/Forms/ModularKitchenForm',
     'Extend/index': './src/components/Extend/',
   },
   output: {
