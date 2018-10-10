@@ -41,6 +41,7 @@ const Div = styled.div`
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
   ${props => props.alignSelf && { alignSelf: props.alignSelf }}
+  ${props => props.right && { right: props.right }}
   display: ${props => props.hide ? 'none' : 'initial'};
 
   box-sizing: border-box;
