@@ -11,8 +11,7 @@ import FormInput from '../Forms/FormInput';
 
 const WriteReviewBtn = styled(Button)`
   &:hover {
-    background: #f98d29;
-    color: #fff;
+    opacity: 0.8;
   }
 `;
 
@@ -84,7 +83,7 @@ class WriteReview extends React.Component {
           <Label color="textExtraLight">Already bought this product?</Label>
           <WriteReviewBtn
             onClick={this.toggleAddReview}
-            btnType="custom"
+            btnType="primary"
             color={Theme.colors.primary}
             fontSize="0.875rem"
             lh="1"
