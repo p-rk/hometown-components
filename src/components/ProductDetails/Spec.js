@@ -8,9 +8,9 @@ import Text from 'components/Text';
 
 const Description = styled(Text)`
   ol {
-    list-style:none;
     margin-top: 0;
-    padding-left: 0;
+    padding-left: 15px;
+    list-style-type: disc;
   }
 `;
 
