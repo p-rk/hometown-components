@@ -40,7 +40,7 @@ const ProductWrapper = styled.div`
 `;
 
 const ProductInner = styled(Div)`
-  height: 102px;
+  height: 90px;
   svg {
     vertical-align: middle;
   }
@@ -139,21 +139,22 @@ const Product = props => {
         </ImgWrapper>
         <ProductInner p="0.25rem 0 0.25rem">
           <Heading
-            pb="5px"
+            pb="2px"
             mb="0"
-            color={Theme.colors.text}
-            fontSize="0.9375rem"
+            color="text515151"
+            fontSize="0.875rem"
             mt="0.3125em"
+            fontFamily="medium"
           >{name}</Heading>
-          <Div mb="0px">
-            <Span mr="0.625rem" color={Theme.colors.text} fontSize="0.875rem" fontFamily="medium">{price}</Span>
-            <Span mr="0" fontSize="0.75rem" fontFamily="medium"><s>{cutprice}</s></Span>
+          <Div mb="2px">
+            <Span mr="0.625rem" color={Theme.colors.text} fontSize="0.875rem" fontFamily="regular">{price}</Span>
+            <Span mr="0" fontSize="0.75rem" fontFamily="regular" color={Theme.colors.prodText}><s>{cutprice}</s></Span>
             {rating > 0 && (
               <Span ml="0.625rem">
                 <Rating color={color} rating={rating}>★ {rating}</Rating>
                 <Span
                   mr="0.625rem"
-                  fontSize="0.875rem"
+                  fontSize="0.75rem"
                   lh="1.7"
                   va="bottom"
                   color={Theme.colors.textExtraLight}
@@ -161,9 +162,9 @@ const Product = props => {
               </Span>
             )}
           </Div>
-          <Div mb="0px">
+          <Div mb="2px">
             { saving &&
-              <Span fontSize="0.75rem" fontFamily="medium">
+              <Span fontSize="0.75rem" fontFamily="regular" color={Theme.colors.prodText}>
                 Savings Rs. {savingAmount} ({saving.replace('-', '')} OFF)
               </Span> }
           </Div>
@@ -171,7 +172,8 @@ const Product = props => {
             <Span
               fontSize={deliveredBy.indexOf('Sorry') === 0 ? '0.65rem' : '0.75rem'}
               lh="0.1"
-              color={Theme.colors.textExtraLight}
+              fontFamily="regular"
+              color={Theme.colors.prodText}
             >{deliveredBy}</Span>
           </Div>}
         </ProductInner>
