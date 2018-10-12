@@ -110,7 +110,7 @@ const TitlePrice = ({
                   fontSize="0.875rem"
                   color="#29d"
                   va="super"
-                >({count} Review)</Span>
+                >({count} Review{Number(count) === 1 ? '' : 's'})</Span>
                 <div className="hide" itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
                 Rated
                   <span itemProp="ratingValue">{ratings}</span>/5 based on
