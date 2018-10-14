@@ -173,7 +173,7 @@ const Product = props => {
             )}
           </Div>
           <Div mb="2px">
-            { saving !== '-0%' &&
+            { (saving !== '-0%' && Number(savingAmount) !== 0 && saving !== '') &&
               <Span fontSize="0.75rem" fontFamily="regular" color={Theme.colors.prodText}>
                 Savings Rs. {savingAmount} ({saving.replace('-', '')} OFF)
               </Span> }

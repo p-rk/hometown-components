@@ -56,6 +56,7 @@ const colors = {
   microBg: '#f2f2f2',
   mkFormHeading: '#5e5e5e',
   linkBlue: '#3cc0dc',
+  reloadRibbion: '#009f8c',
   gray: [
     '#f8f9fa',
     '#e9ecef',
