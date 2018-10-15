@@ -98,7 +98,7 @@ const TitlePrice = ({
                   count={5}
                   className="ratings"
                   size={18}
-                  value={String(ratings)}
+                  value={Number(ratings)}
                   half
                   edit={false}
                   color2="#f98d29"
