@@ -42,7 +42,7 @@ const ReviewsItems = ({ review, col, pr }) =>
           count={5}
           className="ratings"
           size={18}
-          value={String(review.options[0].option_value || null)}
+          value={Number(review.options[0].option_value || null)}
           half
           edit={false}
           color2="#ffd700"
