@@ -34,7 +34,7 @@ const ReviewsItems = ({ review, col, pr }) =>
   // const color = judgeColor(review.options[0].option_value);
   (
     <ReviewsItemsWrapper col={col} display="block" m="0" mb="0.9375rem" pr={pr} pb="0.625rem">
-      <Heading fontSize="0.875rem" color="secondary" mb="0" pb="5px" mt="0" fontFamily="medium">
+      <Heading fontSize="0.875rem" color="secondary" mb="0" pb="5px" mt="0" fontFamily="regular">
         {review.nickname || review.customer_name || null}
       </Heading>
       <Div>
