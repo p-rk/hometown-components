@@ -41,7 +41,7 @@ class WriteReview extends React.Component {
   }
   ratingChanged = newRating => {
     this.setState({
-      rating: newRating
+      rating: Number(newRating)
     });
   }
 
