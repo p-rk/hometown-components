@@ -39,6 +39,12 @@ const btnType = (props, type) => {
       borderColor: `${props.bc}`,
       border: `${props.border}`
     },
+    btnOutline: {
+      color: `${props.color}`,
+      backgroundColor: `${props.bg}`,
+      borderColor: `${props.bc}`,
+      border: `${props.border}`
+    },
     link: {
       color: `${props.color}`,
       border: 'none',
@@ -90,6 +96,20 @@ const Button = styled.button`
     background: 'transparent',
     color: '#f98d29'
   }}
+  ${props => props.btnType === 'btnOutline' && {
+    background: props.color,
+    color: props.bg
+  }}
+    span {
+      ${props => props.btnType === 'btnOutline' && {
+    color: '#FFF'
+  }}
+    }
+    svg {
+      ${props => props.btnType === 'btnOutline' && {
+    fill: '#FFF'
+  }}
+    }
   }
 
   &:disabled {

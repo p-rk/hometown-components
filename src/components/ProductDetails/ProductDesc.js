@@ -16,6 +16,8 @@ const formatDescription = desc => {
 };
 
 const Description = styled.div`
+font-size: 14px;
+line-height: 1.6;
 ul {
   padding-left: 20px;
   li {
