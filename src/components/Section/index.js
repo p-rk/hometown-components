@@ -22,6 +22,7 @@ const Section = styled.section`
   ${props => props.pr && { paddingRight: props.pr }}
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
+  ${props => props.top && { top: props.top }}
   ${props => props.overflow && { overflow: props.overflow }}
 
   > * {

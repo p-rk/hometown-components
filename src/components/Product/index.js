@@ -151,7 +151,7 @@ const Product = props => {
               mr="0.625rem"
               color={Theme.colors.text}
               fontSize="0.875rem"
-              fontFamily="regular"
+              fontFamily="medium"
             >{price}</Span>
             {price !== cutprice && <Span
               mr="0"
