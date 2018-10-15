@@ -21,7 +21,7 @@ class WriteReview extends React.Component {
     rating: 0,
     review: '',
     nameError: false,
-    nameErrorMessage: 'Name Cannot Be Blank',
+    nameErrorMessage: 'Name cannot be left Blank',
     reviewError: false,
     reviewErrorMessage: 'Review cannot be left Blank',
     addreview: true
