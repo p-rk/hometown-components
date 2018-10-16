@@ -28,7 +28,7 @@ class WriteReview extends React.Component {
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.added && nextProps.added !== this.props.added) {
-      this.setState({ addreview: false });
+      this.setState({ addreview: false, name: '', review: '' });
     }
   }
   handleChange=e => {
