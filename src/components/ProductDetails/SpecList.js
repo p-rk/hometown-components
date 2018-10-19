@@ -29,9 +29,6 @@ const SpecHeading = styled.h4`
   box-shadow: 7px 7px 14px -9px rgba(124,122,122,0.5);
   padding: 15px 20px;
   border: 1px solid #f5f5f5;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    background-color: #fff;
-  }
 `;
 
 const SpecListWrapper = styled.div`
@@ -45,9 +42,6 @@ const SpecListWrapper = styled.div`
   padding: 1rem 1.25rem 0.375rem;
   margin-top: 1px;
   border: 1px solid #f5f5f5;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    background-color: #fff;
-  }
 `;
 
 class SpecList extends Component {

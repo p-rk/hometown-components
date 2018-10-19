@@ -25,7 +25,7 @@ const ImgWrapper = styled.div`
   position: relative;
   box-sizing: border-box;
   width: 60px;
-  height: 60px;
+  height: 61px;
   margin-right: 0.3125rem;
   margin-bottom: 0.3125rem;
   border: 1px solid rgba(221, 221, 221, 0.38);
