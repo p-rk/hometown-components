@@ -67,7 +67,6 @@ const TitlePrice = ({
               }
             </Heading>
             <Heading
-              itemProp="offers"
               itemScope
               itemType=""
               fontSize="1rem"
