@@ -65,7 +65,7 @@ const QuickViewBtn = styled.button`
   width: 130px;
   left: calc(50% - 65px);
   height: 40px;
-  top: calc((270px - 40px)/2);
+  top: calc(50% - 65px);
   font-size: 0.875rem;
   transition: 0.3s all ease;
   @media (min-width: ${props => props.theme.breakpoints('sm')}) {
