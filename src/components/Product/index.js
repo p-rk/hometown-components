@@ -35,6 +35,9 @@ const ProductWrapper = styled.div`
   &:hover {
     button {
       display: block !important;
+      @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+        display: none;
+      }
     }
   }
 `;
@@ -68,7 +71,7 @@ const QuickViewBtn = styled.button`
   top: calc(50% - 65px);
   font-size: 0.875rem;
   transition: 0.3s all ease;
-  @media (min-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     display: none;
   }
 `;

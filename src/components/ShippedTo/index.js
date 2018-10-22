@@ -15,16 +15,25 @@ const ShippedToWrapper = styled(Section)`
 `;
 
 const ShippedTo = ({
-  name, address, city, pincode, state, edit
+  name, address, city, pincode, state, edit, mt, mb
 }) => (
   <ShippedToWrapper mb="0" p="0">
     <Row display="block" mr="0" ml="0" mb="0.3125rem">
-      <Div col="12" bg="#f5f5f5">
-        <Heading fontSize="1rem" ls="1px" mb="0.625rem" color="text" p="10px 20px" pb="10px">
+      <Div col="12" bg="#969696">
+        <Heading
+          fontSize="1rem"
+          ls="1px"
+          mb={mb}
+          mt={mt}
+          color="white"
+          p="10px 20px"
+          pb="10px"
+          fontFamily="light"
+        >
           Shipping Address
           {edit &&
           <Link to="/checkout/delivery-address">
-            <Label float="right" fontSize="0.875rem" fontFamily="light" color="linkBlue" p="0" mt="5px" mb="0">
+            <Label float="right" fontSize="0.875rem" fontFamily="light" color="white" p="0" mt="2px" mb="0">
                 edit
             </Label>
           </Link>
@@ -42,7 +51,9 @@ const ShippedTo = ({
 );
 
 ShippedTo.defaultProps = {
-  edit: true
+  edit: true,
+  mt: '0.3125rem',
+  mb: '0.3125rem'
 };
 
 ShippedTo.propTypes = {
@@ -52,6 +63,8 @@ ShippedTo.propTypes = {
   pincode: PropTypes.string.isRequired,
   state: PropTypes.string.isRequired,
   edit: PropTypes.bool,
+  mt: PropTypes.string,
+  mb: PropTypes.string,
 };
 
 export default ShippedTo;

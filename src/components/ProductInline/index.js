@@ -5,13 +5,11 @@ import Row from 'components/Row';
 import Div from 'components/Div';
 import Heading from 'components/Heading';
 import Img from 'components/Img';
-import Span from 'components/Span';
-import Text from 'components/Text';
 import { Label } from 'components/Label';
 import Theme from 'components/Theme';
 
 const ProductInline = ({
-  name, image, netPrice, specialPrice, unitPrice, qty, productURL
+  name, image, specialPrice, unitPrice, qty, productURL
 }) => (
 
   <Div mr="0" ml="0" mb="0.3125rem">
@@ -36,26 +34,18 @@ const ProductInline = ({
           >{name}
           </Heading>
           <Div mb="0.25rem">
-            <Text mt="0" mb="0">
-              <Span
-                mr="0.625rem"
-                fontSize="0.875rem"
-                color={Theme.colors.textDark}
-                fontFamily={Theme.fontFamily.medium}
-              >Rs. {netPrice}</Span>
-            </Text>
             <Div mt="0.3125rem">
               {unitPrice !== specialPrice && specialPrice !== 0 && (
                 <Label color="black" fontSize="0.875rem" mt="0">
-                  <s>Rs. {Number(unitPrice) * Number(qty)}</s>
+                  <s>Rs. {(Number(unitPrice) * Number(qty))}</s>
                 </Label>
               )}
               <br />
               <Label color="primary" fontSize="1.25rem" mt="0">
                 Rs.{' '}
                 {specialPrice === 0
-                  ? Number(unitPrice) * Number(qty)
-                  : Number(specialPrice) * Number(qty)}
+                  ? (Number(unitPrice) * Number(qty))
+                  : (Number(specialPrice) * Number(qty))}
               </Label>
             </Div>
           </Div>
@@ -68,7 +58,6 @@ const ProductInline = ({
 ProductInline.defaultProps = {
   image: '',
   name: '',
-  netPrice: '',
   specialPrice: '',
   unitPrice: '',
   qty: 0,
@@ -78,7 +67,6 @@ ProductInline.defaultProps = {
 ProductInline.propTypes = {
   image: PropTypes.string,
   name: PropTypes.string,
-  netPrice: PropTypes.string,
   specialPrice: PropTypes.string,
   unitPrice: PropTypes.string,
   qty: PropTypes.number,

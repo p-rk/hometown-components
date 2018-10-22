@@ -20,7 +20,7 @@ const ForgotPasswordLink = styled(Label)`
 
 const SignUpText = styled(Label)`
   font-size: 0.875rem !important;
-  @media only screen and (max-width: '767px'}) {
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     font-size: 0.75rem !important;
   }
 `;
