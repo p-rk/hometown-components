@@ -71,6 +71,7 @@ const QuickViewBtn = styled.button`
   top: calc(50% - 65px);
   font-size: 0.875rem;
   transition: 0.3s all ease;
+  display: none;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     display: none;
   }
