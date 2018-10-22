@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Img from 'components/Img';
 import Div from 'components/Div';
 import ImageShimmer from 'components/ImageShimmer';
+import { Link } from 'react-router-dom';
 
 const ProductCarouselLi = styled.li`
   width: 100%;
@@ -40,7 +41,7 @@ const ProductCarouselLi = styled.li`
   }
 `;
 
-const HyperLink = styled.a`
+const HyperLink = styled(Link)`
   display: block;
 `;
 
@@ -87,7 +88,7 @@ const CategoryCarouselItem = ({
   image, name, url, typeOfSlider, colSize, layout
 }) => (
   <ProductCarouselLi className={typeOfSlider} colSize={colSize} layout={layout}>
-    <HyperLink href={url}>
+    <HyperLink to={url}>
       <ImageShimmer src={image} minHeight="365">
         {imageURL => (
           layout === 'square' ?
