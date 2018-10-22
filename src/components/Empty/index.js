@@ -12,7 +12,7 @@ const EmptyPageContainer = styled.div`
   width: 100%;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     background: ${props => props.bg};
-    height: 55vh;
+    height: ${props => props.height};
   }
 `;
 
@@ -57,9 +57,9 @@ const CustomHeading = styled(Heading)`
 `;
 
 const EmptyPages = ({
-  title, subTitle, btnName, url, bg, children
+  title, subTitle, btnName, url, bg, children, height
 }) => (
-  <EmptyPageContainer bg={bg}>
+  <EmptyPageContainer bg={bg} height={height}>
     <EmptyPageWrapper>
       <Row m="0">
         <Div>
@@ -83,12 +83,17 @@ const EmptyPages = ({
   </EmptyPageContainer>
 );
 
+EmptyPages.defaultProps = {
+  height: '55vh'
+};
+
 EmptyPages.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
   btnName: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   bg: PropTypes.string.isRequired,
+  height: PropTypes.string,
   children: PropTypes.any.isRequired
 };
 

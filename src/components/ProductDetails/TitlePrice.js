@@ -28,7 +28,7 @@ const TitlePrice = ({
           {name}
         </Heading>
         <Row display="block" mr="0" ml="0">
-          <Div col="8">
+          <Div col="9">
             <Heading
               itemProp="offers"
               itemScope
@@ -39,6 +39,7 @@ const TitlePrice = ({
               pb="5px"
               mt="0px"
               fontFamily="medium"
+              ellipsis={false}
             >
               <Span
                 va="text-top"
@@ -58,7 +59,7 @@ const TitlePrice = ({
               <Span
                 fontSize="0.875rem"
                 color="rgba(0, 0, 0, 0.4)"
-                ml="1rem"
+                ml="0.75rem"
                 fontFamily="regular"
                 type="lt"
                 va="text-top"
@@ -89,7 +90,7 @@ const TitlePrice = ({
               }
             </Heading>
           </Div>
-          <Div col="4" ta="right">
+          <Div col="3" ta="right">
             {ratings !== 0 &&
             <Row display="block" mr="0" ml="0">
               <Div right="-10px">

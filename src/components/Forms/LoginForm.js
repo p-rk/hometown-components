@@ -18,6 +18,13 @@ const ForgotPasswordLink = styled(Label)`
   }
 `;
 
+const SignUpText = styled(Label)`
+  font-size: 0.875rem !important;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    font-size: 0.75rem !important;
+  }
+`;
+
 export default class LoginForm extends Component {
   render() {
     const {
@@ -63,9 +70,9 @@ export default class LoginForm extends Component {
         </Row>
         <Row ml="0" mr="0" mt="1.25rem">
           <Div col="8" pt="6px">
-            <Label color="textDark" mr="0.3126rem">
-              Don&#39;t have an account?
-            </Label>
+            <SignUpText color="textDark" mr="0.3126rem">
+              Don't have an account?
+            </SignUpText>
             <Link to={signupUrl}>
               <Label color="primary">Sign Up</Label>
             </Link>
@@ -77,6 +84,7 @@ export default class LoginForm extends Component {
               fontFamily="regular"
               height="42px"
               disabled={loginResponse.loggingIn}
+              fontSize="0.875rem"
             >
               {(loginResponse && !loginResponse.loggingIn) ? 'LOGIN' : 'Please wait...' }
             </Button>
