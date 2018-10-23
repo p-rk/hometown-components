@@ -11,6 +11,9 @@ const Input = styled.input`
   &:hover, &:focus {
     outline: none;
   }
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    font-size: 0.875rem;
+  }
 `;
 
 Input.defaultProps = {
