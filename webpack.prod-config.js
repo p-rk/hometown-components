@@ -13,6 +13,7 @@ module.exports = {
     'Empty/index': './src/components/Empty/',
     'Heading/index': './src/components/Heading/',
     'Icons/Fav': './src/components/Icons/Fav',
+    'Icons/GotoCart': './src/components/Icons/GotoCart',
     'Icons/Refresh': './src/components/Icons/Refresh',
     'Img/index': './src/components/Img/',
     'Input/index': './src/components/Input/',
