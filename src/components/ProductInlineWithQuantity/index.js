@@ -61,16 +61,16 @@ const ProductInlineWithQuantity = ({
                   color={Theme.colors.textDark}
                   fontFamily="medium"
                 >Rs. {specialPrice}</Span>
-                <Span mr="0.625rem" fontSize="0.9rem">Rs. {unitPrice}</Span>
+                <Span mr="0.625rem" fontSize="0.0.75rem"><s>Rs. {unitPrice}</s></Span>
               </Text>
               <Text mt="0" mb="0" lh="1.4">
                 <Span
-                  fontSize="0.875rem"
+                  fontSize="0.75rem"
                 >Saving Rs. {calculateSavings(unitPrice, specialPrice) }({discount}%)</Span>
               </Text>
               <Text mt="0" mb="0" lh="1.4">
                 <Span
-                  fontSize="0.875rem"
+                  fontSize="0.75rem"
                 >Quantity {itemData.qty}</Span>
               </Text>
               <Text mt="0" mb="0" lh="1.4">

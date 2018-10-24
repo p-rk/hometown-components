@@ -71,6 +71,7 @@ export default class SignupForm extends Component {
               fontFamily="regular"
               height="42px"
               disabled={loading}
+              fontSize="0.875rem"
             >
               {!loading ? 'SIGN UP' : 'Please wait...' }
             </Button>

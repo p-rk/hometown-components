@@ -16,7 +16,7 @@ const TitlePrice = ({
       <Row display="block" mr="0" ml="0">
         <Heading
           itemProp="name"
-          fontSize="1.25em"
+          fontSize="1.125em"
           color="textDark"
           mb="0"
           mt="0"
@@ -28,15 +28,15 @@ const TitlePrice = ({
           {name}
         </Heading>
         <Row display="block" mr="0" ml="0">
-          <Div col="9">
+          <Div col="12">
             <Heading
               itemProp="offers"
               itemScope
               itemType="http://schema.org/Offer"
-              fontSize="1.6rem"
+              fontSize="1.125em"
               color="primary"
               mb="0px"
-              pb="5px"
+              pb="0"
               mt="0px"
               fontFamily="medium"
               ellipsis={false}
@@ -46,14 +46,14 @@ const TitlePrice = ({
                 itemProp="priceCurrency"
                 content="INR"
                 color="#f98d29"
-                fontSize="1.6rem"
+                fontSize="1.2rem"
               >₹</Span>
               <Span
                 itemProp="price"
                 va="text-top"
                 content={discPrice.split(',').join('')}
                 color="#f98d29"
-                fontSize="1.6rem"
+                fontSize="1.2rem"
               > {discPrice}</Span>
               { price !== discPrice &&
               <Span
@@ -62,7 +62,7 @@ const TitlePrice = ({
                 ml="0.75rem"
                 fontFamily="regular"
                 type="lt"
-                va="text-top"
+                va="middle"
                 lh="2.2"
               >₹ {price}</Span>
               }
@@ -83,17 +83,17 @@ const TitlePrice = ({
                 color="rgba(0, 0, 0, 0.4)"
                 ml="0"
                 fontFamily="regular"
-                va="text-top"
+                va="middle"
               >Saving ₹ {savingsRs}
                 {' '}({savingsPercentage}% OFF)
               </Span>
               }
             </Heading>
           </Div>
-          <Div col="3" ta="right">
+          <Div col="12" ta="right" mt="2px">
             {ratings !== 0 &&
             <Row display="block" mr="0" ml="0">
-              <Div right="-10px">
+              <Div col="12">
                 <ReactStars
                   count={5}
                   className="ratings"
@@ -103,19 +103,18 @@ const TitlePrice = ({
                   edit={false}
                   color2="#f98d29"
                 />
-              </Div>
-              <Div>
                 <Span
                   className="ratingsCount"
                   fontSize="0.875rem"
                   color="#29d"
-                  va="super"
+                  float="left"
+                  mt="4px"
                 >({count} Review{Number(count) === 1 ? '' : 's'})</Span>
                 <div className="hide" itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
                 Rated
                   <span itemProp="ratingValue">{ratings}</span>/5 based on
                   <span itemProp="reviewCount">{count}</span>
-                customer reviews
+                    customer reviews
                 </div>
               </Div>
             </Row>

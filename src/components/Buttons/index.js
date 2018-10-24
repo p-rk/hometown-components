@@ -17,7 +17,7 @@ const sizes = {
     display: 'block',
     width: '100%',
     padding: '.375rem .75rem',
-    fontSize: '1rem'
+    fontSize: '0.875rem'
   },
 };
 
@@ -63,7 +63,7 @@ const Button = styled.button`
   cursor: pointer;
   text-align: ${props => props.ta};
   white-space: nowrap;
-  vertical-align: middle;
+  vertical-align: ${props => props.va};
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -126,11 +126,12 @@ Button.defaultProps = {
   btnType: 'default',
   border: '1px solid',
   fontFamily: 'regular',
-  lh: '1.5',
+  lh: '1.6',
   bc: 'transparent',
   bg: 'transparent',
   ta: 'center',
   borderRadius: '3px',
+  va: 'middle'
 };
 
 export default Button;

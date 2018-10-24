@@ -35,6 +35,9 @@ const ProductWrapper = styled.div`
   &:hover {
     button {
       display: block !important;
+      @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+        display: none;
+      }
     }
   }
 `;
@@ -68,7 +71,8 @@ const QuickViewBtn = styled.button`
   top: calc(50% - 65px);
   font-size: 0.875rem;
   transition: 0.3s all ease;
-  @media (min-width: ${props => props.theme.breakpoints('sm')}) {
+  display: none;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     display: none;
   }
 `;
@@ -97,13 +101,13 @@ const judgeColor = rating => {
   }
   rating = parseInt(rating, 10);
   if (rating < 2) {
-    return 'red';
+    return '#dc3545';
   }
   if (rating >= 2 && rating < 3) {
-    return 'yellow';
+    return '#f5a623';
   }
   if (rating >= 3) {
-    return 'green';
+    return '#28a745';
   }
 };
 const Product = props => {

@@ -17,11 +17,20 @@ const PaymentMethodWrapper = styled(Section)`
 const PaymentMethod = ({ gateway }) => (
   <PaymentMethodWrapper mb="0" p="0">
     <Row display="block" mr="0" ml="0" mb="0.3125rem">
-      <Div col="12" bg="#f5f5f5">
-        <Heading fontSize="1rem" ls="1px" mb="0.625rem" color="text" p="10px 20px" pb="10px">
+      <Div col="12" bg="#969696">
+        <Heading
+          fontSize="1rem"
+          ls="1px"
+          mb="0.3125rem"
+          mt="0.3125rem"
+          color="white"
+          p="10px 20px"
+          pb="10px"
+          fontFamily="light"
+        >
           Payment Method
           <Link to="/checkout/payment-options">
-            <Label float="right" fontSize="0.875rem" fontFamily="light" color="linkBlue" p="0" mt="5px" mb="0">
+            <Label float="right" fontSize="0.875rem" fontFamily="light" color="white" p="0" mt="2px" mb="0">
               edit
             </Label>
           </Link>
