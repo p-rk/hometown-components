@@ -34,10 +34,14 @@ const ProductWrapper = styled.div`
   box-sizing: border-box;
   &:hover {
     button {
-      display: block !important;
-      @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-        display: none;
+      @media (min-width: ${props => props.theme.breakpoints('md')}) {
+        &:last-child {
+          display: block !important;
+        }
       }
+      ${'' /* @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+        display: none !important;
+      } */}
     }
   }
 `;
@@ -73,7 +77,7 @@ const QuickViewBtn = styled.button`
   transition: 0.3s all ease;
   display: none;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    display: none;
+    display: none !important;
   }
 `;
 
