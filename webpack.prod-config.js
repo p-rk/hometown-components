@@ -62,6 +62,7 @@ module.exports = {
     'Reviews/WriteReview': './src/components/Reviews/WriteReview',
     'Shimmer/index': './src/components/Shimmer/',
     'ImageShimmer/index': './src/components/ImageShimmer/',
+    'ImageShimmerMobile/index': './src/components/ImageShimmerMobile/',
     'SeoContent/index': './src/components/SeoContent/',
     'Forms/ServiceSignUpForm': './src/components/Forms/ServiceSignUpForm',
     'Forms/ModularKitchenForm': './src/components/Forms/ModularKitchenForm',
