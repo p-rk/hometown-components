@@ -63,7 +63,7 @@ const Button = styled.button`
   cursor: pointer;
   text-align: ${props => props.ta};
   white-space: nowrap;
-  vertical-align: middle;
+  vertical-align: ${props => props.va};
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -131,6 +131,7 @@ Button.defaultProps = {
   bg: 'transparent',
   ta: 'center',
   borderRadius: '3px',
+  va: 'middle'
 };
 
 export default Button;
