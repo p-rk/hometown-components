@@ -181,7 +181,7 @@ export default class ServiceRequestForm extends Component {
             />
           </Div>
         </Row>
-        <Row ml="0" mr="0">
+        <Row ml="0" mr="0" pb="1rem">
           <Div col="12" pr="0.625rem" pl="0.625rem" mt="0.3125rem">
             <Div mb="0.3125rem">
               <Label fontSize="0.875em" ml="0" htmlFor="checkbox">

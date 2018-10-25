@@ -212,7 +212,7 @@ export default class FeedBackForm extends Component {
             </Div>
           </Div>
         </Row>
-        <Row ml="0" mr="0">
+        <Row ml="0" mr="0" pb="1rem">
           <Div col={col} pr="0.625rem" pl="0.625rem" mt="1rem">
             <Button
               size="block"
