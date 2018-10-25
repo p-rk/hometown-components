@@ -42,11 +42,13 @@ export default class FeedBackForm extends Component {
       delivery,
       loading,
       loaded,
+      col,
+      reviewcolSize
     } = this.props;
     return (
       <form onSubmit={onSubmitForm}>
         <Row ml="0" mr="0">
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="First Name*"
               type="text"
@@ -58,7 +60,7 @@ export default class FeedBackForm extends Component {
               feedBackMessage={firstNameFeedBackMessage}
             />
           </Div>
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="Last Name*"
               type="text"
@@ -70,7 +72,7 @@ export default class FeedBackForm extends Component {
               feedBackMessage={lastNameFeedBackMessage}
             />
           </Div>
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="Registered mobile no*"
               type="text"
@@ -85,7 +87,7 @@ export default class FeedBackForm extends Component {
           </Div>
         </Row>
         <Row ml="0" mr="0">
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="Email*"
               type="text"
@@ -97,7 +99,7 @@ export default class FeedBackForm extends Component {
               feedBackMessage={emailFeedBackMessage}
             />
           </Div>
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="Order Number*"
               type="text"
@@ -109,7 +111,7 @@ export default class FeedBackForm extends Component {
               feedBackMessage={orderFeedBackMessage}
             />
           </Div>
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="Store*"
               type="text"
@@ -123,7 +125,7 @@ export default class FeedBackForm extends Component {
           </Div>
         </Row>
         <Row ml="0" mr="0">
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="City*"
               type="text"
@@ -187,7 +189,7 @@ export default class FeedBackForm extends Component {
               </Label>
             </Div>
           </Div>
-          <Div col="8" pr="0.625rem" pl="0.625rem">
+          <Div col={reviewcolSize} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="Review*"
               onChange={handleChange}
@@ -211,7 +213,7 @@ export default class FeedBackForm extends Component {
           </Div>
         </Row>
         <Row ml="0" mr="0">
-          <Div col="2" pr="0.625rem" pl="0.625rem" mt="1rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem" mt="1rem">
             <Button
               size="block"
               btnType="primary"
@@ -264,6 +266,8 @@ FeedBackForm.defaultProps = {
   loaded: false,
   handleCheckBoxChange: () => {},
   onSubmitForm: () => {},
+  col: '4',
+  reviewcolSize: '8'
 };
 
 FeedBackForm.propTypes = {
@@ -299,5 +303,7 @@ FeedBackForm.propTypes = {
   delivery: PropTypes.bool,
   handleCheckBoxChange: PropTypes.func,
   loading: PropTypes.bool,
-  loaded: PropTypes.bool
+  loaded: PropTypes.bool,
+  col: PropTypes.string,
+  reviewcolSize: PropTypes.string,
 };
