@@ -42,12 +42,14 @@ export default class ServiceRequestForm extends Component {
       assembly_dismatling,
       /* eslint-enable camelcase */
       loading,
-      loaded
+      loaded,
+      col,
+      reviewcolSize
     } = this.props;
     return (
       <form onSubmit={onSubmitForm}>
         <Row ml="0" mr="0">
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="First Name*"
               type="text"
@@ -59,7 +61,7 @@ export default class ServiceRequestForm extends Component {
               feedBackMessage={firstNameFeedBackMessage}
             />
           </Div>
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="Last Name*"
               type="text"
@@ -71,7 +73,7 @@ export default class ServiceRequestForm extends Component {
               feedBackMessage={lastNameFeedBackMessage}
             />
           </Div>
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="Registered Mobile No*"
               type="text"
@@ -86,7 +88,7 @@ export default class ServiceRequestForm extends Component {
           </Div>
         </Row>
         <Row ml="0" mr="0">
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="Email Address*"
               type="text"
@@ -98,7 +100,7 @@ export default class ServiceRequestForm extends Component {
               feedBackMessage={emailFeedBackMessage}
             />
           </Div>
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="Order Number*"
               type="text"
@@ -110,7 +112,7 @@ export default class ServiceRequestForm extends Component {
               feedBackMessage={orderFeedBackMessage}
             />
           </Div>
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="Store*"
               type="text"
@@ -124,7 +126,7 @@ export default class ServiceRequestForm extends Component {
           </Div>
         </Row>
         <Row ml="0" mr="0">
-          <Div col="4" pr="0.625rem" pl="0.625rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="City*"
               type="text"
@@ -165,7 +167,7 @@ export default class ServiceRequestForm extends Component {
           </Div>
         </Div>
         {/* eslint-enable */}
-          <Div col="8" pr="0.625rem" pl="0.625rem">
+          <Div col={reviewcolSize} pr="0.625rem" pl="0.625rem">
             <FormInput
               label="Review*"
               onChange={handleChange}
@@ -187,7 +189,7 @@ export default class ServiceRequestForm extends Component {
               </Label>
             </Div>
           </Div>
-          <Div col="2" pr="0.625rem" pl="0.625rem" mt="1rem">
+          <Div col={col} pr="0.625rem" pl="0.625rem" mt="1rem">
             <Button
               size="block"
               btnType="primary"
@@ -218,7 +220,9 @@ ServiceRequestForm.defaultProps = {
   loginResponse: {},
   onChangeEmail: () => {},
   onChangePassword: () => {},
-  onSubmitLogin: () => {}
+  onSubmitLogin: () => {},
+  col: '4',
+  reviewcolSize: '8',
 };
 
 ServiceRequestForm.propTypes = {
@@ -263,5 +267,7 @@ ServiceRequestForm.propTypes = {
   assembly_dismatling:PropTypes.bool,
   handleCheckBoxChange:PropTypes.func,
   loading:PropTypes.bool,
-  loaded: PropTypes.bool
+  loaded: PropTypes.bool,
+  col: PropTypes.string,
+  reviewcolSize: PropTypes.string,
 };
