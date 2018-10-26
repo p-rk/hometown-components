@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 const Section = styled.section`
-  box-sizing: border-box;
   clear: both;
-
   display: ${props => props.display};
   background: ${props => props.theme.colors[props.bg]};
   box-shadow: ${props => props.boxShadow};
@@ -25,7 +23,8 @@ const Section = styled.section`
   ${props => props.top && { top: props.top }}
   ${props => props.overflow && { overflow: props.overflow }}
 
-  > * {
+  box-sizing: border-box;
+  > *, ::after, ::before {
     box-sizing: border-box;
   }
 `;
