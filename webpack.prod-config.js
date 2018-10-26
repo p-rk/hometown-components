@@ -67,6 +67,7 @@ module.exports = {
     'Forms/ServiceSignUpForm': './src/components/Forms/ServiceSignUpForm',
     'Forms/ModularKitchenForm': './src/components/Forms/ModularKitchenForm',
     'Extend/index': './src/components/Extend/',
+    'LoadMore/index': './src/components/LoadMore/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
