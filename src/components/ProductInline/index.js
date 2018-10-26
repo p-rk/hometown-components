@@ -9,7 +9,7 @@ import { Label } from 'components/Label';
 import Theme from 'components/Theme';
 
 const ProductInline = ({
-  name, image, specialPrice, unitPrice, qty, productURL
+  name, image, specialPrice, unitPrice, qty, productURL, formatAmount
 }) => (
 
   <Div mr="0" ml="0" mb="0.3125rem">
@@ -37,15 +37,15 @@ const ProductInline = ({
             <Div mt="0.3125rem">
               {unitPrice !== specialPrice && specialPrice !== 0 && (
                 <Label color="black" fontSize="0.875rem" mt="0">
-                  <s>Rs. {(Number(unitPrice) * Number(qty))}</s>
+                  <s>Rs. {formatAmount(Number(unitPrice) * Number(qty))}</s>
                 </Label>
               )}
               <br />
               <Label color="primary" fontSize="1.25rem" mt="0">
                 Rs.{' '}
                 {specialPrice === 0
-                  ? (Number(unitPrice) * Number(qty))
-                  : (Number(specialPrice) * Number(qty))}
+                  ? formatAmount(Number(unitPrice) * Number(qty))
+                  : formatAmount(Number(specialPrice) * Number(qty))}
               </Label>
             </Div>
           </Div>
@@ -61,7 +61,8 @@ ProductInline.defaultProps = {
   specialPrice: '',
   unitPrice: '',
   qty: 0,
-  productURL: ''
+  productURL: '',
+  formatAmount: () => {},
 };
 
 ProductInline.propTypes = {
@@ -71,6 +72,7 @@ ProductInline.propTypes = {
   unitPrice: PropTypes.string,
   qty: PropTypes.number,
   productURL: PropTypes.string,
+  formatAmount: PropTypes.func,
 };
 
 export default ProductInline;
