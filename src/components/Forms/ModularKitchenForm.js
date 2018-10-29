@@ -26,11 +26,13 @@ const ModularKitchen = ({
   onChangeEmail,
   onChangePhone,
   onChangePincode,
-  onSubmitForm
+  onSubmitForm,
+  col,
+  btnMt
 }) => (
   <form onSubmit={onSubmitForm}>
     <Row m="0 1rem">
-      <Div col="6" pr="0.625rem" pl="0.625rem">
+      <Div col={col} pr="0.625rem" pl="0.625rem">
         <FormInput
           label="Name"
           type="text"
@@ -41,7 +43,7 @@ const ModularKitchen = ({
           feedBackMessage={nameErrorMessage}
         />
       </Div>
-      <Div col="6" pr="0.625rem" pl="0.625rem">
+      <Div col={col} pr="0.625rem" pl="0.625rem">
         <FormInput
           label="Phone"
           type="text"
@@ -54,7 +56,7 @@ const ModularKitchen = ({
       </Div>
     </Row>
     <Row m="0 1rem">
-      <Div col="6" pr="0.625rem" pl="0.625rem">
+      <Div col={col} pr="0.625rem" pl="0.625rem">
         <FormInput
           label="Email"
           type="email"
@@ -65,7 +67,7 @@ const ModularKitchen = ({
           feedBackMessage={emailErrorMessage}
         />
       </Div>
-      <Div col="6" pr="0.625rem" pl="0.625rem">
+      <Div col={col} pr="0.625rem" pl="0.625rem">
         <FormInput
           label="Pincode"
           type="text"
@@ -78,7 +80,7 @@ const ModularKitchen = ({
       </Div>
     </Row>
     <Row m="0 1rem">
-      <Div col="6" pr="0.625rem" pl="0.625rem">
+      <Div col={col} pr="0.625rem" pl="0.625rem">
         <FormInput
           label="Address"
           type="textarea"
@@ -89,11 +91,8 @@ const ModularKitchen = ({
           feedBackMessage={addressErrorMessage}
         />
       </Div>
-      <Div col="6" pr="0.625rem" pl="0.625rem">
-        <Button size="block" btnType="primary" fontFamily="regular" height="38px" mt="2rem">
-          {' '}
-                      Submit{' '}
-        </Button>
+      <Div col={col} pr="0.625rem" pl="0.625rem">
+        <Button size="block" btnType="primary" fontFamily="regular" height="38px" mt={btnMt}>Submit</Button>
       </Div>
     </Row>
   </form>
@@ -115,6 +114,8 @@ ModularKitchen.defaultProps = {
   phoneErrorMessage: '',
   addressErrorMessage: '',
   pincodeErrorMessage: '',
+  col: '6',
+  btnMt: '2rem'
 };
 
 ModularKitchen.propTypes = {
@@ -139,6 +140,8 @@ ModularKitchen.propTypes = {
   pincodeErrorMessage: PropTypes.string,
   onChangePincode: PropTypes.func.isRequired,
   onSubmitForm: PropTypes.func.isRequired,
+  col: PropTypes.string,
+  btnMt: PropTypes.string,
 };
 
 export default ModularKitchen;
