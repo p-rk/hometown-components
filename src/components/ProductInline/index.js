@@ -5,6 +5,7 @@ import Row from 'components/Row';
 import Div from 'components/Div';
 import Heading from 'components/Heading';
 import Img from 'components/Img';
+import ImageShimmerMobile from 'components/ImageShimmerMobile';
 import { Label } from 'components/Label';
 import Theme from 'components/Theme';
 
@@ -16,11 +17,9 @@ const ProductInline = ({
     <Row display="block" mr="0" ml="0">
       <Link to={productURL}>
         <Div col="4">
-          <Img
-            alt={name}
-            src={image}
-            width="100%"
-          />
+          <ImageShimmerMobile src={image} height="110px">
+            {imageURL => <Img alt={name} src={imageURL} width="100%" />}
+          </ImageShimmerMobile>
         </Div>
         <Div col="8" pl="0.9375rem">
           <Heading

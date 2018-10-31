@@ -53,6 +53,7 @@ const CatTitle = styled.p`
   font-family: regular;
   margin-top: 5px;
   margin-bottom: 0;
+  text-align: center;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     font-size: 0.875rem;
     margin-top: 3px;
