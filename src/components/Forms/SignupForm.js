@@ -25,6 +25,7 @@ export default class SignupForm extends Component {
       onSubmitSignup,
       loading,
       loginUrl,
+      phonemandatory
     } = this.props;
     return (
       <form onSubmit={onSubmitSignup}>
@@ -38,7 +39,7 @@ export default class SignupForm extends Component {
           feedBackMessage={emailFeedBackMessage}
         />
         <FormInput
-          label="Phone"
+          label={phonemandatory ? 'Phone *' : 'Phone'}
           type="text"
           placeholder=""
           onChange={onChangePhone}
@@ -98,6 +99,7 @@ SignupForm.defaultProps = {
   onSubmitSignup: () => {},
   loading: false,
   loginUrl: '',
+  phonemandatory: false,
 };
 
 SignupForm.propTypes = {
@@ -116,4 +118,5 @@ SignupForm.propTypes = {
   passwordFeedBackMessage: PropTypes.string,
   loading: PropTypes.bool,
   loginUrl: PropTypes.string,
+  phonemandatory: PropTypes.bool,
 };
