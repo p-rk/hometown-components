@@ -9,12 +9,17 @@ import { Label } from 'components/Label';
 import Theme from 'components/Theme';
 
 const ProductInline = ({
-  name, image, specialPrice, unitPrice, qty, productURL, formatAmount
+  name, image, specialPrice, unitPrice, qty, productURL, formatAmount,
 }) => (
 
   <Div mr="0" ml="0" mb="0.3125rem">
     <Row display="block" mr="0" ml="0">
-      <Link to={productURL}>
+      <Link
+        onClick={e => {
+          if (productURL === '') { e.preventDefault(); }
+        }}
+        to={productURL}
+      >
         <Div col="4">
           <Img
             alt={name}
