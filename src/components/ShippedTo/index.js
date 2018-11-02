@@ -12,6 +12,9 @@ import Text from 'components/Text';
 const ShippedToWrapper = styled(Section)`
   border: 1px solid #ededed;
   min-height: 220px;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    min-height: auto;
+  }
 `;
 
 const ShippedTo = ({
