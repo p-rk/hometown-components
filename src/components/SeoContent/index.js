@@ -28,6 +28,11 @@ const SeoContent = styled.div`
   br {
     display: none;
   }
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    height: 200px;
+    overflow: hidden;
+    padding-top: 0;
+  }
 `;
 
 export default SeoContent;
