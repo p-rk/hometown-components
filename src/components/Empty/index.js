@@ -69,7 +69,7 @@ const EmptyPages = ({
             ellipsis={false}
             fontFamily="medium"
             fontSize="1.6rem"
-            mb="1.25rem"
+            mb="0.625rem"
             mt="1rem"
             lh="1.5"
           >{title}</CustomHeading>
