@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Div from 'components/Div';
-import Heading from 'components/Heading';
 import Span from 'components/Span';
 import WishlistBtn from 'components/WishlistBtn';
 import Rating from 'components/Rating';
@@ -96,6 +95,19 @@ const Colors = styled.span`
   }
 `;
 
+const Heading = styled.h3`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.875rem;
+  font-family: medium;
+  line-height: 1.2;
+  color: #515151;
+  margin-top: 0.3125em;
+  margin-bottom: 0;
+  padding-bottom: 2px;
+`;
+
 const handleClick = (dispatcher, position = 0) => () => {
   dispatcher(position + 1);
 };
@@ -146,14 +158,7 @@ const Product = props => {
           }
         </ImgWrapper>
         <ProductInner p="0.25rem 0 0.25rem">
-          <Heading
-            pb="2px"
-            mb="0"
-            color="text515151"
-            fontSize="0.875rem"
-            mt="0.3125em"
-            fontFamily="medium"
-          >{name}</Heading>
+          <Heading>{name}</Heading>
           <Div mb="2px">
             <Span
               mr="0.625rem"
