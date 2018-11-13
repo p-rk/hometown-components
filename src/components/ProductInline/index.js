@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Row from 'components/Row';
@@ -10,12 +10,16 @@ import { Label } from 'components/Label';
 import Theme from 'components/Theme';
 
 const ProductInline = ({
-  name, image, specialPrice, unitPrice, qty, productURL, formatAmount
+  name, image, specialPrice, unitPrice, qty, productURL, formatAmount,
 }) => (
-
   <Div mr="0" ml="0" mb="0.3125rem">
     <Row display="block" mr="0" ml="0">
-      <Link to={productURL}>
+      <Link
+        onClick={e => {
+          if (productURL === '') { e.preventDefault(); }
+        }}
+        to={productURL}
+      >
         <Div col="4">
           <ImageShimmerMobile src={image} height="110px">
             {imageURL => <Img alt={name} src={imageURL} width="100%" />}
@@ -35,11 +39,13 @@ const ProductInline = ({
           <Div mb="0.25rem">
             <Div mt="0.3125rem">
               {unitPrice !== specialPrice && specialPrice !== 0 && (
-                <Label color="black" fontSize="0.875rem" mt="0">
-                  <s>Rs. {formatAmount(Number(unitPrice) * Number(qty))}</s>
-                </Label>
+                <Fragment>
+                  <Label color="black" fontSize="0.875rem" mt="0">
+                    <s>Rs. {formatAmount(Number(unitPrice) * Number(qty))}</s>
+                  </Label>
+                  <br />
+                </Fragment>
               )}
-              <br />
               <Label color="primary" fontSize="1.25rem" mt="0">
                 Rs.{' '}
                 {specialPrice === 0
