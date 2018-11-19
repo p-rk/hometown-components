@@ -8,6 +8,8 @@ const Container = styled.div`
   padding-right: ${props => props.pr};
   padding-left: ${props => props.pl};
   ${props => props.display && { display: props.display }}
+  ${props => props.mt && { marginTop: props.mt }}
+  ${props => props.mb && { marginBottom: props.mb }}
 
   > *, ::after, ::before {
     box-sizing: border-box;
