@@ -24,7 +24,7 @@ const Spec = ({ spec }) => {
             <Label color="black" lh="1.6" fontFamily="regular">{label}</Label>
           </Div>
         )}
-        <Div col={label === 'Care Instructions' ? '12' : '7'}>
+        <Div col={label === 'Care Instructions' || label === 'Note' || label === 'Product warranty' ? '12' : '7'}>
           <Description
             mt="5px"
             mb="5px"
