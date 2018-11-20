@@ -26,6 +26,7 @@ const ProductWrapper = styled.div`
   width: ${props => props.theme.col[props.col]};
   float: left;
   position: relative;
+  text-align: center;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
@@ -38,20 +39,18 @@ const ProductWrapper = styled.div`
           display: block !important;
         }
       }
-      ${'' /* @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-        display: none !important;
-      } */}
     }
   }
 `;
 
 const ProductInner = styled(Div)`
+  padding: 0.25rem 0 0.25rem;
   height: 90px;
   svg {
     vertical-align: middle;
   }
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    height: 110px;
+    padding: 0.25rem 0.25rem 0.25rem;
   }
 `;
 
@@ -86,7 +85,7 @@ const QuickViewBtn = styled.button`
 const Colors = styled.span`
   position: absolute;
   right: 10px;
-  bottom: 15px;
+  bottom: 10px;
   font-size: 14px;
   margin-top: 2px;
   color: rgba(0, 0, 0, 0.75);
@@ -109,6 +108,69 @@ const Heading = styled.h3`
   margin-top: 0.3125em;
   margin-bottom: 0;
   padding-bottom: 2px;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    font-size: 0.75rem;
+    font-family: regular;
+  }
+`;
+
+const PriceSpan = styled(Span)`
+  font-size: 0.875rem;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    font-size: 0.8125rem;
+  }
+`;
+
+const CutPriceSpan = styled(Span)`
+  font-size: 0.75rem;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    font-size: 0.6875rem;
+  }
+`;
+
+const SavingSpan = styled(Span)`
+  font-size: 0.75rem;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    font-size: 0.6875rem;
+  }
+`;
+
+const DeliveredBySpan = styled(Span)`
+  font-size: 0.75rem;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    font-size: 0.6875rem;
+  }
+`;
+
+const SavingWrapper = styled(Div)`
+  margin-bottom: 2px;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    margin-bottom: 0px;
+    margin-top: 4px;
+  }
+`;
+
+const DeliveredByWrapper = styled(Div)`
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    margin-bottom: 5px;
+  }
+`;
+
+const RatingWrapperXs = styled(Span)`
+  display: none;
+  position: absolute;
+  left: 5px;
+  bottom: 6px;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    display: block;
+  }
+`;
+
+const RatingWrapperLg = styled(Span)`
+  display: block;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    display: none;
+  }
 `;
 
 const handleClick = (dispatcher, position = 0) => () => {
@@ -159,24 +221,27 @@ const Product = props => {
             {colors}
           </Colors>
           }
+          {rating > 0 && (
+            <RatingWrapperXs>
+              <Rating color={color} rating={rating}>★ {rating}</Rating>
+            </RatingWrapperXs>
+          )}
         </ImgWrapper>
         <ProductInner p="0.25rem 0 0.25rem">
           <Heading>{name}</Heading>
           <Div mb="2px">
-            <Span
-              mr="0.625rem"
+            <PriceSpan
+              mr="5px"
               color={Theme.colors.text}
-              fontSize="0.875rem"
               fontFamily="medium"
-            >{price}</Span>
-            {price !== cutprice && <Span
+            >{price}</PriceSpan>
+            {price !== cutprice && <CutPriceSpan
               mr="0"
-              fontSize="0.75rem"
               fontFamily="regular"
               color={Theme.colors.prodText}
-            ><s>{cutprice}</s></Span>}
+            ><s>{cutprice}</s></CutPriceSpan>}
             {rating > 0 && (
-              <Span ml="0.625rem">
+              <RatingWrapperLg ml="0.3125rem">
                 <Rating color={color} rating={rating}>★ {rating}</Rating>
                 <Span
                   mr="0.625rem"
@@ -185,23 +250,25 @@ const Product = props => {
                   va="bottom"
                   color={Theme.colors.textExtraLight}
                 >({reviewsCount})</Span>
-              </Span>
+              </RatingWrapperLg>
             )}
           </Div>
-          <Div mb="2px">
+          <SavingWrapper>
             { (saving !== '-0%' && Number(savingAmount) !== 0 && saving !== '') &&
-              <Span fontSize="0.75rem" fontFamily="regular" color={Theme.colors.prodText}>
+              <SavingSpan fontFamily="regular" color={Theme.colors.prodText}>
                 Savings Rs. {savingAmount} ({saving.replace('-', '')} OFF)
-              </Span> }
-          </Div>
-          {deliveredBy && <Div>
-            <Span
+              </SavingSpan> }
+          </SavingWrapper>
+          {deliveredBy && <DeliveredByWrapper>
+            <DeliveredBySpan
               fontSize={deliveredBy.indexOf('Sorry') === 0 ? '0.65rem' : '0.75rem'}
               lh="0.1"
               fontFamily="regular"
               color={Theme.colors.prodText}
-            >{pincode && deliveredBy.indexOf('Sorry') === 0 ? `Sorry, Undeliverable to ${pincode}` : deliveredBy}</Span>
-          </Div>}
+            >
+              {pincode && deliveredBy.indexOf('Sorry') === 0 ? `Sorry, Undeliverable to ${pincode}` : deliveredBy}
+            </DeliveredBySpan>
+          </DeliveredByWrapper>}
         </ProductInner>
       </Link>
       <QuickViewBtn onClick={onOpenQuickViewModal}>QUICK VIEW</QuickViewBtn>

@@ -101,7 +101,7 @@ const TitlePrice = ({
                   value={Number(ratings)}
                   half
                   edit={false}
-                  color2="#f98d29"
+                  color2="rgb(255, 215, 0)"
                 />
               </Div>
               <Div>
