@@ -9,6 +9,7 @@ const Label = styled.label`
   display: ${props => props.display};
   vertical-align: ${props => props.va};
 
+  ${props => props.fontWeight && { fontWeight: props.fontWeight }}
   ${props => props.position && { position: props.position }}
   ${props => props.top && { top: props.top }}
   ${props => props.bg && { background: props.bg }}

@@ -50,6 +50,9 @@ const ProductInner = styled(Div)`
   svg {
     vertical-align: middle;
   }
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    height: 110px;
+  }
 `;
 
 const ImgWrapper = styled.div`
