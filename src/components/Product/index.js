@@ -200,7 +200,7 @@ const Product = props => {
               lh="0.1"
               fontFamily="regular"
               color={Theme.colors.prodText}
-            >{deliveredBy.indexOf('Sorry') === 0 ? `We can't Deliver this product to ${pincode}` : deliveredBy}</Span>
+            >{pincode && deliveredBy.indexOf('Sorry') === 0 ? `Sorry, Undeliverable to ${pincode}` : deliveredBy}</Span>
           </Div>}
         </ProductInner>
       </Link>
@@ -215,7 +215,7 @@ Product.defaultProps = {
   onOpenQuickViewModal: () => {},
   colors: '',
   imgHeight: '270px',
-  pincode: ''
+  pincode: null
 };
 
 Product.propTypes = {
