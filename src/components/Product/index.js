@@ -130,7 +130,7 @@ const Product = props => {
   const {
     name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
     onClick, isWishList, col, skuLoading, onOpenQuickViewModal, deliveredBy, colors, imgHeight,
-    position, setProductPosition, productURL, simpleSku
+    position, setProductPosition, productURL, simpleSku, pincode
   } = props;
   const color = judgeColor(rating);
   return (
@@ -197,7 +197,7 @@ const Product = props => {
               lh="0.1"
               fontFamily="regular"
               color={Theme.colors.prodText}
-            >{deliveredBy}</Span>
+            >{deliveredBy.indexOf('Sorry') === 0 ? `We can't Deliver this product to ${pincode}` : deliveredBy}</Span>
           </Div>}
         </ProductInner>
       </Link>
@@ -212,6 +212,7 @@ Product.defaultProps = {
   onOpenQuickViewModal: () => {},
   colors: '',
   imgHeight: '270px',
+  pincode: ''
 };
 
 Product.propTypes = {
@@ -235,7 +236,8 @@ Product.propTypes = {
   position: PropTypes.string.isRequired,
   setProductPosition: PropTypes.func.isRequired,
   productURL: PropTypes.string.isRequired,
-  simpleSku: PropTypes.string.isRequired
+  simpleSku: PropTypes.string.isRequired,
+  pincode: PropTypes.string
 };
 
 export default Product;
