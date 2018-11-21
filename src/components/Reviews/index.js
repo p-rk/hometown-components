@@ -15,7 +15,7 @@ const Reviews = ({ reviewItems, col, pr }) => {
       p="0"
       pt="0"
       display="block"
-      mt="1rem"
+      mt="1.5rem"
     >
       <Container type="container" pl="1rem" pr="1rem">
         <Heading
@@ -23,9 +23,9 @@ const Reviews = ({ reviewItems, col, pr }) => {
           mt="0"
           color="textLight"
           fontSize="1em"
-          fontFamily="medium"
+          fontFamily="light"
         >
-      Reviews
+          Reviews
         </Heading>
         <Row display="block" m="0" mb="0">
           {reviewItems && reviewItems.map((review, index) => (

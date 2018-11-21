@@ -23,6 +23,9 @@ ul {
   li {
     font-size: 14px;
     margin-bottom: 5px;
+    @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+      font-size: 12px;
+    }
   }
 }
 `;
@@ -39,7 +42,7 @@ const ProductDesc = ({ desc, showmore, toggleShowMore }) => {
               mt="0rem"
               color="textLight"
               fontSize="1em"
-              fontFamily="medium"
+              fontFamily="light"
             >Description</Heading>
             <Description
               itemProp="description"
