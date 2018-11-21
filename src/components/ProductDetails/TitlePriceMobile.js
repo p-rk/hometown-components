@@ -16,12 +16,12 @@ const TitlePrice = ({
       <Row display="block" mr="0" ml="0">
         <Heading
           itemProp="name"
-          fontSize="1.125em"
+          fontSize="14px"
           color="textDark"
           mb="0"
           mt="0"
           lh="1.5"
-          fontFamily="regular"
+          fontFamily="light"
           ellipsis={false}
           pb="5px"
         >
@@ -38,7 +38,7 @@ const TitlePrice = ({
               mb="0px"
               pb="0"
               mt="0px"
-              fontFamily="medium"
+              fontFamily="regular"
               ellipsis={false}
             >
               <Span
@@ -60,7 +60,7 @@ const TitlePrice = ({
                 fontSize="0.875rem"
                 color="rgba(0, 0, 0, 0.4)"
                 ml="0.75rem"
-                fontFamily="regular"
+                fontFamily="light"
                 type="lt"
                 va="middle"
                 lh="2.2"
@@ -82,7 +82,7 @@ const TitlePrice = ({
                 fontSize="0.8125em"
                 color="rgba(0, 0, 0, 0.4)"
                 ml="0"
-                fontFamily="regular"
+                fontFamily="light"
                 va="middle"
               >Saving ₹ {savingsRs}
                 {' '}({savingsPercentage}% OFF)

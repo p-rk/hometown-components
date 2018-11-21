@@ -8,7 +8,7 @@ import WishlistBtn from 'components/WishlistBtn';
 import Rating from 'components/Rating';
 import ImageShimmer from 'components/ImageShimmer';
 import Theme from 'components/Theme';
-import colorIcon from '../../static/pantone.jpg';
+import colorIcon from '../../static/color-swatch.jpg';
 
 const ProductImg = styled.img`
   position: absolute;
@@ -86,12 +86,12 @@ const Colors = styled.span`
   position: absolute;
   right: 10px;
   bottom: 10px;
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 2px;
   color: rgba(0, 0, 0, 0.75);
   font-family: medium;
   img {
-    width: 70px;
+    width: 54px;
     margin-right: 5px;
     vertical-align: baseline;
   }
@@ -110,7 +110,7 @@ const Heading = styled.h3`
   padding-bottom: 2px;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     font-size: 0.75rem;
-    font-family: regular;
+    font-family: light;
   }
 `;
 
@@ -131,7 +131,7 @@ const CutPriceSpan = styled(Span)`
 const SavingSpan = styled(Span)`
   font-size: 0.75rem;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    font-size: 0.6875rem;
+    font-size: 9px;
   }
 `;
 
@@ -145,8 +145,8 @@ const DeliveredBySpan = styled(Span)`
 const SavingWrapper = styled(Div)`
   margin-bottom: 2px;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    margin-bottom: 0px;
-    margin-top: 4px;
+    margin-bottom: 2px;
+    margin-top: 6px;
   }
 `;
 
