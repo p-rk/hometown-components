@@ -77,6 +77,7 @@ const Button = styled.button`
 
   ${props => props.fontSize && { fontSize: props.fontSize }}
   ${props => props.height && { height: props.height }}
+  ${props => props.width && { width: props.width }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}
