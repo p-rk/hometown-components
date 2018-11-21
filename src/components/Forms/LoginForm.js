@@ -69,12 +69,12 @@ export default class LoginForm extends Component {
           </Div>
         </Row>
         <Row ml="0" mr="0" mt="1.25rem">
-          <Div col="8" pt="6px">
+          <Div col="8" pt="3px">
             <SignUpText color="textDark" mr="0.3126rem">
               Don't have an account?
             </SignUpText>
             <Link to={signupUrl}>
-              <Label color="primary">Sign Up</Label>
+              <Label color="primary" fontSize="13px">Sign Up</Label>
             </Link>
           </Div>
           <Div col="4">
@@ -82,7 +82,7 @@ export default class LoginForm extends Component {
               size="block"
               btnType="primary"
               fontFamily="regular"
-              height="42px"
+              height="36px"
               disabled={loginResponse.loggingIn}
               fontSize="0.875rem"
             >
