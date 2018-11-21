@@ -28,7 +28,7 @@ const colors = {
   textDark: 'rgba(0, 0, 0, 0.8)',
   textExtraDark: 'rgba(0, 0, 0, 0.9)',
   text515151: '#515151',
-  prodText: '#7f7f7f',
+  prodText: '#5a5a5a',
   block10: 'rgba(0, 0, 0, 0.10)',
   bg: '#f5f5f5',
   blockefefef: '#e1ded9',
