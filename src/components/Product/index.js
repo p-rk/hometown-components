@@ -110,7 +110,7 @@ const Heading = styled.h3`
   padding-bottom: 2px;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     font-size: 0.75rem;
-    font-family: regular;
+    font-family: light;
   }
 `;
 
@@ -131,7 +131,7 @@ const CutPriceSpan = styled(Span)`
 const SavingSpan = styled(Span)`
   font-size: 0.75rem;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    font-size: 0.6875rem;
+    font-size: 9px;
   }
 `;
 
@@ -145,8 +145,8 @@ const DeliveredBySpan = styled(Span)`
 const SavingWrapper = styled(Div)`
   margin-bottom: 2px;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    margin-bottom: 0px;
-    margin-top: 4px;
+    margin-bottom: 3px;
+    margin-top: 6px;
   }
 `;
 
