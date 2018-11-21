@@ -94,7 +94,7 @@ class WriteReview extends React.Component {
           {(addreview) &&
           <form onSubmit={this.handleSubmit}>
             <Div col={col} mt="0.5rem">
-              <Div mb="0.625rem">
+              <Div mb="0.3125rem">
                 <Label>Rating</Label>
                 <ReactStars
                   count={5}
@@ -105,7 +105,7 @@ class WriteReview extends React.Component {
                   color2="#ffd700"
                 />
               </Div>
-              <Div mb="0.625rem">
+              <Div mb="0.3125rem">
                 <FormInput
                   label="Name"
                   type="text"
@@ -117,7 +117,7 @@ class WriteReview extends React.Component {
                   onChange={this.handleChange}
                 />
               </Div>
-              <Div mb="1rem">
+              <Div mb="0.3125rem">
                 <FormInput
                   type="textarea"
                   label="Review"
