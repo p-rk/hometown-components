@@ -8,7 +8,7 @@ import WishlistBtn from 'components/WishlistBtn';
 import Rating from 'components/Rating';
 import ImageShimmer from 'components/ImageShimmer';
 import Theme from 'components/Theme';
-import colorIcon from '../../static/pantone.jpg';
+import colorIcon from '../../static/color-swatch.jpg';
 
 const ProductImg = styled.img`
   position: absolute;
@@ -86,12 +86,12 @@ const Colors = styled.span`
   position: absolute;
   right: 10px;
   bottom: 10px;
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 2px;
   color: rgba(0, 0, 0, 0.75);
   font-family: medium;
   img {
-    width: 70px;
+    width: 54px;
     margin-right: 5px;
     vertical-align: baseline;
   }
