@@ -99,7 +99,7 @@ const Button = styled.button`
   }}
   ${props => props.btnType === 'btnOutline' && {
     background: props.color,
-    color: props.bg
+    color: props.hoverColor
   }}
     span {
       ${props => props.btnType === 'btnOutline' && {
