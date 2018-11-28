@@ -93,13 +93,13 @@ const Button = styled.button`
   ${props => props.tt && { textTransform: props.tt }}
 
   &:hover {
+    color: ${props => props.hoverColor};
     ${props => props.btnType === 'link' && {
     background: 'transparent',
     color: '#f98d29'
   }}
   ${props => props.btnType === 'btnOutline' && {
-    background: props.color,
-    color: props.bg
+    background: props.color
   }}
     span {
       ${props => props.btnType === 'btnOutline' && {
