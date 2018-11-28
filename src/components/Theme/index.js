@@ -58,6 +58,7 @@ const colors = {
   mkFormHeading: '#5e5e5e',
   linkBlue: '#3cc0dc',
   reloadRibbion: '#009f8c',
+  callusTitle: '#5c5c5c',
   gray: [
     '#f8f9fa',
     '#e9ecef',

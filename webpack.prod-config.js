@@ -68,6 +68,7 @@ module.exports = {
     'Forms/ModularKitchenForm': './src/components/Forms/ModularKitchenForm',
     'Extend/index': './src/components/Extend/',
     'LoadMore/index': './src/components/LoadMore/',
+    'Callus/index': './src/components/Callus/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
