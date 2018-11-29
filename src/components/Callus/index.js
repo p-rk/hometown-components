@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Div from 'components/Div';
 import Row from 'components/Row';
 import Button from 'components/Buttons';
@@ -35,7 +35,9 @@ const OrWrapper = styled(Div)`
   }
 `;
 
-const Callus = () => (
+const Callus = ({
+  onSubmitCallUs, onChangePhone, phone, loading, loaded, error
+}) => (
   <CallusWrapper ta="left" p="10px">
     <Div>
       <Label fontSize="12px" color="callusTitle">Call us</Label>
@@ -49,11 +51,13 @@ const Callus = () => (
       <Label fontSize="14px" color="callusTitle">or</Label>
     </OrWrapper>
     <Div>
-      <form>
+      {(!loaded || error) && <form onSubmit={onSubmitCallUs}>
         <FormInput
           label="Let us call you back"
           type="text"
           placeholder=""
+          value={phone}
+          onChange={onChangePhone}
         />
         <Row ml="0" mr="0" mt="0.625rem">
           <Div col="12">
@@ -66,14 +70,26 @@ const Callus = () => (
               fontFamily="regular"
               height="42px"
               p=".25rem  1rem !important"
+              disable={loading}
             >
               Get a call back
             </CallUsButton>
           </Div>
         </Row>
-      </form>
+      </form>}
+      {loaded && !error && <div>Thank you ! We'll get to you shortly</div>}
+
     </Div>
   </CallusWrapper>
 );
 
 export default Callus;
+
+Callus.propTypes = {
+  onSubmitCallUs: PropTypes.func.isRequired,
+  onChangePhone: PropTypes.func.isRequired,
+  phone: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired,
+  loaded: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired
+};
