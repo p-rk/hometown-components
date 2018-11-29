@@ -12,6 +12,7 @@ module.exports = {
     'Icons/WishListIcon': './src/components/Icons/WishListIcon',
     'Empty/index': './src/components/Empty/',
     'Heading/index': './src/components/Heading/',
+    'HeadingH3/index': './src/components/HeadingH3/',
     'Icons/Fav': './src/components/Icons/Fav',
     'Icons/GotoCart': './src/components/Icons/GotoCart',
     'Icons/Refresh': './src/components/Icons/Refresh',
