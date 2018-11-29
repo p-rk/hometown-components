@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Heading = styled.h3`
+const Heading = styled.h4`
   ${props => props.ellipsis && {
     whiteSpace: 'nowrap',
     overflow: 'hidden',
