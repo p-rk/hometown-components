@@ -167,7 +167,7 @@ const RatingWrapperXs = styled(Span)`
 `;
 
 const RatingWrapperLg = styled(Span)`
-  display: block;
+  display: inline-block;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     display: none;
   }
@@ -261,7 +261,6 @@ const Product = props => {
           </SavingWrapper>
           {deliveredBy && <DeliveredByWrapper>
             <DeliveredBySpan
-              fontSize={deliveredBy.indexOf('Sorry') === 0 ? '0.65rem' : '0.75rem'}
               lh="0.1"
               fontFamily="regular"
               color={Theme.colors.prodText}
