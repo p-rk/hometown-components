@@ -146,7 +146,7 @@ const DeliveredBySpan = styled(Span)`
 
 const SavingWrapper = styled(Div)`
   margin-bottom: 0;
-  margin-top: 2px;
+  margin-top: 0px;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     margin-bottom: 1px;
     margin-top: 4px;
