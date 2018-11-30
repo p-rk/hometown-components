@@ -7,8 +7,10 @@ import Span from 'components/Span';
 import WishlistBtn from 'components/WishlistBtn';
 import Rating from 'components/Rating';
 import ImageShimmer from 'components/ImageShimmer';
+import Img from 'components/Img';
 import Theme from 'components/Theme';
 import colorIcon from '../../static/color-swatch.jpg';
+import truck from '../../static/truck.svg';
 
 const ProductImg = styled.img`
   position: absolute;
@@ -143,14 +145,16 @@ const DeliveredBySpan = styled(Span)`
 `;
 
 const SavingWrapper = styled(Div)`
-  margin-bottom: 2px;
+  margin-bottom: 0;
+  margin-top: 2px;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    margin-bottom: 2px;
-    margin-top: 6px;
+    margin-bottom: 1px;
+    margin-top: 4px;
   }
 `;
 
 const DeliveredByWrapper = styled(Div)`
+  margin-bottom: 5px;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     margin-bottom: 5px;
   }
@@ -265,6 +269,16 @@ const Product = props => {
               fontFamily="regular"
               color={Theme.colors.prodText}
             >
+              <Img
+                width="initial"
+                height="18px"
+                mr="0.5rem"
+                position="relative"
+                top="4px"
+                display="inline-block"
+                float="none"
+                src={truck}
+              />
               {pincode && deliveredBy.indexOf('Sorry') === 0 ? `Sorry, Undeliverable to ${pincode}` : deliveredBy}
             </DeliveredBySpan>
           </DeliveredByWrapper>}
