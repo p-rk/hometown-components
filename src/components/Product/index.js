@@ -34,6 +34,9 @@ const ProductWrapper = styled.div`
   margin-left: 0;
   display: initial;
   box-sizing: border-box;
+  @media (max-width: ${props => props.theme.breakpoints('xs')}) {
+    text-align: left;
+  }
   &:hover {
     button {
       @media (min-width: ${props => props.theme.breakpoints('md')}) {
@@ -52,7 +55,7 @@ const ProductInner = styled(Div)`
     vertical-align: middle;
   }
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    padding: 0.25rem 0.25rem 0.25rem;
+    padding: 0.25rem 0.625rem 0.25rem;
   }
 `;
 
@@ -87,7 +90,7 @@ const QuickViewBtn = styled.button`
 const Colors = styled.span`
   position: absolute;
   right: 10px;
-  bottom: 10px;
+  bottom: 5px;
   font-size: 12px;
   margin-top: 2px;
   color: rgba(0, 0, 0, 0.75);
@@ -104,15 +107,15 @@ const Heading = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 0.875rem;
-  font-family: medium;
+  font-family: light;
   line-height: 1.2;
   color: #515151;
   margin-top: 0.3125em;
   margin-bottom: 0;
   padding-bottom: 2px;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    font-size: 0.75rem;
-    font-family: light;
+    font-size: 11px;
+    color: #656565;
   }
 `;
 
@@ -132,9 +135,6 @@ const CutPriceSpan = styled(Span)`
 
 const SavingSpan = styled(Span)`
   font-size: 0.75rem;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    font-size: 9px;
-  }
 `;
 
 const DeliveredBySpan = styled(Span)`
@@ -148,8 +148,8 @@ const SavingWrapper = styled(Div)`
   margin-bottom: 0;
   margin-top: 0px;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    margin-bottom: 1px;
-    margin-top: 4px;
+    margin-bottom: 0;
+    margin-top: 7px;
   }
 `;
 
@@ -160,14 +160,10 @@ const DeliveredByWrapper = styled(Div)`
   }
 `;
 
-const RatingWrapperXs = styled(Span)`
-  display: none;
+const SavingOff = styled(Span)`
   position: absolute;
   left: 5px;
   bottom: 6px;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    display: block;
-  }
 `;
 
 const RatingWrapperLg = styled(Span)`
@@ -225,13 +221,11 @@ const Product = props => {
             {colors}
           </Colors>
           }
-          {rating > 0 && (
-            <RatingWrapperXs>
-              <Rating color={color} rating={rating}>★ {rating}</Rating>
-            </RatingWrapperXs>
-          )}
+          <SavingOff>
+            {saving.replace('-', '')} OFF
+          </SavingOff>
         </ImgWrapper>
-        <ProductInner p="0.25rem 0 0.25rem">
+        <ProductInner p="0.25rem 0.3125rem 0.25rem">
           <Heading>{name}</Heading>
           <Div mb="2px">
             <PriceSpan
@@ -244,23 +238,11 @@ const Product = props => {
               fontFamily="regular"
               color={Theme.colors.prodText}
             ><s>{cutprice}</s></CutPriceSpan>}
-            {rating > 0 && (
-              <RatingWrapperLg ml="0.3125rem">
-                <Rating color={color} rating={rating}>★ {rating}</Rating>
-                <Span
-                  mr="0.625rem"
-                  fontSize="0.75rem"
-                  lh="1.7"
-                  va="bottom"
-                  color={Theme.colors.textExtraLight}
-                >({reviewsCount})</Span>
-              </RatingWrapperLg>
-            )}
           </Div>
           <SavingWrapper>
             { (saving !== '-0%' && Number(savingAmount) !== 0 && saving !== '') &&
               <SavingSpan fontFamily="regular" color={Theme.colors.prodText}>
-                Savings Rs. {savingAmount} ({saving.replace('-', '')} OFF)
+                Savings Rs. {savingAmount}
               </SavingSpan> }
           </SavingWrapper>
           {deliveredBy && <DeliveredByWrapper>
@@ -269,7 +251,7 @@ const Product = props => {
               fontFamily="regular"
               color={Theme.colors.prodText}
             >
-              <Img
+              {deliveredBy.indexOf('Sorry') !== 0 && <Img
                 width="initial"
                 height="18px"
                 mr="0.5rem"
@@ -278,7 +260,7 @@ const Product = props => {
                 display="inline-block"
                 float="none"
                 src={truck}
-              />
+              />}
               {pincode && deliveredBy.indexOf('Sorry') === 0 ? `Sorry, Undeliverable to ${pincode}` : deliveredBy}
             </DeliveredBySpan>
           </DeliveredByWrapper>}
