@@ -239,12 +239,6 @@ const Product = props => {
               color={Theme.colors.prodText}
             ><s>{cutprice}</s></CutPriceSpan>}
           </Div>
-          <SavingWrapper>
-            { (saving !== '-0%' && Number(savingAmount) !== 0 && saving !== '') &&
-              <SavingSpan fontFamily="regular" color={Theme.colors.prodText}>
-                Savings Rs. {savingAmount}
-              </SavingSpan> }
-          </SavingWrapper>
           {deliveredBy && <DeliveredByWrapper>
             <DeliveredBySpan
               lh="0.1"
