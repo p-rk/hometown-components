@@ -49,7 +49,7 @@ const ProductWrapper = styled.div`
 
 const ProductInner = styled(Div)`
   padding: 0.25rem 0 0.25rem;
-  height: 80px;
+  height: 75px;
   svg {
     vertical-align: middle;
   }
