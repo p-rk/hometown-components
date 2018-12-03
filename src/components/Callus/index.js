@@ -77,7 +77,10 @@ const Callus = ({
           </Div>
         </Row>
       </form>}
-      {loaded && !error && <div>Thank you ! We'll get to you shortly</div>}
+      {loaded && !error && <Div>
+        <Label color="error" fontWeight="500">Thank you ! We'll get to you shortly</Label>
+      </Div>
+      }
 
     </Div>
   </CallusWrapper>
