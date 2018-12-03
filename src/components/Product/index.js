@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import Div from 'components/Div';
 import Span from 'components/Span';
 import WishlistBtn from 'components/WishlistBtn';
-import Rating from 'components/Rating';
 import ImageShimmer from 'components/ImageShimmer';
 import Img from 'components/Img';
 import Theme from 'components/Theme';
@@ -50,7 +49,7 @@ const ProductWrapper = styled.div`
 
 const ProductInner = styled(Div)`
   padding: 0.25rem 0 0.25rem;
-  height: 90px;
+  height: 80px;
   svg {
     vertical-align: middle;
   }
@@ -133,10 +132,6 @@ const CutPriceSpan = styled(Span)`
   }
 `;
 
-const SavingSpan = styled(Span)`
-  font-size: 0.75rem;
-`;
-
 const DeliveredBySpan = styled(Span)`
   font-size: 0.75rem;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
@@ -144,60 +139,27 @@ const DeliveredBySpan = styled(Span)`
   }
 `;
 
-const SavingWrapper = styled(Div)`
-  margin-bottom: 0;
-  margin-top: 0px;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    margin-bottom: 0;
-    margin-top: 7px;
-  }
-`;
-
 const DeliveredByWrapper = styled(Div)`
   margin-bottom: 5px;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    margin-bottom: 5px;
-  }
+  margin-top: 5px;
 `;
 
 const SavingOff = styled(Span)`
   position: absolute;
-  left: 5px;
-  bottom: 6px;
-`;
-
-const RatingWrapperLg = styled(Span)`
-  display: inline-block;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    display: none;
-  }
+  left: 0;
+  bottom: 0;
+  background: #388E3C;
 `;
 
 const handleClick = (dispatcher, position = 0) => () => {
   dispatcher(position + 1);
 };
-const judgeColor = rating => {
-  if (!rating) {
-    return '';
-  }
-  rating = parseInt(rating, 10);
-  if (rating < 2) {
-    return '#dc3545';
-  }
-  if (rating >= 2 && rating < 3) {
-    return '#f5a623';
-  }
-  if (rating >= 3) {
-    return '#28a745';
-  }
-};
 const Product = props => {
   const {
-    name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
+    name, image, price, cutprice, saving, sku,
     onClick, isWishList, col, skuLoading, onOpenQuickViewModal, deliveredBy, colors, imgHeight,
     position, setProductPosition, productURL, simpleSku, pincode
   } = props;
-  const color = judgeColor(rating);
   return (
     <ProductWrapper col={col}>
       <WishlistBtn
@@ -221,7 +183,12 @@ const Product = props => {
             {colors}
           </Colors>
           }
-          <SavingOff>
+          <SavingOff
+            fontSize="10px"
+            fontFamily="medium"
+            color="#FFF"
+            p="5px 5px"
+          >
             {saving.replace('-', '')} OFF
           </SavingOff>
         </ImgWrapper>
@@ -279,11 +246,8 @@ Product.propTypes = {
   price: PropTypes.string.isRequired,
   cutprice: PropTypes.string.isRequired,
   saving: PropTypes.string.isRequired,
-  savingAmount: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   sku: PropTypes.string.isRequired,
-  rating: PropTypes.number.isRequired,
-  reviewsCount: PropTypes.number.isRequired,
   isWishList: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   onOpenQuickViewModal: PropTypes.func,
