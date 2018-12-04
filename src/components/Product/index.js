@@ -183,14 +183,16 @@ const Product = props => {
             {colors}
           </Colors>
           }
-          <SavingOff
-            fontSize="10px"
-            fontFamily="medium"
-            color="#FFF"
-            p="5px 5px"
-          >
-            {saving.replace('-', '')} OFF
-          </SavingOff>
+          {saving &&
+            <SavingOff
+              fontSize="10px"
+              fontFamily="medium"
+              color="#FFF"
+              p="5px 5px"
+            >
+              {saving.replace('-', '')} OFF
+            </SavingOff>
+          }
         </ImgWrapper>
         <ProductInner p="0.25rem 0.3125rem 0.25rem">
           <Heading>{name}</Heading>
