@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import Div from 'components/Div';
 import Span from 'components/Span';
 import WishlistBtn from 'components/WishlistBtn';
-import Rating from 'components/Rating';
 import ImageShimmer from 'components/ImageShimmer';
 import Img from 'components/Img';
 import Theme from 'components/Theme';
@@ -34,6 +33,9 @@ const ProductWrapper = styled.div`
   margin-left: 0;
   display: initial;
   box-sizing: border-box;
+  @media (max-width: ${props => props.theme.breakpoints('xs')}) {
+    text-align: left;
+  }
   &:hover {
     button {
       @media (min-width: ${props => props.theme.breakpoints('md')}) {
@@ -47,12 +49,12 @@ const ProductWrapper = styled.div`
 
 const ProductInner = styled(Div)`
   padding: 0.25rem 0 0.25rem;
-  height: 90px;
+  height: 75px;
   svg {
     vertical-align: middle;
   }
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    padding: 0.25rem 0.25rem 0.25rem;
+    padding: 0.25rem 0.625rem 0.25rem;
   }
 `;
 
@@ -87,7 +89,7 @@ const QuickViewBtn = styled.button`
 const Colors = styled.span`
   position: absolute;
   right: 10px;
-  bottom: 10px;
+  bottom: 5px;
   font-size: 12px;
   margin-top: 2px;
   color: rgba(0, 0, 0, 0.75);
@@ -104,15 +106,15 @@ const Heading = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 0.875rem;
-  font-family: medium;
+  font-family: light;
   line-height: 1.2;
   color: #515151;
   margin-top: 0.3125em;
   margin-bottom: 0;
   padding-bottom: 2px;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    font-size: 0.75rem;
-    font-family: light;
+    font-size: 11px;
+    color: #656565;
   }
 `;
 
@@ -130,13 +132,6 @@ const CutPriceSpan = styled(Span)`
   }
 `;
 
-const SavingSpan = styled(Span)`
-  font-size: 0.75rem;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    font-size: 9px;
-  }
-`;
-
 const DeliveredBySpan = styled(Span)`
   font-size: 0.75rem;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
@@ -144,64 +139,27 @@ const DeliveredBySpan = styled(Span)`
   }
 `;
 
-const SavingWrapper = styled(Div)`
-  margin-bottom: 0;
-  margin-top: 0px;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    margin-bottom: 1px;
-    margin-top: 4px;
-  }
-`;
-
 const DeliveredByWrapper = styled(Div)`
   margin-bottom: 5px;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    margin-bottom: 5px;
-  }
+  margin-top: 5px;
 `;
 
-const RatingWrapperXs = styled(Span)`
-  display: none;
+const SavingOff = styled(Span)`
   position: absolute;
-  left: 5px;
-  bottom: 6px;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    display: block;
-  }
-`;
-
-const RatingWrapperLg = styled(Span)`
-  display: inline-block;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    display: none;
-  }
+  left: 0;
+  bottom: 0;
+  background: #388E3C;
 `;
 
 const handleClick = (dispatcher, position = 0) => () => {
   dispatcher(position + 1);
 };
-const judgeColor = rating => {
-  if (!rating) {
-    return '';
-  }
-  rating = parseInt(rating, 10);
-  if (rating < 2) {
-    return '#dc3545';
-  }
-  if (rating >= 2 && rating < 3) {
-    return '#f5a623';
-  }
-  if (rating >= 3) {
-    return '#28a745';
-  }
-};
 const Product = props => {
   const {
-    name, image, price, cutprice, saving, sku, rating, reviewsCount, savingAmount,
+    name, image, price, cutprice, saving, sku,
     onClick, isWishList, col, skuLoading, onOpenQuickViewModal, deliveredBy, colors, imgHeight,
     position, setProductPosition, productURL, simpleSku, pincode
   } = props;
-  const color = judgeColor(rating);
   return (
     <ProductWrapper col={col}>
       <WishlistBtn
@@ -225,13 +183,16 @@ const Product = props => {
             {colors}
           </Colors>
           }
-          {rating > 0 && (
-            <RatingWrapperXs>
-              <Rating color={color} rating={rating}>★ {rating}</Rating>
-            </RatingWrapperXs>
-          )}
+          <SavingOff
+            fontSize="10px"
+            fontFamily="medium"
+            color="#FFF"
+            p="5px 5px"
+          >
+            {saving.replace('-', '')} OFF
+          </SavingOff>
         </ImgWrapper>
-        <ProductInner p="0.25rem 0 0.25rem">
+        <ProductInner p="0.25rem 0.3125rem 0.25rem">
           <Heading>{name}</Heading>
           <Div mb="2px">
             <PriceSpan
@@ -244,32 +205,14 @@ const Product = props => {
               fontFamily="regular"
               color={Theme.colors.prodText}
             ><s>{cutprice}</s></CutPriceSpan>}
-            {rating > 0 && (
-              <RatingWrapperLg ml="0.3125rem">
-                <Rating color={color} rating={rating}>★ {rating}</Rating>
-                <Span
-                  mr="0.625rem"
-                  fontSize="0.75rem"
-                  lh="1.7"
-                  va="bottom"
-                  color={Theme.colors.textExtraLight}
-                >({reviewsCount})</Span>
-              </RatingWrapperLg>
-            )}
           </Div>
-          <SavingWrapper>
-            { (saving !== '-0%' && Number(savingAmount) !== 0 && saving !== '') &&
-              <SavingSpan fontFamily="regular" color={Theme.colors.prodText}>
-                Savings Rs. {savingAmount} ({saving.replace('-', '')} OFF)
-              </SavingSpan> }
-          </SavingWrapper>
           {deliveredBy && <DeliveredByWrapper>
             <DeliveredBySpan
               lh="0.1"
               fontFamily="regular"
               color={Theme.colors.prodText}
             >
-              <Img
+              {deliveredBy.indexOf('Sorry') !== 0 && <Img
                 width="initial"
                 height="18px"
                 mr="0.5rem"
@@ -278,7 +221,7 @@ const Product = props => {
                 display="inline-block"
                 float="none"
                 src={truck}
-              />
+              />}
               {pincode && deliveredBy.indexOf('Sorry') === 0 ? `Sorry, Undeliverable to ${pincode}` : deliveredBy}
             </DeliveredBySpan>
           </DeliveredByWrapper>}
@@ -303,11 +246,8 @@ Product.propTypes = {
   price: PropTypes.string.isRequired,
   cutprice: PropTypes.string.isRequired,
   saving: PropTypes.string.isRequired,
-  savingAmount: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   sku: PropTypes.string.isRequired,
-  rating: PropTypes.number.isRequired,
-  reviewsCount: PropTypes.number.isRequired,
   isWishList: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   onOpenQuickViewModal: PropTypes.func,
