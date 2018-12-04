@@ -52,7 +52,13 @@ const Btn = styled(Link)`
 const CustomHeading = styled(Heading)`
   font-size: 1.6rem;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    font-size: 1.25rem;
+    font-size: 1.25rem !important;
+  }
+`;
+
+const TextExtend = styled(Text)`
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    font-size: 0.875rem !important;
   }
 `;
 
@@ -73,7 +79,12 @@ const EmptyPages = ({
             mt="1rem"
             lh="1.5"
           >{title}</CustomHeading>
-          <Text ta="center" fontSize="1.125rem" color="rgba(93, 91, 91, 0.75)" mb="0.625rem">{subTitle}</Text>
+          <TextExtend
+            ta="center"
+            fontSize="1.125rem"
+            color="rgba(93, 91, 91, 0.75)"
+            mb="0.625rem"
+          >{subTitle}</TextExtend>
         </Div>
         <Div mt="1rem">
           {btnName && <Btn alt={btnName} to={url}>{btnName}</Btn>}
