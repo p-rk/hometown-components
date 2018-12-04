@@ -27,15 +27,12 @@ const ProductWrapper = styled.div`
   width: ${props => props.theme.col[props.col]};
   float: left;
   position: relative;
-  text-align: center;
+  text-align: left;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
   display: initial;
   box-sizing: border-box;
-  @media (max-width: ${props => props.theme.breakpoints('xs')}) {
-    text-align: left;
-  }
   &:hover {
     button {
       @media (min-width: ${props => props.theme.breakpoints('md')}) {
@@ -111,7 +108,7 @@ const Heading = styled.h3`
   color: #515151;
   margin-top: 0.3125em;
   margin-bottom: 0;
-  padding-bottom: 2px;
+  padding-bottom: 6px;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     font-size: 11px;
     color: #656565;
