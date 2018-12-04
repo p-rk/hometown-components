@@ -10,7 +10,7 @@ import Div from 'components/Div';
 import ReactStars from 'react-stars';
 
 const TitlePrice = ({
-  name, price, discPrice, savingsRs, savingsPercentage, count, ratings
+  name, price, discPrice, savingsRs, savingsPercentage, count, ratings, onClickReviews
 }) => (
   <Section mb="0.3125rem" p="0">
     <Container type="container" pr="1rem" pl="1rem">
@@ -94,7 +94,7 @@ const TitlePrice = ({
           <Div col="3" ta="right">
             {ratings !== 0 &&
             <Row display="block" mr="0" ml="0">
-              <Div right="-10px">
+              <Div right="-10px" onClick={onClickReviews}>
                 <ReactStars
                   count={5}
                   className="ratings"
@@ -136,6 +136,7 @@ TitlePrice.propTypes = {
   savingsRs: PropTypes.string,
   ratings: PropTypes.number,
   count: PropTypes.number,
+  onClickReviews: PropTypes.func
 };
 
 TitlePrice.defaultProps = {
@@ -145,7 +146,8 @@ TitlePrice.defaultProps = {
   savingsPercentage: '',
   savingsRs: '',
   count: 0,
-  ratings: 0
+  ratings: 0,
+  onClickReviews: () => {}
 };
 
 export default TitlePrice;

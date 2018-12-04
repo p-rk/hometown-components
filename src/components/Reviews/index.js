@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Row from 'components/Row';
-import Heading from 'components/Heading';
+import HeadingH6 from 'components/HeadingH6';
 import Container from 'components/Container';
 import Section from 'components/Section';
 import ReviewItem from 'components/Reviews/ReviewItem';
@@ -18,7 +18,7 @@ const Reviews = ({ reviewItems, col, pr }) => {
       mt="1.5rem"
     >
       <Container type="container" pl="1rem" pr="1rem">
-        <Heading
+        <HeadingH6
           mb="1rem"
           mt="0"
           color="textLight"
@@ -26,7 +26,7 @@ const Reviews = ({ reviewItems, col, pr }) => {
           fontFamily="light"
         >
           Reviews
-        </Heading>
+        </HeadingH6>
         <Row display="block" m="0" mb="0">
           {reviewItems && reviewItems.map((review, index) => (
             <ReviewItem col={col} review={review} key={String(index)} pr={pr} />

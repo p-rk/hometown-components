@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Heading from 'components/Heading';
+import HeadingH6 from 'components/HeadingH6';
 import Div from 'components/Div';
 import Text from 'components/Text';
 import Span from 'components/Span';
@@ -34,9 +34,9 @@ const ReviewsItems = ({ review, col, pr }) =>
   // const color = judgeColor(review.options[0].option_value);
   (
     <ReviewsItemsWrapper col={col} display="block" m="0" mb="0.9375rem" pr={pr} pb="0.625rem">
-      <Heading fontSize="0.875rem" color="secondary" mb="0" pb="5px" mt="0" fontFamily="light">
+      <HeadingH6 fontSize="0.875rem" color="secondary" mb="0" pb="5px" mt="0" fontFamily="light">
         {review.nickname || review.customer_name || null}
-      </Heading>
+      </HeadingH6>
       <Div>
         <ReactStars
           count={5}
