@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Row from 'components/Row';
 import Img from 'components/Img';
+import Button from 'components/Buttons';
+import Div from 'components/Div';
 import { Link } from 'react-router-dom';
 import ImageShimmer from 'components/ImageShimmer';
 
@@ -31,23 +33,44 @@ const ImgWrapper = styled.div`
   border: 1px solid rgba(221, 221, 221, 0.38);
 `;
 
+const ColorOptions = styled(Div)`
+  max-height: 150px;
+  overflow: auto;
+  ${props => props.active && {
+    maxHeight: 'inherit'
+  }
+}
+`;
+
 const urlName = name => name.split(' ').join('-').toLowerCase();
 
 const ColorOption = ({ data }) => (
-  <Row mr="0" ml="0" display="block">
-    {data.map((item, index) => (
-      <LinkCustom to={`/${urlName(item.meta.name)}/sku/${item.groupedattributes.sku}`} key={String(index)}>
-        <ImgWrapper>
-          <ImageShimmer src={`${item.image}.jpg`} height="60px">
-            {imageURL => (<ProductImg
-              src={imageURL}
-              alt={item.meta.name}
-              width="60px"
-            />)}
-          </ImageShimmer>
-        </ImgWrapper>
-      </LinkCustom>
-    ))}
+  <Row mr="0" ml="0" mb="1rem" display="block">
+    <ColorOptions active={false}>
+      {data.map((item, index) => (
+        <LinkCustom to={`/${urlName(item.meta.name)}/sku/${item.groupedattributes.sku}`} key={String(index)}>
+          <ImgWrapper>
+            <ImageShimmer src={`${item.image}.jpg`} height="60px">
+              {imageURL => (<ProductImg
+                src={imageURL}
+                alt={item.meta.name}
+                width="60px"
+              />)}
+            </ImageShimmer>
+          </ImgWrapper>
+        </LinkCustom>
+      ))}
+    </ColorOptions>
+    <Div>
+      <Button
+        btnType="link"
+        size="block"
+        ta="right"
+        color="#f98d29"
+        pt="15px"
+        pr="64px"
+      >Show More Products</Button>
+    </Div>
   </Row>
 );
 
