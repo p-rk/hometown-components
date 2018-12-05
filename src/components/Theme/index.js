@@ -59,6 +59,7 @@ const colors = {
   linkBlue: '#3cc0dc',
   reloadRibbion: '#009f8c',
   callusTitle: '#5c5c5c',
+  plusIcon: 'rgb(177, 177, 177)',
   gray: [
     '#f8f9fa',
     '#e9ecef',

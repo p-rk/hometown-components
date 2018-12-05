@@ -92,7 +92,7 @@ const TitlePrice = ({
           </Div>
           <Div col="12" ta="right" mt="2px">
             {ratings !== 0 &&
-            <Row display="block" mr="0" ml="0" >
+            <Row display="block" mr="-44px" ml="0" >
               <Div col="12" onClick={onClickReviews}>
                 <ReactStars
                   count={5}

@@ -50,7 +50,7 @@ const Btn = styled(Link)`
 `;
 
 const CustomHeading = styled(Heading)`
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     font-size: 1.25rem !important;
   }
@@ -58,35 +58,38 @@ const CustomHeading = styled(Heading)`
 
 const TextExtend = styled(Text)`
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    font-size: 0.875rem !important;
+    font-size: 1rem !important;
   }
 `;
 
 const EmptyPages = ({
-  title, subTitle, btnName, url, bg, children, height
+  title, subTitle, btnName, url, bg, children, height, subTitleWidth
 }) => (
   <EmptyPageContainer bg={bg} height={height}>
     <EmptyPageWrapper>
       <Row m="0">
         <Div>
-          {children}
           <CustomHeading
             color="text"
             ellipsis={false}
             fontFamily="medium"
-            fontSize="1.6rem"
-            mb="0.625rem"
-            mt="1rem"
+            fontSize="1.8rem"
+            mb="0"
+            mt="0"
             lh="1.5"
           >{title}</CustomHeading>
+          {children}
           <TextExtend
             ta="center"
             fontSize="1.125rem"
-            color="rgba(93, 91, 91, 0.75)"
+            color="rgba(93, 91, 91, 0.9)"
+            ml="auto"
+            mr="auto"
             mb="0.625rem"
+            subTitleWidth={subTitleWidth}
           >{subTitle}</TextExtend>
         </Div>
-        <Div mt="1rem">
+        <Div mt="1.5rem">
           {btnName && <Btn alt={btnName} to={url}>{btnName}</Btn>}
         </Div>
       </Row>
@@ -95,7 +98,8 @@ const EmptyPages = ({
 );
 
 EmptyPages.defaultProps = {
-  height: '55vh'
+  height: '55vh',
+  subTitleWidth: '100%'
 };
 
 EmptyPages.propTypes = {
@@ -105,6 +109,7 @@ EmptyPages.propTypes = {
   url: PropTypes.string.isRequired,
   bg: PropTypes.string.isRequired,
   height: PropTypes.string,
+  subTitleWidth: PropTypes.string,
   children: PropTypes.any.isRequired
 };
 
