@@ -8,6 +8,7 @@ const defaultImage = require('../../static/placeholder.jpg');
 const ImagePlaceHolderWrapper = styled.div`
   height: ${props => props.height};
   position: relative;
+  overflow: auto;
   ${props => props.width && { width: props.width }}
 `;
 
