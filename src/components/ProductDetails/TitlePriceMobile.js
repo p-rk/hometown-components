@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Container from 'components/Container';
 import Heading from 'components/Heading';
+import HeadingH5 from 'components/HeadingH5';
 import Row from 'components/Row';
 import Span from 'components/Span';
 import Section from 'components/Section';
@@ -29,7 +30,7 @@ const TitlePrice = ({
         </Heading>
         <Row display="block" mr="0" ml="0">
           <Div col="12">
-            <Heading
+            <HeadingH5
               itemProp="offers"
               itemScope
               itemType="http://schema.org/Offer"
@@ -66,8 +67,8 @@ const TitlePrice = ({
                 lh="2.2"
               >₹ {price}</Span>
               }
-            </Heading>
-            <Heading
+            </HeadingH5>
+            <HeadingH5
               itemScope
               itemType=""
               fontSize="1rem"
@@ -88,7 +89,7 @@ const TitlePrice = ({
                 {' '}({savingsPercentage}% OFF)
               </Span>
               }
-            </Heading>
+            </HeadingH5>
           </Div>
           <Div col="12" ta="right" mt="2px">
             {ratings !== 0 &&
