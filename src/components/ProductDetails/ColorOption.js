@@ -44,11 +44,16 @@ const ColorOptions = styled(Div)`
 
 const urlName = name => name.split(' ').join('-').toLowerCase();
 
-const ColorOption = ({ data }) => (
+const ColorOption = ({
+  data, toggleShowMoreColorProducts, showmorecolorproducts
+}) => (
   <Row mr="0" ml="0" mb="1rem" display="block">
-    <ColorOptions active={false}>
+    <ColorOptions active={!showmorecolorproducts}>
       {data.map((item, index) => (
-        <LinkCustom to={`/${urlName(item.meta.name)}/sku/${item.groupedattributes.sku}`} key={String(index)}>
+        <LinkCustom
+          to={`/${urlName(item.meta.name)}/sku/${item.groupedattributes.sku}`}
+          key={String(index)}
+        >
           <ImgWrapper>
             <ImageShimmer src={`${item.image}.jpg`} height="60px">
               {imageURL => (<ProductImg
@@ -61,7 +66,7 @@ const ColorOption = ({ data }) => (
         </LinkCustom>
       ))}
     </ColorOptions>
-    <Div>
+    {data.length > 5 && <Div>
       <Button
         btnType="link"
         size="block"
@@ -69,13 +74,20 @@ const ColorOption = ({ data }) => (
         color="#f98d29"
         pt="15px"
         pr="64px"
-      >Show More Products</Button>
-    </Div>
+        onClick={toggleShowMoreColorProducts}
+      >{showmorecolorproducts ? 'Show More Products' : 'Show Less'}</Button>
+    </Div>}
   </Row>
 );
-
+ColorOption.defaultProps = {
+  showmorecolorproducts: true,
+  toggleShowMoreColorProducts: () => {}
+};
 ColorOption.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  showmorecolorproducts: PropTypes.bool,
+  toggleShowMoreColorProducts: PropTypes.func,
+
 };
 
 export default ColorOption;
