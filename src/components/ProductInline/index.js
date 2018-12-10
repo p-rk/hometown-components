@@ -41,13 +41,13 @@ const ProductInline = ({
               {unitPrice !== specialPrice && specialPrice !== 0 && (
                 <Fragment>
                   <Label color="black" fontSize="0.875rem" mt="0">
-                    <s>Rs. {formatAmount(Number(unitPrice) * Number(qty))}</s>
+                    <s>Rs.{formatAmount(Number(unitPrice) * Number(qty))}</s>
                   </Label>
                   <br />
                 </Fragment>
               )}
               <Label color="primary" fontSize="1.25rem" mt="0">
-                Rs.{' '}
+                Rs.
                 {specialPrice === 0
                   ? formatAmount(Number(unitPrice) * Number(qty))
                   : formatAmount(Number(specialPrice) * Number(qty))}

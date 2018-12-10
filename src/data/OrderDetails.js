@@ -17,7 +17,7 @@ const orderDetails = {
 	"order_details": {
 		"order_no": "171-7514946-1922748",
 		"order_date": "6-Jan-2018",
-		"order_total": "Rs. 29,900",
+		"order_total": "Rs.29,900",
   },
   "shipped_to": {
     "shipped_name": "Saurabh Suman",

@@ -55,8 +55,8 @@ const TitlePrice = ({
                 content={discPrice.split(',').join('')}
                 color="#f98d29"
                 fontSize="1.2rem"
-              > {discPrice}</Span>
-              { price !== discPrice &&
+              >{discPrice}</Span>
+              {price !== discPrice &&
               <Span
                 fontSize="0.875rem"
                 color="rgba(0, 0, 0, 0.4)"
@@ -65,7 +65,7 @@ const TitlePrice = ({
                 type="lt"
                 va="middle"
                 lh="2.2"
-              >₹ {price}</Span>
+              >₹{price}</Span>
               }
             </HeadingH5>
             <HeadingH5
@@ -78,14 +78,14 @@ const TitlePrice = ({
               mt="0px"
               fontFamily="medium"
             >
-              { price !== discPrice &&
+              {price !== discPrice &&
               <Span
                 fontSize="0.8125em"
                 color="rgba(0, 0, 0, 0.4)"
                 ml="0"
                 fontFamily="light"
                 va="middle"
-              >Saving ₹ {savingsRs}
+              >Saving ₹{savingsRs}
                 {' '}({savingsPercentage}% OFF)
               </Span>
               }

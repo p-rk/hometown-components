@@ -145,7 +145,7 @@ const SavingOff = styled(Span)`
   position: absolute;
   left: 0;
   bottom: 0;
-  background: #388E3C;
+  background: #d80019;
 `;
 
 const handleClick = (dispatcher, position = 0) => () => {
@@ -182,10 +182,10 @@ const Product = props => {
           }
           {saving &&
             <SavingOff
-              fontSize="10px"
-              fontFamily="medium"
+              fontSize="9px"
+              fontFamily="regular"
               color="#FFF"
-              p="5px 5px"
+              p="5px 4px"
             >
               {saving.replace('-', '')} OFF
             </SavingOff>
